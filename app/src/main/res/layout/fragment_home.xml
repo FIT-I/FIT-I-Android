@@ -11,12 +11,13 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/mainComment"
+        android:src="@drawable/main_comment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:layout_margin="10dp"
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,32 +29,61 @@
             android:id="@+id/btn_pt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/rounded_rectangle_solid"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:includeFontPadding="false"
             android:text="@string/pt"
-            android:textColor="@color/gray" />
+            android:backgroundTint="@color/white"
+            android:textSize="11sp" />
 
         <Button
             android:id="@+id/btn_diet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/diet"/>
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:includeFontPadding="false"
+            android:text="@string/diet"
+            android:background="@drawable/rounded_rectangle_solid"
+            android:textSize="11sp"
+            />
 
         <Button
             android:id="@+id/btn_eating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/eating" />
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:includeFontPadding="false"
+            android:text="@string/eating"
+            android:background="@drawable/rounded_rectangle_solid"
+            android:textSize="11sp"
+            />
 
         <Button
             android:id="@+id/btn_medical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/medical" />
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:includeFontPadding="false"
+            android:text="@string/medical"
+            android:background="@drawable/rounded_rectangle_solid"
+            android:textSize="11sp"
+            />
 
         <Button
             android:id="@+id/btn_friend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/friend" />
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:includeFontPadding="false"
+            android:text="@string/friend"
+            android:background="@drawable/rounded_rectangle_solid"
+            android:textSize="11sp"
+            />
     </LinearLayout>
 
     <TextView
@@ -84,6 +114,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             tools:listitem="@layout/item_trainer" />
     </ScrollView>
 
