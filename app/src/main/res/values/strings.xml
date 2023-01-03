@@ -6,4 +6,9 @@
     <string name="community">커뮤니티</string>
     <string name="chat">채팅</string>
     <string name="mypage">마이페이지</string>
+    <string name="pt">개인PT</string>
+    <string name="diet">다이어트</string>
+    <string name="eating">식단관리</string>
+    <string name="friend">운동친구</string>
+    <string name="medical">재활치료</string>
 </resources>
