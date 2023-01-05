@@ -6,4 +6,10 @@
     <string name="community">커뮤니티</string>
     <string name="chat">채팅</string>
     <string name="mypage">마이페이지</string>
+    <string name="about_me">소개 글</string>
+    <string name="manage_cost">관리 비용</string>
+    <string name="review">후기</string>
+    <string name="see_more_review"><![CDATA[>]]></string>
+    <string name="trainer_name">이름</string>
+    <string name="match_request_btn">매칭요청</string>
 </resources>
