@@ -73,6 +73,18 @@ class HomeFragment : Fragment() {
             }
         })
 
+        binding.llSort.setOnClickListener {
+            if (binding.tvSort.text == "실시간 순") {
+                binding.tvSort.text = "별점 순"
+            }
+
+            else{
+                binding.tvSort.text = "실시간 순"
+            }
+
+            //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함
+        }
+
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_home, container, false)
 
