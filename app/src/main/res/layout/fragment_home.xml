@@ -8,7 +8,7 @@
     android:layout_margin="10px">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/iv_mainComment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/main_comment"
@@ -17,73 +17,116 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_margin="10dp"
-        android:id="@+id/linearLayout"
+        android:layout_margin="12dp"
+        android:id="@+id/ll_tagBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+        app:layout_constraintTop_toBottomOf="@+id/iv_mainComment">
 
-        <Button
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_pt"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_rectangle_solid"
+            android:layout_height="22dp"
             android:minWidth="0dp"
             android:minHeight="0dp"
-            android:includeFontPadding="false"
             android:text="@string/pt"
-            android:backgroundTint="@color/white"
-            android:textSize="11sp" />
+            android:textSize="11dp"
+            android:textColor="@color/gray"
+            android:textStyle="normal"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:background="@drawable/tagbtn_state"
+            android:layout_marginLeft="10dp"
+            tools:ignore="TouchTargetSizeCheck"
+            style="?android:attr/borderlessButtonStyle"/>
 
-        <Button
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_diet"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="22dp"
             android:minWidth="0dp"
             android:minHeight="0dp"
-            android:includeFontPadding="false"
             android:text="@string/diet"
-            android:background="@drawable/rounded_rectangle_solid"
-            android:textSize="11sp"
-            />
+            android:textSize="11dp"
+            android:textColor="@color/gray"
+            android:textStyle="normal"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:background="@drawable/tagbtn_state"
+            android:layout_marginLeft="10dp"
+            tools:ignore="TouchTargetSizeCheck"
+            style="?android:attr/borderlessButtonStyle"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_eating"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="22dp"
             android:minWidth="0dp"
             android:minHeight="0dp"
-            android:includeFontPadding="false"
             android:text="@string/eating"
-            android:background="@drawable/rounded_rectangle_solid"
-            android:textSize="11sp"
-            />
+            android:textSize="11dp"
+            android:textColor="@color/gray"
+            android:textStyle="normal"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:background="@drawable/tagbtn_state"
+            android:layout_marginLeft="10dp"
+            tools:ignore="TouchTargetSizeCheck"
+            style="?android:attr/borderlessButtonStyle"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_medical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="22dp"
             android:minWidth="0dp"
             android:minHeight="0dp"
-            android:includeFontPadding="false"
             android:text="@string/medical"
-            android:background="@drawable/rounded_rectangle_solid"
-            android:textSize="11sp"
-            />
+            android:textSize="11dp"
+            android:textColor="@color/gray"
+            android:textStyle="normal"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:background="@drawable/tagbtn_state"
+            android:layout_marginLeft="10dp"
+            tools:ignore="TouchTargetSizeCheck"
+            style="?android:attr/borderlessButtonStyle"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_friend"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="22dp"
             android:minWidth="0dp"
             android:minHeight="0dp"
-            android:includeFontPadding="false"
             android:text="@string/friend"
-            android:background="@drawable/rounded_rectangle_solid"
-            android:textSize="11sp"
-            />
+            android:textSize="11dp"
+            android:textColor="@color/gray"
+            android:textStyle="normal"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:background="@drawable/tagbtn_state"
+            android:layout_marginLeft="10dp"
+            tools:ignore="TouchTargetSizeCheck"
+            style="?android:attr/borderlessButtonStyle"/>
+
     </LinearLayout>
 
     <TextView
@@ -93,7 +136,7 @@
         android:text="실시간 순"
         android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/ll_tagBtn" />
 
     <ImageView
         android:id="@+id/imageView3"
