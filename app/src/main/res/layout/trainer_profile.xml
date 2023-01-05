@@ -7,62 +7,63 @@
 
     <TextView
         android:id="@+id/manage_cost"
-        android:layout_width="434dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="350dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginBottom="142dp"
         android:text="@string/manage_cost"
         app:layout_constraintBottom_toBottomOf="@+id/review"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.743" />
+        app:layout_constraintVertical_bias="0.537" />
 
     <TextView
         android:id="@+id/review"
-        android:layout_width="0dp"
-        android:layout_height="110dp"
+        android:layout_width="350dp"
+        android:layout_height="130dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="19dp"
         android:text="@string/review"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.863" />
+        app:layout_constraintVertical_bias="0.86" />
 
     <TextView
         android:id="@+id/about_me"
-        android:layout_width="436dp"
-        android:layout_height="106dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="350dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="13dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginBottom="13dp"
         android:text="@string/about_me"
         app:layout_constraintBottom_toTopOf="@+id/review"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/manage_cost"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintVertical_bias="0.619" />
 
     <ImageView
         android:id="@+id/trainerPicture"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginStart="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/manage_cost"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16"
+        app:layout_constraintVertical_bias="0.56"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
