@@ -81,9 +81,9 @@
         app:layout_constraintVertical_chainStyle="spread" />
 
     <Button
-        android:id="@+id/see_more_review"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:id="@+id/reviewBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="180dp"
         android:text="@string/see_more_review"
@@ -108,11 +108,17 @@
 
     <ImageButton
         android:id="@+id/heart_btn"
-        android:layout_width="38dp"
-        android:layout_height="37dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="18dp"
         android:background="@drawable/round_button"
-        app:srcCompat="@drawable/button_heart_drawable"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="668dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/match_request_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/review"
+        app:srcCompat="@drawable/button_heart_drawable" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
