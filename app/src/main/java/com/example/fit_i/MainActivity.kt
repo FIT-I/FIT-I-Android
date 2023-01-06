@@ -6,7 +6,7 @@ import com.example.fit_i.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
 
-        val bottomNavBar = findViewById(R.id.bottom_navi) as BottomNavigationView
+        val bottomNavBar = findViewById<BottomNavigationView>(R.id.bottom_navi)
         bottomNavBar.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.item_fragment1 -> {
@@ -42,6 +42,11 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
+        val homeFragment = HomeFragment()
+        supportFragmentManager.beginTransaction().replace(R.id.fl_container, homeFragment).commit()
         //selectedItemId=R.id.item_fragment1
+
+        bottomNavBar.itemIconTintList = null
     }
 }
