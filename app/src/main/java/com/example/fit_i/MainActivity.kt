@@ -42,6 +42,9 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
+        val homeFragment = HomeFragment()
+        supportFragmentManager.beginTransaction().replace(R.id.fl_container, homeFragment).commit()
         //selectedItemId=R.id.item_fragment1
 
         bottomNavBar.itemIconTintList = null
