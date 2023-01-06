@@ -5,32 +5,48 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.fit_i.databinding.FragmentHomeBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment() {
-    //lateinit var binding: FragmentHomeBinding
+    private lateinit var binding: FragmentHomeBinding
+    //private val trainerAdapter = TrainerAdapter()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
+
+
+//val trainer_DataArray : ArrayList<TrainerData> = ArrayList()
+    //lateinit var recyclerView : RecyclerView
+//    lateinit var trainerAdapter: TrainerAdapter
+//    val datas = mutableListOf<TrainerData>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        //binding = FragmentHomeBinding.inflate(layoutInflater)
-        val binding = FragmentHomeBinding.inflate(inflater, container, false)
+    ): View {
+
+        //val fragmentHomeBidning = FragmentHomeBinding.bind(view)
+        //binding = fragmentHomeBidning
+        binding = FragmentHomeBinding.inflate(layoutInflater)
+        //val binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        val trainerList : ArrayList<TrainerData> = arrayListOf()
+
+        trainerList.apply {
+            add(TrainerData("김동현","개인PT"))
+            add(TrainerData("유진","재활"))
+        }
+
+        val trainerAdapter = TrainerAdapter(trainerList)
+        binding.rvTrainer.adapter=trainerAdapter
+
+        var linearLayoutManager = LinearLayoutManager(context)
+        binding.rvTrainer.layoutManager=linearLayoutManager
+
 
         //태그 클릭 구현
         binding.btnPt.setOnClickListener(object : View.OnClickListener {
@@ -85,9 +101,30 @@ class HomeFragment : Fragment() {
             //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함
         }
 
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_home, container, false)
+        binding.rvTrainer.layoutManager=LinearLayoutManager(context)
+        binding.rvTrainer.adapter=trainerAdapter
 
+        //임시 데이터로 확인해보기
+        /*
+        TrainerAdapter.summitList(mutableListOf<TrainerData>().apply {
+            add(ArticleModel("1","맥북 프로16인치",100000,"1,000,000",""))
+            add(ArticleModel("1","갤럭시S22",101010,"800,000",""))
+        })*/
+//
+//        val rootView = inflater.inflate(R.layout.fragment_home, container, false)
+//        trainer_DataArray.add(TrainerData("이름","카테고리"))
+//
+//        recyclerView = rootView.findViewById(R.id.rv_trainer)as RecyclerView
+//        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+//        recyclerView.adapter = TrainerAdapter(requireContext(),trainer_DataArray)
+//
+//        return rootView
+//    }
+
+//        initRecycler()
+//        // Inflate the layout for this fragment
+//        //return inflater.inflate(R.layout.fragment_home, container, false)
         return binding.root
+
     }
 }

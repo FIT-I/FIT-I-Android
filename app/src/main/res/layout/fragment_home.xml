@@ -33,7 +33,7 @@
             android:minWidth="0dp"
             android:minHeight="0dp"
             android:text="@string/pt"
-            android:textSize="11dp"
+            android:textSize="11sp"
             android:textColor="@color/gray"
             android:textStyle="normal"
             android:textAlignment="center"
@@ -42,7 +42,7 @@
             android:paddingLeft="14dp"
             android:paddingRight="14dp"
             android:background="@drawable/tagbtn_state"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             tools:ignore="TouchTargetSizeCheck"
             style="?android:attr/borderlessButtonStyle"/>
 
@@ -54,7 +54,7 @@
             android:minWidth="0dp"
             android:minHeight="0dp"
             android:text="@string/diet"
-            android:textSize="11dp"
+            android:textSize="11sp"
             android:textColor="@color/gray"
             android:textStyle="normal"
             android:textAlignment="center"
@@ -63,7 +63,7 @@
             android:paddingLeft="14dp"
             android:paddingRight="14dp"
             android:background="@drawable/tagbtn_state"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             tools:ignore="TouchTargetSizeCheck"
             style="?android:attr/borderlessButtonStyle"/>
 
@@ -74,7 +74,7 @@
             android:minWidth="0dp"
             android:minHeight="0dp"
             android:text="@string/eating"
-            android:textSize="11dp"
+            android:textSize="11sp"
             android:textColor="@color/gray"
             android:textStyle="normal"
             android:textAlignment="center"
@@ -83,7 +83,7 @@
             android:paddingLeft="14dp"
             android:paddingRight="14dp"
             android:background="@drawable/tagbtn_state"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             tools:ignore="TouchTargetSizeCheck"
             style="?android:attr/borderlessButtonStyle"/>
 
@@ -94,7 +94,7 @@
             android:minWidth="0dp"
             android:minHeight="0dp"
             android:text="@string/medical"
-            android:textSize="11dp"
+            android:textSize="11sp"
             android:textColor="@color/gray"
             android:textStyle="normal"
             android:textAlignment="center"
@@ -103,7 +103,7 @@
             android:paddingLeft="14dp"
             android:paddingRight="14dp"
             android:background="@drawable/tagbtn_state"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             tools:ignore="TouchTargetSizeCheck"
             style="?android:attr/borderlessButtonStyle"/>
 
@@ -114,7 +114,7 @@
             android:minWidth="0dp"
             android:minHeight="0dp"
             android:text="@string/friend"
-            android:textSize="11dp"
+            android:textSize="11sp"
             android:textColor="@color/gray"
             android:textStyle="normal"
             android:textAlignment="center"
@@ -123,30 +123,32 @@
             android:paddingLeft="14dp"
             android:paddingRight="14dp"
             android:background="@drawable/tagbtn_state"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             tools:ignore="TouchTargetSizeCheck"
             style="?android:attr/borderlessButtonStyle"/>
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/button2"
+    <LinearLayout
+        android:id="@+id/ll_sort"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="실시간 순"
+        android:orientation="horizontal"
         android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_tagBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/ll_tagBtn">
+        <ImageView
+            android:id="@+id/iv_sort"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/arrow"/>
+        <TextView
+            android:id="@+id/tv_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="실시간 순"/>
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/arrow"
-        app:layout_constraintBottom_toBottomOf="@+id/button2"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/button2" />
-
+    </LinearLayout>
     <ImageView
         android:id="@+id/iv_bar"
         android:layout_width="match_parent"
@@ -155,7 +157,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintTop_toBottomOf="@id/button2" />
+        app:layout_constraintTop_toBottomOf="@id/ll_sort" />
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -167,6 +169,7 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_bar">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_trainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:listitem="@layout/item_trainer" />
