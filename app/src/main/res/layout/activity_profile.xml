@@ -12,7 +12,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="142dp"
-        android:text="@string/manage_cost"
+
         app:layout_constraintBottom_toBottomOf="@+id/review"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
@@ -27,7 +27,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="19dp"
-        android:text="@string/review"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
@@ -43,7 +43,7 @@
         android:layout_marginTop="13dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="13dp"
-        android:text="@string/about_me"
+
         app:layout_constraintBottom_toTopOf="@+id/review"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
@@ -72,25 +72,13 @@
         android:layout_height="50dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/round_button"
-        android:text="@string/match_request_btn"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintTop_toBottomOf="@+id/review"
         app:layout_constraintVertical_bias="0.636"
         app:layout_constraintVertical_chainStyle="spread" />
-
-    <Button
-        android:id="@+id/reviewBtn"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="180dp"
-        android:text="@string/see_more_review"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/review"
-        app:layout_constraintTop_toBottomOf="@+id/manage_cost"
-        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/trainer_name"
@@ -99,7 +87,7 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="188dp"
         android:layout_marginBottom="84dp"
-        android:text="@string/trainer_name"
+
         app:layout_constraintBottom_toTopOf="@+id/manage_cost"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="@+id/trainerPicture"
@@ -120,5 +108,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/review"
         app:srcCompat="@drawable/button_heart_drawable" />
+
+    <ImageButton
+        android:id="@+id/review_btn"
+        android:layout_width="28dp"
+        android:layout_height="37dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.721"
+        app:srcCompat="@drawable/nextpage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
