@@ -14,16 +14,17 @@
         android:textStyle="bold"
         android:text="안녕하세요.\nFit-i를 찾은 당신은 누구입니까?"
         android:textColor="@color/main"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/ib_select"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="30dp"/>
 
-    <ImageView
-        android:id="@+id/imageView"
+    <ImageButton
+        android:id="@+id/ib_select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/customer"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
