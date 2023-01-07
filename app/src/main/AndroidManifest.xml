@@ -15,6 +15,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FITI"
         tools:targetApi="31">
+
+        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="oauth"
+                    android:scheme="78fa9b34400ac36c567656199e53f636" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".SigninFinishActivity"
             android:exported="false">
@@ -50,20 +63,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="oauth"
-                    android:scheme="kakao{78fa9b34400ac36c567656199e53f636}" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".LoginActivity"
             android:exported="true">
