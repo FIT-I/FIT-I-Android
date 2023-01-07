@@ -1,12 +1,12 @@
 # FIT-I-Android
 
 ## Branch
-feature/{기능}  
+`feature/{기능}`
 
 예시) feature/HomeFragment
 
 ## Commit Message
-커밋태그 : 내용 #이슈번호
+`커밋태그 : 내용 #이슈번호`
 
 예시) add : login 파일 추가 #20
 
