@@ -14,7 +14,7 @@
         android:text="PT service only for you, Fit-i"
         android:textSize="20sp"
         android:textColor="@color/main"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
