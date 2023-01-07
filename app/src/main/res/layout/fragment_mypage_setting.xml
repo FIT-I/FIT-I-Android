@@ -6,12 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".MypageSettingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:id="@+id/ib_pre1"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/main"
         android:scaleType="fitXY"
@@ -21,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/tv_loginout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="로그아웃"
@@ -30,10 +28,10 @@
         android:layout_marginTop="30dp"
         android:layout_marginStart="40dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
+        app:layout_constraintTop_toBottomOf="@+id/ib_pre1" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/tv_signout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -42,6 +40,6 @@
         android:textSize="20sp"
         android:textColor="@color/main"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_loginout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
