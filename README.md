@@ -1,11 +1,15 @@
 # FIT-I-Android
 
 ## Branch
-`feature/{기능}`
+### GitHub Flow
+브랜치를 새로 생성할 때에는 main 브랜치를 기점으로 생성하기
 
-예시) feature/HomeFragment
+### Branch Convention
+`feat/{기능}`  
 
-## Commit Message
+예시) feat/HomeFragment
+
+## Commit Message Convention
 `커밋태그 : 내용 #이슈번호`
 
 예시) add : login 파일 추가 #20
