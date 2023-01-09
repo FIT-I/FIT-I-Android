@@ -7,36 +7,10 @@
     tools:context=".CommunityFragment">
 
 
-    <TextView
-        android:id="@+id/tv_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PT service only for you, Fit-i"
-        android:textSize="20sp"
-        android:textColor="@color/main"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_match"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="216dp"
-        android:textColor="@color/main"
-        android:text="매칭내역"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.167"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_text" />
-
     <Button
         android:id="@+id/bt_sent"
         android:layout_width="170dp"
         android:layout_height="140dp"
-        android:layout_marginStart="20dp"
         android:backgroundTint="@color/white"
         android:drawableTop="@drawable/sentx"
         android:padding="19dp"
@@ -44,22 +18,8 @@
         android:textColor="@color/gray"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_match"
-        app:layout_constraintVertical_bias="0.043" />
-
-    <Button
-        android:id="@+id/bt_accept"
-        android:layout_width="170dp"
-        android:layout_height="140dp"
-        android:layout_marginEnd="20dp"
-        android:padding="19dp"
-        android:backgroundTint="@color/white"
-        android:drawableTop="@drawable/acceptx"
-        android:text="받은 요청"
-        android:textColor="@color/gray"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.478" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
