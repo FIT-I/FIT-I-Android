@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/eating" />
+            app:srcCompat="@drawable/ic_eating" />
 
         <TextView
             android:id="@+id/tv_category"
@@ -61,7 +61,7 @@
             android:layout_height="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/gold" />
+            app:srcCompat="@drawable/img_gold" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -76,7 +76,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/star" />
+            android:src="@drawable/ic_star" />
 
         <TextView
             android:id="@+id/tv_rating"

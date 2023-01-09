@@ -23,7 +23,7 @@
         android:id="@+id/ib_select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/customer"
+        android:src="@drawable/img_customer"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
