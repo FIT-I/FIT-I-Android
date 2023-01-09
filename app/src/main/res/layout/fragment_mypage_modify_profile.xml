@@ -33,13 +33,14 @@
 
     <ImageView
         android:id="@+id/iv_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_profileModify"
-        tools:src="@tools:sample/avatars" />
+        tools:src="@drawable/ic_profile" />
 
     <TextView
         android:id="@+id/tv_name"
@@ -66,8 +67,8 @@
     <ImageView
         android:id="@+id/bar"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/gray"
+        android:layout_height="10dp"
+        android:background="#F8F8F8"
         app:layout_constraintTop_toBottomOf="@+id/tv_name"
         android:layout_marginTop="30dp"/>
 
@@ -150,10 +151,10 @@
         android:id="@+id/tv_addressModify"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
         android:text="변경"
         android:textColor="@color/gray"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_address"
         app:layout_constraintTop_toTopOf="@+id/tv_address" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
