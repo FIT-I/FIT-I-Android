@@ -3,9 +3,9 @@ package com.example.fit_i
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class SigninFinishActivity : AppCompatActivity() {
+class ChangePwActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signin_finish)
+        setContentView(R.layout.activity_change_pw)
     }
 }
