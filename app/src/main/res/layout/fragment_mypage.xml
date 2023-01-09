@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,8 +8,132 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="mypage_fragment" />
+        android:id="@+id/tv_mypage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="마이페이지"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:textColor="@color/main"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <ImageButton
+        android:id="@+id/ib_setting"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_gearshape"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_mypage" />
+
+    <ImageView
+        android:id="@+id/iv_profileM"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_profile"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mypage"
+        app:layout_constraintBottom_toBottomOf="@id/tv_emailM"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:id="@+id/tv_nameM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="김동현"
+        android:textColor="@color/main"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@+id/iv_profileM"
+        app:layout_constraintTop_toTopOf="@+id/iv_profileM" />
+
+    <TextView
+        android:id="@+id/tv_emailM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="qqldls030@afms.com"
+        app:layout_constraintStart_toStartOf="@+id/tv_nameM"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nameM" />
+
+    <TextView
+        android:id="@+id/tv_go_modifyProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="프로필 수정"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_emailM"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_profileM" />
+
+
+
+    <Button
+        android:id="@+id/btn_matching"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F8F8F8"
+        android:text="내 매칭 페이지 관리"
+        android:textStyle="bold"
+        android:textColor="@color/main"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_emailM" />
+
+    <ImageView
+        android:id="@+id/iv_bar2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_matching"/>
+
+    <TextView
+        android:id="@+id/tv_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="찜 목록"
+        android:textColor="@color/main"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="@+id/iv_profileM"
+        app:layout_constraintTop_toBottomOf="@+id/iv_bar2" />
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="매칭 위치 설정"
+        android:textColor="@color/main"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/iv_profileM"
+        app:layout_constraintTop_toBottomOf="@+id/tv_like" />
+
+
+    <TextView
+        android:id="@+id/tv_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="공지사항"
+        android:textColor="@color/main"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/iv_profileM"
+        app:layout_constraintTop_toBottomOf="@+id/tv_location" />
+
+
+    <TextView
+        android:id="@+id/tv_permisson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이용약관"
+        android:textColor="@color/main"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/iv_profileM"
+        app:layout_constraintTop_toBottomOf="@+id/tv_notice" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
