@@ -82,7 +82,7 @@
         android:layout_marginTop="20dp">
 
         <TextView
-            android:id="@+id/tv_signIn"
+            android:id="@+id/tv_go_findPW"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="비밀번호 찾기"
@@ -112,7 +112,7 @@
             android:textColor="@color/main" />
 
         <TextView
-            android:id="@+id/tv_findPW"
+            android:id="@+id/tv_go_signIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="회원가입"

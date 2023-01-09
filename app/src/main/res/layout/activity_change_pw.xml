@@ -75,7 +75,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_go_main"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_margin="30dp"

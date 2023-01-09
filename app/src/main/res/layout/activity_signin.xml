@@ -10,7 +10,7 @@
         android:id="@+id/tv_permission"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="이용약관"
+        android:text="회원가입"
         android:textColor="@color/main"
         android:textSize="30dp"
         android:textStyle="bold"
@@ -69,7 +69,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_goto_main"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_margin="30dp"

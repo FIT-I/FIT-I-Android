@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
 import com.example.fit_i.databinding.ActivityLoginBinding
 import com.kakao.sdk.auth.LoginClient
@@ -100,7 +101,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        val kakao_login_button = findViewById<ImageButton>(R.id.kakao_login_button) // 로그인 버튼
+        val kakao_login_button = findViewById<ImageButton>(R.id.ib_kakao_login_button) // 로그인 버튼
 
         kakao_login_button.setOnClickListener {
             if (LoginClient.instance.isKakaoTalkLoginAvailable(this)) {
@@ -117,10 +118,28 @@ class LoginActivity : AppCompatActivity() {
 
         setLayoutState(false)
 
-        val naver_login_button = findViewById<ImageButton>(R.id.naver_Login_Button) // 로그인 버튼
+        val naver_login_button = findViewById<ImageButton>(R.id.ib_naver_Login_Button) // 로그인 버튼
         naver_login_button.setOnClickListener {
             startNaverLogin()
         }
+
+
+        //비밀번호 찾기
+        val findPW = findViewById<TextView>(R.id.tv_go_findPW)
+        findPW.setOnClickListener {
+            val intent = Intent(this, FindPwActivity::class.java)
+            startActivity(intent)  // 화면 전환을 시켜줌
+            finish()
+        }
+
+        //회원가입하기
+        val signIn = findViewById<TextView>(R.id.tv_go_signIn)
+        signIn.setOnClickListener {
+            val intent = Intent(this, PermissionActivity::class.java)
+            startActivity(intent)  // 화면 전환을 시켜줌
+            finish()
+        }
+
 //        binding.tvNaverLogout.setOnClickListener {
 //            startNaverLogout()
 //        }
