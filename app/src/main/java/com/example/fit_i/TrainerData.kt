@@ -7,7 +7,7 @@ data class TrainerData(
     val certificate: Int,
     val univ: String,
     val pr: String,
-    val money: Double,
+    val money: Int,
     //val time: String
     //val rank : Int
 //    val img : Int
