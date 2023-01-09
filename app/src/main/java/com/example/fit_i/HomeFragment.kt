@@ -48,47 +48,47 @@ class HomeFragment : Fragment() {
         var linearLayoutManager = LinearLayoutManager(context)
         binding.rvTrainer.layoutManager=linearLayoutManager
 
-
-        //태그 클릭 구현
-        binding.btnPt.setOnClickListener(object : View.OnClickListener {
-            var isBtnPtSelected = false
-            override fun onClick(v: View) {
-                binding.btnPt.isSelected = !binding.btnPt.isSelected
-                isBtnPtSelected = !isBtnPtSelected
-            }
-        })
-
-        binding.btnDiet.setOnClickListener(object : View.OnClickListener {
-            var isBtnDietSelected = false
-            override fun onClick(v: View) {
-                binding.btnDiet.isSelected = !binding.btnDiet.isSelected
-                isBtnDietSelected = !isBtnDietSelected
-            }
-        })
-
-        binding.btnEating.setOnClickListener(object : View.OnClickListener {
-            var isBtnEatingSelected = false
-            override fun onClick(v: View) {
-                binding.btnEating.isSelected = !binding.btnEating.isSelected
-                isBtnEatingSelected = !isBtnEatingSelected
-            }
-        })
-
-        binding.btnMedical.setOnClickListener(object : View.OnClickListener {
-            var isBtnMedicalSelected = false
-            override fun onClick(v: View) {
-                binding.btnMedical.isSelected = !binding.btnMedical.isSelected
-                isBtnMedicalSelected = !isBtnMedicalSelected
-            }
-        })
-
-        binding.btnFriend.setOnClickListener(object : View.OnClickListener {
-            var isBtnFriendSelected = false
-            override fun onClick(v: View) {
-                binding.btnFriend.isSelected = !binding.btnFriend.isSelected
-                isBtnFriendSelected = !isBtnFriendSelected
-            }
-        })
+//
+//        //태그 클릭 구현
+//        binding.btnPt.setOnClickListener(object : View.OnClickListener {
+//            var isBtnPtSelected = false
+//            override fun onClick(v: View) {
+//                binding.btnPt.isSelected = !binding.btnPt.isSelected
+//                isBtnPtSelected = !isBtnPtSelected
+//            }
+//        })
+//
+//        binding.btnDiet.setOnClickListener(object : View.OnClickListener {
+//            var isBtnDietSelected = false
+//            override fun onClick(v: View) {
+//                binding.btnDiet.isSelected = !binding.btnDiet.isSelected
+//                isBtnDietSelected = !isBtnDietSelected
+//            }
+//        })
+//
+//        binding.btnEating.setOnClickListener(object : View.OnClickListener {
+//            var isBtnEatingSelected = false
+//            override fun onClick(v: View) {
+//                binding.btnEating.isSelected = !binding.btnEating.isSelected
+//                isBtnEatingSelected = !isBtnEatingSelected
+//            }
+//        })
+//
+//        binding.btnMedical.setOnClickListener(object : View.OnClickListener {
+//            var isBtnMedicalSelected = false
+//            override fun onClick(v: View) {
+//                binding.btnMedical.isSelected = !binding.btnMedical.isSelected
+//                isBtnMedicalSelected = !isBtnMedicalSelected
+//            }
+//        })
+//
+//        binding.btnFriend.setOnClickListener(object : View.OnClickListener {
+//            var isBtnFriendSelected = false
+//            override fun onClick(v: View) {
+//                binding.btnFriend.isSelected = !binding.btnFriend.isSelected
+//                isBtnFriendSelected = !isBtnFriendSelected
+//            }
+//        })
 
         binding.llSort.setOnClickListener {
             if (binding.tvSort.text == "실시간 순") {
