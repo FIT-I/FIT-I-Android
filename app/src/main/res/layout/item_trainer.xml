@@ -152,6 +152,12 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_pr">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₩"
+            android:textColor="@color/black"
+            android:textSize="11dp"/>
+        <TextView
             android:id="@+id/tv_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
