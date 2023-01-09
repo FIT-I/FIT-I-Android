@@ -4,25 +4,25 @@
         android:id="@+id/category1"
         android:enabled="true"
         android:icon="@drawable/ic_pt"
-        android:title="개인PT"/>
+        android:title="@string/pt"/>
     <item
         android:id="@+id/category2"
         android:enabled="true"
         android:icon="@drawable/ic_diet"
-        android:title="다이어트"/>
+        android:title="@string/diet"/>
     <item
         android:id="@+id/category4"
         android:enabled="true"
         android:icon="@drawable/ic_eating"
-        android:title="식단관리"/>
+        android:title="@string/eating"/>
     <item
         android:id="@+id/category3"
         android:enabled="true"
         android:icon="@drawable/ic_medical"
-        android:title="재활치료"/>
+        android:title="@string/medical"/>
     <item
         android:id="@+id/category5"
         android:enabled="true"
         android:icon="@drawable/ic_friend"
-        android:title="운동친구"/>
+        android:title="@string/friend"/>
 </menu>
