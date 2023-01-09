@@ -6,138 +6,154 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <ImageButton
+        android:id="@+id/ib_pre1"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@color/main"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_back"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tv_customerLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="Customer-Login"
+        android:textColor="@color/main"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_customerLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
-            android:text="CUSTOMER LOG_IN"
-            android:textColor="@color/main"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout"
-            app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_customerLogin">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_customerLogin">
-
-            <EditText
-                android:id="@+id/editTextTextEmailAddress"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="아이디"
-                android:textColorHint="#B0BAD1"
-                android:textColor="@color/main"
-                android:inputType="textEmailAddress" />
-
-            <EditText
-                android:id="@+id/editTextTextPassword"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="비밀번호"
-                android:textColorHint="#B0BAD1"
-                android:textColor="@color/main"
-                android:inputType="textPassword" />
-
-        </LinearLayout>
-
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="자동 로그인"
-            android:textColor="@color/main"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-        <Button
-            android:id="@+id/btn_login"
+        <EditText
+            android:id="@+id/editTextTextEmailAddress"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="Login"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+            android:ems="10"
+            android:hint="아이디"
+            android:textColorHint="#B0BAD1"
+            android:textColor="@color/main"
+            android:inputType="textEmailAddress" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_login">
+            android:ems="10"
+            android:hint="비밀번호"
+            android:textColorHint="#B0BAD1"
+            android:textColor="@color/main"
+            android:inputType="textPassword" />
 
-            <TextView
-                android:id="@+id/tv_signIn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="회원가입"
-                android:textColor="@color/main" />
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:text="|"
-                android:textColor="@color/main" />
-
-            <TextView
-                android:id="@+id/tv_findId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="아이디찾기"
-                android:textColor="@color/main" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:text="|"
-                android:textColor="@color/main" />
-
-            <TextView
-                android:id="@+id/tv_findPW"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="비밀번호 찾기"
-                android:textColor="@color/main" />
-        </LinearLayout>
+<!--    <CheckBox-->
+<!--        android:id="@+id/checkBox"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="자동 로그인"-->
+<!--        android:textColor="@color/main"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/linearLayout"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />-->
 
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        android:layout_marginTop="20dp">
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="300dp"
+        <TextView
+            android:id="@+id/tv_go_findPW"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="카카오 로그인"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:text="비밀번호 찾기"
+            android:textColor="@color/main" />
 
-        <Button
-            android:layout_width="300dp"
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginLeft="20dp"-->
+        <!--            android:layout_marginRight="20dp"-->
+        <!--            android:text="|"-->
+        <!--            android:textColor="@color/main" />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_findId"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="아이디찾기"-->
+        <!--            android:textColor="@color/main" />-->
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="네이버 로그인" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="|"
+            android:textColor="@color/main" />
+
+        <TextView
+            android:id="@+id/tv_go_signIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원가입"
+            android:textColor="@color/main" />
     </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:maxWidth="0dp"
+        android:maxHeight="0dp"
+        android:text="로그인"
+        android:layout_marginTop="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+    <ImageButton
+        android:id="@+id/ib_kakao_login_button"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/kakao_login_medium_wide"
+        android:text="카카오 로그인"
+        android:layout_marginTop="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+    <ImageButton
+        android:id="@+id/ib_naver_Login_Button"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/naver_login_medium_wide"
+        android:text="네이버 로그인"
+        android:scaleType="fitXY"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ib_kakao_login_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
