@@ -11,4 +11,7 @@
     <string name="eating">식단관리</string>
     <string name="friend">운동친구</string>
     <string name="medical">재활치료</string>
+    <string name="kakao_app_key">78fa9b34400ac36c567656199e53f636</string>
+    <string name="naver_client_id">xD_2K4xveAL2qBrM7dlp</string>
+    <string name="naver_client_secret">FUMNbsrj2C</string>
 </resources>

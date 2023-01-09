@@ -8,82 +8,172 @@
     android:layout_margin="10px">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/iv_mainComment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/mainComment"
+        android:src="@drawable/main_comment"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:layout_margin="12dp"
+        android:id="@+id/ll_tagBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+        app:layout_constraintTop_toBottomOf="@+id/iv_mainComment">
 
-        <Button
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_pt"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="23dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
             android:text="@string/pt"
-            android:textColor="@color/gray" />
+            android:textSize="11sp"
+            android:textColor="@color/gray"
+            android:textStyle="normal"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:background="@drawable/tagbtn_state"
+            android:layout_marginStart="10dp"
+            tools:ignore="TouchTargetSizeCheck"
+            style="?android:attr/borderlessButtonStyle"/>
 
-        <Button
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_diet"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/diet"/>
+            android:layout_height="23dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:text="@string/diet"
+            android:textSize="11sp"
+            android:textColor="@color/gray"
+            android:textStyle="normal"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:background="@drawable/tagbtn_state"
+            android:layout_marginStart="10dp"
+            tools:ignore="TouchTargetSizeCheck"
+            style="?android:attr/borderlessButtonStyle"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_eating"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/eating" />
+            android:layout_height="23dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:text="@string/eating"
+            android:textSize="11sp"
+            android:textColor="@color/gray"
+            android:textStyle="normal"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:background="@drawable/tagbtn_state"
+            android:layout_marginStart="10dp"
+            tools:ignore="TouchTargetSizeCheck"
+            style="?android:attr/borderlessButtonStyle"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_medical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/medical" />
+            android:layout_height="23dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:text="@string/medical"
+            android:textSize="11sp"
+            android:textColor="@color/gray"
+            android:textStyle="normal"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:background="@drawable/tagbtn_state"
+            android:layout_marginStart="10dp"
+            tools:ignore="TouchTargetSizeCheck"
+            style="?android:attr/borderlessButtonStyle"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_friend"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/friend" />
+            android:layout_height="23dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:text="@string/friend"
+            android:textSize="11sp"
+            android:textColor="@color/gray"
+            android:textStyle="normal"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:background="@drawable/tagbtn_state"
+            android:layout_marginStart="10dp"
+            tools:ignore="TouchTargetSizeCheck"
+            style="?android:attr/borderlessButtonStyle"/>
+
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/button2"
+    <LinearLayout
+        android:id="@+id/ll_sort"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="실시간 순"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/ll_tagBtn">
+        <ImageView
+            android:id="@+id/iv_sort"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_arrow_updown"/>
+        <TextView
+            android:id="@+id/tv_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="실시간 순"/>
 
+    </LinearLayout>
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/arrow"
-        app:layout_constraintBottom_toBottomOf="@+id/button2"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/button2" />
+        android:id="@+id/iv_bar"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#F8F8F8"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintTop_toBottomOf="@id/ll_sort" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2">
+        app:layout_constraintTop_toBottomOf="@+id/iv_bar">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_trainer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             tools:listitem="@layout/item_trainer" />
     </ScrollView>
 
