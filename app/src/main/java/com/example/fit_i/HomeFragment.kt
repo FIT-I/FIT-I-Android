@@ -69,17 +69,17 @@ class HomeFragment : Fragment() {
 
 
 
-        binding.llSort.setOnClickListener {
-            if (binding.tvSort.text == "실시간 순") {
-                binding.tvSort.text = "별점 순"
-            }
-
-            else{
-                binding.tvSort.text = "실시간 순"
-            }
-
-            //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함
-        }
+//        binding.llSort.setOnClickListener {
+//            if (binding.tvSort.text == "실시간 순") {
+//                binding.tvSort.text = "별점 순"
+//            }
+//
+//            else{
+//                binding.tvSort.text = "실시간 순"
+//            }
+//
+//            //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함
+//        }
 //
 //        binding.rvTrainer.layoutManager=LinearLayoutManager(context)
 //        binding.rvTrainer.adapter=trainerAdapter
