@@ -6,20 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.fit_i.databinding.FragmentHomePtBinding
 
 class HomePtFragment : Fragment() {
     private lateinit var binding: FragmentHomePtBinding
-    //private val trainerAdapter = TrainerAdapter()
 
-//    lateinit var recyclerView : RecyclerView
-//    lateinit var trainerAdapter: TrainerAdapter
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomePtBinding.inflate(layoutInflater)
 
         val trainerList : ArrayList<TrainerData> = arrayListOf()
@@ -34,19 +33,15 @@ class HomePtFragment : Fragment() {
         val trainerAdapter = TrainerAdapter(trainerList)
         binding.rvTrainer.adapter=trainerAdapter
 
-
         val linearLayoutManager = LinearLayoutManager(context)
         binding.rvTrainer.layoutManager=linearLayoutManager
-
 
         binding.llSort.setOnClickListener {
             if (binding.tvSort.text == "실시간 순") {
                 binding.tvSort.text = "별점 순"
-            } else
-                binding.tvSort.text = "실시간 순"
-            //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함
-        }
+            } else binding.tvSort.text = "실시간 순"
+        } //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함
 
-    return inflater.inflate(R.layout.fragment_home_pt, container, false)
+        return binding.root
     }
 }
