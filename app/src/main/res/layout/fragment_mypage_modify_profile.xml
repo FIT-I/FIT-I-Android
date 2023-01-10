@@ -13,8 +13,8 @@
         android:layout_marginStart="10dp"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/main"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_arrow_left"
+        android:scaleType="fitStart"
+        android:src="@drawable/ic_pre"
         android:layout_margin="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
