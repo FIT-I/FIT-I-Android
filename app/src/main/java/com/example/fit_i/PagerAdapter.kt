@@ -16,9 +16,8 @@ class PagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fr
         return fragmentList[position]
     }
 
-    fun addFragment(fragment: Fragment, title : String){
+    fun addFragment(fragment: Fragment){
         fragmentList.add(fragment)
-        titleList.add(title)
         notifyItemInserted(fragmentList.size - 1)
     }
 
