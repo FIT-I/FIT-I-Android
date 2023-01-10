@@ -178,7 +178,7 @@ class HomeFragment : Fragment() {
 
         // tablayout attach
         TabLayoutMediator(tabLayout, viewPager){ tab, position ->
-            //tab.text = "Tab ${position+1}"
+            tab.text = "Tab ${position+1}"
             //tab.text = "${ }"
         }.attach()
 
