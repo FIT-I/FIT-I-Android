@@ -4,25 +4,29 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
+import com.example.fit_i.databinding.ActivitySplash2Binding
 
-class SplashActivity : AppCompatActivity() {
+
+class Splash2Activity : AppCompatActivity() {
+    private lateinit var viewBinding: ActivitySplash2Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash2)
 
-        Handler().postDelayed({
-            val intent = Intent(this, FirstActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            startActivity(intent)
-            finish()
-        },DURATION)
+        viewBinding = ActivitySplash2Binding.inflate(layoutInflater)
+        setContentView(viewBinding.root)
 
-    }
-    companion object {
-        private const val DURATION : Long = 3000
-    }
+        // Handler의 postDelayed를 이용하면 일정 시간 후에 안에 있는 함수를 실행할 수 있습니다.
+        // Handler를 만들 때에는 () 안에 Looper.getMainLooper()를 넣어주어야 에러가 나지 않습니다!
+        Handler(Looper.getMainLooper()).postDelayed({
+            // 현재 Activity에서 MainActivity로 이동하기 위한 Intent 변수 만들기
+            val moveActivityIntent = Intent(this, FirstActivity::class.java)
 
-    override fun onBackPressed() {
-        super.onBackPressed()
+            // Intent에 정의된대로 MainActivity를 열기
+            startActivity(moveActivityIntent)
+
+            // 현재 Activity (SplashActivity)를 닫기
+            finish();
+        }, 2000) // 2000은 지연시간 설정 (2000 -> 2초, 즉 밀리초 단위로 입력해야 합니다.)
     }
 }
