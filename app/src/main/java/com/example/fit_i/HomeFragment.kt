@@ -20,6 +20,21 @@ class HomeFragment : Fragment() {
     private lateinit var viewPager: ViewPager2
     private lateinit var tabLayout: TabLayout
 
+    private val tabTitleArray = arrayOf(
+        "개인PT",
+        "다이어트",
+        "식단관리",
+        "재활치료",
+        "운동친구"
+    )
+    private val tabIconArray = arrayOf(
+        R.drawable.ic_pt,
+        R.drawable.ic_diet,
+        R.drawable.ic_eating,
+        R.drawable.ic_medical,
+        R.drawable.ic_friend
+    )
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -178,7 +193,7 @@ class HomeFragment : Fragment() {
 
         // tablayout attach
         TabLayoutMediator(tabLayout, viewPager){ tab, position ->
-            tab.text = "Tab ${position+1}"
+            tab.text = tabTitleArray[position]
             //tab.text = "${ }"
         }.attach()
 
