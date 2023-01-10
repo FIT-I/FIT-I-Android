@@ -1,17 +1,31 @@
 package com.example.fit_i
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.viewpager2.widget.ViewPager2
 import com.example.fit_i.databinding.FragmentHomeBinding
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     //private val trainerAdapter = TrainerAdapter()
 
+
+    private lateinit var viewPager: ViewPager2
+    private lateinit var tabLayout: TabLayout
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,6 +41,12 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        // Inflate the layout for this fragment
+        val view:View = inflater.inflate(R.layout.fragment_home, container, false)
+        viewPager = view.findViewById(R.id.viewPager2)
+        tabLayout = view.findViewById(R.id.tab_layout)
+
+        //viewPager = view?.findViewById(R.id.viewPager2)
 
         //val fragmentHomeBidning = FragmentHomeBinding.bind(view)
         //binding = fragmentHomeBidning
@@ -41,12 +61,12 @@ class HomeFragment : Fragment() {
             add(TrainerData("홍준혁","식단관리",3.3,7,"숭실대학교","생활체육지도사 2급 자격증 이외의 다양한 자격증을 보유하고있습니다. 믿어주시면 됩니다.",12000))
             add(TrainerData("노규리","재활치료",5.0,2,"동국대학교","재활관련 센터에서 근무해본 경험이 있습니다.",20000))
         }
-
-        val trainerAdapter = TrainerAdapter(trainerList)
-        binding.rvTrainer.adapter=trainerAdapter
-
-        var linearLayoutManager = LinearLayoutManager(context)
-        binding.rvTrainer.layoutManager=linearLayoutManager
+//
+//        val trainerAdapter = TrainerAdapter(trainerList)
+//        binding.rvTrainer.adapter=trainerAdapter
+//
+//        var linearLayoutManager = LinearLayoutManager(context)
+//        binding.rvTrainer.layoutManager=linearLayoutManager
 
 //
 //        //태그 클릭 구현
@@ -101,9 +121,13 @@ class HomeFragment : Fragment() {
 
             //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함
         }
+//
+//        binding.rvTrainer.layoutManager=LinearLayoutManager(context)
+//        binding.rvTrainer.adapter=trainerAdapter
 
-        binding.rvTrainer.layoutManager=LinearLayoutManager(context)
-        binding.rvTrainer.adapter=trainerAdapter
+
+
+
 
         //임시 데이터로 확인해보기
         /*
@@ -125,7 +149,38 @@ class HomeFragment : Fragment() {
 //        initRecycler()
 //        // Inflate the layout for this fragment
 //        //return inflater.inflate(R.layout.fragment_home, container, false)
-        return binding.root
+    return view
+    //return binding.root
+
+    }
+
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        val pagerAdapter = PagerAdapter(requireActivity())
+        // 6개의 fragment add
+        pagerAdapter.addFragment(HomePtFragment(),"개인PT")
+        pagerAdapter.addFragment(HomeDietFragment(),"다이어트")
+        pagerAdapter.addFragment(HomeEatingFragment(),"식단관리")
+        pagerAdapter.addFragment(HomeMedicalFragment(),"재활치료")
+        pagerAdapter.addFragment(HomeFriendFragment(),"운동친구")
+
+        // adapter 연결
+        viewPager.adapter = pagerAdapter
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int){
+                super.onPageSelected(position)
+                Log.e("ViewPagerFragment", "Page ${position+1}")
+            }
+        })
+
+
+        // tablayout attach
+        TabLayoutMediator(tabLayout, viewPager){ tab, position ->
+            //tab.text = "Tab ${position+1}"
+            //tab.text = "${ }"
+        }.attach()
 
     }
 }

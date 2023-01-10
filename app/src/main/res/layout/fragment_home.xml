@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeFragment"
-    android:layout_margin="10px">
+    android:layout_margin="10dp">
 
 <!--    <ImageView-->
 <!--        android:id="@+id/iv_mainComment"-->
@@ -18,20 +18,19 @@
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/category"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:outlineProvider="none"
-        app:itemBackground="@color/white"
-        app:labelVisibilityMode="labeled"
+        android:background="@android:color/background_light"
+        android:elevation="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/category" />
-
-
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/main"
+        app:tabTextColor="@color/main" />
     <LinearLayout
         android:id="@+id/ll_sort"
         android:layout_width="wrap_content"
@@ -39,7 +38,7 @@
         android:orientation="horizontal"
         android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/category">
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout">
         <ImageView
             android:id="@+id/iv_sort"
             android:layout_width="match_parent"
@@ -59,22 +58,41 @@
         android:background="#F8F8F8"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintBottom_toTopOf="@+id/viewPager2"
         app:layout_constraintTop_toBottomOf="@id/ll_sort" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layoutDirection="ltr"
+        app:layout_constraintTop_toBottomOf="@id/iv_bar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_bar">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_trainer"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            tools:listitem="@layout/item_trainer" />
-    </ScrollView>
+<!--    -->
+<!--    <FrameLayout-->
+<!--        android:id="@+id/fl_container_home"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="300dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/iv_bar" />-->
+<!--    <ScrollView-->
+<!--        android:id="@+id/scrollView2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/iv_bar">-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/rv_trainer"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            tools:listitem="@layout/item_trainer" />-->
+<!--    </ScrollView>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
