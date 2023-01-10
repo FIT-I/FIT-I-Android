@@ -140,6 +140,15 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
 
+        //로그인 버튼 -> 메인
+        //회원여부 판단하는 코드 작성 필요
+        val Login = findViewById<TextView>(R.id.btn_login)
+        Login.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)  // 화면 전환을 시켜줌
+            finish()
+        }
+
 //        binding.tvNaverLogout.setOnClickListener {
 //            startNaverLogout()
 //        }
