@@ -4,178 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment"
-    android:layout_margin="10px">
+    tools:context=".HomeFragment">
+<!--    <ImageView-->
+<!--        android:id="@+id/iv_mainComment"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/main_comment"-->
+<!--        android:paddingLeft="50dp"-->
+<!--        android:paddingRight="50dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <ImageView
-        android:id="@+id/iv_mainComment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/main_comment"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:layout_margin="12dp"
-        android:id="@+id/ll_tagBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_mainComment">
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_pt"
-            android:layout_width="wrap_content"
-            android:layout_height="23dp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:text="@string/pt"
-            android:textSize="11sp"
-            android:textColor="@color/gray"
-            android:textStyle="normal"
-            android:textAlignment="center"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="12dp"
-            android:paddingRight="12dp"
-            android:background="@drawable/tagbtn_state"
-            android:layout_marginStart="10dp"
-            tools:ignore="TouchTargetSizeCheck"
-            style="?android:attr/borderlessButtonStyle"/>
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_diet"
-            android:layout_width="wrap_content"
-            android:layout_height="23dp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:text="@string/diet"
-            android:textSize="11sp"
-            android:textColor="@color/gray"
-            android:textStyle="normal"
-            android:textAlignment="center"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="12dp"
-            android:paddingRight="12dp"
-            android:background="@drawable/tagbtn_state"
-            android:layout_marginStart="10dp"
-            tools:ignore="TouchTargetSizeCheck"
-            style="?android:attr/borderlessButtonStyle"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_eating"
-            android:layout_width="wrap_content"
-            android:layout_height="23dp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:text="@string/eating"
-            android:textSize="11sp"
-            android:textColor="@color/gray"
-            android:textStyle="normal"
-            android:textAlignment="center"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="12dp"
-            android:paddingRight="12dp"
-            android:background="@drawable/tagbtn_state"
-            android:layout_marginStart="10dp"
-            tools:ignore="TouchTargetSizeCheck"
-            style="?android:attr/borderlessButtonStyle"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_medical"
-            android:layout_width="wrap_content"
-            android:layout_height="23dp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:text="@string/medical"
-            android:textSize="11sp"
-            android:textColor="@color/gray"
-            android:textStyle="normal"
-            android:textAlignment="center"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="12dp"
-            android:paddingRight="12dp"
-            android:background="@drawable/tagbtn_state"
-            android:layout_marginStart="10dp"
-            tools:ignore="TouchTargetSizeCheck"
-            style="?android:attr/borderlessButtonStyle"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_friend"
-            android:layout_width="wrap_content"
-            android:layout_height="23dp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:text="@string/friend"
-            android:textSize="11sp"
-            android:textColor="@color/gray"
-            android:textStyle="normal"
-            android:textAlignment="center"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="12dp"
-            android:paddingRight="12dp"
-            android:background="@drawable/tagbtn_state"
-            android:layout_marginStart="10dp"
-            tools:ignore="TouchTargetSizeCheck"
-            style="?android:attr/borderlessButtonStyle"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_sort"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_tagBtn">
-        <ImageView
-            android:id="@+id/iv_sort"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_arrow_updown"/>
-        <TextView
-            android:id="@+id/tv_sort"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="실시간 순"/>
-
-    </LinearLayout>
-    <ImageView
-        android:id="@+id/iv_bar"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="#F8F8F8"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintTop_toBottomOf="@id/ll_sort" />
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:elevation="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/main"
+        app:tabTextColor="#818181"
+        app:tabIndicatorHeight="0dp"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabGravity="fill"
+        app:tabPadding="20dp" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layoutDirection="ltr"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_bar">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_trainer"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            tools:listitem="@layout/item_trainer" />
-    </ScrollView>
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

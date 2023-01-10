@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/category1"
+        android:enabled="true"
+        android:icon="@drawable/ic_pt"
+        android:title="@string/pt"/>
+    <item
+        android:id="@+id/category2"
+        android:enabled="true"
+        android:icon="@drawable/ic_diet"
+        android:title="@string/diet"/>
+    <item
+        android:id="@+id/category4"
+        android:enabled="true"
+        android:icon="@drawable/ic_eating"
+        android:title="@string/eating"/>
+    <item
+        android:id="@+id/category3"
+        android:enabled="true"
+        android:icon="@drawable/ic_medical"
+        android:title="@string/medical"/>
+    <item
+        android:id="@+id/category5"
+        android:enabled="true"
+        android:icon="@drawable/ic_friend"
+        android:title="@string/friend"/>
+</menu>
