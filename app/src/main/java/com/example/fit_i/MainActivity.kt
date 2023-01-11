@@ -2,6 +2,9 @@ package com.example.fit_i
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.fit_i.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -43,5 +46,16 @@ class MainActivity : AppCompatActivity() {
             true
         }
         //selectedItemId=R.id.item_fragment1
-    }
+
+        val communityFragment = CommunityFragment()
+        val fm:FragmentManager = supportFragmentManager
+        fm.beginTransaction().add(R.id.fl_container,communityFragment).commit()
+
+
+
+
+}
+
+
+
 }
