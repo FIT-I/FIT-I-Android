@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CommunityFragment">
+    tools:context=".CommunityFragment"
+    android:id="@+id/communitylayout">
 
 
     <Button
@@ -13,13 +14,15 @@
         android:layout_height="140dp"
         android:backgroundTint="@color/white"
         android:drawableTop="@drawable/sentx"
-        android:padding="19dp"
+        android:paddingTop="20dp"
         android:text="보낸 요청"
+        android:textSize="15sp"
         android:textColor="@color/gray"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
