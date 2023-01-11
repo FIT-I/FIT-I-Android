@@ -9,7 +9,7 @@
         android:id="@+id/item_fragment2"
         android:enabled="true"
         android:icon="@drawable/globe_selector"
-        android:title="@string/community"/>
+        android:title="@string/matching"/>
     <item
         android:id="@+id/item_fragment3"
         android:enabled="true"
