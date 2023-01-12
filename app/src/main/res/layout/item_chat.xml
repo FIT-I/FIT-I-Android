@@ -18,7 +18,7 @@
         android:id="@+id/item_pic"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/pic"
+        android:src="@drawable/img_pic"
         android:background="@drawable/corner"
         android:backgroundTint="@color/white"
         android:layout_marginTop="10dp"
@@ -37,7 +37,7 @@
         android:id="@+id/secondlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:orientation="vertical"
         app:layout_constraintStart_toEndOf="@+id/item_pic"
         app:layout_constraintTop_toTopOf="parent"
@@ -71,7 +71,7 @@
             android:layout_width="10dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginRight="9dp"
+            android:layout_marginEnd="9dp"
             android:src="@drawable/ic_circle" />
 
 
@@ -97,7 +97,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:src="@drawable/line"
+            android:src="@drawable/img_line"
             android:layout_marginBottom="5dp"/>
     </LinearLayout>
 
