@@ -1,65 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CommunityFragment">
 
-
+    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/tv_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PT service only for you, Fit-i"
-        android:textSize="20sp"
-        android:textColor="@color/main"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="community_fragment" />
 
-    <TextView
-        android:id="@+id/tv_match"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="216dp"
-        android:textColor="@color/main"
-        android:text="매칭내역"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.167"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_text" />
-
-    <Button
-        android:id="@+id/bt_sent"
-        android:layout_width="170dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="20dp"
-        android:backgroundTint="@color/white"
-        android:drawableTop="@drawable/sentx"
-        android:padding="19dp"
-        android:text="보낸 요청"
-        android:textColor="@color/gray"
-        app:cornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_match"
-        app:layout_constraintVertical_bias="0.043" />
-
-    <Button
-        android:id="@+id/bt_accept"
-        android:layout_width="170dp"
-        android:layout_height="140dp"
-        android:layout_marginEnd="20dp"
-        android:padding="19dp"
-        android:backgroundTint="@color/white"
-        android:drawableTop="@drawable/acceptx"
-        android:text="받은 요청"
-        android:textColor="@color/gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.478" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
