@@ -5,5 +5,6 @@ import java.io.Serializable
 data class Message(
    val name: String,
    val date: String,
-   val content: String
+   val content: String,
+   //val pic : String
 )
