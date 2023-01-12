@@ -13,6 +13,6 @@ class ProfileActivity :AppCompatActivity(){
         setContentView(R.layout.activity_profile)
 
         val intent = Intent(this, ReviewActivity::class.java)
-        binding.reviewBtn.setOnClickListener{startActivity(intent)}
+
     }
 }
