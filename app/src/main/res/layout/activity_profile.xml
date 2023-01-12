@@ -14,29 +14,30 @@
         tools:layout_editor_absoluteY="0dp">
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/manage_cost"
+            android:layout_width="350dp"
+            android:layout_height="130dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="295dp"
-            android:layout_marginEnd="22dp"
-            android:layout_marginBottom="298dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="335dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="379dp"
             app:srcCompat="@drawable/img_manage_cost" />
 
         <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="145dp"
+            android:id="@+id/about_me"
+            android:layout_width="350dp"
+            android:layout_height="130dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="22dp"
-            android:layout_marginEnd="22dp"
-            android:layout_marginBottom="137dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="480dp"
+            android:layout_marginBottom="234dp"
             app:srcCompat="@drawable/img_about_me" />
 
         <Button
@@ -45,31 +46,33 @@
             android:layout_height="50dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="15dp"
             android:layout_marginBottom="25dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="769dp"
             android:background="@drawable/round_button"
             android:text="@string/match_request" />
 
         <ImageButton
             android:id="@+id/heart_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="17.79dp"
+            android:layout_height="16.47dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="790dp"
-            android:layout_marginEnd="349dp"
-            android:layout_marginBottom="38dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="787dp"
+            android:layout_marginEnd="340.21dp"
+            android:layout_marginBottom="40.53dp"
             android:background="@drawable/round_button"
             android:padding="0sp"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/button_heart_drawable"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/heartbtn_border"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
@@ -78,245 +81,266 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="16dp"
             android:layout_marginTop="769dp"
-            android:layout_marginEnd="342dp"
+            android:layout_marginEnd="324dp"
             android:layout_marginBottom="25dp"
             app:srcCompat="@drawable/ic_button_border" />
 
-        <Button
-            android:id="@+id/reviewBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="47dp"
+        <ImageView
+            android:id="@+id/certificate1"
+            android:layout_width="82dp"
+            android:layout_height="18dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="349dp"
-            android:layout_marginTop="551dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="133dp"
-            android:text="@string/see_more_review" />
-
-        <ImageView
-            android:id="@+id/certificate1"
-            android:layout_width="95dp"
-            android:layout_height="20dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="290dp"
-            android:layout_marginBottom="458dp"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="276dp"
+            android:layout_marginEnd="277dp"
+            android:layout_marginBottom="550dp"
             app:srcCompat="@drawable/img_certificate_background"
             tools:layout_editor_absoluteX="25dp"
             tools:layout_editor_absoluteY="189dp" />
 
         <TextView
             android:id="@+id/certificate_context1"
-            android:layout_width="73dp"
+            android:layout_width="60dp"
             android:layout_height="11dp"
-            android:layout_alignLeft="@+id/certificate1"
-            android:layout_alignTop="@+id/certificate1"
-            android:layout_alignRight="@+id/certificate1"
-            android:layout_alignBottom="@+id/certificate1"
-            android:layout_marginLeft="17dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
-            android:text="NCSA 자격증 보유"
-            android:textSize="8sp" />
-
-        <ImageView
-
-            android:id="@+id/certificate2"
-            android:layout_width="95dp"
-
-            android:layout_height="20dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="119dp"
-            android:layout_marginTop="251dp"
-            android:layout_marginEnd="198dp"
-            android:layout_marginBottom="458dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="279dp"
+            android:layout_marginEnd="282dp"
+            android:layout_marginBottom="554dp"
+            android:text="NCSA 자격증 보유"
+            android:textSize="7.5sp"
+             />
+
+        <ImageView
+            android:id="@+id/certificate2"
+            android:layout_width="82dp"
+            android:layout_height="18dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="116dp"
+            android:layout_marginTop="276dp"
+            android:layout_marginEnd="192dp"
+            android:layout_marginBottom="550dp"
             app:srcCompat="@drawable/img_certificate_background"
             tools:layout_editor_absoluteX="25dp"
             tools:layout_editor_absoluteY="189dp" />
 
         <TextView
             android:id="@+id/certificate_context2"
-            android:layout_width="73dp"
+            android:layout_width="62dp"
             android:layout_height="11dp"
-            android:layout_alignLeft="@+id/certificate2"
-            android:layout_alignTop="@+id/certificate2"
-            android:layout_alignRight="@+id/certificate2"
-            android:layout_alignBottom="@+id/certificate2"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginBottom="5dp"
-            android:text="NCSM 자격증 보유"
-            android:textSize="8sp" />
-
-        <ImageView
-            android:id="@+id/certificate3"
-            android:layout_width="95dp"
-            android:layout_height="20dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="214dp"
-            android:layout_marginTop="251dp"
-            android:layout_marginEnd="101dp"
-            android:layout_marginBottom="459dp"
+            android:layout_marginStart="133dp"
+            android:layout_marginTop="279dp"
+            android:layout_marginEnd="195dp"
+            android:layout_marginBottom="554dp"
+            android:text="NCSM 자격증 보유"
+            android:textSize="7.5sp" />
+
+        <ImageView
+            android:id="@+id/certificate3"
+            android:layout_width="82dp"
+            android:layout_height="18dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="201dp"
+            android:layout_marginTop="276dp"
+            android:layout_marginEnd="107dp"
+            android:layout_marginBottom="550dp"
             app:srcCompat="@drawable/img_certificate_background" />
 
         <TextView
             android:id="@+id/certificate_context3"
-            android:layout_width="73dp"
+            android:layout_width="61dp"
             android:layout_height="11dp"
-            android:layout_alignLeft="@+id/certificate2"
-            android:layout_alignTop="@+id/certificate2"
-            android:layout_alignRight="@+id/certificate2"
-            android:layout_alignBottom="@+id/certificate2"
-            android:layout_marginLeft="115dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginRight="-93dp"
-            android:layout_marginBottom="6dp"
-            android:text="ACSM 자격증 보유"
-            android:textSize="8sp" />
-
-        <ImageView
-            android:id="@+id/certificate4"
-            android:layout_width="95dp"
-            android:layout_height="20dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="273dp"
-            android:layout_marginEnd="292dp"
-            android:layout_marginBottom="437dp"
+            android:layout_marginStart="218dp"
+            android:layout_marginTop="279dp"
+            android:layout_marginEnd="111dp"
+            android:layout_marginBottom="554dp"
+            android:text="ACSM 자격증 보유"
+            android:textSize="7.5sp" />
+
+        <ImageView
+            android:id="@+id/certificate4"
+            android:layout_width="86dp"
+            android:layout_height="18dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="297dp"
+            android:layout_marginEnd="273dp"
+            android:layout_marginBottom="529dp"
             app:srcCompat="@drawable/img_certificate_background" />
 
         <TextView
             android:id="@+id/certificate_context4"
-            android:layout_width="67dp"
+            android:layout_width="64dp"
             android:layout_height="11dp"
-            android:layout_alignLeft="@+id/certificate1"
-            android:layout_alignTop="@+id/certificate1"
-            android:layout_alignRight="@+id/certificate1"
-            android:layout_alignBottom="@+id/certificate1"
-            android:layout_marginLeft="17dp"
-            android:layout_marginTop="26dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="-17dp"
-            android:text="생활체육지도사 1급"
-            android:textSize="8sp" />
-
-        <ImageView
-            android:id="@+id/certificate5"
-            android:layout_width="95dp"
-            android:layout_height="20dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="119dp"
-            android:layout_marginTop="273dp"
-            android:layout_marginEnd="196dp"
-            android:layout_marginBottom="437dp"
+            android:layout_marginStart="48.83dp"
+            android:layout_marginTop="300dp"
+            android:layout_marginEnd="277.17dp"
+            android:layout_marginBottom="533dp"
+            android:text="생활체육지도사 1급"
+            android:textSize="7.5sp" />
+
+        <ImageView
+            android:id="@+id/certificate5"
+            android:layout_width="86dp"
+            android:layout_height="18dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="297dp"
+            android:layout_marginEnd="184dp"
+            android:layout_marginBottom="529dp"
             app:srcCompat="@drawable/img_certificate_background" />
 
         <TextView
             android:id="@+id/certificate_context5"
-            android:layout_width="73dp"
+            android:layout_width="64dp"
             android:layout_height="11dp"
-            android:layout_alignLeft="@+id/certificate1"
-            android:layout_alignTop="@+id/certificate1"
-            android:layout_alignRight="@+id/certificate1"
-            android:layout_alignBottom="@+id/certificate1"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="26dp"
-            android:layout_marginRight="-86dp"
-            android:layout_marginBottom="-17dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="137.83dp"
+            android:layout_marginTop="300dp"
+            android:layout_marginEnd="188.17dp"
+            android:layout_marginBottom="533dp"
             android:text="생활체육지도사 2급"
-            android:textSize="8sp" />
+            android:textSize="7.5sp" />
 
         <ImageView
             android:id="@+id/imageView6"
-            android:layout_width="match_parent"
-            android:layout_height="185dp"
+            android:layout_width="390dp"
+            android:layout_height="180dp"
             app:srcCompat="@drawable/img_background" />
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="60dp"
-            android:text="숭실대학교 재학" />
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="167dp"
+            android:layout_marginTop="256dp"
+            android:layout_marginEnd="157dp"
+            android:layout_marginBottom="574dp"
+            android:text="숭실대학교 재학"
+            android:textSize="10sp" />
 
         <ImageView
             android:id="@+id/trainer_grade"
             android:layout_width="51dp"
             android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="81dp"
+            android:layout_marginTop="226dp"
+            android:layout_marginEnd="252.22dp"
+            android:layout_marginBottom="594dp"
             app:srcCompat="@drawable/img_gold" />
 
         <TextView
             android:id="@+id/distance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="4dp"
-            android:text="1km" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="10dp"
-            android:layout_height="11dp"
-            android:layout_marginEnd="12dp"
-            app:srcCompat="@drawable/ic_star" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="4.3" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="93dp"
-            android:layout_height="17dp"
-            android:layout_alignStart="@+id/imageView5"
+            android:layout_width="20dp"
+            android:layout_height="14dp"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="125dp"
-            android:layout_marginTop="213dp"
-            android:layout_marginEnd="193dp"
-            android:layout_marginBottom="501dp"
-            android:autoText="false"
-            android:text="보유 자격증 5개" />
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="256dp"
+            android:layout_marginEnd="339dp"
+            android:layout_marginBottom="574dp"
+            android:text="1km"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="6.57dp"
+            android:layout_height="6.61dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="260dp"
+            android:layout_marginEnd="323.43dp"
+            android:layout_marginBottom="577.39dp"
+            app:srcCompat="@drawable/ic_star" />
+
+        <TextView
+            android:id="@+id/trainer_star"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="256dp"
+            android:layout_marginEnd="306dp"
+            android:layout_marginBottom="574dp"
+            android:text="4.3"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/certificate_num"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="93dp"
+            android:layout_marginTop="256dp"
+            android:layout_marginEnd="232dp"
+            android:layout_marginBottom="574dp"
+            android:text="보유 자격증 5개"
+            android:textSize="10sp" />
 
         <ImageView
             android:id="@+id/dot"
             android:layout_width="0dp"
             android:layout_height="3dp"
-            android:layout_marginEnd="4dp"
-            app:srcCompat="@drawable/ic_dot" />
-
-        <ImageView
-            android:id="@+id/dot5"
-            android:layout_width="3dp"
-            android:layout_height="3dp"
-            android:layout_marginEnd="4dp"
-            app:srcCompat="@drawable/ic_dot" />
-
-        <ImageView
-            android:id="@+id/dot4"
-            android:layout_width="3dp"
-            android:layout_height="3dp"
-            android:layout_marginEnd="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="127dp"
+            android:layout_marginTop="194dp"
+            android:layout_marginEnd="263dp"
+            android:layout_marginBottom="647dp"
             app:srcCompat="@drawable/ic_dot" />
 
         <TextView
@@ -327,24 +351,87 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="227dp"
-            android:layout_marginEnd="345dp"
-            android:layout_marginBottom="483dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="230dp"
+            android:layout_marginEnd="319dp"
+            android:layout_marginBottom="594dp"
             android:text="김동현"
-            android:textSize="15sp" />
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/trainer_profile"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="27dp"
-            android:layout_marginEnd="314dp"
-            android:layout_marginBottom="505dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="145dp"
+            android:layout_marginEnd="290dp"
+            android:layout_marginBottom="629dp"
             app:srcCompat="@drawable/img_trainerprofile" />
+
+        <TextView
+            android:id="@+id/dot_or"
+            android:layout_width="3dp"
+            android:layout_height="12dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="254dp"
+            android:layout_marginEnd="333dp"
+            android:layout_marginBottom="578dp"
+            android:text="."
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/dot_or2"
+            android:layout_width="3dp"
+            android:layout_height="12dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="87dp"
+            android:layout_marginTop="254dp"
+            android:layout_marginEnd="300dp"
+            android:layout_marginBottom="578dp"
+            android:text="."
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/dot_or3"
+            android:layout_width="3dp"
+            android:layout_height="12dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="161dp"
+            android:layout_marginTop="254dp"
+            android:layout_marginEnd="226dp"
+            android:layout_marginBottom="578dp"
+            android:text="."
+            android:textSize="10sp" />
+
+        <ImageView
+            android:id="@+id/about_service"
+            android:layout_width="350dp"
+            android:layout_height="130dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="625dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="89dp"
+            app:srcCompat="@drawable/img_about_service" />
 
     </RelativeLayout>
 
