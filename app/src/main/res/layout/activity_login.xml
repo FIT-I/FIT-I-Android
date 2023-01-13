@@ -51,7 +51,10 @@
             android:background="@drawable/edittext_border"
             android:textColorHint="#B0BAD1"
             android:textColor="@color/main"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textCursorDrawable="@null"/>
+
+        />
 
         <EditText
             android:id="@+id/editTextTextPassword"

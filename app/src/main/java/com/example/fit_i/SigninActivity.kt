@@ -13,7 +13,7 @@ class SigninActivity : AppCompatActivity() {
         //회원가입하기
         val signIn = findViewById<TextView>(R.id.btn_goto_main)
         signIn.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, LoginSplashActivity::class.java)
             startActivity(intent)  // 화면 전환을 시켜줌
             finish()
         }
