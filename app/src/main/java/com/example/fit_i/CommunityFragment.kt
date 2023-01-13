@@ -23,21 +23,22 @@ class CommunityFragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
 
-        //나중에 버튼 이동시킬때 사용할 코드
 
-        /*  val view = inflater.inflate(R.layout.fragment_community, container, false)
-        val btsent = view.findViewById<View>(R.id.bt_sent) as Button
+        //나중에 버튼 연결할때 사용할 코드
 
-        btsent.setOnClickListener {
-            val homeFragment = HomeFragment()
-            val transaction:FragmentTransaction = requireFragmentManager().beginTransaction()
-
-            transaction.replace(R.id.fl_container,homeFragment)
-            transaction.commit()
-
-
-        }
-        return view */
+//        val view = inflater.inflate(R.layout.fragment_community, container, false)
+//        val btsent = view.findViewById<View>(R.id.bt_sent) as Button
+//
+//        btsent.setOnClickListener {
+//            val homeFragment = HomeFragment()
+//            val transaction:FragmentTransaction = requireFragmentManager().beginTransaction()
+//
+//            transaction.replace(R.id.fl_container,homeFragment)
+//            transaction.commit()
+//
+//
+//        }
+//        return view
 
 
     }
