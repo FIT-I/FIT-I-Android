@@ -14,7 +14,6 @@ class TrainerAdapter(private val dataList: ArrayList<TrainerData>): RecyclerView
 
         fun bind(position: Int) {
             binding.tvName.text = dataList[position].name
-            binding.tvCategory.text=dataList[position].category
             binding.tvRating.text= dataList[position].rating.toString()
             binding.tvCertificate.text= dataList[position].certificate.toString()
             binding.tvUniv.text=dataList[position].univ

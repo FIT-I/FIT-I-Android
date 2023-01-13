@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class MypageFragment : Fragment() {
+class MypageSettingFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -14,6 +14,7 @@ class MypageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mypage, container, false)
+        return inflater.inflate(R.layout.fragment_mypage_setting, container, false)
     }
+
 }
