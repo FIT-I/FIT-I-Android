@@ -46,6 +46,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="아이디"
+            android:padding="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edittext_border"
             android:textColorHint="#B0BAD1"
             android:textColor="@color/main"
             android:inputType="textEmailAddress" />
@@ -56,6 +59,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="비밀번호"
+            android:padding="10dp"
+            android:background="@drawable/edittext_border"
             android:textColorHint="#B0BAD1"
             android:textColor="@color/main"
             android:inputType="textPassword" />
@@ -131,6 +136,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
     <ImageButton
         android:id="@+id/ib_kakao_login_button"
         android:layout_width="300dp"
