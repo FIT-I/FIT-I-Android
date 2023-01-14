@@ -170,7 +170,6 @@
         android:layout_margin="30dp"
         android:text="다음"
         android:textSize="15dp"
-        android:backgroundTint="@color/main"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
