@@ -18,11 +18,13 @@
         <ScrollView
             android:id="@+id/scrollview"
             android:layout_width="match_parent"
-            android:layout_height="432dp"
+            android:layout_height="641dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="328dp"
+            android:layout_marginTop="286dp"
             android:layout_marginEnd="0dp"
-            android:layout_marginBottom="529dp"
+            android:layout_marginBottom="-75dp"
             tools:ignore="SpeakableTextPresentCheck">
 
             <LinearLayout
@@ -113,155 +115,6 @@
             app:srcCompat="@drawable/ic_button_border" />
 
         <ImageView
-            android:id="@+id/certificate1"
-            android:layout_width="82dp"
-            android:layout_height="18dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="31dp"
-            android:layout_marginTop="276dp"
-            android:layout_marginEnd="277dp"
-            android:layout_marginBottom="550dp"
-            app:srcCompat="@drawable/img_certificate_background"
-            tools:layout_editor_absoluteX="25dp"
-            tools:layout_editor_absoluteY="189dp" />
-
-        <TextView
-            android:id="@+id/certificate_context1"
-            android:layout_width="60dp"
-            android:layout_height="11dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="279dp"
-            android:layout_marginEnd="282dp"
-            android:layout_marginBottom="554dp"
-            android:text="NCSA 자격증 보유"
-            android:textSize="7.5sp" />
-
-        <ImageView
-            android:id="@+id/certificate2"
-            android:layout_width="82dp"
-            android:layout_height="18dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="116dp"
-            android:layout_marginTop="276dp"
-            android:layout_marginEnd="192dp"
-            android:layout_marginBottom="550dp"
-            app:srcCompat="@drawable/img_certificate_background"
-            tools:layout_editor_absoluteX="25dp"
-            tools:layout_editor_absoluteY="189dp" />
-
-        <TextView
-            android:id="@+id/certificate_context2"
-            android:layout_width="62dp"
-            android:layout_height="11dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="133dp"
-            android:layout_marginTop="279dp"
-            android:layout_marginEnd="195dp"
-            android:layout_marginBottom="554dp"
-            android:text="NCSM 자격증 보유"
-            android:textSize="7.5sp" />
-
-        <ImageView
-            android:id="@+id/certificate3"
-            android:layout_width="82dp"
-            android:layout_height="18dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="201dp"
-            android:layout_marginTop="276dp"
-            android:layout_marginEnd="107dp"
-            android:layout_marginBottom="550dp"
-            app:srcCompat="@drawable/img_certificate_background" />
-
-        <TextView
-            android:id="@+id/certificate_context3"
-            android:layout_width="61dp"
-            android:layout_height="11dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="218dp"
-            android:layout_marginTop="279dp"
-            android:layout_marginEnd="111dp"
-            android:layout_marginBottom="554dp"
-            android:text="ACSM 자격증 보유"
-            android:textSize="7.5sp" />
-
-        <ImageView
-            android:id="@+id/certificate4"
-            android:layout_width="86dp"
-            android:layout_height="18dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="31dp"
-            android:layout_marginTop="297dp"
-            android:layout_marginEnd="273dp"
-            android:layout_marginBottom="529dp"
-            app:srcCompat="@drawable/img_certificate_background" />
-
-        <TextView
-            android:id="@+id/certificate_context4"
-            android:layout_width="64dp"
-            android:layout_height="11dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="48.83dp"
-            android:layout_marginTop="300dp"
-            android:layout_marginEnd="277.17dp"
-            android:layout_marginBottom="533dp"
-            android:text="생활체육지도사 1급"
-            android:textSize="7.5sp" />
-
-        <ImageView
-            android:id="@+id/certificate5"
-            android:layout_width="86dp"
-            android:layout_height="18dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="120dp"
-            android:layout_marginTop="297dp"
-            android:layout_marginEnd="184dp"
-            android:layout_marginBottom="529dp"
-            app:srcCompat="@drawable/img_certificate_background" />
-
-        <TextView
-            android:id="@+id/certificate_context5"
-            android:layout_width="64dp"
-            android:layout_height="11dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="137.83dp"
-            android:layout_marginTop="300dp"
-            android:layout_marginEnd="188.17dp"
-            android:layout_marginBottom="533dp"
-            android:text="생활체육지도사 2급"
-            android:textSize="7.5sp" />
-
-        <ImageView
             android:id="@+id/imageView6"
             android:layout_width="390dp"
             android:layout_height="180dp"
@@ -280,7 +133,7 @@
             android:layout_marginEnd="157dp"
             android:layout_marginBottom="574dp"
             android:text="숭실대학교 재학"
-            android:textSize="10sp" />
+            android:textSize="9.5sp" />
 
         <ImageView
             android:id="@+id/trainer_grade"
@@ -353,7 +206,7 @@
             android:layout_marginEnd="232dp"
             android:layout_marginBottom="574dp"
             android:text="보유 자격증 5개"
-            android:textSize="10sp" />
+            android:textSize="9.5sp" />
 
         <ImageView
             android:id="@+id/dot"
