@@ -6,12 +6,19 @@ import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.databinding.ActivityFindPwBinding
 
 class FindPwActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFindPwBinding
+
+    var emailF: String=""
+    var tempPW:String=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,27 +26,59 @@ class FindPwActivity : AppCompatActivity() {
 
         binding = ActivityFindPwBinding.inflate(layoutInflater)
 
+        val etEmailF : EditText= findViewById(R.id.et_emailF)
+        val etTempPwF :EditText = findViewById(R.id.et_tempPwF)
+        val btnFindPw : Button = findViewById(R.id.btn_find_pw)
 
-        //비밀번호 변경
-        val changePW = findViewById<TextView>(R.id.btn_go_next)
-        changePW.setOnClickListener {
-            val intent = Intent(this, FindPw2Activity::class.java)
-            startActivity(intent)  // 화면 전환을 시켜줌
-            finish()
-        }
+        btnFindPw.isEnabled = false
+        btnFindPw.text="임시 비밀번호 발급"
 
-        binding.etEmailAddressF.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
-            override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
-            override fun afterTextChanged(editable: Editable) {
-                if (editable.isNotEmpty()) {
-                    binding.btnGoNext.isClickable = true
-                    binding.btnGoNext.setBackgroundColor(Color.BLUE)
-                } else {
-                    binding.btnGoNext.isClickable = false
-                    binding.btnGoNext.setBackgroundColor(Color.GRAY)
-                }
+        etTempPwF.visibility= View.INVISIBLE
+
+        etEmailF.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            //값 변경 시 실행되는 함수
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                //입력값 담기
+                emailF = etEmailF.text.toString()
+
+                //값 유무에 따른 활성화 여부
+                btnFindPw.isEnabled = emailF.isNotEmpty()
+
+
+                btnFindPw.setOnClickListener(){
+                    if(btnFindPw.isEnabled)
+                        etTempPwF.visibility= View.VISIBLE}
+
+
             }
+            override fun afterTextChanged(p0: Editable?) {}
         })
+
+        etTempPwF.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            //값 변경 시 실행되는 함수
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                //입력값 담기
+                tempPW = etTempPwF.text.toString()
+                if (btnFindPw.text=="임시 비밀번호 발급")
+                        btnFindPw.text="로그인"
+
+
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
+
+        //버튼 이벤트
+        btnFindPw.setOnClickListener {
+            if(btnFindPw.text=="로그인") {
+                val intent = Intent(this, LoginSplashActivity::class.java)
+                startActivity(intent)  // 화면 전환을 시켜줌
+                finish()
+                Toast.makeText(this, emailF + "findPW", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

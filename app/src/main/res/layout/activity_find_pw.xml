@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_findPW">
 
         <EditText
-            android:id="@+id/et_emailAddressF"
+            android:id="@+id/et_emailF"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="이메일을 입력해주세요."
@@ -40,10 +40,25 @@
             android:inputType="textEmailAddress"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
+
+        <EditText
+            android:id="@+id/et_tempPwF"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_border"
+            android:hint="임시비밀번호를 입력하세요"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="20dp"
+            android:paddingStart="20dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_emailF" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/btn_go_next"
+        android:id="@+id/btn_find_pw"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="15dp"
@@ -51,7 +66,6 @@
         android:layout_marginBottom="50dp"
         android:text="인증번호 받기"
         android:textSize="20dp"
-        android:backgroundTint="@color/main"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
