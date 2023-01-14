@@ -20,6 +20,61 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <GridLayout
+        android:id="@+id/gridLayou1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_icon">
+
+
+        <CheckBox
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:scaleType="fitCenter"
+            android:layout_margin="8dp"
+            android:background="@drawable/icon_selector"/>
+        <CheckBox
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:scaleType="fitCenter"
+            android:layout_margin="8dp"
+            android:background="@drawable/icon_selector"
+            android:src="@drawable/img_char2" />
+        <CheckBox
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:scaleType="fitCenter"
+            android:layout_margin="8dp"
+            android:background="@drawable/icon_selector"
+            android:src="@drawable/img_char3" />
+        <CheckBox
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:scaleType="fitCenter"
+            android:layout_margin="8dp"
+            android:background="@drawable/icon_selector"
+            android:src="@drawable/img_char4" />
+        <CheckBox
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:scaleType="fitCenter"
+            android:layout_margin="8dp"
+            android:background="@drawable/icon_selector"
+            android:src="@drawable/img_char5" />
+        <CheckBox
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:scaleType="fitCenter"
+            android:layout_margin="8dp"
+            android:background="@drawable/icon_selector"
+            android:src="@drawable/img_char6" />
+    </GridLayout>
+
     <GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
@@ -30,52 +85,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_icon">
 
-        <ImageButton
+        <ImageView
             android:layout_width="85dp"
             android:layout_height="85dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
-            android:background="@drawable/icon_selector"
-            android:src="@drawable/img_char1" />
+            android:src="@drawable/img_char1"/>
 
-        <ImageButton
+        <ImageView
             android:layout_width="85dp"
             android:layout_height="85dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
-            android:background="@drawable/icon_selector"
             android:src="@drawable/img_char2" />
 
-        <ImageButton
+        <ImageView
             android:layout_width="85dp"
             android:layout_height="85dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
-            android:background="@drawable/icon_selector"
             android:src="@drawable/img_char3" />
 
-        <ImageButton
+        <ImageView
             android:layout_width="85dp"
             android:layout_height="85dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
-            android:background="@drawable/icon_selector"
             android:src="@drawable/img_char4" />
 
-        <ImageButton
+        <ImageView
             android:layout_width="85dp"
             android:layout_height="85dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
-            android:background="@drawable/icon_selector"
             android:src="@drawable/img_char5" />
 
-        <ImageButton
+        <ImageView
             android:layout_width="85dp"
             android:layout_height="85dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
-            android:background="@drawable/icon_selector"
             android:src="@drawable/img_char6" />
     </GridLayout>
 
