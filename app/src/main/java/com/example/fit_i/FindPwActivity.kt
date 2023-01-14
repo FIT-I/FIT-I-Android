@@ -1,15 +1,12 @@
 package com.example.fit_i
 
-import android.R.attr.button
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.databinding.ActivityFindPwBinding
@@ -46,12 +43,9 @@ class FindPwActivity : AppCompatActivity() {
                 //값 유무에 따른 활성화 여부
                 btnFindPw.isEnabled = emailF.isNotEmpty()
 
-
                 btnFindPw.setOnClickListener(){
                     if(btnFindPw.isEnabled)
                         etTempPwF.visibility= View.VISIBLE}
-
-
             }
             override fun afterTextChanged(p0: Editable?) {}
         })
@@ -65,20 +59,18 @@ class FindPwActivity : AppCompatActivity() {
                 tempPW = etTempPwF.text.toString()
                 if (btnFindPw.text=="임시 비밀번호 발급")
                         btnFindPw.text="로그인"
-
-
+                btnFindPw.setOnClickListener {
+                    letgo()
+                }
             }
             override fun afterTextChanged(p0: Editable?) {}
         })
+    }
 
-        //버튼 이벤트
-        btnFindPw.setOnClickListener {
-            if(btnFindPw.text=="로그인") {
-                val intent = Intent(this, LoginSplashActivity::class.java)
-                startActivity(intent)  // 화면 전환을 시켜줌
-                finish()
-                Toast.makeText(this, emailF + "findPW", Toast.LENGTH_SHORT).show()
-            }
-        }
+    private fun letgo() {
+        val intent = Intent(this, LoginSplashActivity::class.java)
+        startActivity(intent)  // 화면 전환을 시켜줌
+        finish()
+        Toast.makeText(this, emailF + "findPW", Toast.LENGTH_SHORT).show()
     }
 }
