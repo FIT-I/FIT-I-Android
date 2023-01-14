@@ -93,7 +93,7 @@ class SignupActivity : AppCompatActivity() {
         //회원가입하기
         //버튼 이벤트
         btnFinSignUp.setOnClickListener {
-            val intent = Intent(this, LoginSplashActivity::class.java)
+            val intent = Intent(this, SignupIconActivity::class.java)
             startActivity(intent)  // 화면 전환을 시켜줌
             finish()
         Toast.makeText(this, name+"signUp", Toast.LENGTH_SHORT).show()
