@@ -33,6 +33,7 @@
             android:layout_gravity="center">
 
             <Button
+                android:id="@+id/btn_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00ff0000"
@@ -41,6 +42,7 @@
                 android:textColor="@color/black"
                 android:textSize="20dp" />
             <Button
+                android:id="@+id/btn_out"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#007AFF"
