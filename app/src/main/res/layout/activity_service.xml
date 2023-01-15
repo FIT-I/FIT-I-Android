@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="390dp"
+    android:layout_height="844dp">
+
+    <ImageButton
+        android:id="@+id/back_arrow"
+        android:layout_width="12dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="348dp"
+        android:layout_marginBottom="754dp"
+        android:backgroundTint="#FFFFFF"
+        android:padding="0sp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/pick_service"
+        android:layout_width="96dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginBottom="737dp"
+        android:text="서비스 선택"
+        android:textColor="#011E5F"
+        android:textSize="19.5sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pick_service2"
+        android:layout_width="133dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="163dp"
+        android:layout_marginEnd="227dp"
+        android:layout_marginBottom="654dp"
+        android:text="서비스 선택하기"
+        android:textColor="#011E5F"
+        android:textSize="19.5sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/background_step"
+        android:layout_width="390dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginBottom="714dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/img_bar" />
+
+    <ImageView
+        android:id="@+id/current_step"
+        android:layout_width="130dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="260dp"
+        android:layout_marginBottom="714dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_currentbar" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="229dp"
+
+        android:layout_marginEnd="330dp"
+        android:layout_marginBottom="585dp"
+        android:background="@drawable/checkbox_selector"
+        android:button="@null"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.279"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/service_price"
+        android:layout_width="285dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="231dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="586dp"
+        android:text="1시간                                20,000원"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="769dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="25dp"
+        android:text="다음"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
