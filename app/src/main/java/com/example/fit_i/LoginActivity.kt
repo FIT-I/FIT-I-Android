@@ -1,34 +1,22 @@
 package com.example.fit_i
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import com.example.fit_i.databinding.ActivityLoginBinding
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
-import com.kakao.sdk.common.KakaoSdk
 
 import com.kakao.sdk.common.model.AuthErrorCause.*
-import com.kakao.sdk.common.model.ClientError
-import com.kakao.sdk.common.model.ClientErrorCause
-import com.kakao.sdk.user.UserApiClient
 import com.navercorp.nid.NaverIdLoginSDK
 import com.navercorp.nid.oauth.NidOAuthLogin
 import com.navercorp.nid.oauth.OAuthLoginCallback
 import com.navercorp.nid.profile.NidProfileCallback
-import com.navercorp.nid.profile.api.NidProfileApi
 import com.navercorp.nid.profile.data.NidProfileResponse
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import retrofit2.Response
 
 
 class LoginActivity : AppCompatActivity() {
@@ -135,7 +123,7 @@ class LoginActivity : AppCompatActivity() {
         //회원가입하기
         val signIn = findViewById<TextView>(R.id.tv_go_signIn)
         signIn.setOnClickListener {
-            val intent = Intent(this, PermissionActivity::class.java)
+            val intent = Intent(this, SignupPermissionActivity::class.java)
             startActivity(intent)  // 화면 전환을 시켜줌
             finish()
         }

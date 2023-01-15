@@ -31,44 +31,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_icon">
 
-
         <CheckBox
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:id="@+id/cb_icon1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
             android:background="@drawable/icon_selector"/>
         <CheckBox
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:id="@+id/cb_icon2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
             android:background="@drawable/icon_selector"
             android:src="@drawable/img_char2" />
         <CheckBox
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:id="@+id/cb_icon3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
             android:background="@drawable/icon_selector"
             android:src="@drawable/img_char3" />
         <CheckBox
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:id="@+id/cb_icon4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
             android:background="@drawable/icon_selector"
             android:src="@drawable/img_char4" />
         <CheckBox
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:id="@+id/cb_icon5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
             android:background="@drawable/icon_selector"
             android:src="@drawable/img_char5" />
         <CheckBox
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:id="@+id/cb_icon6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
             android:background="@drawable/icon_selector"
@@ -86,43 +91,43 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_icon">
 
         <ImageView
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
             android:src="@drawable/img_char1"/>
 
         <ImageView
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
             android:src="@drawable/img_char2" />
 
         <ImageView
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
             android:src="@drawable/img_char3" />
 
         <ImageView
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
             android:src="@drawable/img_char4" />
 
         <ImageView
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
             android:src="@drawable/img_char5" />
 
         <ImageView
-            android:layout_width="85dp"
-            android:layout_height="85dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
             android:src="@drawable/img_char6" />
