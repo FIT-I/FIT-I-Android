@@ -46,10 +46,10 @@ class MainActivity : AppCompatActivity() {
             true
         }
         //selectedItemId=R.id.item_fragment1
-
-        val communityFragment = CommunityFragment()
-        val fm:FragmentManager = supportFragmentManager
-        fm.beginTransaction().add(R.id.fl_container,communityFragment).commit()
+//버튼 눌렀을때 다른 프래그먼트로 이동시
+//        val communityFragment = CommunityFragment()
+//        val fm:FragmentManager = supportFragmentManager
+//        fm.beginTransaction().add(R.id.fl_container,communityFragment).commit()
 
 
 

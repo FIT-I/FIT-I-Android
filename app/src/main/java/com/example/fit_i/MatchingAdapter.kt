@@ -14,8 +14,8 @@ class MatchingAdapter(private val dataList: ArrayList<MatchingData>): RecyclerVi
                 fun onBind(position: Int){
                     binding.matchIm.text = dataList[position].im
                     binding.matchStar.text = dataList[position].star
-                    binding.matchCount.text= dataList[position].count
                     binding.matchUni.text= dataList[position].uni
+                    binding.matchDay.text=dataList[position].day
 
                     itemView.setOnClickListener{
                         Log.d("Click","success")
