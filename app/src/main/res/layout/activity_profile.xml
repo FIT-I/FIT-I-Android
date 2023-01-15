@@ -2,213 +2,142 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="390dp"
-    android:layout_height="844dp">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="390dp"
-        android:layout_height="844dp"
-        android:background="#ffffff"
+
+    <Button
+        android:id="@+id/match_request_btn"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/main"
+        android:text="@string/match_request"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/heartbtn_border" />
+
+    <ImageButton
+        android:id="@+id/heart_btn"
+        android:layout_width="17.79dp"
+        android:layout_height="16.47dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="15.53dp"
+        android:background="@drawable/round_button"
+        android:padding="0sp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/heartbtn_border"
+        app:layout_constraintStart_toStartOf="@+id/heartbtn_border"
+        app:srcCompat="@drawable/ic_heart"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/heartbtn_border"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:srcCompat="@drawable/ic_button_border" />
 
-        <ScrollView
-            android:id="@+id/scrollview"
-            android:layout_width="match_parent"
-            android:layout_height="641dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="286dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="-75dp"
-            tools:ignore="SpeakableTextPresentCheck">
+    <ImageView
+        android:id="@+id/background_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="191dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_background" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+    <TextView
+        android:id="@+id/university_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="2.36dp"
+        android:text="숭실대학교 재학"
+        android:textSize="9.5sp"
+        app:layout_constraintStart_toEndOf="@+id/dot_or3"
+        app:layout_constraintTop_toBottomOf="@+id/trainer_grade" />
 
-                <ImageView
-                    android:id="@+id/manage_cost"
-                    android:layout_width="350dp"
-                    android:layout_height="86dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="15dp"
-                    app:srcCompat="@drawable/img_manage_cost" />
+    <ImageView
+        android:id="@+id/trainer_grade"
+        android:layout_width="51dp"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trainer_profile"
+        app:srcCompat="@drawable/img_gold" />
 
-                <ImageView
-                    android:id="@+id/about_me"
-                    android:layout_width="350dp"
-                    android:layout_height="130dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="15dp"
-                    app:srcCompat="@drawable/img_about_me" />
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="20dp"
+        android:layout_height="14dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="2dp"
+        android:text="1km"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trainer_name" />
 
-                <ImageView
-                    android:id="@+id/about_service"
-                    android:layout_width="350dp"
-                    android:layout_height="130dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="15dp"
-                    app:srcCompat="@drawable/img_about_service" />
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="6.57dp"
+        android:layout_height="6.61dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6.4dp"
+        app:layout_constraintStart_toEndOf="@+id/dot_or2"
+        app:layout_constraintTop_toBottomOf="@+id/trainer_name"
+        app:srcCompat="@drawable/ic_star" />
 
-                <ImageView
-                    android:id="@+id/about_review"
-                    android:layout_width="350dp"
-                    android:layout_height="87dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    app:srcCompat="@drawable/img_about_review" />
-            </LinearLayout>
-        </ScrollView>
+    <TextView
+        android:id="@+id/trainer_star"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="3.43dp"
+        android:layout_marginTop="2dp"
+        android:text="4.3"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/trainer_name" />
 
-        <Button
-            android:id="@+id/match_request_btn"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="75dp"
-            android:layout_marginTop="769dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="25dp"
-            android:background="@drawable/round_button"
-            android:text="@string/match_request" />
-
-        <ImageButton
-            android:id="@+id/heart_btn"
-            android:layout_width="17.79dp"
-            android:layout_height="16.47dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="787dp"
-            android:layout_marginEnd="340.21dp"
-            android:layout_marginBottom="40.53dp"
-            android:background="@drawable/round_button"
-            android:padding="0sp"
-            android:scaleType="centerInside"
-            app:srcCompat="@drawable/ic_heart"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-        <ImageView
-            android:id="@+id/heartbtn_border"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="769dp"
-            android:layout_marginEnd="324dp"
-            android:layout_marginBottom="25dp"
-            app:srcCompat="@drawable/ic_button_border" />
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="390dp"
-            android:layout_height="180dp"
-            app:srcCompat="@drawable/img_background" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="167dp"
-            android:layout_marginTop="256dp"
-            android:layout_marginEnd="157dp"
-            android:layout_marginBottom="574dp"
-            android:text="숭실대학교 재학"
-            android:textSize="9.5sp" />
-
-        <ImageView
-            android:id="@+id/trainer_grade"
-            android:layout_width="51dp"
-            android:layout_height="20dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="81dp"
-            android:layout_marginTop="226dp"
-            android:layout_marginEnd="252.22dp"
-            android:layout_marginBottom="594dp"
-            app:srcCompat="@drawable/img_gold" />
-
-        <TextView
-            android:id="@+id/distance"
-            android:layout_width="20dp"
-            android:layout_height="14dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="31dp"
-            android:layout_marginTop="256dp"
-            android:layout_marginEnd="339dp"
-            android:layout_marginBottom="574dp"
-            android:text="1km"
-            android:textSize="10sp" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="6.57dp"
-            android:layout_height="6.61dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="260dp"
-            android:layout_marginEnd="323.43dp"
-            android:layout_marginBottom="577.39dp"
-            app:srcCompat="@drawable/ic_star" />
-
-        <TextView
-            android:id="@+id/trainer_star"
-            android:layout_width="14dp"
-            android:layout_height="14dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="256dp"
-            android:layout_marginEnd="306dp"
-            android:layout_marginBottom="574dp"
-            android:text="4.3"
-            android:textSize="10sp" />
-
-        <TextView
-            android:id="@+id/certificate_num"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="93dp"
-            android:layout_marginTop="256dp"
-            android:layout_marginEnd="232dp"
-            android:layout_marginBottom="574dp"
-            android:text="보유 자격증 5개"
-            android:textSize="9.5sp" />
-
-        <ImageView
+    <ImageView
             android:id="@+id/dot"
             android:layout_width="0dp"
             android:layout_height="3dp"
@@ -222,38 +151,44 @@
             android:layout_marginBottom="647dp"
             app:srcCompat="@drawable/ic_dot" />
 
-        <TextView
-            android:id="@+id/trainer_name"
-            android:layout_width="41dp"
-            android:layout_height="20dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="230dp"
-            android:layout_marginEnd="319dp"
-            android:layout_marginBottom="594dp"
-            android:text="김동현"
-            android:textColor="#000000"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/trainer_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:text="김동현"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trainer_profile" />
 
-        <ImageView
-            android:id="@+id/trainer_profile"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="145dp"
-            android:layout_marginEnd="290dp"
-            android:layout_marginBottom="629dp"
-            app:srcCompat="@drawable/img_trainerprofile" />
+    <ImageView
+        android:id="@+id/trainer_profile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginEnd="290dp"
+        android:layout_marginBottom="-35dp"
+        app:layout_constraintBottom_toBottomOf="@+id/background_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/img_trainerprofile" />
 
-        <TextView
+    <TextView
             android:id="@+id/dot_or"
             android:layout_width="3dp"
             android:layout_height="12dp"
@@ -268,37 +203,44 @@
             android:text="."
             android:textSize="10sp" />
 
-        <TextView
-            android:id="@+id/dot_or2"
-            android:layout_width="3dp"
-            android:layout_height="12dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="87dp"
-            android:layout_marginTop="254dp"
-            android:layout_marginEnd="300dp"
-            android:layout_marginBottom="578dp"
-            android:text="."
-            android:textSize="10sp" />
+    <TextView
+        android:id="@+id/dot_or2"
+        android:layout_width="3dp"
+        android:layout_height="12dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="6dp"
+        android:text="."
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/distance"
+        app:layout_constraintTop_toBottomOf="@+id/trainer_name" />
 
-        <TextView
-            android:id="@+id/dot_or3"
-            android:layout_width="3dp"
-            android:layout_height="12dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="161dp"
-            android:layout_marginTop="254dp"
-            android:layout_marginEnd="226dp"
-            android:layout_marginBottom="578dp"
-            android:text="."
-            android:textSize="10sp" />
+    <TextView
+        android:id="@+id/dot_or3"
+        android:layout_width="3dp"
+        android:layout_height="12dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="2dp"
+        android:text="."
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/trainer_star"
+        app:layout_constraintTop_toBottomOf="@+id/trainer_name" />
 
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/manage_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="관리 비용\n\n1시간\t\t\t\t\t\t\t\t20000원"
+        android:textSize="15dp"
+        android:background="#F8F8F8"
+        tools:layout_editor_absoluteX="67dp"
+        tools:layout_editor_absoluteY="314dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
