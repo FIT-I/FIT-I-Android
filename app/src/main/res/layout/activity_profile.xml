@@ -6,6 +6,98 @@
     android:layout_height="match_parent">
 
 
+    <TextView
+        android:id="@+id/about_me"
+        android:layout_width="369dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:background="#F8F8F8"
+        android:gravity="center_vertical|top"
+        android:paddingLeft="20dp"
+        android:paddingTop="58dp"
+        android:text="다양한 자격증을 바탕으로 친절하게 지도해드립니다. 스포애니 3년의 경력을 믿어주세요~!"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manage_cost" />
+
+    <TextView
+        android:id="@+id/about_service"
+        android:layout_width="369dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:background="#F8F8F8"
+        android:gravity="center_vertical|top"
+        android:paddingLeft="20dp"
+        android:paddingTop="58dp"
+        android:text="서울 반포 근처, 이수역 근처 PT를 전문적으로\n 지도한 경험이 있습니다. "
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about_me" />
+
+    <TextView
+        android:id="@+id/review1"
+        android:layout_width="369dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="5dp"
+        android:background="#F8F8F8"
+        android:gravity="center_vertical|top"
+        android:paddingLeft="20dp"
+        android:paddingTop="17dp"
+        android:text="후기 총"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/match_request_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about_service"
+        tools:paddingLeft="48dp" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="22dp"
+        app:layout_constraintEnd_toEndOf="@+id/about_me"
+        app:layout_constraintStart_toStartOf="@+id/about_me"
+        app:layout_constraintTop_toTopOf="@+id/manage_cost"
+        app:srcCompat="@drawable/ic_longbar" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="22dp"
+        app:layout_constraintEnd_toEndOf="@+id/about_service"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/about_service"
+        app:layout_constraintTop_toTopOf="@+id/about_service"
+        app:srcCompat="@drawable/ic_longbar" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="22dp"
+        app:layout_constraintEnd_toEndOf="@+id/about_service"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/about_service"
+        app:layout_constraintTop_toTopOf="@+id/review1"
+        app:srcCompat="@drawable/ic_longbar" />
+
     <Button
         android:id="@+id/match_request_btn"
         android:layout_width="300dp"
@@ -122,6 +214,20 @@
         app:layout_constraintTop_toBottomOf="@+id/trainer_name"
         app:srcCompat="@drawable/ic_star" />
 
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="262.76dp"
+        android:layout_marginTop="31dp"
+        app:layout_constraintStart_toStartOf="@+id/review1"
+        app:layout_constraintTop_toTopOf="@+id/review1"
+        app:srcCompat="@drawable/ic_star" />
+
     <TextView
         android:id="@+id/trainer_star"
         android:layout_width="14dp"
@@ -136,20 +242,6 @@
         android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toBottomOf="@+id/trainer_name" />
-
-    <ImageView
-            android:id="@+id/dot"
-            android:layout_width="0dp"
-            android:layout_height="3dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="127dp"
-            android:layout_marginTop="194dp"
-            android:layout_marginEnd="263dp"
-            android:layout_marginBottom="647dp"
-            app:srcCompat="@drawable/ic_dot" />
 
     <TextView
         android:id="@+id/trainer_name"
@@ -189,21 +281,6 @@
         app:srcCompat="@drawable/img_trainerprofile" />
 
     <TextView
-            android:id="@+id/dot_or"
-            android:layout_width="3dp"
-            android:layout_height="12dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="54dp"
-            android:layout_marginTop="254dp"
-            android:layout_marginEnd="333dp"
-            android:layout_marginBottom="578dp"
-            android:text="."
-            android:textSize="10sp" />
-
-    <TextView
         android:id="@+id/dot_or2"
         android:layout_width="3dp"
         android:layout_height="12dp"
@@ -234,13 +311,183 @@
 
     <TextView
         android:id="@+id/manage_cost"
+        android:layout_width="369dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="20dp"
+        android:background="#F8F8F8"
+        android:gravity="center_vertical|top"
+        android:paddingLeft="20dp"
+        android:paddingTop="58dp"
+        android:text="1시간"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/background_photo" />
+
+    <TextView
+        android:id="@+id/manage_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="관리 비용\n\n1시간\t\t\t\t\t\t\t\t20000원"
+        android:layout_marginBottom="8dp"
+        android:text="20000"
         android:textSize="15dp"
-        android:background="#F8F8F8"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="314dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/manage_cost"
+        app:layout_constraintEnd_toStartOf="@+id/won2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/won1" />
 
+    <TextView
+        android:id="@+id/won2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="8dp"
+        android:text="원"
+        app:layout_constraintBottom_toBottomOf="@+id/manage_cost"
+        app:layout_constraintEnd_toEndOf="@+id/manage_cost" />
+
+    <TextView
+        android:id="@+id/won1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="280dp"
+        android:layout_marginBottom="8dp"
+        android:text="￦"
+        app:layout_constraintBottom_toBottomOf="@+id/manage_cost"
+        app:layout_constraintStart_toStartOf="@+id/manage_cost" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="22dp"
+        app:layout_constraintEnd_toEndOf="@+id/manage_cost"
+        app:layout_constraintStart_toStartOf="@+id/manage_cost"
+        app:layout_constraintTop_toTopOf="@+id/manage_cost"
+        app:srcCompat="@drawable/ic_longbar" />
+
+    <TextView
+        android:id="@+id/manage_cost_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="관리 비용"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        tools:layout_editor_absoluteX="58dp" />
+
+    <TextView
+        android:id="@+id/manage_cost_title3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="10dp"
+        android:text="소개 글"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintStart_toStartOf="@+id/about_me" />
+
+    <TextView
+        android:id="@+id/manage_cost_title4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="10dp"
+        android:text="서비스 상세 설명"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView8"
+        app:layout_constraintStart_toEndOf="@+id/imageView9" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/manage_cost_title"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/manage_cost"
+        app:layout_constraintTop_toTopOf="@+id/manage_cost"
+        app:srcCompat="@drawable/ic_manage_cost" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/manage_cost_title3"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="@+id/about_me"
+        app:layout_constraintTop_toTopOf="@+id/about_me"
+        app:srcCompat="@drawable/ic_about_me" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="17dp"
+        app:layout_constraintStart_toStartOf="@+id/about_service"
+        app:layout_constraintTop_toTopOf="@+id/about_service"
+        app:srcCompat="@drawable/ic_about_service" />
+
+    <TextView
+        android:id="@+id/review_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="17dp"
+        android:text="2"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@+id/review1"
+        app:layout_constraintTop_toTopOf="@+id/review1" />
+
+    <TextView
+        android:id="@+id/review2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="건"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@+id/review_num"
+        tools:layout_editor_absoluteY="703dp" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="18dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="@+id/review1"
+        app:layout_constraintTop_toTopOf="@+id/review1"
+        app:srcCompat="@drawable/ic_review" />
+
+    <TextView
+        android:id="@+id/average"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="29dp"
+        android:text="평균"
+        android:textSize="10dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView12"
+        app:layout_constraintTop_toTopOf="@+id/review1" />
+
+    <TextView
+        android:id="@+id/average_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="29dp"
+        android:text="4.3"
+        android:textSize="10dp"
+        app:layout_constraintStart_toEndOf="@+id/average"
+        app:layout_constraintTop_toTopOf="@+id/review1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
