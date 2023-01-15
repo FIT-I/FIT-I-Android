@@ -4,6 +4,6 @@ data class LikelistData(
     //val profile: String,
     val im: String,
     val star: String,
-    val uni: String
+    val uni: String,
     val date: String
 )
