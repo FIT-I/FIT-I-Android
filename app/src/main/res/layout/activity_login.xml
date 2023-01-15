@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_customerLogin">
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/et_emailL"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -54,10 +54,10 @@
             android:inputType="textEmailAddress"
             android:textCursorDrawable="@null"/>
 
-        />
+
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/et_pwL"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:ems="10"
