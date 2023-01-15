@@ -3,9 +3,11 @@ package com.example.fit_i
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
+import android.text.InputType
 import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.databinding.ActivitySignupBinding
@@ -89,6 +91,41 @@ class SignupActivity : AppCompatActivity() {
             }
             override fun afterTextChanged(p0: Editable?) {}
         })
+
+
+        //비밀번호 눈 아이콘
+
+        val ivEye1 : ImageView = findViewById(R.id.iv_eye1)
+        val ivEye2 : ImageView =findViewById(R.id.iv_eye2)
+
+        ivEye1.setOnClickListener(){
+            if(ivEye1.tag.equals("0")){//비밀번호 안 보이고 있던 상황
+                ivEye1.tag = "1"
+                ivEye1.setImageResource(R.drawable.ic_eye)
+                etPW.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            }else{//비밀번호 보이고 있던 상황
+                ivEye1.tag = "0"
+                ivEye1.setImageResource(R.drawable.ic_eye_slash)
+                etPW.inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+            etPW.setSelection(etPW.text.length)
+            //etPW2.setSelection(etPW.text.length)
+        }
+
+        ivEye2.setOnClickListener(){
+            if(ivEye2.tag.equals("0")){//비밀번호 안 보이고 있던 상황
+                ivEye2.tag = "1"
+                ivEye2.setImageResource(R.drawable.ic_eye)
+                etPW.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            }else{//비밀번호 보이고 있던 상황
+                ivEye2.tag = "0"
+                ivEye2.setImageResource(R.drawable.ic_eye_slash)
+                etPW2.inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+            //etPW.setSelection(etPW.text.length)
+            etPW2.setSelection(etPW.text.length)
+        }
+
 
         //회원가입하기
         //버튼 이벤트

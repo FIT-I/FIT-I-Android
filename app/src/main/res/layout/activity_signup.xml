@@ -26,8 +26,7 @@ tools:context=".SignupActivity">
     android:layout_marginStart="20dp"
     android:layout_marginEnd="20dp"
     android:layout_marginTop="84dp"
-    app:layout_constraintTop_toBottomOf="@+id/tv_permission"
-    tools:layout_editor_absoluteX="30dp">
+    app:layout_constraintTop_toBottomOf="@+id/tv_permission">
 
     <EditText
         android:id="@+id/et_name"
@@ -66,36 +65,57 @@ tools:context=".SignupActivity">
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:paddingStart="20dp"
-        android:inputType="textVisiblePassword"
+        android:inputType="textPassword"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
-            <TextView
-                android:id="@+id/tv_special"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginStart="20dp"
-                android:textSize="11dp"
-                android:text="(특수문자 @, &amp;, !, ?를 포함해 5자 이상으로 입력해주세요)"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_pw" />
+    <TextView
+        android:id="@+id/tv_special"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginStart="20dp"
+        android:textSize="11dp"
+        android:text="(특수문자 @, &amp;, !, ?를 포함해 5자 이상으로 입력해주세요)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_pw" />
 
-            <EditText
-                android:id="@+id/et_pw2"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:background="@drawable/edittext_border"
-                android:hint="비밀번호를 확인해주세요."
-                android:inputType="textPassword"
-                android:paddingStart="20dp"
-                android:paddingTop="12dp"
-                android:paddingBottom="12dp"
-                android:layout_marginTop="3dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_special" />
+    <ImageView
+        android:id="@+id/iv_eye1"
+        android:layout_width="20dp"
+        android:layout_height="13.5dp"
+        android:src="@drawable/ic_eye_slash"
+        android:layout_marginEnd="17.5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_pw"
+        app:layout_constraintEnd_toEndOf="@+id/et_pw"
+        app:layout_constraintTop_toTopOf="@+id/et_pw"
+        android:tag="0"/>
 
+
+    <EditText
+        android:id="@+id/et_pw2"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/edittext_border"
+        android:hint="비밀번호를 확인해주세요."
+        android:inputType="textPassword"
+        android:paddingStart="20dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_special" />
+    <ImageView
+        android:id="@+id/iv_eye2"
+        android:layout_width="20dp"
+        android:layout_height="13.5dp"
+        android:src="@drawable/ic_eye_slash"
+        android:layout_marginEnd="17.5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_pw2"
+        app:layout_constraintEnd_toEndOf="@+id/et_pw2"
+        app:layout_constraintTop_toTopOf="@+id/et_pw2"
+        android:tag="0"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
