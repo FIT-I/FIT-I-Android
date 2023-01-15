@@ -116,7 +116,7 @@
         android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/heartbtn_border" />
 
-    <ImageButton
+    <CheckBox
         android:id="@+id/heart_btn"
         android:layout_width="17.79dp"
         android:layout_height="16.47dp"

@@ -7,8 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.databinding.ActivityProfileBinding
 
 class ProfileActivity :AppCompatActivity(){
-    val binding by lazy {ActivityProfileBinding.inflate(layoutInflater)}
-
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
