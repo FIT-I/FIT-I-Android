@@ -39,7 +39,17 @@ class MainActivity : AppCompatActivity() {
                     val mypageFragment = MypageFragment()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fl_container, mypageFragment).commit()
+                    val mypageSettingFragment = MypageSettingFragment()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fl_container, mypageSettingFragment).commit()
+                    val mypageSiginoutFragment = MypageSiginoutFragment()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fl_container, mypageSiginoutFragment).commit()
+                    val mypageLikelistFragment = MypageLikelistFragment()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fl_container, mypageLikelistFragment).commit()
                 }
+
             }
             true
         }
