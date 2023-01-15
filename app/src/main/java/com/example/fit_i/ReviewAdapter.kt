@@ -4,33 +4,55 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fit_i.databinding.ItemReviewBinding
-import java.lang.reflect.Member
+import android.util.Log
+import android.view.View
+import android.widget.AdapterView
 
 
-class ReviewAdapter :
-RecyclerView.Adapter<Holder>(){
-   var listData= mutableListOf<ReviewData>()
+class ReviewAdapter(private val dataList: ArrayList<ReviewData>): RecyclerView.Adapter<ReviewAdapter.ViewHolder>() {
+    inner class ViewHolder(private val binding: ItemReviewBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
-    override fun onCreateViewHolder(parent:ViewGroup,viewType:Int):Holder{
-        val binding = ItemReviewBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return Holder(binding)
+        fun bind(position: Int) {
+            binding.tvNameT.text = dataList[position].name
+            binding.tvStar.text= dataList[position].star.toString()
+            binding.tvDateT.text= dataList[position].date
+            binding.tvReview.text=dataList[position].review
+
+            //viewBinding.imgFricard.setImageResource(dataList[position].front)
+            itemView.setOnClickListener {
+                Log.d("Click", "success")
+            }
+        }
     }
-    override fun onBindViewHolder(holder: Holder, position: Int) {
-        val reviewData = listData[position]
-        holder.setData(reviewData)
+
+    interface OnItemClickListener : AdapterView.OnItemClickListener {
+        //fun onClick(v: View, position: Int)
+        fun onItemClick(v:View,data:ReviewData,position: Int)
+        //override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        //  TODO("Not yet implemented")
+        //}
     }
-    override fun getItemCount(): Int {
-        return listData.size
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val viewBinding =
+            ItemReviewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(viewBinding)
     }
 
-
-
-
-}
-class Holder(val binding: ItemReviewBinding):RecyclerView.ViewHolder(binding.root) {
-    fun setData(reviewData: ReviewData) {
-        binding.reviewNameItem.text = ReviewData.name
-        binding.reviewDateItem.text = ReviewData.date
-        binding.reviewContextItem.text = ReviewData.review
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(position)
+        /*
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView?.context, CardDetailActivity::class.java)
+            intent.putExtra("front", dataList[position].front)
+            intent.putExtra("back", dataList[position].back)
+            intent.putExtra("name", dataList[position].name)
+            ContextCompat.startActivity(holder.itemView.context, intent, null)
+        }*/
     }
+
+    override fun getItemCount(): Int = dataList.size
+
 }
