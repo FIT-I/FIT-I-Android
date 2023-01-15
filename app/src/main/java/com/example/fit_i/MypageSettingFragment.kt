@@ -23,10 +23,19 @@ class MypageSettingFragment :Fragment() {
 
         val ee = inflater.inflate(R.layout.fragment_mypage_setting, container, false)
         val btnlogout = ee.findViewById<View>(R.id.btn_logout) as Button
+        val btnwithdraw = ee.findViewById<View>(R.id.btn_withdrow) as Button
 
         btnlogout.setOnClickListener {
             showProfileDialog()
         }
+        btnwithdraw.setOnClickListener {
+            val mypageSiginoutFragment = MypageSiginoutFragment()
+            val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
+
+            transaction.replace(R.id.fl_container,mypageSiginoutFragment)
+            transaction.commit()
+        }
+
         return ee
 
 
