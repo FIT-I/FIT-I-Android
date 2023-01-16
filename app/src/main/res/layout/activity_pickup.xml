@@ -61,22 +61,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pick_pickup">
 
-        <ImageButton
+        <CheckBox
             android:id="@+id/pickup1_btn"
             android:layout_width="170dp"
             android:layout_height="220dp"
-            android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/pickup1_selector"
-            android:layout_marginRight="10dp"/>
+            android:background="@drawable/pickup1_selector"
+            android:button="@android:color/transparent"
+            android:layout_marginRight="10dp"
+        />
 
-        <ImageButton
+        <CheckBox
             android:id="@+id/pickup2_btn"
             android:layout_width="170dp"
             android:layout_height="220dp"
-            android:background="@android:color/transparent"
+            android:background="@drawable/pickup2_selector"
+            android:button="@android:color/transparent"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/pickup2_selector"
             tools:layout_editor_absoluteX="170dp" />
 
     </LinearLayout>
