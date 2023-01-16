@@ -1,19 +1,13 @@
 package com.example.fit_i
 
-import android.R
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fit_i.databinding.FragmentHomePtBinding
-import com.google.android.material.bottomsheet.BottomSheetDialog
 
 
 class HomePtFragment : Fragment() {
@@ -63,7 +57,42 @@ class HomePtFragment : Fragment() {
         dialog.show()
 */
 
+        binding.llSort.setOnClickListener {
+            val bottomSheet: BottomSheetFragment = BottomSheetFragment {
+                when (it) {
+                    0 -> {Toast.makeText(activity,"실시간 순", Toast.LENGTH_SHORT).show()
+                    binding.tvSort.text="실시간 순"}
+                    1 -> {
+                        Toast.makeText(activity, "트레이너 레벨 순", Toast.LENGTH_SHORT).show()
+                        binding.tvSort.text="트레이너 순"}
 
+                    2 -> {
+                        Toast.makeText(activity, "낮은 가격 순", Toast.LENGTH_SHORT).show()
+                        binding.tvSort.text="낮은 가격 순"}
+                    3 -> {
+                        Toast.makeText(activity, "높은 가격 순", Toast.LENGTH_SHORT).show()
+                        binding.tvSort.text="높은 가격 순"}
+                }
+            }
+            activity?.let { it1 -> bottomSheet.show(it1.supportFragmentManager, bottomSheet.tag) }
+        }
+
+
+
+
+/*
+        binding.llSort.setOnClickListener {
+            val bottomSheet: BottomSheetFragment = BottomSheetFragment{
+                when (it) {
+                    0 -> Toast.makeText(this, "추천순", Toast.LENGTH_SHORT).show()
+                    1 -> Toast.makeText(this, "리뷰순", Toast.LENGTH_SHORT).show()
+                }
+            }
+            activity?.let { it1 -> bottomSheet.show(it1.supportFragmentManager, bottomSheet.tag) }
+        }*/
+            //activity?.supportFragmentManager?.let { it1 -> bottomSheet.show(it1, bottomSheet.tag) }
+        //}
+/*
         binding.llSort.setOnClickListener { content ->
             val bottomSheet = BottomSheetFragment()
             activity?.supportFragmentManager?.let { it1 -> bottomSheet.show(it1, BottomSheetFragment.TAG) }
@@ -75,7 +104,7 @@ class HomePtFragment : Fragment() {
 
 
         } //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함
-
+*/
         return binding.root
     }
 }

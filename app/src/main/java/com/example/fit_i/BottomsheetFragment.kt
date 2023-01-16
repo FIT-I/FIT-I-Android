@@ -18,7 +18,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import java.util.logging.Logger
 
-class BottomSheetFragment : BottomSheetDialogFragment() {
+class BottomSheetFragment(val itemClick: (Int) -> Unit) : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentBottomsheetBinding
 //
 //
@@ -29,7 +29,35 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
     lateinit var select: String
 
 
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View =
+        inflater.inflate(R.layout.fragment_bottomsheet, container, false)
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding = FragmentBottomsheetBinding.inflate(layoutInflater)
+
+        binding.tvSortTime.setOnClickListener {
+            itemClick(0)
+            dialog?.dismiss()
+        }
+        binding.tvSortLevel.setOnClickListener {
+            itemClick(1)
+            dialog?.dismiss()
+        }
+        binding.tvSortLow.setOnClickListener {
+            itemClick(2)
+            dialog?.dismiss()
+        }
+        binding.tvSortHigh.setOnClickListener {
+            itemClick(3)
+            dialog?.dismiss()
+        }
+    }
+/*
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -67,5 +95,5 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
 
     companion object {
         const val TAG = "BottomSheetFragment"
-    }
+    }*/
 }
