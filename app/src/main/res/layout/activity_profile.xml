@@ -374,11 +374,12 @@
         android:id="@+id/manage_cost_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
         android:layout_marginBottom="10dp"
         android:text="관리 비용"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        tools:layout_editor_absoluteX="58dp" />
+        app:layout_constraintStart_toStartOf="@+id/manage_cost" />
 
     <TextView
         android:id="@+id/manage_cost_title3"
@@ -453,10 +454,11 @@
         android:id="@+id/review2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:text="건"
         android:textSize="15dp"
-        app:layout_constraintStart_toEndOf="@+id/review_num"
-        tools:layout_editor_absoluteY="703dp" />
+        app:layout_constraintBottom_toTopOf="@+id/imageView10"
+        app:layout_constraintStart_toEndOf="@+id/review_num" />
 
     <ImageView
         android:id="@+id/imageView11"

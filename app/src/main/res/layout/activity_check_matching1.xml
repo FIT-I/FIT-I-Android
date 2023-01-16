@@ -42,8 +42,8 @@
     <TextView
 
         android:id="@+id/service_request"
-        android:layout_width="350dp"
-        android:layout_height="370dp"
+        android:layout_width="348dp"
+        android:layout_height="312dp"
         android:layout_marginTop="22dp"
         android:background="#F8F8F8"
         android:gravity="center_vertical|top"
@@ -62,11 +62,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
+        android:layout_marginTop="63dp"
         android:layout_marginEnd="22dp"
         app:layout_constraintEnd_toEndOf="@+id/service_request"
         app:layout_constraintStart_toStartOf="@+id/service_request"
-        app:srcCompat="@drawable/line"
-        tools:layout_editor_absoluteY="217dp" />
+        app:layout_constraintTop_toTopOf="@+id/service_request"
+        app:srcCompat="@drawable/line" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -105,19 +106,6 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/service_request"
         app:layout_constraintTop_toBottomOf="@+id/imageView13"
-        app:srcCompat="@drawable/line" />
-
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="22dp"
-        app:layout_constraintEnd_toEndOf="@+id/service_request"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/service_request"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14"
         app:srcCompat="@drawable/line" />
 
     <TextView
@@ -168,59 +156,24 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
         android:text="픽업 형태"
         android:textColor="@color/main"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView15"
         app:layout_constraintStart_toStartOf="@+id/service_request"
         app:layout_constraintTop_toBottomOf="@+id/imageView14" />
-
-    <TextView
-        android:id="@+id/match_place"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="21.76dp"
-        android:text="매칭 장소"
-        android:textColor="@color/main"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/service_request"
-        app:layout_constraintStart_toStartOf="@+id/service_request"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
-
-    <TextView
-        android:id="@+id/match_place2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="118dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="21.76dp"
-        android:text="서울특별시 상도로 50"
-        android:textColor="@color/main"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/service_request"
-        app:layout_constraintStart_toEndOf="@+id/match_place"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15"
-        app:layout_constraintVertical_bias="0.25" />
 
     <TextView
         android:id="@+id/pickup_way2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
+        android:layout_marginStart="149dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="트레이너님이 와주세요"
+        android:text="제가 직접 갈게요"
         android:textColor="@color/main"
         android:textSize="15dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView15"
         app:layout_constraintStart_toEndOf="@+id/pickup_way"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView14" />
 
     <TextView
         android:id="@+id/match_date2"
