@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    
+    <LinearLayout
+        android:id="@+id/firstlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+        android:id="@+id/item_pic"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/img_pic"
+        android:background="@drawable/corner"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/secondlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/item_pic"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="김동현"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:id="@+id/item_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2023.1.1"
+            android:textSize="10sp"
+            android:textColor="@color/gray" />
+
+
+    </LinearLayout>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginEnd="9dp"
+            android:src="@drawable/ic_circle" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/firstlay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PT 문의드립니다~!"
+            android:textSize="12sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="@drawable/img_line"
+            android:layout_marginBottom="5dp"/>
+    </LinearLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
