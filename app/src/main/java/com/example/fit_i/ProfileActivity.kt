@@ -21,21 +21,21 @@ class ProfileActivity :AppCompatActivity(){
             moveToNextPage()
         }
 
+        val moreAboutMe = findViewById<ImageButton>(R.id.btn_about_me)
         fun showAboutMe(){
             val intent = Intent(this,AboutMeActivity::class.java)
             startActivity(intent)
         }
-        val moreAboutMe = findViewById<ImageButton>(R.id.btn_about_me)
         moreAboutMe.setOnClickListener{
             showAboutMe()
         }
 
+        val moreAboutService = findViewById<ImageButton>(R.id.btn_about_service)
         fun showAboutService(){
             val intent = Intent(this,AboutServiceActivity::class.java)
             startActivity(intent)
         }
-        val moreAboutService = findViewById<ImageButton>(R.id.btn_about_service)
-        moreAboutMe.setOnClickListener{
+        moreAboutService.setOnClickListener{
             showAboutService()
         }
     }
