@@ -120,14 +120,8 @@
         android:id="@+id/heart_btn"
         android:layout_width="17.79dp"
         android:layout_height="16.47dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="15.53dp"
-        android:background="@drawable/round_button"
-        android:padding="0sp"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="@+id/heartbtn_border"
         app:layout_constraintStart_toStartOf="@+id/heartbtn_border"
@@ -382,7 +376,7 @@
         app:layout_constraintStart_toStartOf="@+id/manage_cost" />
 
     <TextView
-        android:id="@+id/manage_cost_title3"
+        android:id="@+id/about_me_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -417,13 +411,13 @@
         app:srcCompat="@drawable/ic_manage_cost" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/about_me_icon"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="17dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/manage_cost_title3"
+        app:layout_constraintEnd_toStartOf="@+id/about_me_title"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="@+id/about_me"
         app:layout_constraintTop_toTopOf="@+id/about_me"
@@ -491,5 +485,31 @@
         android:textSize="10dp"
         app:layout_constraintStart_toEndOf="@+id/average"
         app:layout_constraintTop_toTopOf="@+id/review1" />
+
+    <ImageButton
+        android:id="@+id/btn_about_me"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="167dp"
+        android:layout_marginBottom="5dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/about_me"
+        app:layout_constraintStart_toStartOf="@+id/about_me"
+        app:srcCompat="@drawable/ic_view_more" />
+
+    <ImageButton
+        android:id="@+id/btn_about_service"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="167dp"
+        android:layout_marginBottom="5dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/about_service"
+        app:layout_constraintStart_toStartOf="@+id/about_service"
+        app:srcCompat="@drawable/ic_view_more" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

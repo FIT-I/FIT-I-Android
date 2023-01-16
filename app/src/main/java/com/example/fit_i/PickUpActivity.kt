@@ -1,4 +1,14 @@
 package com.example.fit_i
 
-class PickUpActivity {
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+
+class PickUpActivity :AppCompatActivity(){
+    override fun onCreate(savedInstanceState: Bundle?){
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_pickup)
+
+
+
+    }
 }
