@@ -1,24 +1,35 @@
 package com.example.fit_i
 
+import android.R
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fit_i.databinding.FragmentHomePtBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
+
 
 class HomePtFragment : Fragment() {
     private lateinit var binding: FragmentHomePtBinding
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
+
+    //private lateinit var tvSort: TextView
+
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
+        super.onCreate(savedInstanceState)
+
         binding = FragmentHomePtBinding.inflate(layoutInflater)
 
         val trainerList : ArrayList<TrainerData> = arrayListOf()
@@ -36,10 +47,33 @@ class HomePtFragment : Fragment() {
         val linearLayoutManager = LinearLayoutManager(context)
         binding.rvTrainer.layoutManager=linearLayoutManager
 
-        binding.llSort.setOnClickListener {
-            if (binding.tvSort.text == "실시간 순") {
-                binding.tvSort.text = "별점 순"
-            } else binding.tvSort.text = "실시간 순"
+        //tvSort = findViewById(R.id.resultText)
+
+        binding.tvSort.text = "실시간 순"
+
+        /*
+        val dialog: BottomSheetDialog = BottomSheetDialog(this)
+        dialog.setContentView(R.layout.bottom_sheet)
+
+        val tv = dialog.findViewById<TextView>(R.id.content)
+        tv?.setOnClickListener {
+            Toast.makeText("내용을 클릭하였습니다", Toast.LENGTH_LONG).show()
+            dialog.dismiss()
+        }
+        dialog.show()
+*/
+
+
+        binding.llSort.setOnClickListener { content ->
+            val bottomSheet = BottomSheetFragment()
+            activity?.supportFragmentManager?.let { it1 -> bottomSheet.show(it1, BottomSheetFragment.TAG) }
+            //선택한 값 불러와야함
+            //위에 택스트가 바뀌어야함
+            //binding.tvSort.text= select
+
+            binding.tvSort.text = content.toString()
+
+
         } //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함
 
         return binding.root
