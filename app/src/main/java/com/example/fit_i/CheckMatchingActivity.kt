@@ -23,7 +23,9 @@ class CheckMatchingActivity :AppCompatActivity(){
 
         val btnNext: Button = findViewById(R.id.btn_next)
         btnNext.setOnClickListener{
-            showDialog()
+            val dialog = MatchRequestDialog(this)
+            dialog.matchDialog()
+
         }
     //뒤로가기
         val goBack = findViewById<ImageButton>(R.id.back_arrow)
@@ -35,16 +37,16 @@ class CheckMatchingActivity :AppCompatActivity(){
         }
 
     }
-    private fun showDialog(){
-        val builder : AlertDialog.Builder = AlertDialog.Builder(this)
-
-
-
-        val inflater : LayoutInflater = layoutInflater
-        builder.setView(inflater.inflate(R.layout.dialog_match_request, null))
-
-        val alertDialog: AlertDialog = builder.create()
-        alertDialog.show()
-    }
+//    private fun showDialog(){
+//        val builder : AlertDialog.Builder = AlertDialog.Builder(this)
+//
+//
+//
+//        val inflater : LayoutInflater = layoutInflater
+//        builder.setView(inflater.inflate(R.layout.dialog_match_request, null))
+//
+//        val alertDialog: AlertDialog = builder.create()
+//        alertDialog.show()
+//    }
 
 }
