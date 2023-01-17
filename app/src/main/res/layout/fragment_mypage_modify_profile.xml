@@ -50,8 +50,7 @@
             <ImageButton
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:backgroundTint="#007AFF"
-                android:background="@drawable/round"/>
+                android:background="@drawable/prof1_selector"/>
             <ImageView
                 android:src="@drawable/img_f1"
                 android:layout_width="37dp"
@@ -66,8 +65,7 @@
             <ImageButton
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:backgroundTint="#D9D9D9"
-                android:background="@drawable/round"/>
+                android:background="@drawable/prof1_selector"/>
             <ImageView
                 android:src="@drawable/img_f2"
                 android:layout_width="37dp"
@@ -82,8 +80,7 @@
             <ImageButton
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:backgroundTint="#D9D9D9"
-                android:background="@drawable/round"/>
+                android:background="@drawable/prof1_selector"/>
             <ImageView
                 android:src="@drawable/img_profile3"
                 android:layout_width="37dp"
@@ -109,8 +106,7 @@
             <ImageButton
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:backgroundTint="#D9D9D9"
-                android:background="@drawable/round"/>
+                android:background="@drawable/prof1_selector"/>
             <ImageView
                 android:src="@drawable/img_profile4"
                 android:layout_width="37dp"
@@ -125,8 +121,7 @@
             <ImageButton
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:backgroundTint="#D9D9D9"
-                android:background="@drawable/round"/>
+                android:background="@drawable/prof1_selector"/>
             <ImageView
                 android:src="@drawable/img_profile5"
                 android:layout_width="37dp"
@@ -141,8 +136,7 @@
             <ImageButton
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:backgroundTint="#D9D9D9"
-                android:background="@drawable/round"/>
+                android:background="@drawable/prof1_selector"/>
             <ImageView
                 android:src="@drawable/img_profile6"
                 android:layout_width="37dp"

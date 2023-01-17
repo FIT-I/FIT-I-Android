@@ -29,6 +29,7 @@ class MypageFragment : Fragment() {
         val ivnextnotice = vv.findViewById<View>(R.id.iv_next_notice) as ImageView
         val ivnextpermisson = vv.findViewById<View>(R.id.iv_next_permisson) as ImageView
         val tvgotoprofile = vv.findViewById<View>(R.id.tv_go_modifyProfile) as TextView
+        val ivnextreview = vv.findViewById<View>(R.id.iv_next_review) as ImageView
 
 
         //설정
@@ -72,6 +73,15 @@ class MypageFragment : Fragment() {
             transaction.replace(R.id.fl_container, mypageLikelistFragment)
             transaction.commit()
         }
+        //매칭 후기 작성하기
+        ivnextreview.setOnClickListener {
+            val mypageReviewBinding = MypageReviewFragment()
+            val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
+
+            transaction.replace(R.id.fl_container, mypageReviewBinding)
+            transaction.commit()
+        }
+
 
 
 

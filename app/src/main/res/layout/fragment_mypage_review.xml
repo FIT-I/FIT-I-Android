@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageButton
-        android:id="@+id/ib_pre4"
+        android:id="@+id/ib_pre5"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="10dp"
@@ -19,31 +19,31 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_likelist"
+        android:id="@+id/tv_review"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/ib_pre4"
-        app:layout_constraintBottom_toBottomOf="@+id/ib_pre4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="찜 목록"
-            android:textSize="20sp"
-            android:textColor="@color/main"
-            android:textStyle="bold"/>
+        app:layout_constraintTop_toTopOf="@id/ib_pre5"
+        app:layout_constraintBottom_toBottomOf="@+id/ib_pre5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="매칭 내역 보기 / 후기 남기기"
+        android:textSize="20sp"
+        android:textColor="@color/main"
+        android:textStyle="bold"/>
     <ImageView
-        android:id="@+id/iv_line"
+        android:id="@+id/iv_line3"
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:background="#F8F8F8"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_likelist"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_review"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rc_likelist"
+        android:id="@+id/rc_review"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/iv_line"/>
+        app:layout_constraintTop_toBottomOf="@+id/iv_line3"/>
 
 
 

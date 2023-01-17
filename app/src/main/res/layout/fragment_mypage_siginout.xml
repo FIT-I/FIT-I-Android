@@ -73,7 +73,7 @@
         android:backgroundTint="@color/skyblue"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_withdrow"
+        android:id="@+id/btn_withdraw2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

@@ -1,0 +1,80 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MypageNoticeFragment">
+
+
+
+    <ImageButton
+        android:id="@+id/ib_pre7"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="10dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@color/main"
+        android:scaleType="fitStart"
+        android:src="@drawable/ic_pre"
+        android:layout_margin="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_mypage_notice"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="공지사항"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ib_pre7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ib_pre7" />
+    <ImageView
+        android:id="@+id/iv_bar4"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#F8F8F8"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mypage_notice"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_bar4"
+        android:id="@+id/tv_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="앱 업데이트 안내"
+        android:textColor="@color/main"
+        android:textSize="15sp"
+        android:padding="13dp"/>
+
+
+    <ImageView
+        android:id="@+id/iv_bar5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#D9D9D9"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ok"
+        android:layout_marginTop="5dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="13dp"
+        app:layout_constraintTop_toBottomOf="@+id/iv_bar5"
+        android:text="안녕하세요 Fit-i 이용자 여러분,\n
+해당 어플은 보다 나은 서비스를 위해 2023년 1월 20일\n 업데이트를 예정하고 있습니다.\n\n
+이용자 여러분은 참고하여 이용해주시면 감사하겠습니다."
+        android:textColor="@color/main"
+        android:textSize="15sp"/>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
