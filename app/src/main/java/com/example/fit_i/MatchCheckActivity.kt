@@ -13,7 +13,7 @@ class MatchCheckActivity :AppCompatActivity(){
         super.onCreate(savedInstanceState)
 
         binding = ActivityMatchCheck1Binding.inflate(layoutInflater)
-        setContentView(R.layout.activity_match_check1)
+        setContentView(R.layout.activity_match_check2)
 
         val btnNext: Button = findViewById(R.id.btn_next)
         btnNext.setOnClickListener{
