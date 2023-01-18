@@ -5,134 +5,583 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <TextView
-        android:id="@+id/about_me"
-        android:layout_width="369dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
-        android:background="#F8F8F8"
-        android:gravity="center_vertical|top"
-        android:paddingLeft="20dp"
-        android:paddingTop="58dp"
-        android:text="다양한 자격증을 바탕으로 친절하게 지도해드립니다. 스포애니 3년의 경력을 믿어주세요~!"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manage_cost" />
-
-    <TextView
-        android:id="@+id/about_service"
-        android:layout_width="369dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
-        android:background="#F8F8F8"
-        android:gravity="center_vertical|top"
-        android:paddingLeft="20dp"
-        android:paddingTop="58dp"
-        android:text="서울 반포 근처, 이수역 근처 PT를 전문적으로\n 지도한 경험이 있습니다. "
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_me" />
-
-    <TextView
-        android:id="@+id/review1"
-        android:layout_width="369dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginBottom="5dp"
-        android:background="#F8F8F8"
-        android:gravity="center_vertical|top"
-        android:paddingLeft="20dp"
-        android:paddingTop="17dp"
-        android:text="후기 총"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/match_request_btn"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/heartbtn_border"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_service"
-        tools:paddingLeft="48dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="22dp"
-        app:layout_constraintEnd_toEndOf="@+id/about_me"
-        app:layout_constraintStart_toStartOf="@+id/about_me"
-        app:layout_constraintTop_toTopOf="@+id/manage_cost"
-        app:srcCompat="@drawable/ic_longbar" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/heartbtn_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="22dp"
-        app:layout_constraintEnd_toEndOf="@+id/about_service"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/about_service"
-        app:layout_constraintTop_toTopOf="@+id/about_service"
-        app:srcCompat="@drawable/ic_longbar" />
+            <TextView
+                android:id="@+id/about_me"
+                android:layout_width="369dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:background="#F8F8F8"
+                android:gravity="center_vertical|top"
+                android:paddingLeft="20dp"
+                android:paddingTop="58dp"
+                android:text="다양한 자격증을 바탕으로 친절하게 지도해드립니다. 스포애니 3년의 경력을 믿어주세요~!"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/manage_cost" />
 
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="22dp"
-        app:layout_constraintEnd_toEndOf="@+id/about_service"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/about_service"
-        app:layout_constraintTop_toTopOf="@+id/review1"
-        app:srcCompat="@drawable/ic_longbar" />
+            <TextView
+                android:id="@+id/about_service"
+                android:layout_width="369dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:background="#F8F8F8"
+                android:gravity="center_vertical|top"
+                android:paddingLeft="20dp"
+                android:paddingTop="58dp"
+                android:text="서울 반포 근처, 이수역 근처 PT를 전문적으로\n 지도한 경험이 있습니다. "
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/about_me" />
 
-    <Button
-        android:id="@+id/match_request_btn"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/round_button"
-        android:backgroundTint="@color/main"
-        android:text="@string/match_request"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/heartbtn_border" />
+            <TextView
+                android:id="@+id/review1"
+                android:layout_width="0dp"
+                android:layout_height="134dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:background="#F8F8F8"
+                android:gravity="center_vertical|top"
+                android:paddingLeft="48.08dp"
+                android:paddingTop="17dp"
+                android:text="후기 총"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/about_service"
+                app:layout_constraintVertical_bias="0.0"
+                tools:paddingLeft="48dp" />
 
-    <ImageButton
-        android:id="@+id/heart_btn"
-        android:layout_width="17.79dp"
-        android:layout_height="16.47dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="15.53dp"
-        android:background="@drawable/round_button"
-        android:padding="0sp"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="@+id/heartbtn_border"
-        app:layout_constraintStart_toStartOf="@+id/heartbtn_border"
-        app:srcCompat="@drawable/ic_heart"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="148dp"
+                android:layout_marginEnd="22dp"
+                app:layout_constraintEnd_toEndOf="@+id/about_me"
+                app:layout_constraintStart_toStartOf="@+id/about_me"
+                app:layout_constraintTop_toTopOf="@+id/manage_cost"
+                app:srcCompat="@drawable/ic_longbar" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="47dp"
+                android:layout_marginEnd="22dp"
+                app:layout_constraintEnd_toEndOf="@+id/about_service"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/about_service"
+                app:layout_constraintTop_toTopOf="@+id/about_service"
+                app:srcCompat="@drawable/ic_longbar" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="47dp"
+                android:layout_marginEnd="22dp"
+                app:layout_constraintEnd_toEndOf="@+id/about_service"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/about_service"
+                app:layout_constraintTop_toTopOf="@+id/review1"
+                app:srcCompat="@drawable/ic_longbar" />
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="39.41dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/review1"
+                app:srcCompat="@drawable/ic_longbar" />
+
+            <ImageView
+                android:id="@+id/background_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/img_background" />
+
+            <TextView
+                android:id="@+id/university_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="2.36dp"
+                android:text="숭실대학교 재학"
+                android:textSize="9.5sp"
+                app:layout_constraintStart_toEndOf="@+id/dot_or3"
+                app:layout_constraintTop_toBottomOf="@+id/trainer_grade" />
+
+            <ImageView
+                android:id="@+id/trainer_grade"
+                android:layout_width="51dp"
+                android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="82dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/trainer_profile"
+                app:srcCompat="@drawable/img_gold" />
+
+            <TextView
+                android:id="@+id/distance"
+                android:layout_width="20dp"
+                android:layout_height="14dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="2dp"
+                android:text="1km"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/trainer_name" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="6.57dp"
+                android:layout_height="6.61dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="6.4dp"
+                app:layout_constraintStart_toEndOf="@+id/dot_or2"
+                app:layout_constraintTop_toBottomOf="@+id/trainer_name"
+                app:srcCompat="@drawable/ic_star" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="262.76dp"
+                android:layout_marginTop="31dp"
+                app:layout_constraintStart_toStartOf="@+id/review1"
+                app:layout_constraintTop_toTopOf="@+id/review1"
+                app:srcCompat="@drawable/ic_star" />
+
+            <TextView
+                android:id="@+id/trainer_star"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="3.43dp"
+                android:layout_marginTop="2dp"
+                android:text="4.3"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                app:layout_constraintTop_toBottomOf="@+id/trainer_name" />
+
+            <TextView
+                android:id="@+id/trainer_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="김동현"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/trainer_profile" />
+
+            <ImageView
+                android:id="@+id/trainer_profile"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="145dp"
+                android:layout_marginEnd="290dp"
+                android:layout_marginBottom="-35dp"
+                app:layout_constraintBottom_toBottomOf="@+id/background_photo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/img_trainerprofile" />
+
+            <TextView
+                android:id="@+id/dot_or2"
+                android:layout_width="3dp"
+                android:layout_height="12dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="6dp"
+                android:text="."
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/distance"
+                app:layout_constraintTop_toBottomOf="@+id/trainer_name" />
+
+            <TextView
+                android:id="@+id/dot_or3"
+                android:layout_width="3dp"
+                android:layout_height="12dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="2dp"
+                android:text="."
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/trainer_star"
+                app:layout_constraintTop_toBottomOf="@+id/trainer_name" />
+
+            <TextView
+                android:id="@+id/manage_cost"
+                android:layout_width="369dp"
+                android:layout_height="86dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="108dp"
+                android:layout_marginEnd="20dp"
+                android:background="#F8F8F8"
+                android:gravity="center_vertical|top"
+                android:paddingLeft="20dp"
+                android:paddingTop="58dp"
+                android:text="1시간"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/background_photo" />
+
+            <TextView
+                android:id="@+id/manage_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="20000"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/manage_cost"
+                app:layout_constraintEnd_toStartOf="@+id/won2"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/won1" />
+
+            <TextView
+                android:id="@+id/won2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="원"
+                app:layout_constraintBottom_toBottomOf="@+id/manage_cost"
+                app:layout_constraintEnd_toEndOf="@+id/manage_cost" />
+
+            <TextView
+                android:id="@+id/won1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="280dp"
+                android:layout_marginBottom="10dp"
+                android:text="￦"
+                app:layout_constraintBottom_toBottomOf="@+id/manage_cost"
+                app:layout_constraintStart_toStartOf="@+id/manage_cost" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="47dp"
+                android:layout_marginEnd="22dp"
+                app:layout_constraintEnd_toEndOf="@+id/manage_cost"
+                app:layout_constraintStart_toStartOf="@+id/manage_cost"
+                app:layout_constraintTop_toTopOf="@+id/manage_cost"
+                app:srcCompat="@drawable/ic_longbar" />
+
+            <TextView
+                android:id="@+id/manage_cost_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginBottom="10dp"
+                android:text="관리 비용"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView2"
+                app:layout_constraintStart_toStartOf="@+id/manage_cost" />
+
+            <TextView
+                android:id="@+id/about_me_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginBottom="10dp"
+                android:text="소개 글"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView6"
+                app:layout_constraintStart_toStartOf="@+id/about_me" />
+
+            <TextView
+                android:id="@+id/manage_cost_title4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginBottom="10dp"
+                android:text="서비스 상세 설명"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView8"
+                app:layout_constraintStart_toStartOf="@+id/about_service" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/manage_cost_title"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/manage_cost"
+                app:layout_constraintTop_toTopOf="@+id/manage_cost"
+                app:srcCompat="@drawable/ic_manage_cost" />
+
+            <ImageView
+                android:id="@+id/about_me_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/about_me_title"
+                app:layout_constraintHorizontal_bias="0.666"
+                app:layout_constraintStart_toStartOf="@+id/about_me"
+                app:layout_constraintTop_toTopOf="@+id/about_me"
+                app:srcCompat="@drawable/ic_about_me" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="17dp"
+                app:layout_constraintStart_toStartOf="@+id/about_service"
+                app:layout_constraintTop_toTopOf="@+id/about_service"
+                app:srcCompat="@drawable/ic_about_service" />
+
+            <TextView
+                android:id="@+id/review_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="92dp"
+                android:layout_marginTop="17dp"
+                android:text="2"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="@+id/review1"
+                app:layout_constraintTop_toTopOf="@+id/review1" />
+
+            <TextView
+                android:id="@+id/review2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="건"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView10"
+                app:layout_constraintStart_toEndOf="@+id/review_num" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="20dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView10"
+                app:layout_constraintStart_toStartOf="@+id/review1"
+                app:layout_constraintTop_toTopOf="@+id/review1"
+                app:srcCompat="@drawable/ic_review" />
+
+            <TextView
+                android:id="@+id/average"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="29dp"
+                android:text="평균"
+                android:textSize="10dp"
+                app:layout_constraintStart_toEndOf="@+id/imageView12"
+                app:layout_constraintTop_toTopOf="@+id/review1" />
+
+            <TextView
+                android:id="@+id/average_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="29dp"
+                android:text="4.3"
+                android:textSize="10dp"
+                app:layout_constraintStart_toEndOf="@+id/average"
+                app:layout_constraintTop_toTopOf="@+id/review1" />
+
+            <ImageButton
+                android:id="@+id/btn_about_me"
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_marginStart="167dp"
+                android:layout_marginBottom="5dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="@+id/about_me"
+                app:layout_constraintStart_toStartOf="@+id/about_me"
+                app:srcCompat="@drawable/ic_view_more"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/btn_about_service"
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_marginStart="167dp"
+                android:layout_marginBottom="5dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="@+id/about_service"
+                app:layout_constraintStart_toStartOf="@+id/about_service"
+                app:srcCompat="@drawable/ic_view_more"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="22dp"
+                android:layout_height="17.55dp"
+                android:layout_marginStart="39dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="6.86dp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/review1"
+                app:srcCompat="@drawable/ic_picture_more" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginBottom="4dp"
+                android:text="사진 및 자격증"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/imageView17"
+                app:layout_constraintStart_toEndOf="@+id/imageView7" />
+
+            <HorizontalScrollView
+                android:layout_width="439dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:fillViewport="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView17"
+                tools:ignore="SpeakableTextPresentCheck">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView18"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/img_more_pic1" />
+
+                    <ImageView
+                        android:id="@+id/imageView19"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/img_more_pic2" />
+
+                    <ImageView
+                        android:id="@+id/imageView20"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/img_more_pic3" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <ImageView
         android:id="@+id/heartbtn_border"
@@ -143,351 +592,48 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="15dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="24dp"
+        app:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/match_request_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_button_border" />
 
-    <ImageView
-        android:id="@+id/background_photo"
-        android:layout_width="wrap_content"
-        android:layout_height="191dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/img_background" />
-
-    <TextView
-        android:id="@+id/university_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="2.36dp"
-        android:text="숭실대학교 재학"
-        android:textSize="9.5sp"
-        app:layout_constraintStart_toEndOf="@+id/dot_or3"
-        app:layout_constraintTop_toBottomOf="@+id/trainer_grade" />
-
-    <ImageView
-        android:id="@+id/trainer_grade"
-        android:layout_width="51dp"
-        android:layout_height="20dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="82dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trainer_profile"
-        app:srcCompat="@drawable/img_gold" />
-
-    <TextView
-        android:id="@+id/distance"
-        android:layout_width="20dp"
-        android:layout_height="14dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="2dp"
-        android:text="1km"
-        android:textSize="10sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trainer_name" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="6.57dp"
-        android:layout_height="6.61dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="6.4dp"
-        app:layout_constraintStart_toEndOf="@+id/dot_or2"
-        app:layout_constraintTop_toBottomOf="@+id/trainer_name"
-        app:srcCompat="@drawable/ic_star" />
-
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="262.76dp"
-        android:layout_marginTop="31dp"
-        app:layout_constraintStart_toStartOf="@+id/review1"
-        app:layout_constraintTop_toTopOf="@+id/review1"
-        app:srcCompat="@drawable/ic_star" />
-
-    <TextView
-        android:id="@+id/trainer_star"
-        android:layout_width="14dp"
-        android:layout_height="14dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="3.43dp"
-        android:layout_marginTop="2dp"
-        android:text="4.3"
-        android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/trainer_name" />
-
-    <TextView
-        android:id="@+id/trainer_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="15dp"
-        android:text="김동현"
-        android:textColor="#000000"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trainer_profile" />
-
-    <ImageView
-        android:id="@+id/trainer_profile"
+    <CheckBox
+        android:id="@+id/heart_btn"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="145dp"
-        android:layout_marginEnd="290dp"
-        android:layout_marginBottom="-35dp"
-        app:layout_constraintBottom_toBottomOf="@+id/background_photo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/img_trainerprofile" />
-
-    <TextView
-        android:id="@+id/dot_or2"
-        android:layout_width="3dp"
-        android:layout_height="12dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="6dp"
-        android:text="."
-        android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/distance"
-        app:layout_constraintTop_toBottomOf="@+id/trainer_name" />
-
-    <TextView
-        android:id="@+id/dot_or3"
-        android:layout_width="3dp"
-        android:layout_height="12dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="2dp"
-        android:text="."
-        android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/trainer_star"
-        app:layout_constraintTop_toBottomOf="@+id/trainer_name" />
-
-    <TextView
-        android:id="@+id/manage_cost"
-        android:layout_width="369dp"
-        android:layout_height="86dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="108dp"
-        android:layout_marginEnd="20dp"
-        android:background="#F8F8F8"
-        android:gravity="center_vertical|top"
-        android:paddingLeft="20dp"
-        android:paddingTop="58dp"
-        android:text="1시간"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/background_photo" />
-
-    <TextView
-        android:id="@+id/manage_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="20000"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/manage_cost"
-        app:layout_constraintEnd_toStartOf="@+id/won2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/won1" />
-
-    <TextView
-        android:id="@+id/won2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="8dp"
-        android:text="원"
-        app:layout_constraintBottom_toBottomOf="@+id/manage_cost"
-        app:layout_constraintEnd_toEndOf="@+id/manage_cost" />
-
-    <TextView
-        android:id="@+id/won1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="280dp"
-        android:layout_marginBottom="8dp"
-        android:text="￦"
-        app:layout_constraintBottom_toBottomOf="@+id/manage_cost"
-        app:layout_constraintStart_toStartOf="@+id/manage_cost" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="22dp"
-        app:layout_constraintEnd_toEndOf="@+id/manage_cost"
-        app:layout_constraintStart_toStartOf="@+id/manage_cost"
-        app:layout_constraintTop_toTopOf="@+id/manage_cost"
-        app:srcCompat="@drawable/ic_longbar" />
-
-    <TextView
-        android:id="@+id/manage_cost_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text="관리 비용"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        tools:layout_editor_absoluteX="58dp" />
-
-    <TextView
-        android:id="@+id/manage_cost_title3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="10dp"
-        android:text="소개 글"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
-        app:layout_constraintStart_toStartOf="@+id/about_me" />
-
-    <TextView
-        android:id="@+id/manage_cost_title4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginBottom="10dp"
-        android:text="서비스 상세 설명"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView8"
-        app:layout_constraintStart_toEndOf="@+id/imageView9" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/manage_cost_title"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/manage_cost"
-        app:layout_constraintTop_toTopOf="@+id/manage_cost"
-        app:srcCompat="@drawable/ic_manage_cost" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/manage_cost_title3"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="@+id/about_me"
-        app:layout_constraintTop_toTopOf="@+id/about_me"
-        app:srcCompat="@drawable/ic_about_me" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="17dp"
-        app:layout_constraintStart_toStartOf="@+id/about_service"
-        app:layout_constraintTop_toTopOf="@+id/about_service"
-        app:srcCompat="@drawable/ic_about_service" />
-
-    <TextView
-        android:id="@+id/review_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="17dp"
-        android:text="2"
-        android:textSize="15dp"
-        app:layout_constraintStart_toStartOf="@+id/review1"
-        app:layout_constraintTop_toTopOf="@+id/review1" />
-
-    <TextView
-        android:id="@+id/review2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="건"
-        android:textSize="15dp"
-        app:layout_constraintStart_toEndOf="@+id/review_num"
-        tools:layout_editor_absoluteY="703dp" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="18dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="18dp"
-        app:layout_constraintStart_toStartOf="@+id/review1"
-        app:layout_constraintTop_toTopOf="@+id/review1"
-        app:srcCompat="@drawable/ic_review" />
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ic_heart"
+        android:button="@android:color/transparent"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="@+id/heartbtn_border"
+        app:layout_constraintEnd_toEndOf="@+id/heartbtn_border"
+        app:layout_constraintStart_toStartOf="@+id/heartbtn_border"
+        app:layout_constraintTop_toTopOf="@+id/heartbtn_border"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <TextView
-        android:id="@+id/average"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="29dp"
-        android:text="평균"
-        android:textSize="10dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView12"
-        app:layout_constraintTop_toTopOf="@+id/review1" />
-
-    <TextView
-        android:id="@+id/average_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="29dp"
-        android:text="4.3"
-        android:textSize="10dp"
-        app:layout_constraintStart_toEndOf="@+id/average"
-        app:layout_constraintTop_toTopOf="@+id/review1" />
+    <Button
+        android:id="@+id/match_request_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/main"
+        android:text="@string/match_request"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/heartbtn_border" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
