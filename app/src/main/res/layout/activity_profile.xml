@@ -12,7 +12,7 @@
         android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@+id/heartbtn_border"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -317,7 +317,7 @@
                 android:id="@+id/manage_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="10dp"
                 android:text="20000"
                 android:textSize="15dp"
                 app:layout_constraintBottom_toBottomOf="@+id/manage_cost"
@@ -330,7 +330,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="10dp"
                 android:text="원"
                 app:layout_constraintBottom_toBottomOf="@+id/manage_cost"
                 app:layout_constraintEnd_toEndOf="@+id/manage_cost" />
@@ -340,7 +340,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="280dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="10dp"
                 android:text="￦"
                 app:layout_constraintBottom_toBottomOf="@+id/manage_cost"
                 app:layout_constraintStart_toStartOf="@+id/manage_cost" />
@@ -373,7 +373,7 @@
                 android:id="@+id/about_me_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="36dp"
+                android:layout_marginStart="48dp"
                 android:layout_marginBottom="10dp"
                 android:text="소개 글"
                 android:textColor="@color/black"
@@ -385,13 +385,13 @@
                 android:id="@+id/manage_cost_title4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="48dp"
                 android:layout_marginBottom="10dp"
                 android:text="서비스 상세 설명"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/imageView8"
-                app:layout_constraintStart_toEndOf="@+id/imageView9" />
+                app:layout_constraintStart_toStartOf="@+id/about_service" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -457,9 +457,9 @@
                 android:layout_width="20dp"
                 android:layout_height="26dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="75dp"
-                app:layout_constraintEnd_toEndOf="@+id/review2"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView10"
                 app:layout_constraintStart_toStartOf="@+id/review1"
                 app:layout_constraintTop_toTopOf="@+id/review1"
                 app:srcCompat="@drawable/ic_review" />
@@ -540,8 +540,8 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView7" />
 
             <HorizontalScrollView
-                android:layout_width="416dp"
-                android:layout_height="1737dp"
+                android:layout_width="439dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:fillViewport="true"
