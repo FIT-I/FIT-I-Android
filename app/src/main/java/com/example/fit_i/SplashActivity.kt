@@ -8,7 +8,7 @@ import android.os.Looper
 import com.example.fit_i.databinding.ActivitySplash2Binding
 
 
-class Splash2Activity : AppCompatActivity() {
+class SplashActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivitySplash2Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
