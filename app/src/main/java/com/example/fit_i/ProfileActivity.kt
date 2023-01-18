@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import com.example.fit_i.databinding.ActivityProfileBinding
 
 class ProfileActivity :AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?){
@@ -14,7 +13,7 @@ class ProfileActivity :AppCompatActivity(){
 
         val matchRequest =findViewById<Button>(R.id.match_request_btn)
         fun moveToNextPage(){
-            val intent = Intent(this,ServiceActivity::class.java)
+            val intent = Intent(this,MatchServiceActivity::class.java)
             startActivity(intent)
         }
         matchRequest.setOnClickListener{
@@ -23,7 +22,7 @@ class ProfileActivity :AppCompatActivity(){
 
         val moreAboutMe = findViewById<ImageButton>(R.id.btn_about_me)
         fun showAboutMe(){
-            val intent = Intent(this,AboutMeActivity::class.java)
+            val intent = Intent(this,ProfileAboutMeActivity::class.java)
             startActivity(intent)
         }
         moreAboutMe.setOnClickListener{
@@ -32,7 +31,7 @@ class ProfileActivity :AppCompatActivity(){
 
         val moreAboutService = findViewById<ImageButton>(R.id.btn_about_service)
         fun showAboutService(){
-            val intent = Intent(this,AboutServiceActivity::class.java)
+            val intent = Intent(this,ProfileAboutServiceActivity::class.java)
             startActivity(intent)
         }
         moreAboutService.setOnClickListener{

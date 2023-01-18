@@ -7,17 +7,16 @@ import android.widget.CheckBox
 import android.widget.CompoundButton
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
-class PickUpActivity :AppCompatActivity(){
+class MatchPickUpActivity :AppCompatActivity(){
     private lateinit var pickup1 : CheckBox
     private lateinit var pickup2 : CheckBox
     private lateinit var buttonNext : Button
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pickup)
+        setContentView(R.layout.activity_match_pickup)
 
         pickup1 = findViewById(R.id.pickup1_btn)
         pickup2 = findViewById(R.id.pickup2_btn)
@@ -30,14 +29,14 @@ class PickUpActivity :AppCompatActivity(){
         //뒤로가기
         val goBack = findViewById<ImageButton>(R.id.back_arrow)
         goBack.setOnClickListener{
-            val intent = Intent(this,DateChooseActivity::class.java)
+            val intent = Intent(this,MatchDateChooseActivity::class.java)
             startActivity(intent)
             finish()
         }
         //픽업 다음 단계로 이동
         val nextStep = findViewById<TextView>(R.id.button_next)
         nextStep.setOnClickListener{
-            val intent = Intent(this,CheckMatchingActivity::class.java)
+            val intent = Intent(this,MatchCheckActivity::class.java)
             startActivity(intent)
             finish()
         }

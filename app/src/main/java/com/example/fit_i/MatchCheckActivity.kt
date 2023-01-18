@@ -1,25 +1,19 @@
 package com.example.fit_i
 
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.text.Layout
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.fit_i.databinding.ActivityCheckMatching1Binding
+import com.example.fit_i.databinding.ActivityMatchCheck1Binding
 
-class CheckMatchingActivity :AppCompatActivity(){
-    private lateinit var binding:ActivityCheckMatching1Binding
+class MatchCheckActivity :AppCompatActivity(){
+    private lateinit var binding:ActivityMatchCheck1Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityCheckMatching1Binding.inflate(layoutInflater)
-        setContentView(R.layout.activity_check_matching1)
+        binding = ActivityMatchCheck1Binding.inflate(layoutInflater)
+        setContentView(R.layout.activity_match_check1)
 
         val btnNext: Button = findViewById(R.id.btn_next)
         btnNext.setOnClickListener{
@@ -30,7 +24,7 @@ class CheckMatchingActivity :AppCompatActivity(){
     //뒤로가기
         val goBack = findViewById<ImageButton>(R.id.back_arrow)
         goBack.setOnClickListener{
-            val intent = Intent(this,PickUpActivity::class.java)
+            val intent = Intent(this,MatchPickUpActivity::class.java)
             startActivity(intent)
             finish()
 

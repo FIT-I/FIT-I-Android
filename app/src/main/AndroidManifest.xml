@@ -142,42 +142,42 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".CheckMatchingActivity"
+            android:name=".MatchCheckActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ServiceActivity"
+            android:name=".MatchServiceActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".DateChooseActivity"
+            android:name=".MatchDateChooseActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".PickUpActivity"
+            android:name=".MatchPickUpActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".AboutMeActivity"
+            android:name=".ProfileAboutMeActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".AboutServiceActivity"
+            android:name=".ProfileAboutServiceActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

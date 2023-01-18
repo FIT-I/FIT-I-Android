@@ -7,14 +7,13 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.CompoundButton
 import android.widget.ImageButton
-import android.widget.TextView
 
-class ServiceActivity :AppCompatActivity(){
+class MatchServiceActivity :AppCompatActivity(){
     private lateinit var checkBox: CheckBox
     private lateinit var buttonNext : Button
     override fun onCreate(savedInstanceState:Bundle?){
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_service)
+        setContentView(R.layout.activity_match_service)
 
         checkBox = findViewById(R.id.checkBox)
         buttonNext=findViewById(R.id.button_next)
@@ -35,7 +34,7 @@ class ServiceActivity :AppCompatActivity(){
 
 
         buttonNext.setOnClickListener{
-            val intent = Intent(this,DateChooseActivity::class.java)
+            val intent = Intent(this,MatchDateChooseActivity::class.java)
             startActivity(intent)
             finish()
         }

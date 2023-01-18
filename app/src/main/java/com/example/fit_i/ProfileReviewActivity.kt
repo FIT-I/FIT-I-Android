@@ -4,14 +4,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.fit_i.databinding.ActivityReviewBinding
 
-class ReviewActivity:AppCompatActivity() {
+class ProfileReviewActivity:AppCompatActivity() {
     //private lateinit var binding: ActivityReviewBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_review)
+        setContentView(R.layout.activity_profile_review)
 //        binding = ActivityReviewBinding.inflate(layoutInflater)
 
         val rvReview : RecyclerView = findViewById(R.id.rv_review)

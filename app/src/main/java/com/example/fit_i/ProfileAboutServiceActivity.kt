@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 
-class AboutServiceActivity : AppCompatActivity() {
+class ProfileAboutServiceActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_about_service)
+        setContentView(R.layout.activity_profile_about_service)
         val goBack = findViewById<ImageButton>(R.id.back_arrow)
         goBack.setOnClickListener{
             val intent = Intent(this,ProfileActivity::class.java)
