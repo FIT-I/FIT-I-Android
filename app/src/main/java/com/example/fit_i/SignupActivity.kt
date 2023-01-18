@@ -44,6 +44,12 @@ class SignupActivity : AppCompatActivity() {
                 //입력값 담기
                 name = etName.text.toString()
 
+                //stroke 색상변경
+                if(name.isNotEmpty())
+                    etName.setBackgroundResource(R.drawable.edittext_border)
+                else
+                    etName.setBackgroundResource(R.drawable.edittext_border_not)
+
                 //값 유무에 따른 활성화 여부
                 btnFinSignUp.isEnabled = isTrue() //있다면 true 없으면 false
             }
@@ -57,6 +63,13 @@ class SignupActivity : AppCompatActivity() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 //입력값 담기
                 email = etEmail.text.toString()
+
+
+                //stroke 색상변경
+                if(email.isNotEmpty())
+                    etEmail.setBackgroundResource(R.drawable.edittext_border)
+                else
+                    etEmail.setBackgroundResource(R.drawable.edittext_border_not)
 
                 //값 유무에 따른 활성화 여부
                 btnFinSignUp.isEnabled = isTrue() //있다면 true 없으면 false
@@ -72,6 +85,11 @@ class SignupActivity : AppCompatActivity() {
                 //입력값 담기
                 pw = etPW.text.toString()
 
+                //stroke 색상변경
+                if(pw.isNotEmpty())
+                    etPW.setBackgroundResource(R.drawable.edittext_border)
+                else
+                    etPW.setBackgroundResource(R.drawable.edittext_border_not)
                 //값 유무에 따른 활성화 여부
                 btnFinSignUp.isEnabled = isTrue() //있다면 true 없으면 false
             }
@@ -85,6 +103,12 @@ class SignupActivity : AppCompatActivity() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 //입력값 담기
                 pw2 = etPW2.text.toString()
+
+                //stroke 색상변경
+                if(pw2.isNotEmpty())
+                    etPW2.setBackgroundResource(R.drawable.edittext_border)
+                else
+                    etPW2.setBackgroundResource(R.drawable.edittext_border_not)
 
                 //값 유무에 따른 활성화 여부
                 btnFinSignUp.isEnabled = isTrue() //있다면 true 없으면 false

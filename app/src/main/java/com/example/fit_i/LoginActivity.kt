@@ -1,16 +1,17 @@
 package com.example.fit_i
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
+import android.view.View.OnFocusChangeListener
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.databinding.ActivityLoginBinding
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
-
 import com.kakao.sdk.common.model.AuthErrorCause.*
 import com.navercorp.nid.NaverIdLoginSDK
 import com.navercorp.nid.oauth.NidOAuthLogin
@@ -143,6 +144,7 @@ class LoginActivity : AppCompatActivity() {
 
         //EditText 값 있을때만 버튼 활성화
         etEmail.addTextChangedListener(object: TextWatcher {
+
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             //값 변경 시 실행되는 함수
@@ -150,11 +152,39 @@ class LoginActivity : AppCompatActivity() {
                 //입력값 담기
                 email = etEmail.text.toString()
 
+
+                //stroke 색상변경
+                if(email.isNotEmpty())
+                    etEmail.setBackgroundResource(R.drawable.edittext_border)
+                else
+                    etEmail.setBackgroundResource(R.drawable.edittext_border_not)
+
                 //값 유무에 따른 활성화 여부
                 btnLogin.isEnabled = isTrue() //있다면 true 없으면 false
             }
-            override fun afterTextChanged(p0: Editable?) {}
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
         })
+//        if(focus>0){
+//            etEmail.isFocusable=true
+//        }
+//        var focus :Int = 0
+//
+//        etEmail.onFocusChangeListener = OnFocusChangeListener { v, gainFocus ->
+//            //포커스가 주어졌을 때 동작
+//            if (gainFocus) {
+//                focus++
+//                //etEmail.isFocusable=true
+//                //to do
+//                //원하는 동작
+//            }
+//
+//
+//        }
+//
+//        if(focus>0)
+//            etEmail.isFocusable=true
 
         //EditText 값 있을때만 버튼 활성화
         etPW.addTextChangedListener(object: TextWatcher {
@@ -164,6 +194,12 @@ class LoginActivity : AppCompatActivity() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 //입력값 담기
                 pw = etPW.text.toString()
+
+                //stroke 색상변경
+                if(pw.isNotEmpty())
+                    etPW.setBackgroundResource(R.drawable.edittext_border)
+                else
+                    etPW.setBackgroundResource(R.drawable.edittext_border_not)
 
                 //값 유무에 따른 활성화 여부
                 btnLogin.isEnabled = isTrue() //있다면 true 없으면 false
@@ -189,6 +225,13 @@ class LoginActivity : AppCompatActivity() {
 
 
 
+
+    }
+
+    private fun isTrue(): Boolean {
+        return email.isNotEmpty()&&pw.isNotEmpty()
+    }
+    private fun isStroke(){
 
     }
 
@@ -306,7 +349,4 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun isTrue(): Boolean {
-        return email.isNotEmpty()&&pw.isNotEmpty()
-    }
 }

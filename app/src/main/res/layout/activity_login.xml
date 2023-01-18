@@ -48,7 +48,7 @@
             android:hint="아이디"
             android:padding="10dp"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/edittext_border"
+            android:background="@drawable/edittext_border_not"
             android:textColorHint="#B0BAD1"
             android:textColor="@color/main"
             android:inputType="textEmailAddress"
@@ -63,7 +63,7 @@
             android:ems="10"
             android:hint="비밀번호"
             android:padding="10dp"
-            android:background="@drawable/edittext_border"
+            android:background="@drawable/edittext_border_not"
             android:textColorHint="#B0BAD1"
             android:textColor="@color/main"
             android:inputType="textPassword" />
