@@ -40,6 +40,13 @@ class FindPwActivity : AppCompatActivity() {
                 //입력값 담기
                 emailF = etEmailF.text.toString()
 
+
+                //stroke 색상변경
+                if(emailF.isNotEmpty())
+                    etEmailF.setBackgroundResource(R.drawable.edittext_border)
+                else
+                    etEmailF.setBackgroundResource(R.drawable.edittext_border_not)
+
                 //값 유무에 따른 활성화 여부
                 btnFindPw.isEnabled = emailF.isNotEmpty()
 
@@ -59,6 +66,15 @@ class FindPwActivity : AppCompatActivity() {
                 tempPW = etTempPwF.text.toString()
                 if (btnFindPw.text=="임시 비밀번호 발급")
                         btnFindPw.text="로그인"
+
+
+                //stroke 색상변경
+                if(tempPW.isNotEmpty())
+                    etTempPwF.setBackgroundResource(R.drawable.edittext_border)
+                else
+                    etTempPwF.setBackgroundResource(R.drawable.edittext_border_not)
+
+
                 btnFindPw.setOnClickListener {
                     letgo()
                 }
