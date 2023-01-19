@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fit_i.databinding.FragmentHomePtBinding
@@ -12,10 +11,6 @@ import com.example.fit_i.databinding.FragmentHomePtBinding
 
 class HomePtFragment : Fragment() {
     private lateinit var binding: FragmentHomePtBinding
-
-
-    //private lateinit var tvSort: TextView
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,70 +36,20 @@ class HomePtFragment : Fragment() {
         val linearLayoutManager = LinearLayoutManager(context)
         binding.rvTrainer.layoutManager=linearLayoutManager
 
-        //tvSort = findViewById(R.id.resultText)
 
         binding.tvSort.text = "실시간 순"
-
-        /*
-        val dialog: BottomSheetDialog = BottomSheetDialog(this)
-        dialog.setContentView(R.layout.bottom_sheet)
-
-        val tv = dialog.findViewById<TextView>(R.id.content)
-        tv?.setOnClickListener {
-            Toast.makeText("내용을 클릭하였습니다", Toast.LENGTH_LONG).show()
-            dialog.dismiss()
-        }
-        dialog.show()
-*/
-
-        binding.llSort.setOnClickListener {
-            val bottomSheet: BottomSheetFragment = BottomSheetFragment {
-                when (it) {
-                    0 -> {Toast.makeText(activity,"실시간 순", Toast.LENGTH_SHORT).show()
-                    binding.tvSort.text="실시간 순"}
-                    1 -> {
-                        Toast.makeText(activity, "트레이너 레벨 순", Toast.LENGTH_SHORT).show()
-                        binding.tvSort.text="트레이너 순"}
-
-                    2 -> {
-                        Toast.makeText(activity, "낮은 가격 순", Toast.LENGTH_SHORT).show()
-                        binding.tvSort.text="낮은 가격 순"}
-                    3 -> {
-                        Toast.makeText(activity, "높은 가격 순", Toast.LENGTH_SHORT).show()
-                        binding.tvSort.text="높은 가격 순"}
+        binding.llSort.setOnClickListener(){
+            val bottomSheet = BottomSheetFragment{
+                when (it){
+                    0 -> binding.tvSort.text = "실시간 순"
+                    1 -> binding.tvSort.text = "트레이너 레벨 순"
+                    2 -> binding.tvSort.text = "가격 낮은 순"
+                    3 -> binding.tvSort.text = "가격 높은 순"
                 }
             }
-            activity?.let { it1 -> bottomSheet.show(it1.supportFragmentManager, bottomSheet.tag) }
-        }
-
-
-
-
-/*
-        binding.llSort.setOnClickListener {
-            val bottomSheet: BottomSheetFragment = BottomSheetFragment{
-                when (it) {
-                    0 -> Toast.makeText(this, "추천순", Toast.LENGTH_SHORT).show()
-                    1 -> Toast.makeText(this, "리뷰순", Toast.LENGTH_SHORT).show()
-                }
-            }
-            activity?.let { it1 -> bottomSheet.show(it1.supportFragmentManager, bottomSheet.tag) }
-        }*/
-            //activity?.supportFragmentManager?.let { it1 -> bottomSheet.show(it1, bottomSheet.tag) }
-        //}
-/*
-        binding.llSort.setOnClickListener { content ->
-            val bottomSheet = BottomSheetFragment()
-            activity?.supportFragmentManager?.let { it1 -> bottomSheet.show(it1, BottomSheetFragment.TAG) }
-            //선택한 값 불러와야함
-            //위에 택스트가 바뀌어야함
-            //binding.tvSort.text= select
-
-            binding.tvSort.text = content.toString()
-
-
+            activity?.let { it1 -> bottomSheet.show(it1.supportFragmentManager,bottomSheet.tag) }
         } //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함
-*/
+
         return binding.root
     }
 }
