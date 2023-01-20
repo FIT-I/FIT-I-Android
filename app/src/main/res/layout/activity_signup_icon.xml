@@ -37,6 +37,7 @@
             android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
+            android:button="@null"
             android:background="@drawable/icon_selector"/>
         <CheckBox
             android:id="@+id/cb_icon2"
@@ -44,6 +45,7 @@
             android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
+            android:button="@null"
             android:background="@drawable/icon_selector"
             android:src="@drawable/img_char2" />
         <CheckBox
@@ -52,6 +54,7 @@
             android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
+            android:button="@null"
             android:background="@drawable/icon_selector"
             android:src="@drawable/img_char3" />
         <CheckBox
@@ -60,6 +63,7 @@
             android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
+            android:button="@null"
             android:background="@drawable/icon_selector"
             android:src="@drawable/img_char4" />
         <CheckBox
@@ -68,6 +72,7 @@
             android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
+            android:button="@null"
             android:background="@drawable/icon_selector"
             android:src="@drawable/img_char5" />
         <CheckBox
@@ -76,6 +81,7 @@
             android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:layout_margin="8dp"
+            android:button="@null"
             android:background="@drawable/icon_selector"
             android:src="@drawable/img_char6" />
     </GridLayout>

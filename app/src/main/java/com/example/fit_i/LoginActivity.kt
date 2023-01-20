@@ -1,16 +1,17 @@
 package com.example.fit_i
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
-import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
+import android.view.View
+import android.view.View.OnFocusChangeListener
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.databinding.ActivityLoginBinding
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
-
 import com.kakao.sdk.common.model.AuthErrorCause.*
 import com.navercorp.nid.NaverIdLoginSDK
 import com.navercorp.nid.oauth.NidOAuthLogin
@@ -24,14 +25,23 @@ class LoginActivity : AppCompatActivity() {
 
     private val TAG = this.javaClass.simpleName
 
-    private var email: String = ""
-    private var gender: String = ""
-    private var name: String = ""
+//    private var email: String = ""
+//    private var gender: String = ""
+//    private var name: String = ""
+
+    var email : String=""
+    var pw: String=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         binding = ActivityLoginBinding.inflate(layoutInflater)
+
+        val etEmail : EditText = findViewById(R.id.et_emailL)
+        val etPW : EditText = findViewById(R.id.et_pwL)
+
+        val btnLogin : Button = findViewById(R.id.btn_login)
+
 
         //val keyHash = Utility.getKeyHash(this)
         //Log.e("해시키", keyHash)
@@ -128,10 +138,79 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
 
+
+        //버튼 비활성화
+        btnLogin.isEnabled = false
+
+        //EditText 값 있을때만 버튼 활성화
+        etEmail.addTextChangedListener(object: TextWatcher {
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            //값 변경 시 실행되는 함수
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                //입력값 담기
+                email = etEmail.text.toString()
+
+
+                //stroke 색상변경
+                if(email.isNotEmpty())
+                    etEmail.setBackgroundResource(R.drawable.edittext_border)
+                else
+                    etEmail.setBackgroundResource(R.drawable.edittext_border_not)
+
+                //값 유무에 따른 활성화 여부
+                btnLogin.isEnabled = isTrue() //있다면 true 없으면 false
+            }
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+        })
+//        if(focus>0){
+//            etEmail.isFocusable=true
+//        }
+//        var focus :Int = 0
+//
+//        etEmail.onFocusChangeListener = OnFocusChangeListener { v, gainFocus ->
+//            //포커스가 주어졌을 때 동작
+//            if (gainFocus) {
+//                focus++
+//                //etEmail.isFocusable=true
+//                //to do
+//                //원하는 동작
+//            }
+//
+//
+//        }
+//
+//        if(focus>0)
+//            etEmail.isFocusable=true
+
+        //EditText 값 있을때만 버튼 활성화
+        etPW.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            //값 변경 시 실행되는 함수
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                //입력값 담기
+                pw = etPW.text.toString()
+
+                //stroke 색상변경
+                if(pw.isNotEmpty())
+                    etPW.setBackgroundResource(R.drawable.edittext_border)
+                else
+                    etPW.setBackgroundResource(R.drawable.edittext_border_not)
+
+                //값 유무에 따른 활성화 여부
+                btnLogin.isEnabled = isTrue() //있다면 true 없으면 false
+            }
+            override fun afterTextChanged(p0: Editable?) {}
+        })
+
+
         //로그인 버튼 -> 메인
         //회원여부 판단하는 코드 작성 필요
-        val Login = findViewById<TextView>(R.id.btn_login)
-        Login.setOnClickListener {
+        btnLogin.setOnClickListener {
             val intent = Intent(this, LoginSplashActivity::class.java)
             startActivity(intent)  // 화면 전환을 시켜줌
             finish()
@@ -143,6 +222,17 @@ class LoginActivity : AppCompatActivity() {
 //        binding.tvNaverDeleteToken.setOnClickListener {
 //            startNaverDeleteToken()
 //        }
+
+
+
+
+    }
+
+    private fun isTrue(): Boolean {
+        return email.isNotEmpty()&&pw.isNotEmpty()
+    }
+    private fun isStroke(){
+
     }
 
     /**
@@ -257,65 +347,6 @@ class LoginActivity : AppCompatActivity() {
 //            binding.tvResult.text = ""
 //        }
         }
-
-//
-//
-//        val naver_login_button = findViewById<ImageButton>(R.id.naver_Login_Button) // 로그인 버튼
-//
-//        naver_login_button.setOnClickListener {
-//            if (LoginClient.instance.isKakaoTalkLoginAvailable(this)) {
-//                LoginClient.instance.loginWithKakaoTalk(this, callback = callback)
-//            } else {
-//                LoginClient.instance.loginWithKakaoAccount(this, callback = callback)
-//            }
-//        }
-//
-//
-//        //네이버 로그인
-//        binding.run {
-//            naverLoginButton.setOnClickListener {
-//                val oAuthLoginCallback = object : OAuthLoginCallback {
-//                    override fun onSuccess() {
-//                        // 네이버 로그인 API 호출 성공 시 유저 정보를 가져온다
-//                        NidOAuthLogin().callProfileApi(object :
-//                            NidProfileCallback<NidProfileResponse> {
-//                            override fun onSuccess(result: NidProfileResponse) {
-//                                name = result.profile?.name.toString()
-//                                email = result.profile?.email.toString()
-//                                gender = result.profile?.gender.toString()
-//                                Log.e(TAG, "네이버 로그인한 유저 정보 - 이름 : $name")
-//                                Log.e(TAG, "네이버 로그인한 유저 정보 - 이메일 : $email")
-//                                Log.e(TAG, "네이버 로그인한 유저 정보 - 성별 : $gender")
-//                            }
-//
-//                            override fun onError(errorCode: Int, message: String) {
-//                                //
-//                            }
-//
-//                            override fun onFailure(httpStatus: Int, message: String) {
-//                                //
-//                            }
-//                        })
-//                    }
-//
-//                    override fun onError(errorCode: Int, message: String) {
-//                        val naverAccessToken = NaverIdLoginSDK.getAccessToken()
-//                        Log.e(TAG, "naverAccessToken : $naverAccessToken")
-//                    }
-//
-//                    override fun onFailure(httpStatus: Int, message: String) {
-//                        //
-//                    }
-//                }
-//
-//                NaverIdLoginSDK.initialize(
-//                    this@LoginActivity,
-//                    getString(R.string.naver_client_id),
-//                    getString(R.string.naver_client_secret),
-//                    "FIT-I"
-//                )
-//                NaverIdLoginSDK.authenticate(this@LoginActivity, oAuthLoginCallback)
-//            }
-//        }
     }
+
 }
