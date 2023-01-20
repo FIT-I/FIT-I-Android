@@ -22,7 +22,7 @@ class MatchCheckActivity :AppCompatActivity(){
 
         }
     //뒤로가기
-        val goBack = findViewById<ImageButton>(R.id.back_arrow)
+        val goBack = findViewById<ImageButton>(R.id.ib_back_arrow)
         goBack.setOnClickListener{
             val intent = Intent(this,MatchPickUpActivity::class.java)
             startActivity(intent)
