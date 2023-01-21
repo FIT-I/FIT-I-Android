@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatButton
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.FragmentTransaction
 
 class MypageSiginoutFragment : Fragment() {
@@ -32,21 +33,21 @@ class MypageSiginoutFragment : Fragment() {
         }
 
 
-//
-//    btnwithdraw2.setOnClickListener {
-//        showAccountDialog()
-//
-//    }
+
+        btnwithdraw2.setOnClickListener {
+            showAccountDialog()
+
+        }
 
 
         return bb
 
 
     }
+
+    private fun showAccountDialog() {
+        AccountDialog(requireContext()) {
+
+        }.show()
+    }
 }
-//    private fun showAccountDialog() {
-//        AccountDialog(requireContext()){
-//
-//        }.show()
-//    }
-//}

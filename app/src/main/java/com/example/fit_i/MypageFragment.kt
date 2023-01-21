@@ -46,31 +46,32 @@ class MypageFragment : Fragment() {
             val mypageLikelistFragment = MypageLikelistFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
 
+
             transaction.replace(R.id.fl_container, mypageLikelistFragment)
             transaction.commit()
         }
         // 공지사항
         ivnextnotice.setOnClickListener {
-            val mypageLikelistFragment = MypageLikelistFragment()
+            val mypageNoticeFragment = MypageNoticeFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
 
-            transaction.replace(R.id.fl_container, mypageLikelistFragment)
+            transaction.replace(R.id.fl_container, mypageNoticeFragment)
             transaction.commit()
         }
         //프로필 수정
         tvgotoprofile.setOnClickListener {
-            val mypageLikelistFragment = MypageLikelistFragment()
+            val mypageModifyProfileFragment = MypageModifyProfileFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
 
-            transaction.replace(R.id.fl_container, mypageLikelistFragment)
+            transaction.replace(R.id.fl_container, mypageModifyProfileFragment)
             transaction.commit()
         }
         //이용약관
         ivnextpermisson.setOnClickListener {
-            val mypageLikelistFragment = MypageLikelistFragment()
+            val mypagepermissonFragment = MypagepermissonFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
 
-            transaction.replace(R.id.fl_container, mypageLikelistFragment)
+            transaction.replace(R.id.fl_container, mypagepermissonFragment)
             transaction.commit()
         }
         //매칭 후기 작성하기

@@ -11,7 +11,7 @@
         android:layout_height="25dp"
         android:layout_margin="50dp"
         android:layout_marginStart="10dp"
-        android:background="@android:color/transparent"
+        android:background="@null"
         android:backgroundTint="@color/main"
         android:scaleType="fitStart"
         android:src="@drawable/ic_pre"
@@ -20,16 +20,15 @@
 
     <TextView
         android:id="@+id/tv_review_ing"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/main"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/ib_pre6"
         app:layout_constraintBottom_toBottomOf="@+id/ib_pre6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="매칭 후기 남기기"
-        android:textSize="20sp"
-        android:textColor="@color/main"
-        android:textStyle="bold"/>
+        android:text="매칭 후기 남기기"  android:layout_height="wrap_content"
+        android:layout_width="wrap_content"/>
     <ImageView
         android:id="@+id/iv_line4"
         android:layout_width="match_parent"
@@ -60,62 +59,17 @@
             android:text="별점"
             android:textColor="@color/main"/>
 
-        <ImageButton
-            android:id="@+id/iv_s1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_margin="5dp"
-            android:scaleType="fitCenter"
-            android:background="transparent"
-            android:src="@drawable/star_review"
-            app:layout_constraintTop_toTopOf="@+id/tv_star"
+        <com.willy.ratingbar.RotationRatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/tv_star"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_star"
+            app:srb_stepSize="0.5"
+            app:srb_drawableEmpty="@drawable/review_1"
+            app:srb_drawableFilled="@drawable/review_2" />
 
-        <ImageButton
-            android:id="@+id/iv_s2"
-            android:layout_margin="5dp"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:scaleType="fitCenter"
-            android:background="transparent"
-            android:src="@drawable/star_review"
-            app:layout_constraintTop_toTopOf="@+id/tv_star"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_star"
-            app:layout_constraintEnd_toStartOf="@+id/iv_s1"/>
-        <ImageButton
-            android:id="@+id/iv_s3"
-            android:layout_margin="5dp"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:scaleType="fitCenter"
-            android:background="transparent"
-            android:src="@drawable/star_review"
-            app:layout_constraintTop_toTopOf="@+id/tv_star"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_star"
-            app:layout_constraintEnd_toStartOf="@+id/iv_s2"/>
-        <ImageButton
-            android:id="@+id/iv_s4"
-            android:layout_margin="5dp"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:scaleType="fitCenter"
-            android:background="transparent"
-            android:src="@drawable/star_review"
-            app:layout_constraintTop_toTopOf="@+id/tv_star"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_star"
-            app:layout_constraintEnd_toStartOf="@+id/iv_s3"/>
-        <ImageButton
-            android:id="@+id/iv_s5"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_margin="5dp"
-            android:scaleType="fitCenter"
-            android:background="transparent"
-            android:src="@drawable/star_review"
-            app:layout_constraintTop_toTopOf="@+id/tv_star"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_star"
-            app:layout_constraintEnd_toStartOf="@+id/iv_s4"/>
+
         <ImageView
             android:id="@+id/iv_line5"
             android:layout_width="match_parent"
@@ -151,11 +105,24 @@
             android:paddingTop="10dp"
             app:layout_constraintTop_toBottomOf="@+id/iv_line6"
             app:layout_constraintStart_toStartOf="parent"
-            android:background="transparent"/>
+            android:background="@null"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <Button
+        android:id="@+id/btn_review_ing"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rectangle"
+        android:text="작성완료"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="25dp"/>
 
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-  </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,8 +26,19 @@ class MypageSettingFragment :Fragment() {
     ): View? {
 
         val ee = inflater.inflate(R.layout.fragment_mypage_setting, container, false)
+        val ibpre = ee.findViewById<View>(R.id.ib_pre1)
         val btnlogout = ee.findViewById<View>(R.id.btn_logout) as AppCompatButton
         val btnwithdraw = ee.findViewById<View>(R.id.btn_withdraw) as AppCompatButton
+
+        ibpre.setOnClickListener{
+            val mypageFragment = MypageFragment()
+            val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
+
+            //이전 화면으로 이동
+            transaction.replace(R.id.fl_container,mypageFragment)
+            transaction.commit()
+
+        }
 
         btnlogout.setOnClickListener {
             showProfileDialog()

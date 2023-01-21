@@ -29,7 +29,8 @@
         android:src="@drawable/ic_gearshape"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_mypage" />
+        app:layout_constraintTop_toTopOf="@+id/tv_mypage"
+        tools:ignore="SpeakableTextPresentCheck"/>
 
     <ImageView
         android:id="@+id/iv_profileM"

@@ -19,7 +19,8 @@
         android:src="@drawable/ic_pre"
         android:layout_margin="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck"/>
 
     <TextView
         android:id="@+id/tv_profileModify"
@@ -27,7 +28,7 @@
         android:layout_height="wrap_content"
         android:text="프로필 수정"
         android:textColor="@color/main"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/ib_pre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,30 +43,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         
         <FrameLayout
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <ImageButton
+            <CheckBox
+                android:id="@+id/btn_pf1"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:background="@drawable/prof1_selector"/>
+                android:button="@null"
+                android:background="@drawable/prof1_selector"
+                android:checked="true"/>
             <ImageView
                 android:src="@drawable/img_f1"
                 android:layout_width="37dp"
                 android:layout_height="64dp"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center" />
 
         </FrameLayout>
         <FrameLayout
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <ImageButton
+            <CheckBox
+                android:id="@+id/btn_pf2"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:background="@drawable/prof1_selector"/>
+                android:button="@null"
+                android:background="@drawable/prof1_selector" />
             <ImageView
                 android:src="@drawable/img_f2"
                 android:layout_width="37dp"
@@ -77,10 +84,12 @@
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <ImageButton
+            <CheckBox
+                android:id="@+id/btn_pf3"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:background="@drawable/prof1_selector"/>
+                android:button="@null"
+                android:background="@drawable/prof1_selector" />
             <ImageView
                 android:src="@drawable/img_profile3"
                 android:layout_width="37dp"
@@ -103,10 +112,12 @@
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <ImageButton
+            <CheckBox
+                android:id="@+id/btn_pf4"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:background="@drawable/prof1_selector"/>
+                android:button="@null"
+                android:background="@drawable/prof1_selector" />
             <ImageView
                 android:src="@drawable/img_profile4"
                 android:layout_width="37dp"
@@ -118,25 +129,30 @@
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <ImageButton
+            <CheckBox
+                android:id="@+id/btn_pf5"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:background="@drawable/prof1_selector"/>
+                android:button="@null"
+                android:background="@drawable/prof1_selector" />
             <ImageView
                 android:src="@drawable/img_profile5"
                 android:layout_width="37dp"
                 android:layout_height="64dp"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                tools:ignore="SpeakableTextPresentCheck"/>
 
         </FrameLayout>
         <FrameLayout
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <ImageButton
+            <CheckBox
+                android:id="@+id/btn_pf6"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:background="@drawable/prof1_selector"/>
+                android:button="@null"
+                android:background="@drawable/prof1_selector" />
             <ImageView
                 android:src="@drawable/img_profile6"
                 android:layout_width="37dp"
@@ -172,7 +188,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="기본정보"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/main"
         android:layout_marginStart="30dp"

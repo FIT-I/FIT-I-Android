@@ -17,16 +17,18 @@
         android:layout_margin="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/logout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:scaleType="fitCenter"
         android:layout_width="209dp"
         android:layout_height="187dp"
-        android:src="@drawable/img_log" />
+        android:scaleType="fitCenter"
+        android:src="@drawable/img_log"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.402" />
 
     <TextView
         android:id="@+id/tv_logout"

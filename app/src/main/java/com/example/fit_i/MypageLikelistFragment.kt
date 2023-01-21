@@ -1,5 +1,6 @@
 package com.example.fit_i
 
+import android.graphics.Insets.add
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -31,6 +32,8 @@ class MypageLikelistFragment : Fragment() {
         binding.rcLikelist.adapter = likelistAdapter
         var linearLayoutManager = LinearLayoutManager(context)
         binding.rcLikelist.layoutManager = linearLayoutManager
+
+
 
         return binding.root
 
