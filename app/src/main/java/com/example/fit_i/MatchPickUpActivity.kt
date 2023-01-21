@@ -35,12 +35,23 @@ class MatchPickUpActivity :AppCompatActivity(){
         }
         //픽업 다음 단계로 이동
         val nextStep = findViewById<TextView>(R.id.btn_next_step)
+//        nextStep.setOnClickListener{
+//            val intent = Intent(this,MatchCheckActivity2::class.java)
+//            startActivity(intent)
+//            finish()
+//        }
         nextStep.setOnClickListener{
-            val intent = Intent(this,MatchCheckActivity::class.java)
-            startActivity(intent)
-            finish()
+            if(pickup1.isChecked){
+                val intent = Intent(this,MatchCheckActivity1::class.java)
+                startActivity(intent)
+                finish()
+            }
+            else{
+                val intent = Intent(this, MatchCheckActivity2::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
-
 
     }
     private fun onCheckChanged(compoundButton: CompoundButton){
