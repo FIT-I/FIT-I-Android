@@ -50,16 +50,20 @@ class MatchPickUpActivity :AppCompatActivity(){
                     pickup2.isChecked = false
                     buttonNext.isEnabled = true
                 }
+                else{
+                    buttonNext.isEnabled = false
+                }
             }
             R.id.btn_pickup2->{
                 if(pickup2.isChecked){
                     pickup1.isChecked = false
                     buttonNext.isEnabled = true
                 }
+                else{
+                    buttonNext.isEnabled = false
+                }
             }
 
         }
-        buttonNext.isEnabled = pickup1.isChecked
-        buttonNext.isEnabled = pickup2.isChecked
     }
 }
