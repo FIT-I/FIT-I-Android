@@ -94,21 +94,18 @@
             android:text="  내 매칭 관리"
             android:gravity="center_vertical"
             android:background="@drawable/rectangle" />
+        <Switch
+            android:id="@+id/swt_my"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center"
+            android:layout_marginEnd="25dp"
+            android:track="@drawable/switch_my"
+            android:thumb="@drawable/switch_my_one"/>
 
-<!--        <Switch-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_gravity="right"/>-->
 
 
-        <TextView
-            android:id="@+id/ImageView02"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:text="OFF"
-            android:textColor="@color/main"
-            android:layout_marginEnd="30dp"
-            android:layout_gravity="center|right"/>
+
     </FrameLayout>
 <!--    <FrameLayout-->
 <!--        android:id="@+id/fl"-->

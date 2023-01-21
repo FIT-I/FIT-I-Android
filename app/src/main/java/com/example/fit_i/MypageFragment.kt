@@ -1,5 +1,6 @@
 package com.example.fit_i
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.provider.ContactsContract.CommonDataKinds.Im
 import androidx.fragment.app.Fragment
@@ -7,8 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.CompoundButton
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.RadioGroup.OnCheckedChangeListener
+import android.widget.Switch
 import android.widget.TextView
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -16,6 +20,7 @@ import androidx.fragment.app.FragmentTransaction
 class MypageFragment : Fragment() {
 
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,6 +35,9 @@ class MypageFragment : Fragment() {
         val ivnextpermisson = vv.findViewById<View>(R.id.iv_next_permisson) as ImageView
         val tvgotoprofile = vv.findViewById<View>(R.id.tv_go_modifyProfile) as TextView
         val ivnextreview = vv.findViewById<View>(R.id.iv_next_review) as ImageView
+        val swtmy = vv.findViewById<View>(R.id.swt_my) as Switch
+
+
 
 
         //설정
@@ -82,6 +90,16 @@ class MypageFragment : Fragment() {
             transaction.replace(R.id.fl_container, mypageReviewBinding)
             transaction.commit()
         }
+        swtmy.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener{
+            override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+                if (isChecked){
+
+                }
+                else{
+
+                }
+            }
+        })
 
 
 
