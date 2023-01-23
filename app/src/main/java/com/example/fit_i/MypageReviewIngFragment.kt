@@ -9,12 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import com.example.fit_i.databinding.FragmentMypageReviewBinding
-import com.example.fit_i.databinding.FragmentMypageReviewIngBinding
+import android.widget.ImageButton
+import androidx.fragment.app.FragmentTransaction
 
 
-class MypageReview : Fragment() {
-    private lateinit var binding: FragmentMypageReviewIngBinding
+class MypageReviewIngFragment : Fragment() {
     var review : String = ""
 
 
@@ -22,10 +21,18 @@ class MypageReview : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View{
-        binding = FragmentMypageReviewIngBinding.inflate(inflater,container,false)
         val view = inflater.inflate(R.layout.fragment_mypage_review_ing,container,false)
         val etreview = view.findViewById<View>(R.id.et_review) as EditText
         val btnreviewing = view.findViewById<View>(R.id.btn_review_ing) as Button
+        val ibpre = view.findViewById<View>(R.id.ib_pre6) as ImageButton
+
+        ibpre.setOnClickListener{
+            val mypageFragment = MypageFragment()
+            val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
+
+            transaction.replace(R.id.fl_container,mypageFragment)
+            transaction.commit()
+        }
 
         btnreviewing.isEnabled = false
 

@@ -12,12 +12,12 @@
         android:id="@+id/ib_pre"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/main"
         android:scaleType="fitStart"
         android:src="@drawable/ic_pre"
-        android:layout_margin="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck"/>
@@ -27,15 +27,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="프로필 수정"
+        android:layout_marginBottom="10dp"
         android:textColor="@color/main"
-        android:textSize="20sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/ib_pre"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ib_pre" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="30dp"
         android:id="@+id/ll_pro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

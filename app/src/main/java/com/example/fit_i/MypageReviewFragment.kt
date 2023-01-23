@@ -25,7 +25,7 @@ class MypageReviewFragment : Fragment() {
     ): View? {
         binding = FragmentMypageReviewBinding.inflate(inflater,container, false)
         val ff = inflater.inflate(R.layout.fragment_mypage_review,container,false)
-        val ibpre = ff.findViewById<View>(R.id.ib_pre5) as ImageButton
+        val ibpre = ff.findViewById<View>(R.id.ib_pre5)
 
             ibpre.setOnClickListener{
                 val mypageFragment = MypageFragment()
@@ -52,10 +52,10 @@ class MypageReviewFragment : Fragment() {
             override fun onClick(v: View, position: Int) {
                 //클릭 시 이벤트 작성하기
                 //임의로 홈이랑 연결함
-                val homeFragment = HomeFragment()
+                val mypageReviewIngFragment = MypageReviewIngFragment()
                 val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
 
-                transaction.replace(R.id.fl_container, homeFragment)
+                transaction.replace(R.id.fl_container, mypageReviewIngFragment)
                 transaction.commit()
             }
         })
