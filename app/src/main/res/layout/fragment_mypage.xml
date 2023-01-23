@@ -107,49 +107,6 @@
 
 
     </FrameLayout>
-<!--    <FrameLayout-->
-<!--        android:id="@+id/fl"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="20dp"-->
-<!--        android:layout_gravity="center"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/tv_emailM">-->
-
-<!--        <Button-->
-<!--            android:id="@+id/btn_matching"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:backgroundTint="#F8F8F8"-->
-<!--            android:gravity="start|center"-->
-<!--            android:layout_gravity="start|center_vertical"-->
-<!--            android:text="내 매칭 관리"-->
-<!--            android:visibility="visible"-->
-<!--            android:textColor="@color/main"-->
-<!--            android:textStyle="bold"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/tv_emailM" />-->
-
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:text="OFF" />-->
-<!--        &lt;!&ndash;        <Switch&ndash;&gt;-->
-<!--&lt;!&ndash;            android:id="@+id/switch1"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_gravity="right|center"&ndash;&gt;-->
-<!--&lt;!&ndash;            app:layout_constraintBottom_toBottomOf="@+id/btn_matching"&ndash;&gt;-->
-<!--&lt;!&ndash;            app:layout_constraintEnd_toEndOf="@+id/btn_matching"&ndash;&gt;-->
-<!--&lt;!&ndash;            app:layout_constraintTop_toTopOf="@+id/btn_matching" />&ndash;&gt;-->
-
-
-<!--    </FrameLayout>-->
 
     <ImageView
         android:id="@+id/iv_bar2"

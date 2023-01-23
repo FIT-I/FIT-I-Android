@@ -38,6 +38,7 @@ RecyclerView.Adapter<LikelistAdapter.ViewHolder>(){
     interface OnItemClicklistener : AdapterView.OnItemClickListener{
         fun onItemClick(v:View, data: LikelistData, position: Int)
     }
+
 //    interface OnItemClickListener{
 //        fun onItemClick(v:View, data: ProfileData, pos : Int)
 //    }
@@ -45,6 +46,8 @@ RecyclerView.Adapter<LikelistAdapter.ViewHolder>(){
 //    fun setOnItemClickListener(listener : OnItemClickListener) {
 //        this.listener = listener
 //    }
+
+
 //넣을 액티비티나 프래그먼트에 추가하기
 //    profileAdapter.setOnItemClickListener(object : ProfileAdapter.OnItemClickListener{
 //        override fun onItemClick(v: View, data: ProfileData, pos : Int) {

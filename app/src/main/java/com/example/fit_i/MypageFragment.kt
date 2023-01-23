@@ -90,12 +90,15 @@ class MypageFragment : Fragment() {
             transaction.replace(R.id.fl_container, mypageReviewBinding)
             transaction.commit()
         }
+        //스위치 눌렀을때 기능 추가하기
         swtmy.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener{
             override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
                 if (isChecked){
+                    //체크된 상태 취소시 반응 추가
 
                 }
                 else{
+                    //체크된 상태 만들 시 코드
 
                 }
             }

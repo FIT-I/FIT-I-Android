@@ -11,12 +11,12 @@
         android:id="@+id/ib_pre"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/main"
         android:scaleType="fitStart"
         android:src="@drawable/ic_pre"
-        android:layout_margin="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,9 +26,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="공지사항"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/ib_pre"
+        android:textColor="@color/main"
+        android:textSize="25dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/ib_pre" />
