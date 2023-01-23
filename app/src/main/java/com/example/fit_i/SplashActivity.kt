@@ -8,7 +8,7 @@ import android.os.Looper
 import com.example.fit_i.databinding.ActivitySplash2Binding
 
 
-class Splash2Activity : AppCompatActivity() {
+class SplashActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivitySplash2Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +20,7 @@ class Splash2Activity : AppCompatActivity() {
         // Handler를 만들 때에는 () 안에 Looper.getMainLooper()를 넣어주어야 에러가 나지 않습니다!
         Handler(Looper.getMainLooper()).postDelayed({
             // 현재 Activity에서 MainActivity로 이동하기 위한 Intent 변수 만들기
-            val moveActivityIntent = Intent(this, FirstActivity::class.java)
+            val moveActivityIntent = Intent(this, LoginActivity::class.java)
 
             // Intent에 정의된대로 MainActivity를 열기
             startActivity(moveActivityIntent)

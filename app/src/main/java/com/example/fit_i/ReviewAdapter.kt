@@ -1,5 +1,6 @@
 package com.example.fit_i
 
+
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
@@ -58,13 +59,16 @@ class ReviewAdapter(private val dataList: ArrayList<ReviewData>):
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val viewBinding = ItemReviewBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+
         return ViewHolder(viewBinding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
         holder.onBind(position)
     }
 
     override fun getItemCount(): Int= dataList.size
 
 }
+
