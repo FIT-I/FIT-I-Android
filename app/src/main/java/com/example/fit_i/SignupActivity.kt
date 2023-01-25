@@ -1,16 +1,25 @@
 package com.example.fit_i
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fit_i.RetrofitImpl.service
 import com.example.fit_i.databinding.ActivitySignupBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 class SignupActivity : AppCompatActivity() {
@@ -30,7 +39,32 @@ class SignupActivity : AppCompatActivity() {
         val etEmail : EditText = findViewById(R.id.et_email)
         val etPW : EditText = findViewById(R.id.et_pw)
         val etPW2: EditText = findViewById(R.id.et_pw2)
+        val ConfirmPW: TextView = findViewById(R.id.tv_pwConfirm)
+
         val btnFinSignUp : Button = findViewById(R.id.btn_fin_signUp)
+
+
+/*
+//        val signUp = User(name,email,pw,"example")
+        val signUp = User("홍길동","fiti@soongsil.ac.kr","fiti123!","customerProfile1")
+        service.postSignup(signUp).enqueue(object : Callback<User>{
+            override fun onResponse(call: Call<User>, response: Response<User>) {
+                if(response.isSuccessful){
+                    // 정상적으로 통신이 성공된 경우
+                    val result: User? = response.body()
+                    Log.d("post", "onResponse 성공: " + result?.toString());
+                }else{
+                    // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
+                    Log.d("post", "onResponse 실패")
+                }
+            }
+
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                // 통신 실패 (인터넷 끊킴, 예외 발생 등 시스템적인 이유)
+                Log.d("post", "onFailure 에러: " + t.message.toString());
+            }
+        })
+*/
 
         //버튼 비활성화
         btnFinSignUp.isEnabled = false
@@ -112,9 +146,43 @@ class SignupActivity : AppCompatActivity() {
 
                 //값 유무에 따른 활성화 여부
                 btnFinSignUp.isEnabled = isTrue() //있다면 true 없으면 false
+
+
+                //비밀번호 확인 일치 로직
+                if(etPW.text.toString() == etPW2.text.toString()){
+                    ConfirmPW.text = " "
+//                    ConfirmPW.setTextColor(colorMain)
+                    // 가입하기 버튼 활성화
+                    btnFinSignUp.isEnabled=isTrue()&&true
+                }
+                else{
+                    ConfirmPW.text = "비밀번호가 일치하지 않습니다."
+                    ConfirmPW.setTextColor(Color.parseColor("#FF0000"))
+                    // 가입하기 버튼 비활성화
+                    btnFinSignUp.isEnabled=isTrue()&&false
+                }
             }
-            override fun afterTextChanged(p0: Editable?) {}
+
+            override fun afterTextChanged(p0: Editable?) {
+                if(etPW.text.toString() == etPW2.text.toString()){
+                    ConfirmPW.text = " "
+                    //ConfirmPW.setTextColor(ma)
+                    // 가입하기 버튼 활성화
+                    btnFinSignUp.isEnabled=isTrue()&&true
+                }
+                else{
+                    ConfirmPW.text = "비밀번호가 일치하지 않습니다."
+                    ConfirmPW.setTextColor(Color.parseColor("#FF0000"))
+                    // 가입하기 버튼 비활성화
+                    btnFinSignUp.isEnabled=isTrue()&&false
+                }
+            }
         })
+
+
+        //비밀번호 조건
+
+
 
 
         //비밀번호 눈 아이콘
