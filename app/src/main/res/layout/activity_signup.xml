@@ -75,9 +75,8 @@ tools:context=".SignupActivity">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
-        android:layout_marginStart="20dp"
-        android:textSize="11dp"
-        android:text="(특수문자 @, &amp;, !, ?를 포함해 5자 이상으로 입력해주세요)"
+        android:textSize="10dp"
+        android:text="(영문, 숫자, 특수문자(! @ # $ % ^ &amp; + =) 를 포함해 5자 이상으로 입력해주세요)"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_pw" />
 
@@ -116,6 +115,14 @@ tools:context=".SignupActivity">
         app:layout_constraintEnd_toEndOf="@+id/et_pw2"
         app:layout_constraintTop_toTopOf="@+id/et_pw2"
         android:tag="0"/>
+
+    <TextView
+        android:id="@+id/tv_pwConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_pw2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
