@@ -7,41 +7,42 @@ import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.fit_i.RetrofitImpl.service
 import com.example.fit_i.databinding.ActivitySignupBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import java.util.regex.Pattern
 
 
 class SignupActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignupBinding
+
     //메시지 담을 변수
     var name: String = ""
-    var email : String=""
-    var pw: String=""
-    var pw2: String=""
+    var email: String = ""
+    var pw: String = ""
+    var pw2: String = ""
+
+    val emailPattern =
+        "^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$"
+    val pwPattern = "^.*(?=^.{5,15}\$)(?=.*\\d)(?=.*[a-zA-Z])(?=.*[!@#\$%^&+=]).*$"
+
+    private lateinit var ConfirmPW: TextView
+    private lateinit var special: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
         //객체 생성
-        val etName :EditText = findViewById(R.id.et_name)
-        val etEmail : EditText = findViewById(R.id.et_email)
-        val etPW : EditText = findViewById(R.id.et_pw)
+        val etName: EditText = findViewById(R.id.et_name)
+        val etEmail: EditText = findViewById(R.id.et_email)
+        val etPW: EditText = findViewById(R.id.et_pw)
         val etPW2: EditText = findViewById(R.id.et_pw2)
-        val ConfirmPW: TextView = findViewById(R.id.tv_pwConfirm)
 
-        val btnFinSignUp : Button = findViewById(R.id.btn_fin_signUp)
+        ConfirmPW = findViewById(R.id.tv_pwConfirm)
+        special = findViewById(R.id.tv_special)
+
+        val btnFinSignUp: Button = findViewById(R.id.btn_fin_signUp)
 
 
 /*
@@ -70,7 +71,7 @@ class SignupActivity : AppCompatActivity() {
         btnFinSignUp.isEnabled = false
 
         //EditText 값 있을때만 버튼 활성화
-        etName.addTextChangedListener(object: TextWatcher {
+        etName.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             //값 변경 시 실행되는 함수
@@ -79,7 +80,7 @@ class SignupActivity : AppCompatActivity() {
                 name = etName.text.toString()
 
                 //stroke 색상변경
-                if(name.isNotEmpty())
+                if (name.isNotEmpty())
                     etName.setBackgroundResource(R.drawable.edittext_border)
                 else
                     etName.setBackgroundResource(R.drawable.edittext_border_not)
@@ -87,31 +88,39 @@ class SignupActivity : AppCompatActivity() {
                 //값 유무에 따른 활성화 여부
                 btnFinSignUp.isEnabled = isTrue() //있다면 true 없으면 false
             }
+
             override fun afterTextChanged(p0: Editable?) {}
         })
 
-        etEmail.addTextChangedListener(object: TextWatcher {
+
+        etEmail.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             //값 변경 시 실행되는 함수
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 //입력값 담기
                 email = etEmail.text.toString()
-
+//
+//                val pattern = Pattern.compile(emailPattern) // 패턴 컴파일
+//                val matcher = pattern.matcher(email)
+//                Toast.makeText(this@SignupActivity,  matcher.find().toString(), Toast.LENGTH_SHORT).show()
 
                 //stroke 색상변경
-                if(email.isNotEmpty())
+                if (email.isNotEmpty())
                     etEmail.setBackgroundResource(R.drawable.edittext_border)
                 else
                     etEmail.setBackgroundResource(R.drawable.edittext_border_not)
 
                 //값 유무에 따른 활성화 여부
                 btnFinSignUp.isEnabled = isTrue() //있다면 true 없으면 false
-           }
+            }
+
             override fun afterTextChanged(p0: Editable?) {}
         })
 
-        etPW.addTextChangedListener(object: TextWatcher {
+
+        //(! @ # $ % ^ &amp; + =
+        etPW.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             //값 변경 시 실행되는 함수
@@ -120,17 +129,34 @@ class SignupActivity : AppCompatActivity() {
                 pw = etPW.text.toString()
 
                 //stroke 색상변경
-                if(pw.isNotEmpty())
+                if (pw.isNotEmpty())
                     etPW.setBackgroundResource(R.drawable.edittext_border)
                 else
                     etPW.setBackgroundResource(R.drawable.edittext_border_not)
+
                 //값 유무에 따른 활성화 여부
                 btnFinSignUp.isEnabled = isTrue() //있다면 true 없으면 false
+
             }
-            override fun afterTextChanged(p0: Editable?) {}
+
+            override fun afterTextChanged(p0: Editable?) {
+//
+//                val pattern2 = Pattern.compile(pwPattern) // 패턴 컴파일
+//                val matcher2 = pattern2.matcher(etPW.text.toString())
+//
+//                if (!matcher2.find()) {
+//                    special.text = "(영문, 숫자, 특수문자(! @ # \$ % ^ & + =) 를 포함해 5자 이상으로 입력해주세요)"
+//                    special.setTextColor(Color.parseColor("#FF0000"))
+//                    btnFinSignUp.isEnabled = isTrue() && false //있다면 true 없으면 false
+//                } else{
+//                    special.text = " "
+//                    //special.setTextColor(Color.parseColor("#D9D9D9"))
+//                    btnFinSignUp.isEnabled = isTrue() && true //있다면 true 없으면 false
+//                }
+            }
         })
 
-        etPW2.addTextChangedListener(object: TextWatcher {
+        etPW2.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             //값 변경 시 실행되는 함수
@@ -139,7 +165,7 @@ class SignupActivity : AppCompatActivity() {
                 pw2 = etPW2.text.toString()
 
                 //stroke 색상변경
-                if(pw2.isNotEmpty())
+                if (pw2.isNotEmpty())
                     etPW2.setBackgroundResource(R.drawable.edittext_border)
                 else
                     etPW2.setBackgroundResource(R.drawable.edittext_border_not)
@@ -147,35 +173,33 @@ class SignupActivity : AppCompatActivity() {
                 //값 유무에 따른 활성화 여부
                 btnFinSignUp.isEnabled = isTrue() //있다면 true 없으면 false
 
-
-                //비밀번호 확인 일치 로직
-                if(etPW.text.toString() == etPW2.text.toString()){
-                    ConfirmPW.text = " "
-//                    ConfirmPW.setTextColor(colorMain)
-                    // 가입하기 버튼 활성화
-                    btnFinSignUp.isEnabled=isTrue()&&true
-                }
-                else{
-                    ConfirmPW.text = "비밀번호가 일치하지 않습니다."
-                    ConfirmPW.setTextColor(Color.parseColor("#FF0000"))
-                    // 가입하기 버튼 비활성화
-                    btnFinSignUp.isEnabled=isTrue()&&false
-                }
+//
+//                //비밀번호 확인 일치 로직
+//                if (etPW.text.toString() == etPW2.text.toString()) {
+//                    ConfirmPW.text = " "
+////                    ConfirmPW.setTextColor(colorMain)
+//                    // 가입하기 버튼 활성화
+//                    btnFinSignUp.isEnabled = isTrue() && true
+//                } else {
+//                    ConfirmPW.text = "비밀번호가 일치하지 않습니다."
+//                    ConfirmPW.setTextColor(Color.parseColor("#FF0000"))
+//                    // 가입하기 버튼 비활성화
+//                    btnFinSignUp.isEnabled = isTrue() && false
+//                }
             }
 
             override fun afterTextChanged(p0: Editable?) {
-                if(etPW.text.toString() == etPW2.text.toString()){
-                    ConfirmPW.text = " "
-                    //ConfirmPW.setTextColor(ma)
-                    // 가입하기 버튼 활성화
-                    btnFinSignUp.isEnabled=isTrue()&&true
-                }
-                else{
-                    ConfirmPW.text = "비밀번호가 일치하지 않습니다."
-                    ConfirmPW.setTextColor(Color.parseColor("#FF0000"))
-                    // 가입하기 버튼 비활성화
-                    btnFinSignUp.isEnabled=isTrue()&&false
-                }
+//                if (etPW.text.toString() == etPW2.text.toString()) {
+//                    ConfirmPW.text = " "
+//                    //ConfirmPW.setTextColor(ma)
+//                    // 가입하기 버튼 활성화
+//                    btnFinSignUp.isEnabled = isTrue() && true
+//                } else {
+//                    ConfirmPW.text = "비밀번호가 일치하지 않습니다."
+//                    ConfirmPW.setTextColor(Color.parseColor("#FF0000"))
+//                    // 가입하기 버튼 비활성화
+//                    btnFinSignUp.isEnabled = isTrue() && false
+//                }
             }
         })
 
@@ -183,19 +207,17 @@ class SignupActivity : AppCompatActivity() {
         //비밀번호 조건
 
 
-
-
         //비밀번호 눈 아이콘
 
-        val ivEye1 : ImageView = findViewById(R.id.iv_eye1)
-        val ivEye2 : ImageView =findViewById(R.id.iv_eye2)
+        val ivEye1: ImageView = findViewById(R.id.iv_eye1)
+        val ivEye2: ImageView = findViewById(R.id.iv_eye2)
 
-        ivEye1.setOnClickListener(){
-            if(ivEye1.tag.equals("0")){//비밀번호 안 보이고 있던 상황
+        ivEye1.setOnClickListener() {
+            if (ivEye1.tag.equals("0")) {//비밀번호 안 보이고 있던 상황
                 ivEye1.tag = "1"
                 ivEye1.setImageResource(R.drawable.ic_eye)
                 etPW.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-            }else{//비밀번호 보이고 있던 상황
+            } else {//비밀번호 보이고 있던 상황
                 ivEye1.tag = "0"
                 ivEye1.setImageResource(R.drawable.ic_eye_slash)
                 etPW.inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD
@@ -204,12 +226,12 @@ class SignupActivity : AppCompatActivity() {
             //etPW2.setSelection(etPW.text.length)
         }
 
-        ivEye2.setOnClickListener(){
-            if(ivEye2.tag.equals("0")){//비밀번호 안 보이고 있던 상황
+        ivEye2.setOnClickListener() {
+            if (ivEye2.tag.equals("0")) {//비밀번호 안 보이고 있던 상황
                 ivEye2.tag = "1"
                 ivEye2.setImageResource(R.drawable.ic_eye)
                 etPW.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-            }else{//비밀번호 보이고 있던 상황
+            } else {//비밀번호 보이고 있던 상황
                 ivEye2.tag = "0"
                 ivEye2.setImageResource(R.drawable.ic_eye_slash)
                 etPW2.inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD
@@ -222,14 +244,78 @@ class SignupActivity : AppCompatActivity() {
         //회원가입하기
         //버튼 이벤트
         btnFinSignUp.setOnClickListener {
-            val intent = Intent(this, SignupIconActivity::class.java)
-            startActivity(intent)  // 화면 전환을 시켜줌
-            finish()
-        Toast.makeText(this, name+"signUp", Toast.LENGTH_SHORT).show()
+            val pattern1 = Pattern.compile(emailPattern) // 패턴 컴파일
+            val pattern2 = Pattern.compile(pwPattern) // 패턴 컴파일
+
+            val matcher1 = pattern1.matcher(email)
+            val matcher2 = pattern2.matcher(pw)
+
+//
+//            if (!matcher1.find()) {
+//                Toast.makeText(this@SignupActivity, "이메일 형식을 확인해주세요", Toast.LENGTH_SHORT).show()
+//            } else if (!matcher2.find()) {
+//            Toast.makeText(this@SignupActivity, "비밀번호 형식을 확인해주세요", Toast.LENGTH_SHORT).show() }
+//            else {
+
+                val intent = Intent(this, SignupIconActivity::class.java)
+                startActivity(intent)  // 화면 전환을 시켜줌
+                finish()
+                Toast.makeText(this, name + "signUp", Toast.LENGTH_SHORT).show()
+//            }
         }
     }
 
+    //네개 다 입력 & 이메일 정규성 & 비밀번호 일치 & 비밀번호 정규성
     private fun isTrue(): Boolean {
-        return name.isNotEmpty()&&email.isNotEmpty()&&pw.isNotEmpty()&&pw2.isNotEmpty()
+        pwDoubleCheck()
+        pwCheck()
+        emailCheck()
+        return name.isNotEmpty() && email.isNotEmpty() && pw.isNotEmpty() && pw2.isNotEmpty() && emailCheck() && pwDoubleCheck() && pwCheck()
+    }
+
+    //패스워드 일치 검사
+    private fun pwDoubleCheck(): Boolean {
+        //비밀번호 확인 일치 로직
+        if (pw == pw2) {
+            ConfirmPW.text = " "
+//                    ConfirmPW.setTextColor(colorMain)
+            return true
+        } else {
+            ConfirmPW.text = "비밀번호가 일치하지 않습니다."
+            ConfirmPW.setTextColor(Color.parseColor("#FF0000"))
+            return false
+        }
+
+    }
+
+    //패스워드 정규성검사
+    private fun pwCheck(): Boolean {
+
+        val pattern2 = Pattern.compile(pwPattern) // 패턴 컴파일
+        val matcher2 = pattern2.matcher(pw)
+
+        return if (!matcher2.find()) {
+            special.text = "(영문, 숫자, 특수문자(! @ # \$ % ^ & + =) 를 포함해 5자 이상으로 입력해주세요)"
+            special.setTextColor(Color.parseColor("#FF0000"))
+            false
+        } else {
+            special.text = " "
+            //special.setTextColor(Color.parseColor("#D9D9D9"))
+            true
+        }
+    }
+
+    //이메일 정규성 검사
+    private fun emailCheck(): Boolean {
+
+        val pattern1 = Pattern.compile(emailPattern) // 패턴 컴파일
+        val matcher1 = pattern1.matcher(email)
+
+        return if (!matcher1.find()) {
+            Toast.makeText(this@SignupActivity, "이메일 형식을 확인해주세요", Toast.LENGTH_SHORT).show()
+            false
+        } else {
+            true
+        }
     }
 }

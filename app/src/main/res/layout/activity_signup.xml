@@ -75,7 +75,7 @@ tools:context=".SignupActivity">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
-        android:textSize="11dp"
+        android:textSize="10dp"
         android:text="(영문, 숫자, 특수문자(! @ # $ % ^ &amp; + =) 를 포함해 5자 이상으로 입력해주세요)"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_pw" />
@@ -120,6 +120,7 @@ tools:context=".SignupActivity">
         android:id="@+id/tv_pwConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_pw2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
