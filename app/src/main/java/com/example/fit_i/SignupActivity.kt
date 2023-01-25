@@ -100,10 +100,6 @@ class SignupActivity : AppCompatActivity() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 //입력값 담기
                 email = etEmail.text.toString()
-//
-//                val pattern = Pattern.compile(emailPattern) // 패턴 컴파일
-//                val matcher = pattern.matcher(email)
-//                Toast.makeText(this@SignupActivity,  matcher.find().toString(), Toast.LENGTH_SHORT).show()
 
                 //stroke 색상변경
                 if (email.isNotEmpty())
@@ -136,24 +132,9 @@ class SignupActivity : AppCompatActivity() {
 
                 //값 유무에 따른 활성화 여부
                 btnFinSignUp.isEnabled = isTrue() //있다면 true 없으면 false
-
             }
 
-            override fun afterTextChanged(p0: Editable?) {
-//
-//                val pattern2 = Pattern.compile(pwPattern) // 패턴 컴파일
-//                val matcher2 = pattern2.matcher(etPW.text.toString())
-//
-//                if (!matcher2.find()) {
-//                    special.text = "(영문, 숫자, 특수문자(! @ # \$ % ^ & + =) 를 포함해 5자 이상으로 입력해주세요)"
-//                    special.setTextColor(Color.parseColor("#FF0000"))
-//                    btnFinSignUp.isEnabled = isTrue() && false //있다면 true 없으면 false
-//                } else{
-//                    special.text = " "
-//                    //special.setTextColor(Color.parseColor("#D9D9D9"))
-//                    btnFinSignUp.isEnabled = isTrue() && true //있다면 true 없으면 false
-//                }
-            }
+            override fun afterTextChanged(p0: Editable?) {}
         })
 
         etPW2.addTextChangedListener(object : TextWatcher {
@@ -172,43 +153,13 @@ class SignupActivity : AppCompatActivity() {
 
                 //값 유무에 따른 활성화 여부
                 btnFinSignUp.isEnabled = isTrue() //있다면 true 없으면 false
-
-//
-//                //비밀번호 확인 일치 로직
-//                if (etPW.text.toString() == etPW2.text.toString()) {
-//                    ConfirmPW.text = " "
-////                    ConfirmPW.setTextColor(colorMain)
-//                    // 가입하기 버튼 활성화
-//                    btnFinSignUp.isEnabled = isTrue() && true
-//                } else {
-//                    ConfirmPW.text = "비밀번호가 일치하지 않습니다."
-//                    ConfirmPW.setTextColor(Color.parseColor("#FF0000"))
-//                    // 가입하기 버튼 비활성화
-//                    btnFinSignUp.isEnabled = isTrue() && false
-//                }
             }
 
-            override fun afterTextChanged(p0: Editable?) {
-//                if (etPW.text.toString() == etPW2.text.toString()) {
-//                    ConfirmPW.text = " "
-//                    //ConfirmPW.setTextColor(ma)
-//                    // 가입하기 버튼 활성화
-//                    btnFinSignUp.isEnabled = isTrue() && true
-//                } else {
-//                    ConfirmPW.text = "비밀번호가 일치하지 않습니다."
-//                    ConfirmPW.setTextColor(Color.parseColor("#FF0000"))
-//                    // 가입하기 버튼 비활성화
-//                    btnFinSignUp.isEnabled = isTrue() && false
-//                }
-            }
+            override fun afterTextChanged(p0: Editable?) {}
         })
 
 
-        //비밀번호 조건
-
-
         //비밀번호 눈 아이콘
-
         val ivEye1: ImageView = findViewById(R.id.iv_eye1)
         val ivEye2: ImageView = findViewById(R.id.iv_eye2)
 
@@ -244,28 +195,14 @@ class SignupActivity : AppCompatActivity() {
         //회원가입하기
         //버튼 이벤트
         btnFinSignUp.setOnClickListener {
-            val pattern1 = Pattern.compile(emailPattern) // 패턴 컴파일
-            val pattern2 = Pattern.compile(pwPattern) // 패턴 컴파일
-
-            val matcher1 = pattern1.matcher(email)
-            val matcher2 = pattern2.matcher(pw)
-
-//
-//            if (!matcher1.find()) {
-//                Toast.makeText(this@SignupActivity, "이메일 형식을 확인해주세요", Toast.LENGTH_SHORT).show()
-//            } else if (!matcher2.find()) {
-//            Toast.makeText(this@SignupActivity, "비밀번호 형식을 확인해주세요", Toast.LENGTH_SHORT).show() }
-//            else {
-
-                val intent = Intent(this, SignupIconActivity::class.java)
-                startActivity(intent)  // 화면 전환을 시켜줌
-                finish()
-                Toast.makeText(this, name + "signUp", Toast.LENGTH_SHORT).show()
-//            }
+            val intent = Intent(this, SignupIconActivity::class.java)
+            startActivity(intent)  // 화면 전환을 시켜줌
+            finish()
+            Toast.makeText(this, name + "signUp", Toast.LENGTH_SHORT).show()
         }
     }
 
-    //네개 다 입력 & 이메일 정규성 & 비밀번호 일치 & 비밀번호 정규성
+    //네 개 다 입력 & 이메일 정규성 & 비밀번호 일치 & 비밀번호 정규성
     private fun isTrue(): Boolean {
         pwDoubleCheck()
         pwCheck()
@@ -273,24 +210,21 @@ class SignupActivity : AppCompatActivity() {
         return name.isNotEmpty() && email.isNotEmpty() && pw.isNotEmpty() && pw2.isNotEmpty() && emailCheck() && pwDoubleCheck() && pwCheck()
     }
 
-    //패스워드 일치 검사
-    private fun pwDoubleCheck(): Boolean {
-        //비밀번호 확인 일치 로직
-        if (pw == pw2) {
-            ConfirmPW.text = " "
-//                    ConfirmPW.setTextColor(colorMain)
-            return true
-        } else {
-            ConfirmPW.text = "비밀번호가 일치하지 않습니다."
-            ConfirmPW.setTextColor(Color.parseColor("#FF0000"))
-            return false
-        }
+    //이메일 정규성 검사
+    private fun emailCheck(): Boolean {
+        val pattern1 = Pattern.compile(emailPattern) // 패턴 컴파일
+        val matcher1 = pattern1.matcher(email)
 
+        return if (!matcher1.find()) {
+            Toast.makeText(this@SignupActivity, "이메일 형식을 확인해주세요", Toast.LENGTH_SHORT).show()
+            false
+        } else {
+            true
+        }
     }
 
     //패스워드 정규성검사
     private fun pwCheck(): Boolean {
-
         val pattern2 = Pattern.compile(pwPattern) // 패턴 컴파일
         val matcher2 = pattern2.matcher(pw)
 
@@ -305,17 +239,15 @@ class SignupActivity : AppCompatActivity() {
         }
     }
 
-    //이메일 정규성 검사
-    private fun emailCheck(): Boolean {
-
-        val pattern1 = Pattern.compile(emailPattern) // 패턴 컴파일
-        val matcher1 = pattern1.matcher(email)
-
-        return if (!matcher1.find()) {
-            Toast.makeText(this@SignupActivity, "이메일 형식을 확인해주세요", Toast.LENGTH_SHORT).show()
-            false
+    //패스워드 일치 검사 로직
+    private fun pwDoubleCheck(): Boolean {
+        if (pw == pw2) {
+            ConfirmPW.text = " "
+            return true
         } else {
-            true
+            ConfirmPW.text = "비밀번호가 일치하지 않습니다."
+            ConfirmPW.setTextColor(Color.parseColor("#FF0000"))
+            return false
         }
     }
 }
