@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fit_i.databinding.FragmentHomePtBinding
 
@@ -35,6 +37,10 @@ class HomePtFragment : Fragment() {
 
         val linearLayoutManager = LinearLayoutManager(context)
         binding.rvTrainer.layoutManager=linearLayoutManager
+
+        binding.rvTrainer.setHasFixedSize(true)
+        // 1. 정의되어 있는 구분선
+        binding.rvTrainer.addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL))
 
 
         binding.tvSort.text = "실시간 순"
