@@ -196,7 +196,7 @@ class LoginActivity : AppCompatActivity() {
 
             val login = Login(email,pw)
             //val login = Login("fiti@soongsil.ac.kr","fiti123!")
-            service.postLogin(login).enqueue(object: Callback<Login> {
+            service.Login(login).enqueue(object: Callback<Login> {
                 override fun onResponse(call: Call<Login>, response: Response<Login>) {
                     if(response.isSuccessful) {
                         Log.d("Post", "success ${response.body().toString()}")

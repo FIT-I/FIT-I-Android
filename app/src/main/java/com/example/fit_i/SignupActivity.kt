@@ -147,10 +147,10 @@ class SignupActivity : AppCompatActivity() {
             startActivity(intent)  // 화면 전환을 시켜줌
             finish()
             Toast.makeText(this, name + "signUp", Toast.LENGTH_SHORT).show()
-/*
-            val signUp = User(name,email,pw,"example")
+
+            val signUp = User(name,email,pw,"customerProfile1")
             //val signUp = User("홍길동","fiti@soongsil.ac.kr","fiti123!","customerProfile1")
-            service.postSignup(signUp).enqueue(object : Callback<User> {
+            service.Signup(signUp).enqueue(object : Callback<User> {
                 override fun onResponse(call: Call<User>, response: Response<User>) {
                     if(response.isSuccessful){
                         // 정상적으로 통신이 성공된 경우
@@ -166,7 +166,7 @@ class SignupActivity : AppCompatActivity() {
                     // 통신 실패 (인터넷 끊킴, 예외 발생 등 시스템적인 이유)
                     Log.d("post", "onFailure 에러: " + t.message.toString());
                 }
-            })*/
+            })
             }
 
     }
