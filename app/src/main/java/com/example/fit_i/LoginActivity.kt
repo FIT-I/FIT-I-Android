@@ -5,10 +5,9 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.view.View
-import android.view.View.OnFocusChangeListener
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fit_i.RetrofitImpl.service
 import com.example.fit_i.databinding.ActivityLoginBinding
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
@@ -18,6 +17,9 @@ import com.navercorp.nid.oauth.NidOAuthLogin
 import com.navercorp.nid.oauth.OAuthLoginCallback
 import com.navercorp.nid.profile.NidProfileCallback
 import com.navercorp.nid.profile.data.NidProfileResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class LoginActivity : AppCompatActivity() {
@@ -41,7 +43,6 @@ class LoginActivity : AppCompatActivity() {
         val etPW : EditText = findViewById(R.id.et_pwL)
 
         val btnLogin : Button = findViewById(R.id.btn_login)
-
 
         //val keyHash = Utility.getKeyHash(this)
         //Log.e("해시키", keyHash)
@@ -152,7 +153,6 @@ class LoginActivity : AppCompatActivity() {
                 //입력값 담기
                 email = etEmail.text.toString()
 
-
                 //stroke 색상변경
                 if(email.isNotEmpty())
                     etEmail.setBackgroundResource(R.drawable.edittext_border)
@@ -166,25 +166,6 @@ class LoginActivity : AppCompatActivity() {
             }
 
         })
-//        if(focus>0){
-//            etEmail.isFocusable=true
-//        }
-//        var focus :Int = 0
-//
-//        etEmail.onFocusChangeListener = OnFocusChangeListener { v, gainFocus ->
-//            //포커스가 주어졌을 때 동작
-//            if (gainFocus) {
-//                focus++
-//                //etEmail.isFocusable=true
-//                //to do
-//                //원하는 동작
-//            }
-//
-//
-//        }
-//
-//        if(focus>0)
-//            etEmail.isFocusable=true
 
         //EditText 값 있을때만 버튼 활성화
         etPW.addTextChangedListener(object: TextWatcher {
@@ -212,8 +193,26 @@ class LoginActivity : AppCompatActivity() {
         //회원여부 판단하는 코드 작성 필요
         btnLogin.setOnClickListener {
             val intent = Intent(this, LoginSplashActivity::class.java)
-            startActivity(intent)  // 화면 전환을 시켜줌
-            finish()
+
+            val login = Login(email,pw)
+            //val login = Login("fiti@soongsil.ac.kr","fiti123!")
+            service.postLogin(login).enqueue(object: Callback<Login> {
+                override fun onResponse(call: Call<Login>, response: Response<Login>) {
+                    if(response.isSuccessful) {
+                        Log.d("Post", "success ${response.body().toString()}")
+//                    Log.d("Post","success ${response}")
+
+                        startActivity(intent)  // 화면 전환을 시켜줌
+                        finish()
+                    } else {
+                        Log.d("Post", "success,but ${response.errorBody()}")
+                    }
+                }
+
+                override fun onFailure(call: Call<Login>, t: Throwable) {
+                    Log.d("Post","fail ${t}")
+                }
+            })
         }
 
 //        binding.tvNaverLogout.setOnClickListener {
@@ -222,10 +221,6 @@ class LoginActivity : AppCompatActivity() {
 //        binding.tvNaverDeleteToken.setOnClickListener {
 //            startNaverDeleteToken()
 //        }
-
-
-
-
     }
 
     private fun isTrue(): Boolean {

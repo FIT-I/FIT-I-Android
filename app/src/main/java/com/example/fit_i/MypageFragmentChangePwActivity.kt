@@ -90,7 +90,7 @@ class MypageChangePwActivity : AppCompatActivity() {
     private fun isTrue(): Boolean {
         pwDoubleCheck()
         pwCheck()
-        return pw1.isNotEmpty() && pw2.isNotEmpty()
+        return pw1.isNotEmpty() && pw2.isNotEmpty() && pwCheck() && pwDoubleCheck()
     }
 
     //비밀번호 정규성 검사
