@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent">
 
     <ScrollView
@@ -45,7 +45,7 @@
 
             <TextView
                 android:id="@+id/tv_about_service"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="130dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
@@ -62,7 +62,7 @@
 
             <TextView
                 android:id="@+id/tv_review1"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="134dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
@@ -296,7 +296,7 @@
 
             <TextView
                 android:id="@+id/tv_manage_cost"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="86dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="108dp"
@@ -313,15 +313,13 @@
 
             <TextView
                 android:id="@+id/tv_manage_price"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:text="20000"
                 android:textSize="15dp"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_manage_cost"
-                app:layout_constraintEnd_toStartOf="@+id/tv_won2"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/tv_won1" />
+                app:layout_constraintEnd_toStartOf="@+id/tv_won2" />
 
             <TextView
                 android:id="@+id/tv_won2"
@@ -337,11 +335,10 @@
                 android:id="@+id/tv_won1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="280dp"
                 android:layout_marginBottom="10dp"
                 android:text="￦"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_manage_cost"
-                app:layout_constraintStart_toStartOf="@+id/tv_manage_cost" />
+                app:layout_constraintEnd_toStartOf="@+id/tv_manage_price" />
 
             <ImageView
                 android:id="@+id/iv_bar1"
