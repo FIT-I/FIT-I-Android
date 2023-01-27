@@ -11,7 +11,7 @@ class ProfileActivity :AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        val matchRequest =findViewById<Button>(R.id.match_request_btn)
+        val matchRequest =findViewById<Button>(R.id.btn_match_request)
         fun moveToNextPage(){
             val intent = Intent(this,MatchServiceActivity::class.java)
             startActivity(intent)
