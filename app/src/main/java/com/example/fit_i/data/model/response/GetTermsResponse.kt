@@ -1,6 +1,6 @@
 package com.example.fit_i.data.model.response
 
-data class TermsResponse(
+data class GetTermsResponse(
     val code: Int,
     val isSuccess: Boolean,
     val message: String,
