@@ -1,6 +1,6 @@
 package com.example.fit_i.data.model.request
 
-data class UserToken(
+data class LogoutRequest(
     val accessToken: String,
     val refreshToken: String
 )

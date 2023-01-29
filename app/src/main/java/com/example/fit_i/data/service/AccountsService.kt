@@ -4,7 +4,7 @@ import CloseResponse
 import com.example.fit_i.Login
 import com.example.fit_i.User
 import com.example.fit_i.data.model.request.ChangePWRequest
-import com.example.fit_i.data.model.request.UserToken
+import com.example.fit_i.data.model.request.LogoutRequest
 import com.example.fit_i.data.model.response.AccountBaseResponse
 import com.example.fit_i.data.model.response.LoginResponse
 import retrofit2.Call
@@ -24,7 +24,7 @@ interface AccountsService {
     //로그아웃
     @Headers("content-type: application/json")
     @POST("api/accounts/logout")
-    fun logOut(@Body token : UserToken) : Call<AccountBaseResponse>
+    fun logOut(@Body token : LogoutRequest) : Call<AccountBaseResponse>
 
     //비밀번호변경
     @Headers("content-type: application/json")

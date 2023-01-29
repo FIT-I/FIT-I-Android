@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.RetrofitImpl.service
+import com.example.fit_i.data.model.response.LoginResponse
 import com.example.fit_i.databinding.ActivityLoginBinding
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
@@ -196,8 +197,8 @@ class LoginActivity : AppCompatActivity() {
 
             val login = Login(email,pw)
             //val login = Login("fiti@soongsil.ac.kr","fiti123!")
-            service.Login(login).enqueue(object: Callback<Login> {
-                override fun onResponse(call: Call<Login>, response: Response<Login>) {
+            service.logIn(login).enqueue(object: Callback<LoginResponse> {
+                override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     if(response.isSuccessful) {
                         Log.d("Post", "success ${response.body().toString()}")
 //                    Log.d("Post","success ${response}")
@@ -209,7 +210,7 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
 
-                override fun onFailure(call: Call<Login>, t: Throwable) {
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Log.d("Post","fail ${t}")
                 }
             })
