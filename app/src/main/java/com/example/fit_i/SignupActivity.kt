@@ -8,9 +8,9 @@ import android.text.TextWatcher
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.fit_i.RetrofitImpl.service
-import com.example.fit_i.data.model.response.AccountBaseResponse
-import com.example.fit_i.data.model.response.LoginResponse
+import com.example.fit_i.data.model.response.BaseResponse
+import com.example.fit_i.data.service.AccountsService
+import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.ActivitySignupBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -154,10 +154,12 @@ class SignupActivity : AppCompatActivity() {
 
             val newUser = ArrayList<String>()
 
+            val service= RetrofitImpl.getApiClient().create(AccountsService::class.java)
+
             val signUp = User(name,email,pw,"customerProfile1")
             //val signUp = User("홍길동","fiti@soongsil.ac.kr","fiti123!","customerProfile1")
-            service.signUp(signUp).enqueue(object : Callback<AccountBaseResponse> {
-                override fun onResponse(call: Call<AccountBaseResponse>, response: Response<AccountBaseResponse>) {
+            service.signUp(signUp).enqueue(object : Callback<BaseResponse> {
+                override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
                     if(response.isSuccessful){
                         // 정상적으로 통신이 성공된 경우
                         //val result: User? = response.body()
@@ -170,7 +172,7 @@ class SignupActivity : AppCompatActivity() {
                     }
                 }
 
-                override fun onFailure(call: Call<AccountBaseResponse>, t: Throwable) {
+                override fun onFailure(call: Call<BaseResponse>, t: Throwable) {
                     // 통신 실패 (인터넷 끊킴, 예외 발생 등 시스템적인 이유)
                     Log.d("post", "onFailure 에러: " + t.message.toString());
                 }

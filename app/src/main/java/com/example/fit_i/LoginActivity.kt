@@ -7,8 +7,10 @@ import android.text.TextWatcher
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.fit_i.RetrofitImpl.service
+import com.example.fit_i.RetrofitImpl.getApiClient
+import com.example.fit_i.data.model.request.LoginRequest
 import com.example.fit_i.data.model.response.LoginResponse
+import com.example.fit_i.data.service.AccountsService
 import com.example.fit_i.databinding.ActivityLoginBinding
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
@@ -25,6 +27,9 @@ import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
+
+    val PREFERENCE = "fit-i"
+
 
     private val TAG = this.javaClass.simpleName
 
@@ -189,16 +194,37 @@ class LoginActivity : AppCompatActivity() {
             override fun afterTextChanged(p0: Editable?) {}
         })
 
+        //SharedPref.openSharedPrep(this)
 
         //로그인 버튼 -> 메인
         //회원여부 판단하는 코드 작성 필요
         btnLogin.setOnClickListener {
             val intent = Intent(this, LoginSplashActivity::class.java)
 
-            val login = Login(email,pw)
+            val loginRequest = LoginRequest(email,pw)
             //val login = Login("fiti@soongsil.ac.kr","fiti123!")
-            service.logIn(login).enqueue(object: Callback<LoginResponse> {
+
+            //private val api = ApiClient.getApiClient().create(ItemListAPI::class.java)
+            val service= getApiClient().create(AccountsService::class.java)
+
+            service.logIn(loginRequest).enqueue(object: Callback<LoginResponse> {
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                    when (response!!.code()) {
+                        200 -> {
+                            val pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE)
+                            val editor = pref.edit()
+                            editor.putString("email", etEmail.text.toString())
+                            editor.commit()
+                            finish()
+
+                            App.token_prefs.accessToken = response.body()?.result?.accessToken
+                            App.token_prefs.refreshToken = response.body()?.result?.refreshToken
+
+                        }
+                        405 -> Toast.makeText(this@LoginActivity, "로그인 실패 : 아이디나 비번이 올바르지 않습니다", Toast.LENGTH_LONG).show()
+                        500 -> Toast.makeText(this@LoginActivity, "로그인 실패 : 서버 오류", Toast.LENGTH_LONG).show()
+                    }
+                }/*
                     if(response.isSuccessful) {
                         Log.d("Post", "success ${response.body().toString()}")
 //                    Log.d("Post","success ${response}")
@@ -207,8 +233,9 @@ class LoginActivity : AppCompatActivity() {
                         finish()
                     } else {
                         Log.d("Post", "success,but ${response.errorBody()}")
+                        Toast.makeText(this@LoginActivity, "아이디/비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()
                     }
-                }
+                }*/
 
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Log.d("Post","fail ${t}")
