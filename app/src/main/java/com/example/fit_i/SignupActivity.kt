@@ -10,7 +10,6 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.AccountsService
-import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.ActivitySignupBinding
 import retrofit2.Call
 import retrofit2.Callback

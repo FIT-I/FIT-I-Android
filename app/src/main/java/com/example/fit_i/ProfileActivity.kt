@@ -3,10 +3,7 @@ package com.example.fit_i
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.CompoundButton
-import android.widget.ImageButton
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.AccountsService
@@ -18,15 +15,15 @@ import retrofit2.Response
 class ProfileActivity :AppCompatActivity() {
     private var trainerIdx: Int = 0
 
-    lateinit var heartBtn: CheckBox
+    lateinit var wish: CheckBox
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
         trainerIdx = 1 // intent getint로 실제 클릭한 트레이너값 받아와야함
 
-        heartBtn = findViewById<Button>(R.id.heart_btn) as CheckBox
-        heartBtn.setOnClickListener { onCheckChanged(heartBtn) }
+        wish = findViewById<Button>(R.id.cb_heart_btn) as CheckBox
+        wish.setOnClickListener { onCheckChanged(wish) }
             
         val matchRequest =findViewById<Button>(R.id.btn_match_request)
         fun moveToNextPage(){
@@ -61,7 +58,7 @@ class ProfileActivity :AppCompatActivity() {
     val service = RetrofitImpl.getApiClient().create(CustomerService::class.java)
 
     private fun onCheckChanged(compoundButton: CompoundButton) {
-        if (heartBtn.isChecked) {
+        if (wish.isChecked) {
             service.trainerSave(trainerIdx).enqueue(object : Callback<BaseResponse> {
                 override fun onResponse(
                     call: Call<BaseResponse>,
@@ -71,6 +68,7 @@ class ProfileActivity :AppCompatActivity() {
                         // 정상적으로 통신이 성공된 경우
                         //val result: User? = response.body()
                         Log.d("post", "onResponse 성공: " + response.body().toString());
+                        Toast.makeText(this@ProfileActivity, "찜목록 추가", Toast.LENGTH_SHORT).show()
                         //Log.d("post","result: "+response.)
                         //Log.d("post", "onResponse 성공: " + result.toString());
                     } else {
