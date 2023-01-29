@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageButton
-        android:id="@+id/back_arrow"
+        android:id="@+id/ib_back_arrow"
         android:layout_width="12dp"
         android:layout_height="20dp"
         android:layout_marginStart="30dp"
@@ -20,20 +20,20 @@
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/pick_service"
+        android:id="@+id/tv_pick_service"
         android:layout_width="96dp"
         android:layout_height="27dp"
-        android:layout_marginStart="105dp"
         android:layout_marginTop="80dp"
         android:text="서비스 선택"
         android:textColor="#011E5F"
         android:textSize="19.5sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/back_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/pick_service2"
+        android:id="@+id/tv_pick_service2"
         android:layout_width="133dp"
         android:layout_height="27dp"
         android:layout_marginStart="30dp"
@@ -43,30 +43,30 @@
         android:textSize="19.5sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/background_step" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_background_step" />
 
     <ImageView
-        android:id="@+id/background_step"
+        android:id="@+id/iv_background_step"
         android:layout_width="0dp"
         android:layout_height="5dp"
         android:layout_marginTop="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pick_service"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pick_service"
         app:srcCompat="@drawable/img_bar" />
 
     <ImageView
-        android:id="@+id/current_step"
+        android:id="@+id/iv_current_step"
         android:layout_width="130dp"
         android:layout_height="5dp"
         android:layout_marginTop="18dp"
         android:background="@color/gray"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pick_service" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_pick_service" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/cb_check_service"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="30dp"
@@ -76,22 +76,22 @@
         android:button="@null"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pick_service2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pick_service2"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/service_price"
+        android:id="@+id/tv_service_price"
         android:layout_width="wrap_content"
         android:layout_height="27dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="41dp"
         android:text="1시간"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/checkBox"
-        app:layout_constraintTop_toBottomOf="@+id/pick_service2" />
+        app:layout_constraintStart_toEndOf="@+id/cb_check_service"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pick_service2" />
 
     <Button
-        android:id="@+id/button_next"
+        android:id="@+id/btn_next_step"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_margin="30dp"
@@ -103,24 +103,26 @@
 
 
     <TextView
-        android:id="@+id/price"
+        android:id="@+id/tv_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="157dp"
         android:layout_marginTop="41dp"
         android:text="20,000"
         android:textSize="20dp"
-        app:layout_constraintStart_toEndOf="@+id/service_price"
-        app:layout_constraintTop_toBottomOf="@+id/pick_service2" />
+        app:layout_constraintStart_toEndOf="@+id/tv_service_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pick_service2" />
 
     <TextView
-        android:id="@+id/price_won"
+        android:id="@+id/tv_price_won"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="41dp"
+        android:layout_marginEnd="30dp"
         android:text="원"
         android:textSize="20dp"
-        app:layout_constraintStart_toEndOf="@+id/price"
-        app:layout_constraintTop_toBottomOf="@+id/pick_service2" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pick_service2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

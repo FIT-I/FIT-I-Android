@@ -27,10 +27,11 @@ class ProfileActivity :AppCompatActivity() {
 
         heartBtn = findViewById<Button>(R.id.heart_btn) as CheckBox
         heartBtn.setOnClickListener { onCheckChanged(heartBtn) }
-
-        val matchRequest = findViewById<Button>(R.id.match_request_btn)
-        fun moveToNextPage() {
-            val intent = Intent(this, MatchServiceActivity::class.java)
+            
+        val matchRequest =findViewById<Button>(R.id.btn_match_request)
+        fun moveToNextPage(){
+            val intent = Intent(this,MatchServiceActivity::class.java)
+            
             startActivity(intent)
         }
         matchRequest.setOnClickListener {
