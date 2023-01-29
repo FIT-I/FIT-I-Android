@@ -11,10 +11,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import androidx.fragment.app.FragmentTransaction
+import com.example.fit_i.RetrofitImpl.service
 
 
 class MypageReviewIngFragment : Fragment() {
-    var review : String = ""
+    var trainerIdx : String = ""
+    var grade : String = ""
+    var contents : String = ""
 
 
     override fun onCreateView(
@@ -25,6 +28,9 @@ class MypageReviewIngFragment : Fragment() {
         val etreview = view.findViewById<View>(R.id.et_review) as EditText
         val btnreviewing = view.findViewById<View>(R.id.btn_review_ing) as Button
         val ibpre = view.findViewById<View>(R.id.ib_pre6) as ImageButton
+        contents = etreview.text.toString()
+
+        btnreviewing.isEnabled = false
 
         ibpre.setOnClickListener{
             val mypageFragment = MypageFragment()
@@ -34,7 +40,6 @@ class MypageReviewIngFragment : Fragment() {
             transaction.commit()
         }
 
-        btnreviewing.isEnabled = false
 
             etreview.addTextChangedListener(object: TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
@@ -42,9 +47,8 @@ class MypageReviewIngFragment : Fragment() {
 //값 변경시 실행되는 함수
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
-                 review = etreview.text.toString()
 
-                if (review.isNotEmpty())
+                if (contents.isNotEmpty())
                     btnreviewing.setBackgroundResource(R.drawable.edittext_false)
                 else
                     btnreviewing.setBackgroundResource(R.drawable.edittext_true)
@@ -58,11 +62,16 @@ class MypageReviewIngFragment : Fragment() {
 
 
         })
+//
+//        btnreviewing.setOnClickListener{
+//            service.UserReview(review = etreview.toString() )
+//        }
 
         return view
 
 
     }
+
 
 }
 
