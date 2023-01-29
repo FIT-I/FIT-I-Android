@@ -9,6 +9,8 @@ import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.RetrofitImpl.service
+import com.example.fit_i.data.model.response.AccountBaseResponse
+import com.example.fit_i.data.model.response.LoginResponse
 import com.example.fit_i.databinding.ActivitySignupBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -147,22 +149,28 @@ class SignupActivity : AppCompatActivity() {
             startActivity(intent)  // 화면 전환을 시켜줌
             finish()
             Toast.makeText(this, name + "signUp", Toast.LENGTH_SHORT).show()
+            //인텐트가 여기 있으면 예외처리를 못해줌
+
+
+            val newUser = ArrayList<String>()
 
             val signUp = User(name,email,pw,"customerProfile1")
             //val signUp = User("홍길동","fiti@soongsil.ac.kr","fiti123!","customerProfile1")
-            service.Signup(signUp).enqueue(object : Callback<User> {
-                override fun onResponse(call: Call<User>, response: Response<User>) {
+            service.signUp(signUp).enqueue(object : Callback<AccountBaseResponse> {
+                override fun onResponse(call: Call<AccountBaseResponse>, response: Response<AccountBaseResponse>) {
                     if(response.isSuccessful){
                         // 정상적으로 통신이 성공된 경우
-                        val result: User? = response.body()
-                        Log.d("post", "onResponse 성공: " + result?.toString());
+                        //val result: User? = response.body()
+                        Log.d("post", "onResponse 성공: " + response.body().toString());
+                        //Log.d("post","result: "+response.)
+                        //Log.d("post", "onResponse 성공: " + result.toString());
                     }else{
                         // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
                         Log.d("post", "onResponse 실패")
                     }
                 }
 
-                override fun onFailure(call: Call<User>, t: Throwable) {
+                override fun onFailure(call: Call<AccountBaseResponse>, t: Throwable) {
                     // 통신 실패 (인터넷 끊킴, 예외 발생 등 시스템적인 이유)
                     Log.d("post", "onFailure 에러: " + t.message.toString());
                 }
