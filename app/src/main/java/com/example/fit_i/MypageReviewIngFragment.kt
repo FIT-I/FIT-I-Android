@@ -36,9 +36,7 @@ class MypageReviewIngFragment : Fragment() {
 
         btnreviewing.isEnabled = false
 
-
-
-        etreview.addTextChangedListener(object: TextWatcher{
+            btnreviewing.addTextChangedListener(object: TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
 //값 변경시 실행되는 함수
@@ -47,9 +45,9 @@ class MypageReviewIngFragment : Fragment() {
                  review = etreview.text.toString()
 
                 if (review.isNotEmpty())
-                    etreview.setBackgroundResource(R.drawable.edittext_true)
+                    btnreviewing.setBackgroundResource(R.drawable.edittext_false)
                 else
-                    etreview.setBackgroundResource(R.drawable.edittext_false)
+                    btnreviewing.setBackgroundResource(R.drawable.edittext_true)
 
                 btnreviewing.isEnabled = true
 
