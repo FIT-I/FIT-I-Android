@@ -36,7 +36,7 @@ class MypageReviewIngFragment : Fragment() {
 
         btnreviewing.isEnabled = false
 
-            btnreviewing.addTextChangedListener(object: TextWatcher{
+            etreview.addTextChangedListener(object: TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
 //값 변경시 실행되는 함수
