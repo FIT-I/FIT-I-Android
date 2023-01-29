@@ -1,8 +1,7 @@
 package com.example.fit_i.data.service
 
-import CloseResponse
 import com.example.fit_i.data.model.request.LoginRequest
-import com.example.fit_i.User
+import com.example.fit_i.data.model.request.User
 import com.example.fit_i.data.model.request.ChangePWRequest
 import com.example.fit_i.data.model.request.LogoutRequest
 import com.example.fit_i.data.model.response.BaseResponse
@@ -34,7 +33,7 @@ interface AccountsService {
     //계정탈퇴
     @Headers("content-type: application/json")
     @PATCH("api/accounts/close")
-    fun close() : Call<CloseResponse>
+    fun close() : Call<BaseResponse>
 
     //계정 비밀번호 조회
     @Headers("content-type: application/json")

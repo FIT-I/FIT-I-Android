@@ -1,4 +1,4 @@
-package com.example.fit_i
+package com.example.fit_i.data.model.request
 
 import android.provider.ContactsContract.CommonDataKinds.Email
 import com.google.gson.annotations.SerializedName

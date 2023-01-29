@@ -3,7 +3,7 @@ package com.example.fit_i.data.service
 import com.example.fit_i.data.model.request.MatchingRequest
 import com.example.fit_i.data.model.request.ReviewRequest
 import com.example.fit_i.data.model.response.BaseResponse
-import com.example.fit_i.data.model.response.GetTrainerlistResponse
+import com.example.fit_i.data.model.response.GetTrainerListResponse
 import com.example.fit_i.data.model.response.WishResponse
 import retrofit2.Call
 import retrofit2.http.*
@@ -13,12 +13,12 @@ interface CustomerService {
     //트레이너 찜하기
     @Headers("content-type: application/json")
     @POST("api/customer/{trainerIdx}")
-    fun trainerSave(@Path("trainerIdx") trainerIdx : Int) : Call<BaseResponse>
+    fun addWish(@Path("trainerIdx") trainerIdx : Int) : Call<BaseResponse>
 
     //트레이너 찜하기 취소
     @Headers("content-type: application/json")
     @DELETE("api/customer/{trainerIdx}")
-    fun trainerSaveCancel(@Path("trainerIdx") trainerIdx : Int) : Call<BaseResponse>
+    fun cancelWish(@Path("trainerIdx") trainerIdx : Int) : Call<BaseResponse>
 
     //리뷰작성
     @Headers("content-type: application/json")
@@ -58,5 +58,5 @@ interface CustomerService {
     //트레이너 목록조회
     @Headers("content-type: application/json")
     @GET("api/customer/trainer-list")
-    fun getTrainerlist(@Query("category") category:String, @Query("lastTrainerId") lastTrainerId : Int, @Query("pageable") pageable: Object) : Call<GetTrainerlistResponse>
+    fun getTrainerlist(@Query("category") category:String, @Query("lastTrainerId") lastTrainerId : Int, @Query("page") page: Int, @Query("size") size : Int, @Query("sort") sort : Array<String>) : Call<GetTrainerListResponse>
 }

@@ -6,7 +6,6 @@ import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.data.model.response.BaseResponse
-import com.example.fit_i.data.service.AccountsService
 import com.example.fit_i.data.service.CustomerService
 import retrofit2.Call
 import retrofit2.Callback
@@ -59,7 +58,7 @@ class ProfileActivity :AppCompatActivity() {
 
     private fun onCheckChanged(compoundButton: CompoundButton) {
         if (wish.isChecked) {
-            service.trainerSave(trainerIdx).enqueue(object : Callback<BaseResponse> {
+            service.addWish(trainerIdx).enqueue(object : Callback<BaseResponse> {
                 override fun onResponse(
                     call: Call<BaseResponse>,
                     response: Response<BaseResponse>
@@ -83,7 +82,7 @@ class ProfileActivity :AppCompatActivity() {
                 }
             })
         } else
-            service.trainerSaveCancel(trainerIdx).enqueue(object : Callback<BaseResponse> {
+            service.cancelWish(trainerIdx).enqueue(object : Callback<BaseResponse> {
                 override fun onResponse(
                     call: Call<BaseResponse>,
                     response: Response<BaseResponse>
