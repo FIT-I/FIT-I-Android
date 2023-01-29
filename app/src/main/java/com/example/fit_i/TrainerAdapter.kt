@@ -9,6 +9,7 @@ import android.widget.AdapterView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fit_i.databinding.ItemTrainerBinding
+import com.example.fit_i.ui.profile.ProfileActivity
 
 class TrainerAdapter(private val dataList: ArrayList<TrainerData>): RecyclerView.Adapter<TrainerAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ItemTrainerBinding) :
