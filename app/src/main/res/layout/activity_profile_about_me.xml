@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageButton
+        android:id="@+id/back_arrow"
+        android:layout_width="12dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="70dp"
+        android:background="@android:color/transparent"
+        android:padding="0sp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tv_about_me_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="80dp"
+        android:text="소개글"
+        android:textColor="#011E5F"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/back_arrow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_about_me_context"
+        android:layout_width="369dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="20dp"
+        android:background="#F8F8F8"
+        android:gravity="center_vertical|top"
+        android:paddingLeft="20dp"
+        android:paddingRight="16.1dp"
+        android:paddingTop="58dp"
+        android:paddingBottom="26dp"
+        android:text="다양한 자격증을 바탕으로 친절하게 지도해드립니다.
+스포애니 3년의 경력을 믿어주세요~!
+저의경력은 前 경희대 소속 태권도 도장 사범 前 태권도 선수출신/공인 4단 前 래미안 피트니스 퍼스널트레이너 前 아레나 피트니스 중화점 퍼스널트레이너 現 한빛맹아원 운동 트레이너 現 한국 레블 트레이닝카페 회원 現 DL PT Shop 운영 現 스포애니 협력 트레이너 -국제 트레이닝 fisaf 보유 중입니다."
+        android:textSize="15dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_about_me_title" />
+
+    <ImageView
+        android:id="@+id/about_me_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/about_me_title"
+        app:layout_constraintTop_toTopOf="@+id/tv_about_me_context"
+        app:srcCompat="@drawable/ic_about_me" />
+
+    <TextView
+        android:id="@+id/about_me_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="17dp"
+        android:text="소개 글"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_about_me_context"
+        app:layout_constraintTop_toTopOf="@+id/tv_about_me_context" />
+
+    <ImageView
+        android:id="@+id/img_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="22dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_about_me_context"
+        app:layout_constraintStart_toStartOf="@+id/tv_about_me_context"
+        app:layout_constraintTop_toTopOf="@+id/tv_about_me_context"
+        app:srcCompat="@drawable/ic_longbar" />
+
+    <TextView
+        android:id="@+id/tv_total_char"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="20dp"
+        android:text="자/500자"
+        android:textColor="#D9D9D9"
+        app:layout_constraintEnd_toEndOf="@+id/tv_about_me_context"
+        app:layout_constraintTop_toTopOf="@+id/tv_about_me_context" />
+
+    <TextView
+        android:id="@+id/tv_char_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="170"
+        android:textColor="#D9D9D9"
+        app:layout_constraintEnd_toStartOf="@+id/tv_total_char"
+        app:layout_constraintTop_toTopOf="@+id/tv_about_me_context" />
+</androidx.constraintlayout.widget.ConstraintLayout>

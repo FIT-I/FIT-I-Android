@@ -20,12 +20,14 @@ class MypageSettingFragment :Fragment() {
 
 
     @SuppressLint("MissingInflatedId")
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
         val ee = inflater.inflate(R.layout.fragment_mypage_setting, container, false)
+
         val ibpre = ee.findViewById<View>(R.id.ib_pre1)
         val btnlogout = ee.findViewById<View>(R.id.btn_logout) as AppCompatButton
         val btnwithdraw = ee.findViewById<View>(R.id.btn_withdraw) as AppCompatButton
@@ -49,9 +51,11 @@ class MypageSettingFragment :Fragment() {
 
             transaction.replace(R.id.fl_container,mypageSiginoutFragment)
             transaction.commit()
+
         }
 
         return ee
+
 
 
 }
@@ -63,4 +67,3 @@ class MypageSettingFragment :Fragment() {
     }
 
 }
-

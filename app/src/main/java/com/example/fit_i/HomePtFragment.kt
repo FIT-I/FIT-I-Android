@@ -1,24 +1,24 @@
 package com.example.fit_i
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fit_i.databinding.FragmentHomePtBinding
+
 
 class HomePtFragment : Fragment() {
     private lateinit var binding: FragmentHomePtBinding
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
+        super.onCreate(savedInstanceState)
+
         binding = FragmentHomePtBinding.inflate(layoutInflater)
 
         val trainerList : ArrayList<TrainerData> = arrayListOf()
@@ -36,10 +36,18 @@ class HomePtFragment : Fragment() {
         val linearLayoutManager = LinearLayoutManager(context)
         binding.rvTrainer.layoutManager=linearLayoutManager
 
-        binding.llSort.setOnClickListener {
-            if (binding.tvSort.text == "실시간 순") {
-                binding.tvSort.text = "별점 순"
-            } else binding.tvSort.text = "실시간 순"
+
+        binding.tvSort.text = "실시간 순"
+        binding.llSort.setOnClickListener(){
+            val bottomSheet = BottomSheetFragment{
+                when (it){
+                    0 -> binding.tvSort.text = "실시간 순"
+                    1 -> binding.tvSort.text = "트레이너 레벨 순"
+                    2 -> binding.tvSort.text = "가격 낮은 순"
+                    3 -> binding.tvSort.text = "가격 높은 순"
+                }
+            }
+            activity?.let { it1 -> bottomSheet.show(it1.supportFragmentManager,bottomSheet.tag) }
         } //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함
 
         return binding.root
