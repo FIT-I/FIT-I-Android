@@ -94,6 +94,7 @@ class ProfileActivity :AppCompatActivity() {
                         // 정상적으로 통신이 성공된 경우
                         //val result: User? = response.body()
                         Log.d("post", "onResponse 성공: " + response.body().toString());
+                        Toast.makeText(this@ProfileActivity, "찜 목록에서 제거", Toast.LENGTH_SHORT).show()
                         //Log.d("post","result: "+response.)
                         //Log.d("post", "onResponse 성공: " + result.toString());
                     } else {

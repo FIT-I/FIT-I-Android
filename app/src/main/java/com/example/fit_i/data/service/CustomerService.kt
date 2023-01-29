@@ -58,5 +58,10 @@ interface CustomerService {
     //트레이너 목록조회
     @Headers("content-type: application/json")
     @GET("api/customer/trainer-list")
-    fun getTrainerlist(@Query("category") category:String, @Query("lastTrainerId") lastTrainerId : Int, @Query("page") page: Int, @Query("size") size : Int, @Query("sort") sort : Array<String>) : Call<GetTrainerListResponse>
+    fun getTrainerlist(@Query("category") category:String,
+                       @Query("lastTrainerId") lastTrainerId : Int,
+                       @Query("page") page: Int,
+                       @Query("size") size : Int,
+                       @Query("sort") sort : Array<String>)
+    : Call<GetTrainerListResponse>
 }

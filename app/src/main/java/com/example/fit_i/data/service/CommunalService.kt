@@ -16,21 +16,21 @@ interface CommunalService {
 
     //이용약관
     @Headers("content-type: application/json")
-    @GET("/api/communal/terms")
+    @GET("api/communal/terms")
     fun getTerms() : Call<GetTermsResponse>
 
     //리뷰 조회
     @Headers("content-type: application/json")
-    @GET("/api/communal/review/{trainerIdx}")
+    @GET("api/communal/review/{trainerIdx}")
     fun getReviewList(@Path("trainerIdx") trainerIdx : Int) : Call<GetReviewListResponse>
 
     //마이페이지 조회
     @Headers("content-type: application/json")
-    @GET("/api/communal/mypage")
+    @GET("api/communal/mypage")
     fun getMypage() : Call<GetMypageResponse>
 
     //공지사항 목록 조회
     @Headers("content-type: application/json")
-    @GET("/api/communal/announcement")
+    @GET("api/communal/announcement")
     fun getAnnouncement() : Call<GetAnnouncementResponse>
 }
