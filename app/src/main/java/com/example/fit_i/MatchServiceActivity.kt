@@ -15,15 +15,15 @@ class MatchServiceActivity :AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_match_service)
 
-        checkBox = findViewById(R.id.checkBox)
-        buttonNext=findViewById(R.id.button_next)
+        checkBox = findViewById(R.id.cb_check_service)
+        buttonNext=findViewById(R.id.btn_next_step)
         buttonNext.isEnabled = false
 
         checkBox.setOnClickListener{ onCheckChanged(checkBox)}
 
 
         //뒤로가기
-        val goBack = findViewById<ImageButton>(R.id.back_arrow)
+        val goBack = findViewById<ImageButton>(R.id.ib_back_arrow)
         goBack.setOnClickListener{
             val intent = Intent(this,ProfileActivity::class.java)
             startActivity(intent)
@@ -41,7 +41,7 @@ class MatchServiceActivity :AppCompatActivity(){
     }
     private fun onCheckChanged(compoundButton: CompoundButton){
         when(compoundButton.id){
-            R.id.checkBox->{
+            R.id.cb_check_service->{
             if(checkBox.isChecked){
                 buttonNext.isEnabled = true
             }

@@ -9,7 +9,7 @@ class ProfileAboutMeActivity:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_about_me)
-        val goBack = findViewById<ImageButton>(R.id.back_arrow)
+        val goBack = findViewById<ImageButton>(R.id.ib_back_arrow)
         goBack.setOnClickListener{
             val intent = Intent(this,ProfileActivity::class.java)
             startActivity(intent)
