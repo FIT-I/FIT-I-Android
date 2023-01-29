@@ -30,7 +30,6 @@ interface CustomerService {
     @POST("api/customer/matching/{trainerIdx}")
     fun matcingPlz(@Body req : MatchingRequest, @Path("trainerIdx") trainerIdx: Int ) :Call<BaseResponse>
 
-
     //고객 프로필수정
     @Headers("content-type: application/json")
     @PATCH("api/customer/profile/{profile}")
@@ -47,14 +46,17 @@ interface CustomerService {
     fun ringOff(): Call<BaseResponse>
 
     //매칭위치설정
+    @Headers("content-type: application/json")
     @PATCH("api/customer/location/{location}")
     fun setLocation(@Path("location") location:String):Call<BaseResponse>
 
     //찜목록조회
+    @Headers("content-type: application/json")
     @GET("api/customer/wish")
     fun getWishlist() : Call<WishResponse>
 
     //트레이너 목록조회
+    @Headers("content-type: application/json")
     @GET("api/customer/trainer-list")
     fun getTrainerlist(@Query("category") category:String, @Query("lastTrainerId") lastTrainerId : Int, @Query("pageable") pageable: Object) : Call<GetTrainerlistResponse>
 }
