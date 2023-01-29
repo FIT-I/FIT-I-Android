@@ -1,4 +1,4 @@
-package com.example.fit_i
+package com.example.fit_i.ui.match
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.widget.CompoundButton
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fit_i.R
 
 class MatchPickUpActivity :AppCompatActivity(){
     private lateinit var pickup1 : CheckBox
@@ -29,7 +30,7 @@ class MatchPickUpActivity :AppCompatActivity(){
         //뒤로가기
         val goBack = findViewById<ImageButton>(R.id.ib_back_arrow)
         goBack.setOnClickListener{
-            val intent = Intent(this,MatchDateChooseActivity::class.java)
+            val intent = Intent(this, MatchDateChooseActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -42,7 +43,7 @@ class MatchPickUpActivity :AppCompatActivity(){
 //        }
         nextStep.setOnClickListener{
             if(pickup1.isChecked){
-                val intent = Intent(this,MatchCheckActivity1::class.java)
+                val intent = Intent(this, MatchCheckActivity1::class.java)
                 startActivity(intent)
                 finish()
             }
@@ -56,7 +57,7 @@ class MatchPickUpActivity :AppCompatActivity(){
     }
     private fun onCheckChanged(compoundButton: CompoundButton){
         when(compoundButton.id){
-            R.id.btn_pickup1-> {
+            R.id.btn_pickup1 -> {
                 if (pickup1.isChecked) {
                     pickup2.isChecked = false
                     buttonNext.isEnabled = true
@@ -65,7 +66,7 @@ class MatchPickUpActivity :AppCompatActivity(){
                     buttonNext.isEnabled = false
                 }
             }
-            R.id.btn_pickup2->{
+            R.id.btn_pickup2 ->{
                 if(pickup2.isChecked){
                     pickup1.isChecked = false
                     buttonNext.isEnabled = true

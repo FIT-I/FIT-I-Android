@@ -1,4 +1,4 @@
-package com.example.fit_i
+package com.example.fit_i.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,9 @@ import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.fit_i.BottomSheetFragment
+import com.example.fit_i.TrainerAdapter
+import com.example.fit_i.TrainerData
 import com.example.fit_i.databinding.FragmentHomePtBinding
 
 

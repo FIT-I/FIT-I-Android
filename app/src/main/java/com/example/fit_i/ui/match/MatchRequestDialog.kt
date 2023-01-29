@@ -1,11 +1,9 @@
-package com.example.fit_i
+package com.example.fit_i.ui.match
 
 import android.view.Window
 import android.app.Dialog
-import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fit_i.R
 import com.example.fit_i.databinding.DialogMatchRequestBinding
 
 class MatchRequestDialog(private val context: AppCompatActivity) {

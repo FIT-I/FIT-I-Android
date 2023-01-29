@@ -1,4 +1,4 @@
-package com.example.fit_i
+package com.example.fit_i.ui.signup
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.CompoundButton
+import com.example.fit_i.R
 
 class SignupPermissionActivity : AppCompatActivity() {
 //    private lateinit var binding: ActivityPermissionBinding

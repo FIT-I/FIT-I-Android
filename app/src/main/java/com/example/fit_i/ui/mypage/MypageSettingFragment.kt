@@ -1,14 +1,12 @@
-package com.example.fit_i
+package com.example.fit_i.ui.mypage
 
-import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
+import com.example.fit_i.R
 
 class MypageSettingFragment : Fragment() {
 

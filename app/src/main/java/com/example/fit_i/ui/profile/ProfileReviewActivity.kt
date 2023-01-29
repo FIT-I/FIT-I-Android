@@ -1,9 +1,12 @@
-package com.example.fit_i
+package com.example.fit_i.ui.profile
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fit_i.R
+import com.example.fit_i.ReviewAdapter
+import com.example.fit_i.ReviewData
 
 class ProfileReviewActivity:AppCompatActivity() {
     //private lateinit var binding: ActivityReviewBinding

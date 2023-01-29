@@ -1,14 +1,23 @@
-package com.example.fit_i
+package com.example.fit_i.ui.mypage
 
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
-import android.text.InputType
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.*
+import com.example.fit_i.LoginSplashActivity
+import com.example.fit_i.R
+import com.example.fit_i.RetrofitImpl
+import com.example.fit_i.data.model.request.ChangePWRequest
+import com.example.fit_i.data.model.response.BaseResponse
+import com.example.fit_i.data.service.AccountsService
 import com.example.fit_i.databinding.ActivityChangePwBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.regex.Pattern
 
 class MypageChangePwActivity : AppCompatActivity() {
@@ -81,7 +90,32 @@ class MypageChangePwActivity : AppCompatActivity() {
         //버튼 이벤트
         btnFinPwChange.setOnClickListener {
             val intent = Intent(this, LoginSplashActivity::class.java)
-            startActivity(intent)  // 화면 전환을 시켜줌
+            val service = RetrofitImpl.getApiClient().create(AccountsService::class.java)
+
+            service.changePW(ChangePWRequest("", pw1,"")).enqueue(object : Callback<BaseResponse> {
+                override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
+                    if(response.isSuccessful){
+                        // 정상적으로 통신이 성공된 경우
+                        //val result: User? = response.body()
+                        Log.d("post", "onResponse 성공: " + response.body().toString());
+                        Toast.makeText(this@MypageChangePwActivity, "비밀번호가 변경되었습니다.", Toast.LENGTH_SHORT).show()
+                        //Log.d("post","result: "+response.)
+                        //Log.d("post", "onResponse 성공: " + result.toString());
+                    }else{
+                        // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
+                        Log.d("post", "onResponse 실패")
+                    }
+                }
+
+                override fun onFailure(call: Call<BaseResponse>, t: Throwable) {
+                    // 통신 실패 (인터넷 끊킴, 예외 발생 등 시스템적인 이유)
+                    Log.d("post", "onFailure 에러: " + t.message.toString());
+                }
+            })
+
+
+
+        startActivity(intent)  // 화면 전환을 시켜줌
             finish()
             Toast.makeText(this, pw1 + " changePW", Toast.LENGTH_SHORT).show()
         }

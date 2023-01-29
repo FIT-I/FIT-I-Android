@@ -1,4 +1,4 @@
-package com.example.fit_i
+package com.example.fit_i.ui.signup
 
 import android.content.Intent
 import android.graphics.Color
@@ -8,6 +8,9 @@ import android.text.TextWatcher
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fit_i.R
+import com.example.fit_i.RetrofitImpl
+import com.example.fit_i.data.model.request.User
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.AccountsService
 import com.example.fit_i.databinding.ActivitySignupBinding

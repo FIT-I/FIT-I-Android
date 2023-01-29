@@ -1,4 +1,4 @@
-package com.example.fit_i
+package com.example.fit_i.ui.match
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,8 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.CompoundButton
 import android.widget.ImageButton
+import com.example.fit_i.R
+import com.example.fit_i.ui.profile.ProfileActivity
 
 class MatchServiceActivity :AppCompatActivity(){
     private lateinit var checkBox: CheckBox
@@ -25,7 +27,7 @@ class MatchServiceActivity :AppCompatActivity(){
         //뒤로가기
         val goBack = findViewById<ImageButton>(R.id.ib_back_arrow)
         goBack.setOnClickListener{
-            val intent = Intent(this,ProfileActivity::class.java)
+            val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -34,14 +36,14 @@ class MatchServiceActivity :AppCompatActivity(){
 
 
         buttonNext.setOnClickListener{
-            val intent = Intent(this,MatchDateChooseActivity::class.java)
+            val intent = Intent(this, MatchDateChooseActivity::class.java)
             startActivity(intent)
             finish()
         }
     }
     private fun onCheckChanged(compoundButton: CompoundButton){
         when(compoundButton.id){
-            R.id.cb_check_service->{
+            R.id.cb_check_service ->{
             if(checkBox.isChecked){
                 buttonNext.isEnabled = true
             }

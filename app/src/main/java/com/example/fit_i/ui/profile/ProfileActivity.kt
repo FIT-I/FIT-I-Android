@@ -1,10 +1,13 @@
-package com.example.fit_i
+package com.example.fit_i.ui.profile
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fit_i.ui.match.MatchServiceActivity
+import com.example.fit_i.R
+import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.CustomerService
 import retrofit2.Call
@@ -23,11 +26,11 @@ class ProfileActivity :AppCompatActivity() {
 
         wish = findViewById<Button>(R.id.cb_heart_btn) as CheckBox
         wish.setOnClickListener { onCheckChanged(wish) }
-            
+
         val matchRequest =findViewById<Button>(R.id.btn_match_request)
         fun moveToNextPage(){
-            val intent = Intent(this,MatchServiceActivity::class.java)
-            
+            val intent = Intent(this, MatchServiceActivity::class.java)
+
             startActivity(intent)
         }
         matchRequest.setOnClickListener {

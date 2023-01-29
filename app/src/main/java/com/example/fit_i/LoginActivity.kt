@@ -12,6 +12,7 @@ import com.example.fit_i.data.model.request.LoginRequest
 import com.example.fit_i.data.model.response.LoginResponse
 import com.example.fit_i.data.service.AccountsService
 import com.example.fit_i.databinding.ActivityLoginBinding
+import com.example.fit_i.ui.signup.SignupPermissionActivity
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.AuthErrorCause.*
