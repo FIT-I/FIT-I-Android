@@ -1,10 +1,12 @@
 package com.example.fit_i
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fit_i.databinding.ItemTrainerBinding
 
@@ -44,14 +46,12 @@ class TrainerAdapter(private val dataList: ArrayList<TrainerData>): RecyclerView
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(position)
-        /*
+
         holder.itemView.setOnClickListener {
-            val intent = Intent(holder.itemView?.context, CardDetailActivity::class.java)
-            intent.putExtra("front", dataList[position].front)
-            intent.putExtra("back", dataList[position].back)
+            val intent = Intent(holder.itemView?.context, ProfileActivity::class.java)
             intent.putExtra("name", dataList[position].name)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
-        }*/
+        }
     }
 
     override fun getItemCount(): Int = dataList.size

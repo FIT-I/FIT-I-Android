@@ -18,48 +18,63 @@ class MatchPickUpActivity :AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_match_pickup)
 
-        pickup1 = findViewById(R.id.pickup1_btn)
-        pickup2 = findViewById(R.id.pickup2_btn)
-        buttonNext = findViewById(R.id.button_next)
+        pickup1 = findViewById(R.id.btn_pickup1)
+        pickup2 = findViewById(R.id.btn_pickup2)
+        buttonNext = findViewById(R.id.btn_next_step)
         buttonNext.isEnabled = false
 
         pickup1.setOnClickListener{onCheckChanged(pickup1)}
         pickup2.setOnClickListener{onCheckChanged(pickup2)}
 
         //뒤로가기
-        val goBack = findViewById<ImageButton>(R.id.back_arrow)
+        val goBack = findViewById<ImageButton>(R.id.ib_back_arrow)
         goBack.setOnClickListener{
             val intent = Intent(this,MatchDateChooseActivity::class.java)
             startActivity(intent)
             finish()
         }
         //픽업 다음 단계로 이동
-        val nextStep = findViewById<TextView>(R.id.button_next)
+        val nextStep = findViewById<TextView>(R.id.btn_next_step)
+//        nextStep.setOnClickListener{
+//            val intent = Intent(this,MatchCheckActivity2::class.java)
+//            startActivity(intent)
+//            finish()
+//        }
         nextStep.setOnClickListener{
-            val intent = Intent(this,MatchCheckActivity::class.java)
-            startActivity(intent)
-            finish()
+            if(pickup1.isChecked){
+                val intent = Intent(this,MatchCheckActivity1::class.java)
+                startActivity(intent)
+                finish()
+            }
+            else{
+                val intent = Intent(this, MatchCheckActivity2::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
-
 
     }
     private fun onCheckChanged(compoundButton: CompoundButton){
         when(compoundButton.id){
-            R.id.pickup1_btn-> {
+            R.id.btn_pickup1-> {
                 if (pickup1.isChecked) {
                     pickup2.isChecked = false
                     buttonNext.isEnabled = true
                 }
+                else{
+                    buttonNext.isEnabled = false
+                }
             }
-            R.id.pickup2_btn->{
+            R.id.btn_pickup2->{
                 if(pickup2.isChecked){
                     pickup1.isChecked = false
                     buttonNext.isEnabled = true
                 }
+                else{
+                    buttonNext.isEnabled = false
+                }
             }
 
         }
-        buttonNext.isEnabled = pickup1.isChecked
-        buttonNext.isEnabled = pickup2.isChecked
     }
 }

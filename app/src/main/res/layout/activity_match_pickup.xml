@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/pick_pickup"
+        android:id="@+id/tv_pick_pickup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/background_step"
+        android:id="@+id/iv_background_step"
         android:layout_width="0dp"
         android:layout_height="5dp"
         android:layout_marginTop="124dp"
@@ -29,7 +29,7 @@
         app:srcCompat="@drawable/img_bar" />
 
     <ImageView
-        android:id="@+id/current_step"
+        android:id="@+id/iv_current_step"
         android:layout_width="130dp"
         android:layout_height="5dp"
         android:layout_marginTop="125dp"
@@ -38,7 +38,7 @@
         android:background="@color/gray" />
 
     <Button
-        android:id="@+id/button_next"
+        android:id="@+id/btn_next_step"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="15dp"
@@ -59,10 +59,10 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pick_pickup">
+        app:layout_constraintTop_toBottomOf="@+id/tv_pick_pickup">
 
         <CheckBox
-            android:id="@+id/pickup1_btn"
+            android:id="@+id/btn_pickup1"
             android:layout_width="170dp"
             android:layout_height="220dp"
             android:scaleType="fitCenter"
@@ -72,7 +72,7 @@
         />
 
         <CheckBox
-            android:id="@+id/pickup2_btn"
+            android:id="@+id/btn_pickup2"
             android:layout_width="170dp"
             android:layout_height="220dp"
             android:background="@drawable/pickup2_selector"
@@ -83,7 +83,7 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/back_arrow"
+        android:id="@+id/ib_back_arrow"
         android:layout_width="12dp"
         android:layout_height="20dp"
         android:layout_marginEnd="114dp"
@@ -91,8 +91,8 @@
         android:backgroundTint="#FFFFFF"
         android:padding="0sp"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/background_step"
-        app:layout_constraintEnd_toStartOf="@+id/pick_pickup"
+        app:layout_constraintBottom_toTopOf="@+id/iv_background_step"
+        app:layout_constraintEnd_toStartOf="@+id/tv_pick_pickup"
         app:srcCompat="@drawable/ic_back"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 

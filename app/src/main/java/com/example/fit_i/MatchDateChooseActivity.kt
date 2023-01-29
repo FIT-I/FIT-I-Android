@@ -11,7 +11,7 @@ class MatchDateChooseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_match_date_choose)
         //뒤로가기
-        val goBack = findViewById<ImageButton>(R.id.back_arrow)
+        val goBack = findViewById<ImageButton>(R.id.ib_back_arrow)
         goBack.setOnClickListener{
             val intent = Intent(this,MatchServiceActivity::class.java)
             startActivity(intent)

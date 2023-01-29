@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ImageButton
-        android:id="@+id/back_arrow"
+        android:id="@+id/ib_back_arrow"
         android:layout_width="12dp"
         android:layout_height="20dp"
         android:layout_marginStart="30dp"
@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/ic_back"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
     <TextView
-        android:id="@+id/check_matching"
+        android:id="@+id/tv_check_matching"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -30,7 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <ImageView
-        android:id="@+id/background_step"
+        android:id="@+id/iv_background_step"
         android:layout_width="0dp"
         android:layout_height="5dp"
         android:layout_marginTop="124dp"
@@ -41,7 +41,7 @@
 
     <TextView
 
-        android:id="@+id/service_request"
+        android:id="@+id/tv_service_request"
         android:layout_width="350dp"
         android:layout_height="370dp"
         android:layout_marginTop="22dp"
@@ -55,74 +55,74 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/background_step" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_background_step" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_match_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
         android:layout_marginTop="63dp"
         android:layout_marginEnd="22dp"
-        app:layout_constraintEnd_toEndOf="@+id/service_request"
-        app:layout_constraintStart_toStartOf="@+id/service_request"
-        app:layout_constraintTop_toTopOf="@+id/service_request"
+        app:layout_constraintEnd_toEndOf="@+id/tv_service_request"
+        app:layout_constraintStart_toStartOf="@+id/tv_service_request"
+        app:layout_constraintTop_toTopOf="@+id/tv_service_request"
         app:srcCompat="@drawable/line" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/iv_match_bar1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="22dp"
-        app:layout_constraintEnd_toEndOf="@+id/service_request"
+        app:layout_constraintEnd_toEndOf="@+id/tv_service_request"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/service_request"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/tv_service_request"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar"
         app:srcCompat="@drawable/line" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/iv_match_bar2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="22dp"
-        app:layout_constraintEnd_toEndOf="@+id/service_request"
+        app:layout_constraintEnd_toEndOf="@+id/tv_service_request"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/service_request"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/tv_service_request"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar1"
         app:srcCompat="@drawable/line" />
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/iv_match_bar3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="22dp"
-        app:layout_constraintEnd_toEndOf="@+id/service_request"
+        app:layout_constraintEnd_toEndOf="@+id/tv_service_request"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/service_request"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:layout_constraintStart_toStartOf="@+id/tv_service_request"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar2"
         app:srcCompat="@drawable/line" />
 
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/iv_match_bar4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="22dp"
-        app:layout_constraintEnd_toEndOf="@+id/service_request"
+        app:layout_constraintEnd_toEndOf="@+id/tv_service_request"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/service_request"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14"
+        app:layout_constraintStart_toStartOf="@+id/tv_service_request"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar3"
         app:srcCompat="@drawable/line" />
 
     <TextView
-        android:id="@+id/service_time"
+        android:id="@+id/tv_service_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
@@ -131,12 +131,12 @@
         android:text="1시간"
         android:textColor="@color/main"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="@+id/service_request"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintBottom_toTopOf="@+id/iv_match_bar1"
+        app:layout_constraintStart_toStartOf="@+id/tv_service_request"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar" />
 
     <TextView
-        android:id="@+id/total_price"
+        android:id="@+id/tv_total_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
@@ -145,12 +145,12 @@
         android:text="총 금액"
         android:textColor="@color/main"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView13"
-        app:layout_constraintStart_toStartOf="@+id/service_request"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintBottom_toTopOf="@+id/iv_match_bar2"
+        app:layout_constraintStart_toStartOf="@+id/tv_service_request"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar1" />
 
     <TextView
-        android:id="@+id/match_date"
+        android:id="@+id/tv_match_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
@@ -159,12 +159,12 @@
         android:text="매칭 날짜"
         android:textColor="@color/main"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView14"
-        app:layout_constraintStart_toStartOf="@+id/service_request"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+        app:layout_constraintBottom_toTopOf="@+id/iv_match_bar3"
+        app:layout_constraintStart_toStartOf="@+id/tv_service_request"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar2" />
 
     <TextView
-        android:id="@+id/pickup_way"
+        android:id="@+id/tv_pickup_way"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
@@ -173,12 +173,12 @@
         android:text="픽업 형태"
         android:textColor="@color/main"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView15"
-        app:layout_constraintStart_toStartOf="@+id/service_request"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+        app:layout_constraintBottom_toTopOf="@+id/iv_match_bar4"
+        app:layout_constraintStart_toStartOf="@+id/tv_service_request"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar3" />
 
     <TextView
-        android:id="@+id/match_place"
+        android:id="@+id/tv_match_place"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -187,12 +187,12 @@
         android:text="매칭 장소"
         android:textColor="@color/main"
         android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/service_request"
-        app:layout_constraintStart_toStartOf="@+id/service_request"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+        app:layout_constraintBottom_toBottomOf="@+id/tv_service_request"
+        app:layout_constraintStart_toStartOf="@+id/tv_service_request"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar4" />
 
     <TextView
-        android:id="@+id/match_place2"
+        android:id="@+id/tv_match_place2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="118dp"
@@ -202,13 +202,13 @@
         android:textColor="@color/main"
         android:textSize="15dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/service_request"
-        app:layout_constraintStart_toEndOf="@+id/match_place"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_service_request"
+        app:layout_constraintStart_toEndOf="@+id/tv_match_place"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar4"
         app:layout_constraintVertical_bias="0.25" />
 
     <TextView
-        android:id="@+id/pickup_way2"
+        android:id="@+id/tv_pickup_way2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="112dp"
@@ -218,13 +218,13 @@
         android:textColor="@color/main"
         android:textSize="15dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView15"
-        app:layout_constraintStart_toEndOf="@+id/pickup_way"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14"
+        app:layout_constraintBottom_toTopOf="@+id/iv_match_bar4"
+        app:layout_constraintStart_toEndOf="@+id/tv_pickup_way"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar3"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/match_date2"
+        android:id="@+id/tv_match_date2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="107dp"
@@ -234,13 +234,13 @@
         android:textColor="@color/main"
         android:textSize="15dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView14"
-        app:layout_constraintStart_toEndOf="@+id/match_date"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:layout_constraintBottom_toTopOf="@+id/iv_match_bar3"
+        app:layout_constraintStart_toEndOf="@+id/tv_match_date"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar2"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/match_date3"
+        android:id="@+id/tv_match_date3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -249,13 +249,13 @@
         android:textStyle="bold"
         android:textColor="@color/main"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView14"
-        app:layout_constraintStart_toEndOf="@+id/match_date2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:layout_constraintBottom_toTopOf="@+id/iv_match_bar3"
+        app:layout_constraintStart_toEndOf="@+id/tv_match_date2"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar2"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/total_price2"
+        android:id="@+id/tv_total_price2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="208dp"
@@ -265,13 +265,13 @@
         android:textColor="@color/main"
         android:textSize="15dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView13"
-        app:layout_constraintStart_toEndOf="@+id/total_price"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintBottom_toTopOf="@+id/iv_match_bar2"
+        app:layout_constraintStart_toEndOf="@+id/tv_total_price"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar1"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/total_price3"
+        android:id="@+id/tv_total_price3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -280,13 +280,13 @@
         android:textColor="@color/main"
         android:textSize="15dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView13"
-        app:layout_constraintStart_toEndOf="@+id/total_price2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintBottom_toTopOf="@+id/iv_match_bar2"
+        app:layout_constraintStart_toEndOf="@+id/tv_total_price2"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar1"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/service_time2"
+        android:id="@+id/tv_service_time2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="217dp"
@@ -295,13 +295,13 @@
         android:text="20,000"
         android:textColor="@color/main"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
-        app:layout_constraintStart_toEndOf="@+id/service_time"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/iv_match_bar1"
+        app:layout_constraintStart_toEndOf="@+id/tv_service_time"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/service_time3"
+        android:id="@+id/tv_service_time3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -310,24 +310,24 @@
         android:textColor="@color/main"
         android:textSize="15dp"
 
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
-        app:layout_constraintStart_toEndOf="@+id/service_time2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/iv_match_bar1"
+        app:layout_constraintStart_toEndOf="@+id/tv_service_time2"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imageView16"
+        android:id="@+id/iv_match_service_icon"
         android:layout_width="18dp"
         android:layout_height="23dp"
         android:layout_marginStart="19dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="320dp"
         android:layout_marginBottom="6dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/service_request"
+        app:layout_constraintBottom_toTopOf="@+id/iv_match_bar"
+        app:layout_constraintEnd_toEndOf="@+id/tv_service_request"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/service_request"
-        app:layout_constraintTop_toTopOf="@+id/service_request"
+        app:layout_constraintStart_toStartOf="@+id/tv_service_request"
+        app:layout_constraintTop_toTopOf="@+id/tv_service_request"
         app:srcCompat="@drawable/ic_match_request_check" />
     <Button
         android:id="@+id/btn_next"
