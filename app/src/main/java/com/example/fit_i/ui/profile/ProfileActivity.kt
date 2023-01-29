@@ -22,7 +22,7 @@ class ProfileActivity :AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        trainerIdx = 1 // intent getint로 실제 클릭한 트레이너값 받아와야함
+        trainerIdx = 1010 // intent getint로 실제 클릭한 트레이너값 받아와야함
 
         wish = findViewById<Button>(R.id.cb_heart_btn) as CheckBox
         wish.setOnClickListener { onCheckChanged(wish) }
@@ -70,12 +70,12 @@ class ProfileActivity :AppCompatActivity() {
                         // 정상적으로 통신이 성공된 경우
                         //val result: User? = response.body()
                         Log.d("post", "onResponse 성공: " + response.body().toString());
-                        Toast.makeText(this@ProfileActivity, "찜목록 추가", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@ProfileActivity, "찜 목록에 추가", Toast.LENGTH_SHORT).show()
                         //Log.d("post","result: "+response.)
                         //Log.d("post", "onResponse 성공: " + result.toString());
                     } else {
                         // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
-                        Log.d("post", "onResponse 실패")
+                        Log.d("post", "onResponse 실패 "+ response.body().toString())
                     }
                 }
 
