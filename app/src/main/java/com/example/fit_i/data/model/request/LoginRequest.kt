@@ -1,8 +1,8 @@
-package com.example.fit_i
+package com.example.fit_i.data.model.request
 
 import com.google.gson.annotations.SerializedName
 
-data class Login(
+data class LoginRequest(
     @SerializedName("email")
     var email: String,
     @SerializedName("password")
