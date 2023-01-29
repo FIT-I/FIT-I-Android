@@ -9,8 +9,8 @@
         android:id="@+id/ib_pre6"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_margin="50dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="30dp"
         android:background="@null"
         android:backgroundTint="@color/main"
         android:scaleType="fitStart"
@@ -20,15 +20,16 @@
 
     <TextView
         android:id="@+id/tv_review_ing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="매칭 후기 남기기"
+        android:textColor="@color/main"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/main"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/ib_pre6"
-        app:layout_constraintBottom_toBottomOf="@+id/ib_pre6"
-        android:text="매칭 후기 남기기"  android:layout_height="wrap_content"
-        android:layout_width="wrap_content"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ib_pre6" />
     <ImageView
         android:id="@+id/iv_line4"
         android:layout_width="match_parent"
@@ -59,7 +60,7 @@
             android:text="별점"
             android:textColor="@color/main"/>
 
-        <com.willy.ratingbar.RotationRatingBar
+        <com.willy.ratingbar.BaseRatingBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/tv_star"
