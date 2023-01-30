@@ -53,83 +53,6 @@ class LoginActivity : AppCompatActivity() {
 
         val btnLogin : Button = findViewById(R.id.btn_login)
 
-        //val keyHash = Utility.getKeyHash(this)
-        //Log.e("해시키", keyHash)
-//
-//        // 로그인 정보 확인
-//        UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
-//            if (error != null) {
-//                Toast.makeText(this, "토큰 정보 보기 실패", Toast.LENGTH_SHORT).show()
-//            } else if (tokenInfo != null) {
-//                Toast.makeText(this, "토큰 정보 보기 성공", Toast.LENGTH_SHORT).show()
-//                val intent = Intent(this, MainActivity::class.java)
-//                startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                finish()
-//            }
-//        }
-
-        val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
-            if (error != null) {
-                when {
-                    error.toString() == AccessDenied.toString() -> {
-                        Toast.makeText(this, "접근이 거부 됨(동의 취소)", Toast.LENGTH_SHORT).show()
-                    }
-                    error.toString() == InvalidClient.toString() -> {
-                        Toast.makeText(this, "유효하지 않은 앱", Toast.LENGTH_SHORT).show()
-                    }
-                    error.toString() == InvalidGrant.toString() -> {
-                        Toast.makeText(this, "인증 수단이 유효하지 않아 인증할 수 없는 상태", Toast.LENGTH_SHORT)
-                            .show()
-                    }
-                    error.toString() == InvalidRequest.toString() -> {
-                        Toast.makeText(this, "요청 파라미터 오류", Toast.LENGTH_SHORT).show()
-                    }
-                    error.toString() == InvalidScope.toString() -> {
-                        Toast.makeText(this, "유효하지 않은 scope ID", Toast.LENGTH_SHORT).show()
-                    }
-                    error.toString() == Misconfigured.toString() -> {
-                        Toast.makeText(this, "설정이 올바르지 않음(android key hash)", Toast.LENGTH_SHORT)
-                            .show()
-                    }
-                    error.toString() == ServerError.toString() -> {
-                        Toast.makeText(this, "서버 내부 에러", Toast.LENGTH_SHORT).show()
-                    }
-                    error.toString() == Unauthorized.toString() -> {
-                        Toast.makeText(this, "앱이 요청 권한이 없음", Toast.LENGTH_SHORT).show()
-                    }
-                    else -> { // Unknown
-                        Toast.makeText(this, "기타 에러", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            } else if (token != null) {
-                Toast.makeText(this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, LoginSplashActivity::class.java)
-                startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                finish()
-            }
-        }
-
-        val kakao_login_button = findViewById<ImageButton>(R.id.ib_kakao_login_button) // 로그인 버튼
-
-        kakao_login_button.setOnClickListener {
-            if (LoginClient.instance.isKakaoTalkLoginAvailable(this)) {
-                LoginClient.instance.loginWithKakaoTalk(this, callback = callback)
-            } else {
-                LoginClient.instance.loginWithKakaoAccount(this, callback = callback)
-            }
-        }
-
-        val naverClientId = getString(R.string.naver_client_id)
-        val naverClientSecret = getString(R.string.naver_client_secret)
-        val naverClientName = getString(R.string.app_name)
-        NaverIdLoginSDK.initialize(this, naverClientId, naverClientSecret, naverClientName)
-
-        setLayoutState(false)
-
-        val naver_login_button = findViewById<ImageButton>(R.id.ib_naver_Login_Button) // 로그인 버튼
-        naver_login_button.setOnClickListener {
-            startNaverLogin()
-        }
 
 
         //비밀번호 찾기
@@ -248,6 +171,70 @@ class LoginActivity : AppCompatActivity() {
                     Log.d("Post","fail ${t}")
                 }
             })
+        }
+
+
+        val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
+            if (error != null) {
+                when {
+                    error.toString() == AccessDenied.toString() -> {
+                        Toast.makeText(this, "접근이 거부 됨(동의 취소)", Toast.LENGTH_SHORT).show()
+                    }
+                    error.toString() == InvalidClient.toString() -> {
+                        Toast.makeText(this, "유효하지 않은 앱", Toast.LENGTH_SHORT).show()
+                    }
+                    error.toString() == InvalidGrant.toString() -> {
+                        Toast.makeText(this, "인증 수단이 유효하지 않아 인증할 수 없는 상태", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                    error.toString() == InvalidRequest.toString() -> {
+                        Toast.makeText(this, "요청 파라미터 오류", Toast.LENGTH_SHORT).show()
+                    }
+                    error.toString() == InvalidScope.toString() -> {
+                        Toast.makeText(this, "유효하지 않은 scope ID", Toast.LENGTH_SHORT).show()
+                    }
+                    error.toString() == Misconfigured.toString() -> {
+                        Toast.makeText(this, "설정이 올바르지 않음(android key hash)", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                    error.toString() == ServerError.toString() -> {
+                        Toast.makeText(this, "서버 내부 에러", Toast.LENGTH_SHORT).show()
+                    }
+                    error.toString() == Unauthorized.toString() -> {
+                        Toast.makeText(this, "앱이 요청 권한이 없음", Toast.LENGTH_SHORT).show()
+                    }
+                    else -> { // Unknown
+                        Toast.makeText(this, "기타 에러", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            } else if (token != null) {
+                Toast.makeText(this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, LoginSplashActivity::class.java)
+                startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                finish()
+            }
+        }
+
+        val kakao_login_button = findViewById<ImageButton>(R.id.ib_kakao_login_button) // 로그인 버튼
+
+        kakao_login_button.setOnClickListener {
+            if (LoginClient.instance.isKakaoTalkLoginAvailable(this)) {
+                LoginClient.instance.loginWithKakaoTalk(this, callback = callback)
+            } else {
+                LoginClient.instance.loginWithKakaoAccount(this, callback = callback)
+            }
+        }
+
+        val naverClientId = getString(R.string.naver_client_id)
+        val naverClientSecret = getString(R.string.naver_client_secret)
+        val naverClientName = getString(R.string.app_name)
+        NaverIdLoginSDK.initialize(this, naverClientId, naverClientSecret, naverClientName)
+
+        setLayoutState(false)
+
+        val naver_login_button = findViewById<ImageButton>(R.id.ib_naver_Login_Button) // 로그인 버튼
+        naver_login_button.setOnClickListener {
+            startNaverLogin()
         }
 
 //        binding.tvNaverLogout.setOnClickListener {

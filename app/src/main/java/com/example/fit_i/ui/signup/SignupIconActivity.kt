@@ -78,7 +78,7 @@ class SignupIconActivity : AppCompatActivity() {
 
             val signUp = User(name,email,pw,"customerProfile1")
             //val signUp = User("홍길동","fiti@soongsil.ac.kr","fiti123!","customerProfile1")
-            service.signUp(signUp).enqueue(object : Callback<BaseResponse> {
+            service.signUpCustomer(signUp).enqueue(object : Callback<BaseResponse> {
                 override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
                     if(response.isSuccessful){
                         // 정상적으로 통신이 성공된 경우

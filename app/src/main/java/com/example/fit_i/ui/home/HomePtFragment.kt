@@ -1,6 +1,7 @@
 package com.example.fit_i.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,15 +10,27 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fit_i.BottomSheetFragment
+import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.TrainerAdapter
 import com.example.fit_i.TrainerData
+import com.example.fit_i.data.model.response.GetTrainerInfoResponse
+import com.example.fit_i.data.model.response.GetTrainerListResponse
+import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.FragmentHomePtBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.http.Query
 
 
 class HomePtFragment : Fragment() {
     private lateinit var binding: FragmentHomePtBinding
 
-    override fun onCreateView(
+    fun onBind(data: List<GetTrainerListResponse.Result.Dto>){
+
+    }
+
+        override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,6 +47,28 @@ class HomePtFragment : Fragment() {
             add(TrainerData("홍준혁","식단관리",3.3,7,"숭실대학교","생활체육지도사 2급 자격증 이외의 다양한 자격증을 보유하고있습니다. 믿어주시면 됩니다.",12000))
             add(TrainerData("노규리","재활치료",5.0,2,"동국대학교","재활관련 센터에서 근무해본 경험이 있습니다.",20000))
         }
+
+        val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
+        customerService.getTrainerlist("pt",0, 0,20,"recent").enqueue(object :
+            Callback<GetTrainerListResponse> {
+            override fun onResponse(call: Call<GetTrainerListResponse>, response: Response<GetTrainerListResponse>) {
+                if(response.isSuccessful){
+                    // 정상적으로 통신이 성공된 경우
+                    onBind(response.body()!!.result.dto)
+                    Log.d("post", "onResponse 성공: " + response.body().toString());
+                    //Toast.makeText(this@ProfileActivity, "비밀번호 찾기 성공!", Toast.LENGTH_SHORT).show()
+
+                }else{
+                    // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
+                    Log.d("post", "onResponse 실패")
+                }
+            }
+
+            override fun onFailure(call: Call<GetTrainerListResponse>, t: Throwable) {
+                // 통신 실패 (인터넷 끊킴, 예외 발생 등 시스템적인 이유)
+                Log.d("post", "onFailure 에러: " + t.message.toString());
+            }
+        })
 
         val trainerAdapter = TrainerAdapter(trainerList)
         binding.rvTrainer.adapter=trainerAdapter
