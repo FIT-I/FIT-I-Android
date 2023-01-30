@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.signup.SignupPermissionActivity">
+
+    <TextView
+        android:id="@+id/tv_permission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이용약관"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_permission"
+        tools:layout_editor_absoluteX="30dp">
+
+
+        <CheckBox
+            android:id="@+id/cbAll"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:button="@null"
+            android:background="@drawable/custom_checkbox"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <CheckBox
+            android:id="@+id/cb1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:button="@null"
+            android:background="@drawable/custom_checkbox"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cbAll" />
+        <CheckBox
+            android:id="@+id/cb2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_checkbox"
+            android:button="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb1" />
+        <CheckBox
+            android:id="@+id/cb3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_checkbox"
+            android:button="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb2" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="전체동의"
+            android:textColor="@color/main"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cbAll"
+            app:layout_constraintStart_toEndOf="@+id/cbAll"
+            app:layout_constraintTop_toTopOf="@+id/cbAll" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[필수] 개인정보 처리 방침 동의"
+            android:textSize="15dp"
+            android:textColor="@color/main"
+            android:layout_marginStart="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cb1"
+            app:layout_constraintStart_toEndOf="@+id/cb1"
+            app:layout_constraintTop_toTopOf="@+id/cb1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[필수] 서비스 이용약관 동의"
+            android:textSize="15dp"
+            android:textColor="@color/main"
+            android:layout_marginStart="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cb2"
+            app:layout_constraintStart_toEndOf="@+id/cb2"
+            app:layout_constraintTop_toTopOf="@+id/cb2" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[필수] 전자금융거래 이용약관 동의"
+            android:textSize="15dp"
+            android:textColor="@color/main"
+            android:layout_marginStart="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cb3"
+            app:layout_constraintStart_toEndOf="@+id/cb3"
+            app:layout_constraintTop_toTopOf="@+id/cb3" />
+
+
+        <TextView
+            android:id="@+id/tx_show1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보기"
+            app:layout_constraintBottom_toBottomOf="@+id/cb1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cb1" />
+        <TextView
+            android:id="@+id/tx_show2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보기"
+            app:layout_constraintBottom_toBottomOf="@+id/cb2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cb2" />
+        <TextView
+            android:id="@+id/tx_show3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보기"
+            app:layout_constraintBottom_toBottomOf="@+id/cb3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cb3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btn_go_signIn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="30dp"
+        android:text="다음"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

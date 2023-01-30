@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    tools:context=".MypageModifyProfileFragment">
+
+
+
+    <ImageButton
+        android:id="@+id/ib_pre"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@color/main"
+        android:scaleType="fitStart"
+        android:src="@drawable/ic_pre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck"/>
+
+    <TextView
+        android:id="@+id/tv_profileModify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="프로필 수정"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/main"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ib_pre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:id="@+id/ll_pro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_profileModify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        
+        <FrameLayout
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:id="@+id/btn_pf1"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:button="@null"
+                android:background="@drawable/prof1_selector"
+                android:checked="true"/>
+            <ImageView
+                android:src="@drawable/img_f1"
+                android:layout_width="37dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center" />
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:id="@+id/btn_pf2"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:button="@null"
+                android:background="@drawable/prof1_selector" />
+            <ImageView
+                android:src="@drawable/img_f2"
+                android:layout_width="37dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:id="@+id/btn_pf3"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:button="@null"
+                android:background="@drawable/prof1_selector" />
+            <ImageView
+                android:src="@drawable/img_profile3"
+                android:layout_width="37dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+            
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_pro2"
+        app:layout_constraintTop_toBottomOf="@+id/ll_pro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <FrameLayout
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:id="@+id/btn_pf4"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:button="@null"
+                android:background="@drawable/prof1_selector" />
+            <ImageView
+                android:src="@drawable/img_profile4"
+                android:layout_width="37dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:id="@+id/btn_pf5"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:button="@null"
+                android:background="@drawable/prof1_selector" />
+            <ImageView
+                android:src="@drawable/img_profile5"
+                android:layout_width="37dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                tools:ignore="SpeakableTextPresentCheck"/>
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:id="@+id/btn_pf6"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:button="@null"
+                android:background="@drawable/prof1_selector" />
+            <ImageView
+                android:src="@drawable/img_profile6"
+                android:layout_width="37dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="김동현"
+        android:textSize="15sp"
+        android:textColor="@color/main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_pro2"
+        android:layout_marginTop="5dp"/>
+
+
+
+    <ImageView
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="30dp"
+        android:background="#F8F8F8"
+        app:layout_constraintTop_toBottomOf="@+id/ll_pro2" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="기본정보"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/main"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bar" />
+
+    <TextView
+        android:id="@+id/tv_emailM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="이메일 주소"
+        android:textColor="@color/main"
+        app:layout_constraintStart_toStartOf="@+id/tv_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_info" />
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="skydh1214@naver.com"
+        android:textColor="@color/main"
+        app:layout_constraintStart_toStartOf="@+id/tv_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_emailM" />
+
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="매칭 위치 설정"
+        android:textColor="@color/main"
+        app:layout_constraintStart_toStartOf="@+id/tv_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+
+    <TextView
+        android:id="@+id/tv_addressS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="서울대학교 기숙사 922동"
+        android:textColor="@color/main"
+        app:layout_constraintStart_toStartOf="@+id/tv_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_address" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

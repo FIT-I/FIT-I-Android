@@ -1,14 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MypageFragment">
+    tools:context=".ui.mypage.MypageFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="mypage_fragment" />
+        android:id="@+id/tv_mypage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="마이페이지"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:textColor="@color/main"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <ImageButton
+        android:id="@+id/ib_setting"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_gearshape"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_mypage"
+        tools:ignore="SpeakableTextPresentCheck"/>
+
+    <ImageView
+        android:id="@+id/iv_profileM"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="30dp"
+        android:src="@drawable/ic_profile"
+        app:layout_constraintBottom_toBottomOf="@id/tv_emailM"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_nameM" />
+
+    <TextView
+        android:id="@+id/tv_nameM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:text="김동현"
+        android:textColor="@color/main"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/iv_profileM"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mypage" />
+
+    <TextView
+        android:id="@+id/tv_emailM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="qqldls030@afms.com"
+        app:layout_constraintStart_toStartOf="@+id/tv_nameM"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nameM" />
+
+    <TextView
+        android:id="@+id/tv_go_modifyProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:text="프로필 수정"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_nameM"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_profileM" />
+
+
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_emailM">
+
+        <TextView
+            android:layout_margin="10dp"
+            android:id="@+id/ImageView01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="@color/main"
+            android:text="  내 매칭 관리"
+            android:gravity="center_vertical"
+            android:background="@drawable/rectangle" />
+        <Switch
+            android:id="@+id/swt_my"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center"
+            android:layout_marginEnd="25dp"
+            android:track="@drawable/switch_my"
+            android:thumb="@drawable/switch_my_one"/>
+
+
+
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/iv_bar2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/fl"/>
+
+
+    <TextView
+        android:id="@+id/tv_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="찜 목록"
+        android:textColor="@color/main"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="@+id/iv_profileM"
+        app:layout_constraintTop_toBottomOf="@+id/iv_bar2" />
+
+    <ImageView
+        android:id="@+id/iv_next_like"
+        android:layout_width="8dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/ib_setting"
+        android:src="@drawable/ic_next"
+        app:layout_constraintTop_toTopOf="@+id/tv_like"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_like"/>
+
+    <TextView
+        android:id="@+id/tv_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="매칭 내역 보기/ 후기 작성란"
+        android:textColor="@color/main"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/iv_profileM"
+        app:layout_constraintTop_toBottomOf="@+id/tv_like" />
+
+    <ImageView
+        android:id="@+id/iv_next_review"
+        android:layout_width="8dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/ib_setting"
+        android:src="@drawable/ic_next"
+        app:layout_constraintTop_toTopOf="@+id/tv_review"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_review"/>
+
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="매장 위치 설정"
+        android:textColor="@color/main"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/iv_profileM"
+        app:layout_constraintTop_toBottomOf="@+id/tv_review" />
+
+    <ImageView
+        android:id="@+id/iv_next_location"
+        android:layout_width="8dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/ib_setting"
+        android:src="@drawable/ic_next"
+        app:layout_constraintTop_toTopOf="@+id/tv_location"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_location"/>
+
+
+    <TextView
+        android:id="@+id/tv_login_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 재설정"
+        android:textColor="@color/main"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/iv_profileM"
+        app:layout_constraintTop_toBottomOf="@+id/tv_location" />
+
+    <ImageView
+        android:id="@+id/iv_next_login_reset"
+        android:layout_width="8dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/ib_setting"
+        android:src="@drawable/ic_next"
+        app:layout_constraintTop_toTopOf="@+id/tv_login_reset"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_login_reset"/>
+
+    <TextView
+        android:id="@+id/tv_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="공지사항"
+        android:textColor="@color/main"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/iv_profileM"
+        app:layout_constraintTop_toBottomOf="@+id/tv_login_reset" />
+
+    <ImageView
+        android:id="@+id/iv_next_notice"
+        android:layout_width="8dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/ib_setting"
+        android:src="@drawable/ic_next"
+        app:layout_constraintTop_toTopOf="@+id/tv_notice"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_notice"/>
+
+    <TextView
+        android:id="@+id/tv_permisson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이용약관"
+        android:textColor="@color/main"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/iv_profileM"
+        app:layout_constraintTop_toBottomOf="@+id/tv_notice" />
+
+    <ImageView
+        android:id="@+id/iv_next_permisson"
+        android:layout_width="8dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/ib_setting"
+        android:src="@drawable/ic_next"
+        app:layout_constraintTop_toTopOf="@+id/tv_permisson"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_permisson"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

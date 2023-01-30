@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/ib_pre3"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@color/main"
+        android:scaleType="fitStart"
+        android:src="@drawable/ic_pre"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_mypage_permisson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이용약관"
+        android:textColor="@color/main"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ib_pre3" />
+    <ImageView
+        android:id="@+id/iv_bar5"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#F8F8F8"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mypage_permisson"
+        android:layout_marginTop="11dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_bar5"
+        android:padding="15dp"
+        android:textColor="@color/main"
+        android:textSize="15sp"
+        android:text="1 개인정보처리방침(Privacy Policy)을 적절히 게시한다. 모바일 앱 메인화면 또는 ‘설정(Settings)’의 하위 메뉴를 통해 이용자가 언제라도 그 내용을 열람할 수 있도록 개인정보처리방침을 게시하여야 한다. ● 이용약관(Terms of Service)와 별도의 개인정보처리방침(Privacy Policy)을 공개하였는가? ● 다른 정책 링크와 구분되도록 색상, 폰트를 차별화 하였는가? ● 개인정보처리방침의 변경이 있는 경우 이를 이용자가 쉽게 알 수 있도록 표시하는가? ● 모바일에서도 읽을 수 있는 형태(폰트, 색상, 구성 등)로 제시되고 있는가? ● 앱 내에 게시하기 어려운 경우, 개인정보처리방침을 열람할 수 있는 웹사이트 링크를 제공하고 있는가? 2 ‘개인정보 수집 및 이용’에 대한 동의를 법령 요건에 맞추어 제시한다. 개인정보 수집 시, 법령에서 정한 개인정보 수집 및 이용에 대한 동의절차를 모바일 환경에 맞추어 적절히 구현해야 한다. ● 개인정보 수집 및 이용에 관련된 동의 문구는 1) 전문을 노출, 2) 일부를 노출하고 전문은 드래그하여 확인할 수 있도록 처리, 3) 전문에 대한 링크 제공 등의 방식 가운데 하나의 방식으로 제시하였는가? (※단, 1) → 2) → 3) 의 순서대로 선호됨) ● 모바일 환경의 제약으로 인해 간단한 문구를 제시하는 경우, 전문을 확인할 수 있는 별도의 메뉴나 웹페이지를 제공하였는가? ● 개인정보 수집・이용의 발생 시, 개인정보처리방침(전문)이 아닌 ‘개인정보 수집 및 이용에 대한 동의’를 제시하고 이에 대해 동의를 받고 있는가? ● 모바일 앱의 권한(Permission) 동의와는 별도로 개인정보
+    수집 및 이용에 대한 동의 절차를 구현하였는가? 3 위치정보 수집 및 이용에 대한 동의를 적절히 구현한다. "/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

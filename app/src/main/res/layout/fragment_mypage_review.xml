@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/ib_pre5"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@color/main"
+        android:scaleType="fitStart"
+        android:src="@drawable/ic_pre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_review"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ib_pre5"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="매칭 내역 보기 / 후기 남기기"
+        android:textSize="20dp"
+        android:textColor="@color/main"
+        android:textStyle="bold"/>
+    <ImageView
+        android:id="@+id/iv_line3"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#F8F8F8"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_review"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_review"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/iv_line3"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
