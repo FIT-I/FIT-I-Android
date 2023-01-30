@@ -37,7 +37,7 @@ class LoginFindPwActivity : AppCompatActivity() {
         val btnFindPw : Button = findViewById(R.id.btn_find_pw)
 
         btnFindPw.isEnabled = false
-        btnFindPw.text="임시 비밀번호 발급"
+        btnFindPw.text="인증코드 받기"
 
         etTempPwF.visibility= View.INVISIBLE
 
@@ -92,8 +92,8 @@ class LoginFindPwActivity : AppCompatActivity() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 //입력값 담기
                 tempPW = etTempPwF.text.toString()
-                if (btnFindPw.text=="임시 비밀번호 발급")
-                        btnFindPw.text="로그인"
+                if (btnFindPw.text=="인증코드 받기")
+                        btnFindPw.text="완료"
 
                 //stroke 색상변경
                 if(tempPW.isNotEmpty())
@@ -122,7 +122,9 @@ class LoginFindPwActivity : AppCompatActivity() {
                 if(response.isSuccessful){
                     // 정상적으로 통신이 성공된 경우
                     Log.d("post", "onResponse 성공: " + response.body().toString());
-                    Toast.makeText(this@LoginFindPwActivity, "비밀번호 찾기 성공!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginFindPwActivity, response.body()?.result.toString()+" 비밀번호 찾기 성공!", Toast.LENGTH_SHORT).show()
+
+                    //(인증코드가 잘못되었습니다. 다시 확인해 주세요)
                 }else{
                     // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
                     Log.d("post", "onResponse 실패")

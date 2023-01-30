@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="비밀번호 찾기"
-        android:textColor="@color/black"
+        android:textColor="@color/main"
         android:textSize="25dp"
         android:textStyle="bold"
         android:layout_marginTop="80dp"
@@ -31,7 +31,7 @@
         <EditText
             android:id="@+id/et_emailF"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="52dp"
             android:hint="이메일을 입력해주세요."
             android:background="@drawable/edittext_border"
             android:paddingTop="12dp"
@@ -44,9 +44,9 @@
         <EditText
             android:id="@+id/et_tempPwF"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="52dp"
             android:background="@drawable/edittext_border"
-            android:hint="임시비밀번호를 입력하세요"
+            android:hint="인증코드를 입력하세요"
             android:inputType="textEmailAddress"
             android:layout_marginTop="20dp"
             android:paddingStart="20dp"
@@ -55,6 +55,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_emailF" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:text="(인증코드가 잘못되었습니다. 다시 확인해 주세요)"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_tempPwF" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
