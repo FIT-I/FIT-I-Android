@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".GlobalApplication"
+        android:name="App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -29,7 +29,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".LoginSplashActivity"
+            android:name=".ui.login.LoginSplashActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -96,7 +96,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.login.LoginActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

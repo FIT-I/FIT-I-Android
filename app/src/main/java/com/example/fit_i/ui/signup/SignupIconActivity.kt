@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.CompoundButton
-import com.example.fit_i.LoginSplashActivity
+import com.example.fit_i.ui.login.LoginSplashActivity
 import com.example.fit_i.R
 
 class SignupIconActivity : AppCompatActivity() {

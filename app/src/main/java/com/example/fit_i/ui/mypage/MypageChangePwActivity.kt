@@ -8,7 +8,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.*
-import com.example.fit_i.LoginSplashActivity
+import com.example.fit_i.ui.login.LoginSplashActivity
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.request.ChangePWRequest
