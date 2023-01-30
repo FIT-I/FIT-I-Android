@@ -106,9 +106,10 @@
             android:id="@+id/match_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginRight="5dp"
+            android:layout_gravity="start"
+            android:layout_marginRight="15dp"
             android:drawableRight="@drawable/img_nextx"
+            android:padding="5dp"
             android:text="어제"
             android:textColor="@color/main"
             android:textSize="10sp" />
