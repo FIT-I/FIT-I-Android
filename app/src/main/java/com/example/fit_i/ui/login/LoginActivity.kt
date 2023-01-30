@@ -8,7 +8,6 @@ import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.App
-import com.example.fit_i.FindPwActivity
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl.getApiClient
 import com.example.fit_i.data.model.request.LoginRequest
@@ -136,7 +135,7 @@ class LoginActivity : AppCompatActivity() {
         //비밀번호 찾기
         val findPW = findViewById<TextView>(R.id.tv_go_findPW)
         findPW.setOnClickListener {
-            val intent = Intent(this, FindPwActivity::class.java)
+            val intent = Intent(this, LoginFindPwActivity::class.java)
             startActivity(intent)  // 화면 전환을 시켜줌
             finish()
         }
@@ -227,6 +226,7 @@ class LoginActivity : AppCompatActivity() {
                             App.token_prefs.accessToken = response.body()?.result?.accessToken
                             App.token_prefs.refreshToken = response.body()?.result?.refreshToken
 
+                            Toast.makeText(this@LoginActivity, email+" 로그인", Toast.LENGTH_SHORT).show()
                             startActivity(intent)  // 화면 전환을 시켜줌
                             finish()
                         }

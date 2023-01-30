@@ -8,6 +8,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.*
+import com.example.fit_i.App
 import com.example.fit_i.ui.login.LoginSplashActivity
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
@@ -25,6 +26,10 @@ class MypageChangePwActivity : AppCompatActivity() {
 
     var pw1: String=""
     var pw2: String=""
+
+    private var accessToken : String = App.token_prefs.accessToken.toString()
+    private var refreshToken : String = App.token_prefs.refreshToken.toString()
+
 
     val pwPattern = "^.*(?=^.{5,15}\$)(?=.*\\d)(?=.*[a-zA-Z])(?=.*[!@#\$%^&+=]).*$"
 
@@ -91,16 +96,13 @@ class MypageChangePwActivity : AppCompatActivity() {
         btnFinPwChange.setOnClickListener {
             val intent = Intent(this, LoginSplashActivity::class.java)
             val service = RetrofitImpl.getApiClient().create(AccountsService::class.java)
-
-            service.changePW(ChangePWRequest("", pw1,"")).enqueue(object : Callback<BaseResponse> {
+            val changePW = ChangePWRequest(accessToken, pw1, refreshToken)
+            service.changePW(changePW).enqueue(object : Callback<BaseResponse> {
                 override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
                     if(response.isSuccessful){
                         // 정상적으로 통신이 성공된 경우
-                        //val result: User? = response.body()
                         Log.d("post", "onResponse 성공: " + response.body().toString());
                         Toast.makeText(this@MypageChangePwActivity, "비밀번호가 변경되었습니다.", Toast.LENGTH_SHORT).show()
-                        //Log.d("post","result: "+response.)
-                        //Log.d("post", "onResponse 성공: " + result.toString());
                     }else{
                         // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
                         Log.d("post", "onResponse 실패")

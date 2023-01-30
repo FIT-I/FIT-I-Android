@@ -83,6 +83,7 @@ class SignupIconActivity : AppCompatActivity() {
                     if(response.isSuccessful){
                         // 정상적으로 통신이 성공된 경우
                         Log.d("post", "onResponse 성공: " + response.body().toString());
+
                     }else{
                         // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
                         Log.d("post", "onResponse 실패")
