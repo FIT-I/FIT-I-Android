@@ -14,9 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FITI"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".SignupIconActivity"
+            android:name=".ui.signup.SignupIconActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,8 +43,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ChangePwActivity"
-            android:exported="false">
+            android:name=".ui.mypage.MypageChangePwActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -70,14 +77,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignupActivity"
+            android:name=".ui.signup.SignupActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".SignupPermissionActivity"
+            android:name=".ui.signup.SignupPermissionActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -129,7 +136,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ProfileActivity"
+            android:name=".ui.profile.ProfileActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -142,14 +149,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MatchCheckActivity1"
+            android:name=".ui.match.MatchCheckActivity1"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MatchCheckActivity2"
+            android:name=".ui.match.MatchCheckActivity2"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -157,35 +164,35 @@
         </activity>
 
         <activity
-            android:name=".MatchServiceActivity"
+            android:name=".ui.match.MatchServiceActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MatchDateChooseActivity"
+            android:name=".ui.match.MatchDateChooseActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MatchPickUpActivity"
+            android:name=".ui.match.MatchPickUpActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ProfileAboutMeActivity"
+            android:name=".ui.profile.ProfileAboutMeActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ProfileAboutServiceActivity"
+            android:name=".ui.profile.ProfileAboutServiceActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

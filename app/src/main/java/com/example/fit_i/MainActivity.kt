@@ -2,8 +2,10 @@ package com.example.fit_i
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.FragmentManager
 import com.example.fit_i.databinding.ActivityMainBinding
+import com.example.fit_i.ui.chat.ChatFragment
+import com.example.fit_i.ui.home.HomeFragment
+import com.example.fit_i.ui.mypage.MypageFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
