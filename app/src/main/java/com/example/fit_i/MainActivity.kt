@@ -3,6 +3,9 @@ package com.example.fit_i
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.fit_i.databinding.ActivityMainBinding
+import com.example.fit_i.ui.chat.ChatFragment
+import com.example.fit_i.ui.home.HomeFragment
+import com.example.fit_i.ui.mypage.MypageFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -48,5 +51,9 @@ class MainActivity : AppCompatActivity() {
         //selectedItemId=R.id.item_fragment1
 
         bottomNavBar.itemIconTintList = null
+
+//        val mypageFragment = MypageFragment()
+//        val fm: FragmentManager = supportFragmentManager
+//        fm.beginTransaction().add(R.id.fl_container,mypageFragment).commit()
     }
 }

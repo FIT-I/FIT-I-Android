@@ -1,12 +1,15 @@
 package com.example.fit_i
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fit_i.databinding.ItemTrainerBinding
+import com.example.fit_i.ui.profile.ProfileActivity
 
 class TrainerAdapter(private val dataList: ArrayList<TrainerData>): RecyclerView.Adapter<TrainerAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ItemTrainerBinding) :
@@ -14,7 +17,6 @@ class TrainerAdapter(private val dataList: ArrayList<TrainerData>): RecyclerView
 
         fun bind(position: Int) {
             binding.tvName.text = dataList[position].name
-            binding.tvCategory.text=dataList[position].category
             binding.tvRating.text= dataList[position].rating.toString()
             binding.tvCertificate.text= dataList[position].certificate.toString()
             binding.tvUniv.text=dataList[position].univ
@@ -45,14 +47,12 @@ class TrainerAdapter(private val dataList: ArrayList<TrainerData>): RecyclerView
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(position)
-        /*
+
         holder.itemView.setOnClickListener {
-            val intent = Intent(holder.itemView?.context, CardDetailActivity::class.java)
-            intent.putExtra("front", dataList[position].front)
-            intent.putExtra("back", dataList[position].back)
+            val intent = Intent(holder.itemView?.context, ProfileActivity::class.java)
             intent.putExtra("name", dataList[position].name)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
-        }*/
+        }
     }
 
     override fun getItemCount(): Int = dataList.size

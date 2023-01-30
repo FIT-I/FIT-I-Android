@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MypageSettingFragment">
+    tools:context=".ui.mypage.MypageSettingFragment">
 
     <ImageButton
         android:id="@+id/ib_pre1"
@@ -17,30 +17,51 @@
         android:layout_margin="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/logout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="fitCenter"
+        android:layout_width="209dp"
+        android:layout_height="187dp"
+        android:src="@drawable/img_log" />
 
     <TextView
-        android:id="@+id/tv_loginout"
+        android:id="@+id/tv_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="정말 나가시는 거에요...?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logout"
+        android:textColor="@color/main"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/rectangle"
         android:text="로그아웃"
-        android:textSize="20sp"
-        android:textColor="@color/main"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ib_pre1" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_logout" />
 
-    <TextView
-        android:id="@+id/tv_signout"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_withdrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rectangle"
         android:text="탈퇴하기"
-        android:textSize="20sp"
-        android:textColor="@color/main"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_loginout" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_logout" />
 
 
 
