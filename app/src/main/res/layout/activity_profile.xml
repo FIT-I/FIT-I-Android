@@ -141,6 +141,19 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/img_background" />
 
+            <ImageButton
+                android:id="@+id/iv_back"
+                android:layout_width="12dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="70dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
             <TextView
                 android:id="@+id/tv_university_info"
                 android:layout_width="wrap_content"

@@ -1,4 +1,4 @@
-package com.example.fit_i
+package com.example.fit_i.ui.chat
 
 import android.os.Message
 import java.io.Serializable

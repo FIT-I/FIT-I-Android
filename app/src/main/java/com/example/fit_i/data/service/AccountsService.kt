@@ -13,7 +13,7 @@ interface AccountsService {
     //고객 회원가입
     @Headers("content-type: application/json")
     @POST("api/accounts/customer")
-    fun signUp (@Body user : User) : Call<BaseResponse>
+    fun signUpCustomer (@Body user : User) : Call<BaseResponse>
 
     //로그인
     @Headers("content-type: application/json")

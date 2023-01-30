@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginSplashActivity">
+    tools:context=".ui.login.LoginSplashActivity">
 
     <ImageView
         android:id="@+id/iv_match_bar"

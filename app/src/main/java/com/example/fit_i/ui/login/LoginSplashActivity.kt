@@ -1,13 +1,12 @@
-package com.example.fit_i
+package com.example.fit_i.ui.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.example.fit_i.databinding.ActivityLoginBinding
+import com.example.fit_i.MainActivity
 import com.example.fit_i.databinding.ActivityLoginSplashBinding
-import com.example.fit_i.databinding.ActivitySplash2Binding
 
 class LoginSplashActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivityLoginSplashBinding

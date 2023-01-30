@@ -23,15 +23,12 @@ object RetrofitImpl {
         build()
     }
 
-    //val accessToken = App.token_prefs.accessToken
-    //val refreshToken = App.token_prefs.refreshToken
-
     class AppInterceptor : Interceptor {
         @Throws(IOException::class)
         override fun intercept(chain: Interceptor.Chain) : Response = with(chain) {
             val newRequest = request().newBuilder()
-      //          .addHeader("accessToken", accessToken)
-      //          .addHeader("refreshToken", refreshToken)
+                .addHeader("accessToken", App.token_prefs.accessToken ?: "")
+                .addHeader("refreshToken", App.token_prefs.refreshToken ?: "")
                 .build()
             proceed(newRequest)
         }
