@@ -2,6 +2,9 @@ package com.example.fit_i
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.fit_i.databinding.ActivityMainBinding
 import com.example.fit_i.ui.chat.ChatFragment
 import com.example.fit_i.ui.home.HomeFragment
@@ -51,6 +54,12 @@ class MainActivity : AppCompatActivity() {
         val homeFragment = HomeFragment()
         supportFragmentManager.beginTransaction().replace(R.id.fl_container, homeFragment).commit()
         //selectedItemId=R.id.item_fragment1
+//버튼 눌렀을때 다른 프래그먼트로 이동시
+//        val communityFragment = CommunityFragment()
+//        val fm:FragmentManager = supportFragmentManager
+//        fm.beginTransaction().add(R.id.fl_container,communityFragment).commit()
+
+
 
         bottomNavBar.itemIconTintList = null
 
@@ -58,4 +67,5 @@ class MainActivity : AppCompatActivity() {
 //        val fm: FragmentManager = supportFragmentManager
 //        fm.beginTransaction().add(R.id.fl_container,mypageFragment).commit()
     }
+
 }
