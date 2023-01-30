@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fit_i.ChatRoomAdapter
 import com.example.fit_i.Message
 import com.example.fit_i.databinding.FragmentChatBinding
 
