@@ -208,9 +208,7 @@ class LoginActivity : AppCompatActivity() {
             val loginRequest = LoginRequest(email,pw)
             //val login = Login("fiti@soongsil.ac.kr","fiti123!")
 
-            //private val api = ApiClient.getApiClient().create(ItemListAPI::class.java)
             val service= getApiClient().create(AccountsService::class.java)
-
             service.logIn(loginRequest).enqueue(object: Callback<LoginResponse> {
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     when (response.code()) {

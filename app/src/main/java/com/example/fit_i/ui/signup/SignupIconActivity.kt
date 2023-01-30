@@ -3,14 +3,21 @@ package com.example.fit_i.ui.signup
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.CompoundButton
 import com.example.fit_i.ui.login.LoginSplashActivity
 import com.example.fit_i.R
+import com.example.fit_i.RetrofitImpl
+import com.example.fit_i.data.model.request.User
+import com.example.fit_i.data.model.response.BaseResponse
+import com.example.fit_i.data.service.AccountsService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SignupIconActivity : AppCompatActivity() {
-
 
     private lateinit var icon1: CheckBox
     private lateinit var icon2: CheckBox
@@ -18,6 +25,10 @@ class SignupIconActivity : AppCompatActivity() {
     private lateinit var icon4: CheckBox
     private lateinit var icon5: CheckBox
     private lateinit var icon6: CheckBox
+
+    lateinit var name : String
+    lateinit var email : String
+    lateinit var pw : String
 
     private lateinit var btnIconChoice: Button
 
@@ -27,6 +38,11 @@ class SignupIconActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup_icon)
+        val intent = Intent(this,SignupIconActivity::class.java)
+        name = intent.getStringExtra("name").toString()
+        email = intent.getStringExtra("email").toString()
+        pw = intent.getStringExtra("pw").toString()
+
 
         icon1 = findViewById(R.id.cb_icon1)
         icon2 = findViewById(R.id.cb_icon2)
@@ -57,6 +73,27 @@ class SignupIconActivity : AppCompatActivity() {
             val intent = Intent(this, LoginSplashActivity::class.java)
             startActivity(intent)  // 화면 전환을 시켜줌
             finish()
+
+            val service= RetrofitImpl.getApiClient().create(AccountsService::class.java)
+
+            val signUp = User(name,email,pw,"customerProfile1")
+            //val signUp = User("홍길동","fiti@soongsil.ac.kr","fiti123!","customerProfile1")
+            service.signUp(signUp).enqueue(object : Callback<BaseResponse> {
+                override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
+                    if(response.isSuccessful){
+                        // 정상적으로 통신이 성공된 경우
+                        Log.d("post", "onResponse 성공: " + response.body().toString());
+                    }else{
+                        // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
+                        Log.d("post", "onResponse 실패")
+                    }
+                }
+
+                override fun onFailure(call: Call<BaseResponse>, t: Throwable) {
+                    // 통신 실패 (인터넷 끊킴, 예외 발생 등 시스템적인 이유)
+                    Log.d("post", "onFailure 에러: " + t.message.toString());
+                }
+            })
         }
     }
 

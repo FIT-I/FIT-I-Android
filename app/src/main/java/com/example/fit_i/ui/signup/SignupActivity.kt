@@ -51,8 +51,6 @@ class SignupActivity : AppCompatActivity() {
 
         val btnFinSignUp: Button = findViewById(R.id.btn_fin_signUp)
 
-
-
         //버튼 비활성화
         btnFinSignUp.isEnabled = false
 
@@ -148,39 +146,16 @@ class SignupActivity : AppCompatActivity() {
         //버튼 이벤트
         btnFinSignUp.setOnClickListener {
             val intent = Intent(this, SignupIconActivity::class.java)
+            intent.putExtra("name",name)
+            intent.putExtra("email",email)
+            intent.putExtra("pw",pw)
+
             startActivity(intent)  // 화면 전환을 시켜줌
             finish()
             Toast.makeText(this, name + "signUp", Toast.LENGTH_SHORT).show()
             //인텐트가 여기 있으면 예외처리를 못해줌
 
-
-            val newUser = ArrayList<String>()
-
-            val service= RetrofitImpl.getApiClient().create(AccountsService::class.java)
-
-            val signUp = User(name,email,pw,"customerProfile1")
-            //val signUp = User("홍길동","fiti@soongsil.ac.kr","fiti123!","customerProfile1")
-            service.signUp(signUp).enqueue(object : Callback<BaseResponse> {
-                override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
-                    if(response.isSuccessful){
-                        // 정상적으로 통신이 성공된 경우
-                        //val result: User? = response.body()
-                        Log.d("post", "onResponse 성공: " + response.body().toString());
-                        //Log.d("post","result: "+response.)
-                        //Log.d("post", "onResponse 성공: " + result.toString());
-                    }else{
-                        // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
-                        Log.d("post", "onResponse 실패")
-                    }
-                }
-
-                override fun onFailure(call: Call<BaseResponse>, t: Throwable) {
-                    // 통신 실패 (인터넷 끊킴, 예외 발생 등 시스템적인 이유)
-                    Log.d("post", "onFailure 에러: " + t.message.toString());
-                }
-            })
-            }
-
+        }
     }
 
     //네 개 다 입력 & 이메일 정규성 & 비밀번호 일치 & 비밀번호 정규성
