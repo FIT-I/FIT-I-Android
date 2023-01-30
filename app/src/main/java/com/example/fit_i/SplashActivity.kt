@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.example.fit_i.databinding.ActivitySplash2Binding
+import com.example.fit_i.ui.login.LoginActivity
 
 
 class SplashActivity : AppCompatActivity() {

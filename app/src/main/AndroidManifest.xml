@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <application
-        android:name=".GlobalApplication"
+        android:name="App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -58,19 +58,13 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".LoginSplashActivity"
+            android:name=".ui.login.LoginSplashActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".FindPw2Activity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".ui.mypage.MypageChangePwActivity"
             android:exported="true">
@@ -85,7 +79,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".FindPwActivity"
+            android:name=".ui.login.LoginFindPwActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -125,7 +119,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -137,13 +131,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".FirstActivity"
-            android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".SplashActivity"
             android:exported="true">

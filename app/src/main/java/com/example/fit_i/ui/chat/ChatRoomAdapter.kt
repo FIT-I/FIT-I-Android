@@ -1,10 +1,10 @@
-package com.example.fit_i
+package com.example.fit_i.ui.chat
 
-import android.provider.ContactsContract.RawContacts.Data
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fit_i.Message
 import com.example.fit_i.databinding.ItemChatBinding
 
 class ChatRoomAdapter(private val dataList:ArrayList<Message>):
