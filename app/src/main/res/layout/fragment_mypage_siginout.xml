@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.mypage.MypageSettingFragment">
 
-    <ImageButton
-        android:id="@+id/ib_pre1"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:background="@android:color/transparent"
-        android:backgroundTint="@color/main"
-        android:scaleType="fitStart"
-        android:src="@drawable/ic_pre"
-        android:layout_margin="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/logout"
         android:layout_width="231dp"
@@ -26,8 +14,10 @@
         android:src="@drawable/img_withdraw"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.402" />
 
     <TextView
         android:id="@+id/tv_withdraw"
@@ -73,7 +63,7 @@
         android:backgroundTint="@color/skyblue"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_withdrow"
+        android:id="@+id/btn_withdraw2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

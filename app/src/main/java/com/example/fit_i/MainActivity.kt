@@ -41,7 +41,9 @@ class MainActivity : AppCompatActivity() {
                     val mypageFragment = MypageFragment()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fl_container, mypageFragment).commit()
+
                 }
+
             }
             true
         }

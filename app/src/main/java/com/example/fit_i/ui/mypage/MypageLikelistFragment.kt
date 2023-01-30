@@ -1,14 +1,19 @@
 package com.example.fit_i.ui.mypage
 
+import android.graphics.Insets.add
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fit_i.LikelistAdapter
 import com.example.fit_i.LikelistData
+import com.example.fit_i.R
 import com.example.fit_i.databinding.FragmentMypageLikelistBinding
+import com.example.fit_i.ui.home.HomeFragment
 
 class MypageLikelistFragment : Fragment() {
     private lateinit var binding: FragmentMypageLikelistBinding
@@ -21,6 +26,18 @@ class MypageLikelistFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMypageLikelistBinding.inflate(inflater,container, false)
+        val view = inflater.inflate(R.layout.fragment_mypage_likelist,container,false)
+        val ibpre = view.findViewById<View>(R.id.ib_pre4) as ImageButton
+
+        ibpre.setOnClickListener{
+            val mypageFragment = MypageFragment()
+            val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.fl_container,mypageFragment)
+            transaction.commit()
+        }
+
+
+
 
 
         //임의로 데이터 넣어보기, 나중에 사진 글라이드 기능 추가
@@ -33,6 +50,17 @@ class MypageLikelistFragment : Fragment() {
         binding.rcLikelist.adapter = likelistAdapter
         var linearLayoutManager = LinearLayoutManager(context)
         binding.rcLikelist.layoutManager = linearLayoutManager
+
+        likelistAdapter.setItemClickListener(object :LikelistAdapter.OnItemClickListener{
+            override fun onClick(v: View, position: Int) {
+                val homeFragment = HomeFragment()
+                val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
+                transaction.replace(R.id.fl_container,homeFragment)
+                transaction.commit()
+            }
+        })
+
+
 
         return binding.root
 
