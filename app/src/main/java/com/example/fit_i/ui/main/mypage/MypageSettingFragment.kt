@@ -19,13 +19,14 @@ import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.request.LogoutRequest
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.AccountsService
+import com.example.fit_i.databinding.FragmentMypageSettingBinding
 import com.example.fit_i.ui.login.LoginActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class MypageSettingFragment :Fragment() {
-    private lateinit var binding: MypageSettingFragment
+    private lateinit var binding: FragmentMypageSettingBinding
 
     @SuppressLint("MissingInflatedId")
 
@@ -33,11 +34,14 @@ class MypageSettingFragment :Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentMypageSettingBinding.inflate(layoutInflater)
+
         val view = inflater.inflate(R.layout.fragment_mypage_setting, container, false)
 
         val ibpre = view.findViewById<View>(R.id.ib_pre1)
         val btnlogout = view.findViewById<View>(R.id.btn_logout) as AppCompatButton
         val btnwithdraw = view.findViewById<View>(R.id.btn_withdraw) as AppCompatButton
+        binding.tvLogout.text=App.token_prefs.accessToken.toString()
 
         ibpre.setOnClickListener{
             val mypageFragment = MypageFragment()
@@ -61,7 +65,7 @@ class MypageSettingFragment :Fragment() {
             }
             fun logout(){
                 val accountService = RetrofitImpl.getApiClient().create(AccountsService::class.java)
-                val token = LogoutRequest(App.token_prefs.accessToken.toString(), App.token_prefs.refreshToken.toString())
+                val token = LogoutRequest(accessToken = App.token_prefs.accessToken.toString(), refreshToken = App.token_prefs.refreshToken.toString())
                 accountService.logOut(token).enqueue(object : Callback<BaseResponse> {
                     override fun onResponse(
                         call: Call<BaseResponse>,
@@ -70,12 +74,12 @@ class MypageSettingFragment :Fragment() {
                         if (response.isSuccessful) {
                             // 정상적으로 통신이 성공된 경우
                             Log.d("post", "onResponse 성공: " + response.body().toString());
-                            //Toast.makeText(this, "찜 목록에 추가", Toast.LENGTH_SHORT).show()
-                            //Log.d("post","result: "+response.)
-                            //Log.d("post", "onResponse 성공: " + result.toString());
+                            makeToast()
                         } else {
                             // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
-                            Log.d("post", "onResponse 실패 "+ response.body().toString())
+                            //Log.d("post", response.code().toString()+"onResponse 실패 "+ response.body().toString()+token)
+                            Log.d("post", "onResponse 실패 "+ response.body().toString() + token)
+
                         }
                     }
 
@@ -90,7 +94,6 @@ class MypageSettingFragment :Fragment() {
                 when(which){
                     DialogInterface.BUTTON_POSITIVE ->{
                         logout()
-                        makeToast()
                     }
                 }
             }

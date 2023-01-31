@@ -56,8 +56,7 @@ class MypageSiginoutFragment : Fragment() {
             }
             fun close(){ //작동 하는지 아직 확인 x
                 val accountService = RetrofitImpl.getApiClient().create(AccountsService::class.java)
-                val token = LogoutRequest(App.token_prefs.accessToken.toString(), App.token_prefs.refreshToken.toString())
-                accountService.logOut(token).enqueue(object : Callback<BaseResponse> {
+                accountService.close().enqueue(object : Callback<BaseResponse> {
                     override fun onResponse(
                         call: Call<BaseResponse>,
                         response: Response<BaseResponse>
@@ -65,6 +64,7 @@ class MypageSiginoutFragment : Fragment() {
                         if (response.isSuccessful) {
                             // 정상적으로 통신이 성공된 경우
                             Log.d("post", "onResponse 성공: " + response.body().toString());
+                            makeToast()
                           } else {
                             // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
                             Log.d("post", "onResponse 실패 "+ response.body().toString())
@@ -82,7 +82,6 @@ class MypageSiginoutFragment : Fragment() {
                 when(which){
                     DialogInterface.BUTTON_POSITIVE ->{
                         close() //탈퇴처리
-                        makeToast() //토스트 띄우고 로그인화면으로 이동
                     }
                 }
             }
