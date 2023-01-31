@@ -1,4 +1,4 @@
-package com.example.fit_i.ui.mypage
+package com.example.fit_i.ui.main.mypage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.ImageButton
-import androidx.core.view.children
 import androidx.fragment.app.FragmentTransaction
 import com.example.fit_i.R
 import com.example.fit_i.databinding.FragmentMypageModifyProfileBinding

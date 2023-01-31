@@ -1,4 +1,4 @@
-package com.example.fit_i.ui.home
+package com.example.fit_i.ui.main.home
 
 import android.os.Bundle
 import android.util.Log
@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
-import com.example.fit_i.PagerAdapter
 import com.example.fit_i.R
 import com.example.fit_i.databinding.FragmentHomeBinding
 import com.google.android.material.tabs.TabLayout

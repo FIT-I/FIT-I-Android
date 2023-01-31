@@ -1,4 +1,4 @@
-package com.example.fit_i
+package com.example.fit_i.ui.main.home
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

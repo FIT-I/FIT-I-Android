@@ -1,4 +1,4 @@
-package com.example.fit_i.ui.chat
+package com.example.fit_i.ui.main.chat
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

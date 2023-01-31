@@ -1,10 +1,9 @@
-package com.example.fit_i
+package com.example.fit_i.ui.main.matching
 
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.fit_i.databinding.FragmentHomeBinding
 import com.example.fit_i.databinding.ItemMatchBinding
 
 class MatchingAdapter(private val dataList: ArrayList<MatchingData>): RecyclerView.Adapter<MatchingAdapter.ViewHolder>(){

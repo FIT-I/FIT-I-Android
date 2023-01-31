@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.mypage.MypageFragment">
+    tools:context=".ui.main.mypage.MypageFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

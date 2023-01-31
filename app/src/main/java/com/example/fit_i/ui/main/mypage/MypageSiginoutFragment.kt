@@ -1,18 +1,14 @@
-package com.example.fit_i.ui.mypage
+package com.example.fit_i.ui.main.mypage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatButton
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.FragmentTransaction
 import com.example.fit_i.AccountDialog
 import com.example.fit_i.R
-import com.example.fit_i.ui.mypage.MypageFragment
 
 class MypageSiginoutFragment : Fragment() {
     override fun onCreateView(
