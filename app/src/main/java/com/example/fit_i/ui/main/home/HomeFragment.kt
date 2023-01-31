@@ -1,0 +1,73 @@
+package com.example.fit_i.ui.main.home
+
+import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
+import com.example.fit_i.R
+import com.example.fit_i.databinding.FragmentHomeBinding
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+
+class HomeFragment : Fragment() {
+    private lateinit var binding: FragmentHomeBinding
+
+    private lateinit var viewPager: ViewPager2
+    private lateinit var tabLayout: TabLayout
+
+    private val tabTitleArray = arrayOf(
+        "개인PT",
+        "다이어트",
+        "식단관리",
+        "재활치료",
+        "운동친구"
+    )
+    private val tabIconArray = arrayOf(
+        R.drawable.ic_pt,
+        R.drawable.ic_diet,
+        R.drawable.ic_eating,
+        R.drawable.ic_medical,
+        R.drawable.ic_friend
+    )
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        // Inflate the layout for this fragment
+        val view:View = inflater.inflate(R.layout.fragment_home, container, false)
+        binding = FragmentHomeBinding.inflate(layoutInflater)
+
+        viewPager = view.findViewById(R.id.viewPager2)
+        tabLayout = view.findViewById(R.id.tab_layout)
+
+
+        val pagerAdapter = PagerAdapter(requireActivity())
+        pagerAdapter.addFragment(HomePtFragment())
+        pagerAdapter.addFragment(HomeDietFragment())
+        pagerAdapter.addFragment(HomeEatingFragment())
+        pagerAdapter.addFragment(HomeMedicalFragment())
+        pagerAdapter.addFragment(HomeFriendFragment())
+
+        // adapter 연결
+        viewPager.adapter = pagerAdapter
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int){
+                super.onPageSelected(position)
+                Log.e("ViewPagerFragment", "Page ${position+1}")
+            }
+        })
+
+        // tablayout attach
+        TabLayoutMediator(tabLayout, viewPager){ tab, position ->
+            tab.text = tabTitleArray[position]
+            tab.setIcon(tabIconArray[position])
+        }.attach()
+
+        return view
+    }
+}

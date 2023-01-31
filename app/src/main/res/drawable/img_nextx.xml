@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/img_next"
+        android:width="4dp"
+        android:height="6.95dp"/>
+
+
+</layer-list>
