@@ -1,15 +1,18 @@
 package com.example.fit_i.data.service
 
-import com.example.fit_i.data.model.request.LoginRequest
-import com.example.fit_i.data.model.request.User
-import com.example.fit_i.data.model.request.ChangePWRequest
-import com.example.fit_i.data.model.request.LogoutRequest
+import com.example.fit_i.data.model.request.*
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.model.response.LoginResponse
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.*
 
 interface AccountsService {
+    //이용약관수락
+    @Headers("content-type: application/json")
+    @POST("api/accounts/terms")
+    fun termsOk(@Body req : TermsOkRequest) : Call<BaseResponse>
+
     //고객 회원가입
     @Headers("content-type: application/json")
     @POST("api/accounts/customer")
