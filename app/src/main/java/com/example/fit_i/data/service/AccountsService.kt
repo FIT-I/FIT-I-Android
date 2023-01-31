@@ -44,6 +44,4 @@ interface AccountsService {
     @Headers("content-type: application/json")
     @GET("api/accounts/email/{email}")
     fun sendEmail(@Path("email") email : String) : Call<BaseResponse>
-
-
 }
