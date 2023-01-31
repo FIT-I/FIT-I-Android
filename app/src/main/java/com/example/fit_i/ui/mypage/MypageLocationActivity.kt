@@ -1,4 +1,4 @@
-package com.example.fit_i
+package com.example.fit_i.ui.mypage
 
 import android.R
 import android.os.Bundle
@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 
+//도로명주소검색
 class MypageLocationActivity : AppCompatActivity() {
 //
 //    private var webView: WebView? = null
