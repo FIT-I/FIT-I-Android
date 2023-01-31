@@ -1,4 +1,4 @@
-package com.example.fit_i
+package com.example.fit_i.ui.main.matching
 
 data class MatchingData(
     //val prof: String,

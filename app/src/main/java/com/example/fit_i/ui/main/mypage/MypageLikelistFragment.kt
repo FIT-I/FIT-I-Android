@@ -1,6 +1,5 @@
-package com.example.fit_i.ui.mypage
+package com.example.fit_i.ui.main.mypage
 
-import android.graphics.Insets.add
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,7 +12,7 @@ import com.example.fit_i.LikelistAdapter
 import com.example.fit_i.LikelistData
 import com.example.fit_i.R
 import com.example.fit_i.databinding.FragmentMypageLikelistBinding
-import com.example.fit_i.ui.home.HomeFragment
+import com.example.fit_i.ui.main.home.HomeFragment
 
 class MypageLikelistFragment : Fragment() {
     private lateinit var binding: FragmentMypageLikelistBinding

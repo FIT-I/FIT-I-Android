@@ -1,4 +1,4 @@
-package com.example.fit_i.ui.mypage
+package com.example.fit_i.ui.main.mypage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

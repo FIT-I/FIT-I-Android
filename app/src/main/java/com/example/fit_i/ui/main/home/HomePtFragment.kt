@@ -1,4 +1,4 @@
-package com.example.fit_i.ui.home
+package com.example.fit_i.ui.main.home
 
 import android.os.Bundle
 import android.util.Log
@@ -13,14 +13,12 @@ import com.example.fit_i.BottomSheetFragment
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.TrainerAdapter
 import com.example.fit_i.TrainerData
-import com.example.fit_i.data.model.response.GetTrainerInfoResponse
 import com.example.fit_i.data.model.response.GetTrainerListResponse
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.FragmentHomePtBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.http.Query
 
 
 class HomePtFragment : Fragment() {

@@ -1,4 +1,4 @@
-package com.example.fit_i.ui.mypage
+package com.example.fit_i.ui.main.mypage
 
 import android.annotation.SuppressLint
 import android.os.Bundle

@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.example.fit_i.MainActivity
+import com.example.fit_i.ui.main.MainActivity
 import com.example.fit_i.databinding.ActivityLoginSplashBinding
 
 class LoginSplashActivity : AppCompatActivity() {
