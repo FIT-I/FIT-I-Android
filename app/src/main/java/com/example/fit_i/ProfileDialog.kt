@@ -3,10 +3,21 @@ package com.example.fit_i
 import android.app.Dialog
 import android.content.ComponentCallbacks
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
+import com.example.fit_i.data.model.request.LogoutRequest
+import com.example.fit_i.data.model.response.BaseResponse
+import com.example.fit_i.data.service.AccountsService
 import com.example.fit_i.databinding.DialogProfileBinding
+import com.example.fit_i.ui.login.LoginActivity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ProfileDialog(context: Context, private val okCallbacks: (String)-> Unit,): Dialog(context) {
     //뷰를 띄워야하므로 Dialog 클래스는 context를 인자로 받는다
@@ -35,6 +46,5 @@ class ProfileDialog(context: Context, private val okCallbacks: (String)-> Unit,)
             //로그아웃에 대한 코드 짜기
             dismiss()
         }
-
     }
 }

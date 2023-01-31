@@ -18,10 +18,11 @@ class MypageSiginoutFragment : Fragment() {
     ): View? {
 
 
-        val bb = inflater.inflate(R.layout.fragment_mypage_siginout, container, false)
-        val btnstay = bb.findViewById<View>(R.id.btn_stay) as AppCompatButton
-        val btnwithdraw2 = bb.findViewById<View>(R.id.btn_withdraw2) as AppCompatButton
+        val view = inflater.inflate(R.layout.fragment_mypage_siginout, container, false)
+        val btnstay = view.findViewById<View>(R.id.btn_stay) as AppCompatButton
+        val btnwithdraw2 = view.findViewById<View>(R.id.btn_withdraw2) as AppCompatButton
 
+        //계속 있기
         btnstay.setOnClickListener {
             val mypageFragment = MypageFragment()
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
@@ -35,18 +36,16 @@ class MypageSiginoutFragment : Fragment() {
 
         btnwithdraw2.setOnClickListener {
             showAccountDialog()
-
         }
 
 
-        return bb
+        return view
 
 
     }
 
     private fun showAccountDialog() {
         AccountDialog(requireContext()) {
-
         }.show()
     }
 }

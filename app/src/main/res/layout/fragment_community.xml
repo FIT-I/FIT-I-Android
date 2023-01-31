@@ -3,46 +3,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".CommunityFragment"
     android:id="@+id/communitylayout">
 
 
-<!--    <ImageView-->
-<!--        android:id="@+id/img_no"-->
-<!--        android:layout_width="173dp"-->
-<!--        android:layout_height="201dp"-->
-<!--        android:src="@drawable/img_match"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
+    <ImageView
+        android:id="@+id/img_no"
+        android:layout_width="173dp"
+        android:layout_height="201dp"
+        android:src="@drawable/img_match"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <TextView
+        android:layout_width="173dp"
+        android:layout_height="wrap_content"
+        android:text="아직 보낸 요청이 없습니다."
+        app:layout_constraintTop_toBottomOf="@+id/img_no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/main"
+        android:textStyle="bold"
+        />
+
+
+<!--    <Button-->
+<!--        android:id="@+id/bt_sent"-->
+<!--        android:layout_width="170dp"-->
+<!--        android:layout_height="140dp"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:drawableTop="@drawable/sentx"-->
+<!--        android:paddingTop="20dp"-->
+<!--        android:text="보낸 요청"-->
+<!--        android:textSize="15sp"-->
+<!--        android:textColor="@color/gray"-->
+<!--        app:cornerRadius="8dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"/>-->
-<!--    <TextView-->
-<!--        android:layout_width="173dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="아직 보낸 요청이 없습니다."-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/img_no"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        android:textColor="@color/main"-->
-<!--        android:textStyle="bold"-->
 <!--        />-->
-
-
-<!--&lt;!&ndash;    <Button&ndash;&gt;-->
-<!--&lt;!&ndash;        android:id="@+id/bt_sent"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:layout_width="170dp"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:layout_height="140dp"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:backgroundTint="@color/white"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:drawableTop="@drawable/sentx"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:paddingTop="20dp"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:text="보낸 요청"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:textSize="15sp"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:textColor="@color/gray"&ndash;&gt;-->
-<!--&lt;!&ndash;        app:cornerRadius="8dp"&ndash;&gt;-->
-<!--&lt;!&ndash;        app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
-<!--&lt;!&ndash;        app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
-<!--&lt;!&ndash;        app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
-<!--&lt;!&ndash;        app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
-<!--&lt;!&ndash;        />&ndash;&gt;-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
