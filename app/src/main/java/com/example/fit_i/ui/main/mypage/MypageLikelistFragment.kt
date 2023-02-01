@@ -24,8 +24,9 @@ import retrofit2.Response
 
 class MypageLikelistFragment : Fragment() {
     private lateinit var binding: FragmentMypageLikelistBinding
-    private val dataList = ArrayList<LikelistData>()
-
+    lateinit var listAdapter: LikelistAdapter
+    //private val dataList = ArrayList<LikelistData>()
+    var dataList = ArrayList<LikelistData>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -86,6 +87,11 @@ class MypageLikelistFragment : Fragment() {
                     //정상적으로 통신이 성공된 경우
                     Log.d("get","onResponse 성공"+response.body().toString());
                    // Toast.makeText(this@MypageLikelistFragment,"찜목록조회",Toast.LENGTH_SHORT).show()
+
+                   // dataList = response.body() ?: ArrayList()
+                    listAdapter.setList(dataList)
+
+
                 }else{
                     //통신 실패
                     Log.d("get","onResponse 실패"+response.body().toString())

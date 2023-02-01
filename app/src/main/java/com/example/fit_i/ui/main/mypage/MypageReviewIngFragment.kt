@@ -12,6 +12,12 @@ import android.widget.EditText
 import android.widget.ImageButton
 import androidx.fragment.app.FragmentTransaction
 import com.example.fit_i.R
+import com.example.fit_i.RetrofitImpl
+import com.example.fit_i.data.model.request.ReviewRequest
+import com.example.fit_i.data.model.response.BaseResponse
+import com.example.fit_i.data.service.CustomerService
+import retrofit2.Callback
+import retrofit2.Retrofit
 
 //import com.example.fit_i.RetrofitImpl.service
 
@@ -64,11 +70,15 @@ class MypageReviewIngFragment : Fragment() {
 
 
         })
-//
-//        btnreviewing.setOnClickListener{
-//            service.UserReview(review = etreview.toString() )
+        val service = RetrofitImpl.getApiClient().create(CustomerService::class.java)
+//       btnreviewing.setOnClickListener{
+//           service.UserReview(review = etreview.toString() )
 //        }
-
+//        btnreviewing.setOnClickListener{
+//            service.writeReview(ReviewRequest).enqueue(object : Callback<BaseResponse>{
+//
+//            })
+//        }
         return view
 
 

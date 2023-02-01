@@ -22,25 +22,25 @@ class MypageReviewFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMypageReviewBinding.inflate(inflater,container, false)
-        val ff = inflater.inflate(R.layout.fragment_mypage_review,container,false)
+        binding = FragmentMypageReviewBinding.inflate(inflater, container, false)
+        val ff = inflater.inflate(R.layout.fragment_mypage_review, container, false)
         val ibpre = ff.findViewById<View>(R.id.ib_pre5)
 
-            ibpre.setOnClickListener{
-                val mypageFragment = MypageFragment()
-                val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
+        ibpre.setOnClickListener {
+            val mypageFragment = MypageFragment()
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
 
-                //이전 화면으로 이동
-                transaction.replace(R.id.fl_container,mypageFragment)
-                transaction.commit()
+            //이전 화면으로 이동
+            transaction.replace(R.id.fl_container, mypageFragment)
+            transaction.commit()
 
-            }
+        }
 
-    //임의로 데이터 넣어보기, 나중에 사진 글라이드 기능 추가
+        //임의로 데이터 넣어보기, 나중에 사진 글라이드 기능 추가
         dataList.apply {
-            add(ReviewData("김동현","4.3","숭실대학교"))
-            add(ReviewData("김준기","4.3","중앙대학교"))
-            add(ReviewData("홍준혁","4.3","건국대학교"))
+            add(ReviewData("김동현", "4.3", "숭실대학교"))
+            add(ReviewData("김준기", "4.3", "중앙대학교"))
+            add(ReviewData("홍준혁", "4.3", "건국대학교"))
         }
         val reviewAdapter = ReviewAdapter(dataList)
         binding.rcReview.adapter = reviewAdapter
@@ -52,7 +52,7 @@ class MypageReviewFragment : Fragment() {
                 //클릭 시 이벤트 작성하기
                 //임의로 홈이랑 연결함
                 val mypageReviewIngFragment = MypageReviewIngFragment()
-                val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
+                val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
 
                 transaction.replace(R.id.fl_container, mypageReviewIngFragment)
                 transaction.commit()
