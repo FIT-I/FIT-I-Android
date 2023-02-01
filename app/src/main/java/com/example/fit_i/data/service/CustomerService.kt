@@ -55,4 +55,11 @@ interface CustomerService {
                        @Query("sort") sort: String
     )
     : Call<GetTrainerListResponse>
+
+    @GET("api/customer/trainer-list")
+    fun getTrainerlist(@Query("category") category:String,
+                       @Query("page") page: Int,
+                       @Query("size") size: Int,
+                       @Query("sort") sort: Array<String>
+    ): Call<GetTrainerListResponse>
 }

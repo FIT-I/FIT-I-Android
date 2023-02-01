@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
-    tools:context=".MypageModifyProfileFragment">
+    tools:context=".ui.main.mypage.MypageModifyProfileFragment">
 
 
 
@@ -27,7 +27,7 @@
         android:id="@+id/tv_profileModify"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="프로필 수정"
+        android:text="마이 프로필"
         android:layout_marginBottom="10dp"
         android:textColor="@color/main"
         android:textSize="15sp"
@@ -164,17 +164,16 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="김동현"
+        android:text="userName"
         android:textSize="15sp"
         android:textColor="@color/main"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_pro2"
         android:layout_marginTop="5dp"/>
-
-
 
     <ImageView
         android:id="@+id/bar"
@@ -212,14 +211,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="skydh1214@naver.com"
+        android:text="user@email.com"
         android:textColor="@color/main"
         app:layout_constraintStart_toStartOf="@+id/tv_info"
         app:layout_constraintTop_toBottomOf="@+id/tv_emailM" />
 
 
     <TextView
-        android:id="@+id/tv_address"
+        android:id="@+id/tv_addressM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -229,14 +228,14 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_email" />
 
     <TextView
-        android:id="@+id/tv_addressS"
+        android:id="@+id/tv_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="서울대학교 기숙사 922동"
+        android:text="서울특별시 동작구 369, 숭실대학교"
         android:textColor="@color/main"
         app:layout_constraintStart_toStartOf="@+id/tv_info"
-        app:layout_constraintTop_toBottomOf="@+id/tv_address" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_addressM" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

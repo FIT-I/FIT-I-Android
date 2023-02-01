@@ -99,7 +99,7 @@ class MypageChangePwActivity : AppCompatActivity() {
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)  // 화면 전환을 시켜줌
                 finish()
-                Toast.makeText(this,"비밀번호가 변경 되었습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"비밀번호가 변경되었습니다. 다시 로그인해주세요.", Toast.LENGTH_SHORT).show()
                 //Toast.makeText(this, pw1 + " changePW", Toast.LENGTH_SHORT).show()
             }
 
@@ -110,6 +110,7 @@ class MypageChangePwActivity : AppCompatActivity() {
                     if(response.isSuccessful){
                         // 정상적으로 통신이 성공된 경우
                         Log.d("post", "onResponse 성공: " + response.body().toString());
+
                         makeToast()
                     }else{
                         // 통신이 실패한 경우(응답코드 3xx, 4xx 등)

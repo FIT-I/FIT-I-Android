@@ -3,12 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.main.mypage.notice.MypageNoticeFragment">
-
+    tools:context=".ui.main.mypage.notice.MypageNoticeMoreActivity">
 
 
     <ImageButton
-        android:id="@+id/ib_pre7"
+        android:id="@+id/ib_pre"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="30dp"
@@ -31,7 +30,7 @@
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ib_pre7" />
+        app:layout_constraintTop_toTopOf="@+id/ib_pre" />
     <ImageView
         android:id="@+id/iv_bar4"
         android:layout_width="match_parent"
@@ -44,7 +43,7 @@
     <TextView
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_bar4"
-        android:id="@+id/tv_ok"
+        android:id="@+id/tv_notice_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="앱 업데이트 안내"
@@ -58,10 +57,11 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#D9D9D9"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ok"
+        app:layout_constraintTop_toBottomOf="@+id/tv_notice_title"
         android:layout_marginTop="5dp"
         />
     <TextView
+        android:id="@+id/tv_notice_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="13dp"
@@ -71,8 +71,6 @@
 이용자 여러분은 참고하여 이용해주시면 감사하겠습니다."
         android:textColor="@color/main"
         android:textSize="15sp"/>
-
-
 
 
 
