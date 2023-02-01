@@ -23,19 +23,22 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MypageFragment : Fragment() {
-    private lateinit var binding: FragmentMypageBinding
+    private var _binding: FragmentMypageBinding? = null
+    private val binding: FragmentMypageBinding
+        get() = requireNotNull(_binding) { "FragmentMypageBinding" }
 
-
-    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding =FragmentMypageBinding.inflate(layoutInflater)
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_mypage, container, false)
+        _binding = FragmentMypageBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        val view = inflater.inflate(R.layout.fragment_mypage, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         val ibsetting = view.findViewById<View>(R.id.ib_setting) as ImageButton
         val ivnextlike = view.findViewById<View>(R.id.iv_next_like) as ImageView
         val ivnextnotice = view.findViewById<View>(R.id.iv_next_notice) as ImageView
@@ -46,9 +49,8 @@ class MypageFragment : Fragment() {
 
         val swtmy = view.findViewById<View>(R.id.swt_my) as Switch
 
-
         fun onBind(data: GetMypageResponse.Result) {
-            binding.tvNameM.text="바보"
+            binding.tvNameM.text=data.userName
             binding.tvEmailM.text=data.email
         }
 
@@ -140,12 +142,5 @@ class MypageFragment : Fragment() {
 
             }
         }
-
-
-
-
-        return view
-
-
     }
 }
