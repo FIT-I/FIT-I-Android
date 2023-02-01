@@ -64,7 +64,7 @@ class MypageSettingFragment :Fragment() {
                 startActivity(intent)
             }
             fun logout(){
-                val accountService = RetrofitImpl.getApiClient().create(AccountsService::class.java)
+                val accountService = RetrofitImpl.getApiClientWithToken().create(AccountsService::class.java)
                 val token = LogoutRequest(accessToken = App.token_prefs.accessToken.toString(), refreshToken = App.token_prefs.refreshToken.toString())
                 accountService.logOut(token).enqueue(object : Callback<BaseResponse> {
                     override fun onResponse(

@@ -9,6 +9,8 @@ import java.io.IOException
 
 object RetrofitImpl {
     private const val BASE_URL = "http://fiti.site/"
+
+    //코튼 없음
     fun getApiClient(): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -24,9 +26,37 @@ object RetrofitImpl {
     }
 
     class AppInterceptor : Interceptor {
+        @Throws(IOException::class)
+        override fun intercept(chain: Interceptor.Chain) : Response = with(chain) {
+            val newRequest = request().newBuilder()
+                .addHeader("accept", "application/hal+json")
+                .addHeader("Content-Type", "application/json")
+                .build()
+            proceed(newRequest)
+        }
+    }
+
+
+    //토큰 있음
+    fun getApiClientWithToken(): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(provideOkHttpClient(AppTokenInterceptor()))
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+
+    private fun provideOkHttpClient(interceptor: AppTokenInterceptor): OkHttpClient
+            = OkHttpClient.Builder().run {
+        addInterceptor(interceptor)
+        build()
+    }
+
+    class AppTokenInterceptor : Interceptor {
 
         @Throws(IOException::class)
         override fun intercept(chain: Interceptor.Chain) : Response = with(chain) {
+
             val newRequest = request().newBuilder()
                 .addHeader("accept", "application/hal+json")
                 .addHeader("Authorization","Bearer ${App.token_prefs.accessToken.toString()}")
