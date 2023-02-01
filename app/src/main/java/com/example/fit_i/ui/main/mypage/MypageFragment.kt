@@ -1,6 +1,7 @@
 package com.example.fit_i.ui.main.mypage
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -32,10 +33,17 @@ class MypageFragment : Fragment() {
         val ivnextpermisson = vv.findViewById<View>(R.id.iv_next_permisson) as ImageView
         val tvgotoprofile = vv.findViewById<View>(R.id.tv_go_modifyProfile) as TextView
         val ivnextreview = vv.findViewById<View>(R.id.iv_next_review) as ImageView
+        val goChangePW = vv.findViewById<View>(R.id.iv_next_login_reset) as ImageView
+
         val swtmy = vv.findViewById<View>(R.id.swt_my) as Switch
 
 
 
+        goChangePW.setOnClickListener {
+            val intent = Intent(context, MypageChangePwActivity::class.java)  // 인텐트를 생성해줌,
+            startActivity(intent)  // 화면 전환을 시켜줌
+            //finish()
+        }
 
         //설정
         ibsetting.setOnClickListener {
