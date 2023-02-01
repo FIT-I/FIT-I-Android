@@ -7,8 +7,7 @@
     android:layout_marginTop="10dp"
     android:layout_marginBottom="10dp"
     android:layout_marginStart="20dp"
-    android:layout_marginEnd="20dp"
-    >
+    android:layout_marginEnd="20dp">
 
     <ImageButton
         android:id="@+id/iv_profile"
@@ -71,37 +70,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4.3"
-            android:textSize="11dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ㆍ"
-            android:textColor="@color/gray"
-            android:textSize="11dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="보유 자격증"
-            android:textColor="@color/gray"
-            android:textSize="11dp" />
-
-        <TextView
-            android:id="@+id/tv_certificate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" 5"
-            android:textColor="@color/gray"
-
-            android:textSize="11dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="개"
-            android:textColor="@color/gray"
-
             android:textSize="11dp" />
 
         <TextView

@@ -15,7 +15,6 @@ class NoticeAdapter(private val dataList: List<GetAnnouncementResponse.Result>):
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(position: Int) {
-
             binding.tvNoticeTitle.text = dataList[position].title
             binding.tvNoticeDate.text = dataList[position].createdAt
 

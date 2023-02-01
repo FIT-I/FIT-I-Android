@@ -1,4 +1,4 @@
-package com.example.fit_i
+package com.example.fit_i.ui.main.home
 
 import android.content.Intent
 import android.util.Log
@@ -8,20 +8,20 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fit_i.data.model.response.GetTrainerListResponse
 import com.example.fit_i.databinding.ItemTrainerBinding
 import com.example.fit_i.ui.profile.ProfileActivity
 
-class TrainerAdapter(private val dataList: ArrayList<TrainerData>): RecyclerView.Adapter<TrainerAdapter.ViewHolder>() {
+class TrainerAdapter(private val dataList: List<GetTrainerListResponse.Result.Dto>): RecyclerView.Adapter<TrainerAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ItemTrainerBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(position: Int) {
             binding.tvName.text = dataList[position].name
-            binding.tvRating.text= dataList[position].rating.toString()
-            binding.tvCertificate.text= dataList[position].certificate.toString()
-            binding.tvUniv.text=dataList[position].univ
-            binding.tvPr.text=dataList[position].pr
-            binding.tvMoney.text= dataList[position].money.toString()
+            binding.tvRating.text= dataList[position].grade.toString()
+            binding.tvUniv.text=dataList[position].school
+            binding.tvPr.text=dataList[position].contents
+            binding.tvMoney.text= dataList[position].cost.toString()
 
             //viewBinding.imgFricard.setImageResource(dataList[position].front)
             itemView.setOnClickListener {
@@ -32,7 +32,7 @@ class TrainerAdapter(private val dataList: ArrayList<TrainerData>): RecyclerView
 
     interface OnItemClickListener : AdapterView.OnItemClickListener {
         //fun onClick(v: View, position: Int)
-        fun onItemClick(v:View, data:TrainerData, position: Int)
+        fun onItemClick(v:View, data: TrainerData, position: Int)
         //override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         //  TODO("Not yet implemented")
         //}

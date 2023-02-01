@@ -1,4 +1,4 @@
-package com.example.fit_i
+package com.example.fit_i.ui.main.home
 
 data class TrainerData(
     val name: String,

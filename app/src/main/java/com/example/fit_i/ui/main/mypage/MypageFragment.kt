@@ -138,7 +138,6 @@ class MypageFragment : Fragment() {
 
             } else {
                 //체크된 상태 만들 시 코드
-
             }
         }
     }
