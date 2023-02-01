@@ -1,5 +1,7 @@
 package com.example.fit_i.data.model.response
 
+import com.google.gson.annotations.SerializedName
+
 data class GetMypageResponse(
     val code: Int,
     val isSuccess: Boolean,
@@ -7,10 +9,10 @@ data class GetMypageResponse(
     val result: Result
 ){
     data class Result(
-        val email: String,
-        val location: String,
-        val profile: String,
-        val userIdx: Int,
-        val userName: String
+        @SerializedName("email") val email: String,
+        @SerializedName("location") val location: String,
+        @SerializedName("profile") val profile: String,
+        @SerializedName("userIdx") val userIdx: Int,
+        @SerializedName("userName") val userName: String
     )
 }
