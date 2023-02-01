@@ -13,8 +13,6 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
-import com.example.fit_i.TrainerAdapter
-import com.example.fit_i.TrainerData
 import com.example.fit_i.data.model.response.GetAnnouncementResponse
 import com.example.fit_i.data.service.CommunalService
 import com.example.fit_i.databinding.FragmentMypageNoticeBinding
@@ -42,22 +40,15 @@ class MypageNoticeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        lodeData()
+
+
         val noticeList : ArrayList<NoticeData> = arrayListOf()
 
         noticeList.apply {
             add(NoticeData("앱 업데이트 안내2",",","2023-02-01"))
         }
 
-
-        val noticeAdapter = NoticeAdapter(noticeList)
-        binding.rvNotice.adapter=noticeAdapter
-
-        val linearLayoutManager = LinearLayoutManager(context)
-        binding.rvNotice.layoutManager=linearLayoutManager
-
-        binding.rvNotice.setHasFixedSize(true)
-        //구분선
-        binding.rvNotice.addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL))
 
 
         val ibpre = view.findViewById<View>(R.id.ib_pre) as ImageButton
@@ -81,6 +72,49 @@ class MypageNoticeFragment : Fragment() {
 //            transaction.replace(R.id.fl_container,mypageNoticeIngeFragment)
 //            transaction.commit()
 //        }
+    }
+
+
+    private fun setAdapter(noticeList: List<GetAnnouncementResponse.Result>){
+
+        val noticeAdapter = NoticeAdapter(noticeList)
+        binding.rvNotice.adapter=noticeAdapter
+
+        val linearLayoutManager = LinearLayoutManager(context)
+        binding.rvNotice.layoutManager=linearLayoutManager
+
+        binding.rvNotice.setHasFixedSize(true)  //true?
+        //구분선
+        binding.rvNotice.addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL))
+    }
+
+    private fun lodeData() {
+        val commmunalService = RetrofitImpl.getApiClient().create(CommunalService::class.java)
+        commmunalService.getAnnouncement().enqueue(object :
+            Callback<GetAnnouncementResponse> {
+            override fun onResponse(call: Call<GetAnnouncementResponse>, response: Response<GetAnnouncementResponse>) {
+                if(response.isSuccessful){
+                    // 정상적으로 통신이 성공된 경우
+                    //onBind(response.body()!!.result)
+                    Log.d("post", "onResponse 성공: " + response.body().toString());
+                    //Toast.makeText(this@ProfileActivity, "비밀번호 찾기 성공!", Toast.LENGTH_SHORT).show()
+
+                    val body = response.body()
+                    body?.let {
+                        setAdapter(it.result)
+                    }
+                }else{
+                    // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
+                    Log.d("post", "onResponse 실패")
+                }
+            }
+
+            override fun onFailure(call: Call<GetAnnouncementResponse>, t: Throwable) {
+                // 통신 실패 (인터넷 끊킴, 예외 발생 등 시스템적인 이유)
+                Log.d("post", "onFailure 에러: " + t.message.toString());
+            }
+        })
+
     }
 
 }

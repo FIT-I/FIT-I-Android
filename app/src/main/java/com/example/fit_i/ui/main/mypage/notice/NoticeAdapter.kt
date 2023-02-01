@@ -1,19 +1,17 @@
 package com.example.fit_i.ui.main.mypage.notice
 
-import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fit_i.TrainerData
+import com.example.fit_i.data.model.response.GetAnnouncementResponse
 import com.example.fit_i.databinding.ItemNoticeBinding
-import com.example.fit_i.ui.profile.ProfileActivity
 
 
-class NoticeAdapter(private val dataList: ArrayList<NoticeData>): RecyclerView.Adapter<NoticeAdapter.ViewHolder>() {
+class NoticeAdapter(private val dataList: List<GetAnnouncementResponse.Result>): RecyclerView.Adapter<NoticeAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ItemNoticeBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
@@ -21,8 +19,6 @@ class NoticeAdapter(private val dataList: ArrayList<NoticeData>): RecyclerView.A
 
             binding.tvNoticeTitle.text = dataList[position].title
             binding.tvNoticeDate.text = dataList[position].createdAt
-
-
 
             //viewBinding.imgFricard.setImageResource(dataList[position].front)
             itemView.setOnClickListener {
