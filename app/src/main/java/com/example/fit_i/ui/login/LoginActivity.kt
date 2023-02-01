@@ -146,7 +146,7 @@ class LoginActivity : AppCompatActivity() {
 //                            val token = App.prefs.token
                             Log.d("Post", "success ${response.body().toString()}")
 
-                            App.token_prefs.accessToken = response.body()!!.result.accessToken.toString()
+                            App.token_prefs.accessToken = response.body()!!.result.accessToken
                             App.token_prefs.refreshToken = response.body()?.result?.refreshToken
 
                             Toast.makeText(this@LoginActivity, email+" 로그인", Toast.LENGTH_SHORT).show()
