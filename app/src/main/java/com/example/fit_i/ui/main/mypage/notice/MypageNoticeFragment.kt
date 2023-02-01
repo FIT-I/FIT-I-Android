@@ -62,16 +62,6 @@ class MypageNoticeFragment : Fragment() {
             transaction.commit()
 
         }
-
-//        val btnper = view.findViewById<View>(R.id.btn_per)
-//        val btnok = view.findViewById<View>(R.id.btn_okok)
-    //        btnper.setOnClickListener{
-//            val mypageNoticeIngeFragment = MypageNoticeIngeFragment()
-//            val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
-//
-//            transaction.replace(R.id.fl_container,mypageNoticeIngeFragment)
-//            transaction.commit()
-//        }
     }
 
 
@@ -114,7 +104,6 @@ class MypageNoticeFragment : Fragment() {
                 Log.d("post", "onFailure 에러: " + t.message.toString());
             }
         })
-
     }
 
 }
