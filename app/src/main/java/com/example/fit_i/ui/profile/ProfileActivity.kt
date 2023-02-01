@@ -20,7 +20,7 @@ import retrofit2.Response
 class ProfileActivity :AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
 
-    private var trainerIdx: Int = 0
+    private var trainerIdx: Int =2
 
     private lateinit var wish: CheckBox
 
@@ -48,7 +48,7 @@ class ProfileActivity :AppCompatActivity() {
         binding = ActivityProfileBinding.inflate(layoutInflater)
 
 
-        trainerIdx = 1010 // intent getint로 실제 클릭한 트레이너값 받아와야함
+        //trainerIdx = 2// intent getint로 실제 클릭한 트레이너값 받아와야함
 
 
         val commmunalService = RetrofitImpl.getApiClient().create(CommunalService::class.java)
