@@ -147,7 +147,7 @@ class LoginActivity : AppCompatActivity() {
                             Log.d("Post", "success ${response.body().toString()}")
 
                             App.token_prefs.accessToken = response.body()!!.result.accessToken
-                            App.token_prefs.refreshToken = response.body()?.result?.refreshToken
+                            App.token_prefs.refreshToken = response.body()!!.result.refreshToken
 
                             Toast.makeText(this@LoginActivity, email+" 로그인", Toast.LENGTH_SHORT).show()
                             startActivity(intent)  // 화면 전환을 시켜줌
