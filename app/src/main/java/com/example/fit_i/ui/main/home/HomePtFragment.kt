@@ -103,5 +103,6 @@ class HomePtFragment : Fragment() {
                 // 통신 실패 (인터넷 끊킴, 예외 발생 등 시스템적인 이유)
                 Log.d("post", "onFailure 에러: " + t.message.toString());
             }
-        })    }
+        })
+    }
 }
