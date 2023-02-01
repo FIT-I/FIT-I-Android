@@ -1,6 +1,5 @@
 package com.example.fit_i.ui.main.mypage
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -8,7 +7,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CompoundButton
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Switch
@@ -18,6 +16,7 @@ import com.example.fit_i.*
 import com.example.fit_i.data.model.response.GetMypageResponse
 import com.example.fit_i.data.service.CommunalService
 import com.example.fit_i.databinding.FragmentMypageBinding
+import com.example.fit_i.ui.main.mypage.notice.MypageNoticeFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
