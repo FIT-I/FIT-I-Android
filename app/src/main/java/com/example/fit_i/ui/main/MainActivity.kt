@@ -7,6 +7,7 @@ import com.example.fit_i.R
 import com.example.fit_i.databinding.ActivityMainBinding
 import com.example.fit_i.ui.main.chat.ChatFragment
 import com.example.fit_i.ui.main.home.HomeFragment
+import com.example.fit_i.ui.main.matching.MatchingFragment
 import com.example.fit_i.ui.main.mypage.MypageFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -28,9 +29,9 @@ class MainActivity : AppCompatActivity() {
                         .replace(R.id.fl_container, homeFragment).commit()
                 }
                 R.id.item_fragment2 -> {
-                    val communityFragment = CommunityFragment()
+                    val matchingFragment = MatchingFragment()
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.fl_container, communityFragment).commit()
+                        .replace(R.id.fl_container, matchingFragment).commit()
                 }
 
                 R.id.item_fragment3 -> {
