@@ -25,6 +25,8 @@ class HomeMedicalFragment : Fragment() {
     private val binding: FragmentHomeFriendBinding
         get() = requireNotNull(_binding) { "FragmentHomeFriendBinding" }
 
+    var sort = arrayOf("recent")
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -55,10 +57,26 @@ class HomeMedicalFragment : Fragment() {
         binding.llSort.setOnClickListener(){
             val bottomSheet = BottomSheetFragment{
                 when (it){
-                    0 -> binding.tvSort.text = "실시간 순"
-                    1 -> binding.tvSort.text = "트레이너 레벨 순"
-                    2 -> binding.tvSort.text = "가격 낮은 순"
-                    3 -> binding.tvSort.text = "가격 높은 순"
+                    0 -> {
+                        binding.tvSort.text = "실시간 순"
+                        sort = arrayOf("recent")
+                        lodeData()
+                    }
+                    1 -> {
+                        binding.tvSort.text = "트레이너 레벨 순"
+                        sort = arrayOf("level")
+                        lodeData()
+                    }
+                    2 -> {
+                        binding.tvSort.text = "가격 낮은 순"
+                        sort = arrayOf("recent","DESC")
+                        lodeData()
+                    }
+                    3 -> {
+                        binding.tvSort.text = "가격 높은 순"
+                        sort = arrayOf("recent","ASC")
+                        lodeData()
+                    }
                 }
             }
             activity?.let { it1 -> bottomSheet.show(it1.supportFragmentManager,bottomSheet.tag) }

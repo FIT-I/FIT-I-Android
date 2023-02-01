@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
-        android:text="프로필 수정"
+        android:text="마이페이지"
         app:layout_constraintBottom_toBottomOf="@+id/tv_nameM"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/iv_profileM" />
@@ -115,7 +115,6 @@
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/fl"/>
 
-
     <TextView
         android:id="@+id/tv_like"
         android:layout_width="wrap_content"
@@ -153,7 +152,6 @@
         android:src="@drawable/ic_next"
         app:layout_constraintTop_toTopOf="@+id/tv_review"
         app:layout_constraintBottom_toBottomOf="@+id/tv_review"/>
-
 
     <TextView
         android:id="@+id/tv_location"

@@ -24,6 +24,7 @@ class HomePtFragment : Fragment() {
     private val binding: FragmentHomePtBinding
         get() = requireNotNull(_binding) { "FragmentHomePtBinding" }
 
+    var sort = arrayOf("recent")
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,10 +55,26 @@ class HomePtFragment : Fragment() {
         binding.llSort.setOnClickListener(){
             val bottomSheet = BottomSheetFragment{
                 when (it){
-                    0 -> binding.tvSort.text = "실시간 순"
-                    1 -> binding.tvSort.text = "트레이너 레벨 순"
-                    2 -> binding.tvSort.text = "가격 낮은 순"
-                    3 -> binding.tvSort.text = "가격 높은 순"
+                    0 -> {
+                        binding.tvSort.text = "실시간 순"
+                        sort = arrayOf("recent")
+                        lodeData()
+                    }
+                    1 -> {
+                        binding.tvSort.text = "트레이너 레벨 순"
+                        sort = arrayOf("level")
+                        lodeData()
+                    }
+                    2 -> {
+                        binding.tvSort.text = "가격 낮은 순"
+                        sort = arrayOf("recent","DESC")
+                        lodeData()
+                    }
+                    3 -> {
+                        binding.tvSort.text = "가격 높은 순"
+                        sort = arrayOf("recent","ASC")
+                        lodeData()
+                    }
                 }
             }
             activity?.let { it1 -> bottomSheet.show(it1.supportFragmentManager,bottomSheet.tag) }
@@ -81,7 +98,7 @@ class HomePtFragment : Fragment() {
     private fun lodeData() {
 
         val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
-        customerService.getTrainerlist("pt",0,20,arrayOf("recent","DESC")).enqueue(object :
+        customerService.getTrainerlist("pt",0,20,sort).enqueue(object :
             Callback<GetTrainerListResponse> {
             override fun onResponse(call: Call<GetTrainerListResponse>, response: Response<GetTrainerListResponse>) {
                 if(response.isSuccessful){
