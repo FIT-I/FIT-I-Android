@@ -16,6 +16,7 @@ import com.example.fit_i.data.model.request.ChangePWRequest
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.AccountsService
 import com.example.fit_i.databinding.ActivityChangePwBinding
+import com.example.fit_i.ui.login.LoginActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -94,15 +95,22 @@ class MypageChangePwActivity : AppCompatActivity() {
         //비밀번호 변경 끝!
         //버튼 이벤트
         btnFinPwChange.setOnClickListener {
-            val intent = Intent(this, LoginSplashActivity::class.java)
+            fun makeToast() {
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)  // 화면 전환을 시켜줌
+                finish()
+                Toast.makeText(this,"비밀번호가 변경 되었습니다.", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, pw1 + " changePW", Toast.LENGTH_SHORT).show()
+            }
+
             val service = RetrofitImpl.getApiClient().create(AccountsService::class.java)
-            val changePW = ChangePWRequest(accessToken, pw1, refreshToken)
+            val changePW = ChangePWRequest(App.token_prefs.accessToken.toString(), pw1, App.token_prefs.refreshToken.toString())
             service.changePW(changePW).enqueue(object : Callback<BaseResponse> {
                 override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
                     if(response.isSuccessful){
                         // 정상적으로 통신이 성공된 경우
                         Log.d("post", "onResponse 성공: " + response.body().toString());
-                        Toast.makeText(this@MypageChangePwActivity, "비밀번호가 변경되었습니다.", Toast.LENGTH_SHORT).show()
+                        makeToast()
                     }else{
                         // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
                         Log.d("post", "onResponse 실패")
@@ -114,12 +122,6 @@ class MypageChangePwActivity : AppCompatActivity() {
                     Log.d("post", "onFailure 에러: " + t.message.toString());
                 }
             })
-
-
-
-        startActivity(intent)  // 화면 전환을 시켜줌
-            finish()
-            Toast.makeText(this, pw1 + " changePW", Toast.LENGTH_SHORT).show()
         }
     }
 

@@ -24,11 +24,13 @@ object RetrofitImpl {
     }
 
     class AppInterceptor : Interceptor {
+
         @Throws(IOException::class)
         override fun intercept(chain: Interceptor.Chain) : Response = with(chain) {
             val newRequest = request().newBuilder()
-                .addHeader("accessToken", App.token_prefs.accessToken ?: "")
-                .addHeader("refreshToken", App.token_prefs.refreshToken ?: "")
+                .addHeader("accept", "application/hal+json")
+                .addHeader("Authorization","Bearer ${App.token_prefs.accessToken.toString()}")
+                .addHeader("Content-Type", "application/json")
                 .build()
             proceed(newRequest)
         }
