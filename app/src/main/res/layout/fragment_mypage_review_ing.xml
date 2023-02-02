@@ -60,7 +60,7 @@
             android:text="별점"
             android:textColor="@color/main"/>
 
-        <com.willy.ratingbar.BaseRatingBar
+        <RatingBar
             android:id="@+id/bar_grade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

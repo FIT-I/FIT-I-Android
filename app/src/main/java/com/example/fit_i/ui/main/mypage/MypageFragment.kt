@@ -15,7 +15,6 @@ import com.example.fit_i.data.model.response.GetMypageResponse
 import com.example.fit_i.data.service.CommunalService
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.FragmentMypageBinding
-import com.example.fit_i.ui.main.mypage.like.MypageLikelistFragment
 import com.example.fit_i.ui.main.mypage.notice.MypageNoticeFragment
 import com.example.fit_i.ui.main.mypage.review.MypageReviewFragment
 import com.example.fit_i.ui.main.mypage.setting.MypageSettingFragment

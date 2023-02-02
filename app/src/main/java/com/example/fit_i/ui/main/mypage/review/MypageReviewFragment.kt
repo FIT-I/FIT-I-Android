@@ -12,6 +12,7 @@ import com.example.fit_i.ReviewAdapter
 import com.example.fit_i.ReviewData
 import com.example.fit_i.databinding.FragmentMypageReviewBinding
 import com.example.fit_i.ui.main.mypage.MypageFragment
+import com.example.fit_i.ui.main.mypage.MypageReviewIngFragment
 
 class MypageReviewFragment : Fragment() {
     private lateinit var binding: FragmentMypageReviewBinding
