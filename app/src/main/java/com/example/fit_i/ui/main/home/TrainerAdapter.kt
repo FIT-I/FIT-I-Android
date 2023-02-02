@@ -10,6 +10,8 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fit_i.data.model.response.GetTrainerListResponse
 import com.example.fit_i.databinding.ItemTrainerBinding
+import com.example.fit_i.ui.main.mypage.notice.MypageNoticeMoreActivity
+import com.example.fit_i.ui.main.mypage.notice.NoticeData
 import com.example.fit_i.ui.profile.ProfileActivity
 
 class TrainerAdapter(private val dataList: List<GetTrainerListResponse.Result.Dto>): RecyclerView.Adapter<TrainerAdapter.ViewHolder>() {
@@ -22,22 +24,8 @@ class TrainerAdapter(private val dataList: List<GetTrainerListResponse.Result.Dt
             binding.tvUniv.text=dataList[position].school
             binding.tvPr.text=dataList[position].contents
             binding.tvMoney.text= dataList[position].cost.toString()
-
-            //viewBinding.imgFricard.setImageResource(dataList[position].front)
-            itemView.setOnClickListener {
-                Log.d("Click", "success")
-            }
         }
     }
-
-    interface OnItemClickListener : AdapterView.OnItemClickListener {
-        //fun onClick(v: View, position: Int)
-        fun onItemClick(v:View, data: TrainerData, position: Int)
-        //override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        //  TODO("Not yet implemented")
-        //}
-    }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val viewBinding =
@@ -49,9 +37,11 @@ class TrainerAdapter(private val dataList: List<GetTrainerListResponse.Result.Dt
         holder.bind(position)
 
         holder.itemView.setOnClickListener {
-            val intent = Intent(holder.itemView.context, ProfileActivity::class.java)
-            intent.putExtra("trainerIdx", dataList[position].id)
-            ContextCompat.startActivity(holder.itemView.context, intent, null)
+            val trainerIntent = Intent(holder.itemView.context, ProfileActivity::class.java)
+            trainerIntent.putExtra(
+                "trainerIdx",TrainerData(dataList[position].id,dataList[position].c))
+
+            ContextCompat.startActivity(holder.itemView.context, trainerIntent, null)
         }
     }
 

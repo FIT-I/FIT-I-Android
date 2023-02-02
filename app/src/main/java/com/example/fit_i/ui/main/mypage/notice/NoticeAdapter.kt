@@ -17,14 +17,7 @@ class NoticeAdapter(private val dataList: List<GetAnnouncementResponse.Result>):
         fun bind(position: Int) {
             binding.tvNoticeTitle.text = dataList[position].title
             binding.tvNoticeDate.text = dataList[position].createdAt
-
-            //viewBinding.imgFricard.setImageResource(dataList[position].front)
-            itemView.setOnClickListener {
-                Log.d("Click", "success")
-
-            }
         }
-
     }
 
 

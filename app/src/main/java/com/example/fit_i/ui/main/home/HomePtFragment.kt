@@ -86,6 +86,7 @@ class HomePtFragment : Fragment() {
         val trainerAdapter = TrainerAdapter(trainerList)
         binding.rvTrainer.adapter=trainerAdapter
 
+
         val linearLayoutManager = LinearLayoutManager(context)
         binding.rvTrainer.layoutManager=linearLayoutManager
 
