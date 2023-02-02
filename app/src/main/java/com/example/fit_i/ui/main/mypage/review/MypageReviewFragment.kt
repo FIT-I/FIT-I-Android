@@ -1,4 +1,4 @@
-package com.example.fit_i.ui.main.mypage
+package com.example.fit_i.ui.main.mypage.review
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +11,7 @@ import com.example.fit_i.R
 import com.example.fit_i.ReviewAdapter
 import com.example.fit_i.ReviewData
 import com.example.fit_i.databinding.FragmentMypageReviewBinding
+import com.example.fit_i.ui.main.mypage.MypageFragment
 
 class MypageReviewFragment : Fragment() {
     private lateinit var binding: FragmentMypageReviewBinding

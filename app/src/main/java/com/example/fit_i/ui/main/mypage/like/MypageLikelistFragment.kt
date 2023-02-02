@@ -1,4 +1,4 @@
-package com.example.fit_i.ui.main.mypage
+package com.example.fit_i.ui.main.mypage.like
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,6 +13,7 @@ import com.example.fit_i.LikelistData
 import com.example.fit_i.R
 import com.example.fit_i.databinding.FragmentMypageLikelistBinding
 import com.example.fit_i.ui.main.home.HomeFragment
+import com.example.fit_i.ui.main.mypage.MypageFragment
 
 class MypageLikelistFragment : Fragment() {
     private lateinit var binding: FragmentMypageLikelistBinding

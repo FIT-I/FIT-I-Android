@@ -1,4 +1,4 @@
-package com.example.fit_i.ui.main.mypage
+package com.example.fit_i.ui.main.mypage.review
 
 import android.os.Bundle
 import android.text.Editable
@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import androidx.fragment.app.FragmentTransaction
 import com.example.fit_i.R
+import com.example.fit_i.ui.main.mypage.MypageFragment
 
 //import com.example.fit_i.RetrofitImpl.service
 

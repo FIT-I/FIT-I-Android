@@ -1,4 +1,4 @@
-package com.example.fit_i.ui.main.mypage
+package com.example.fit_i.ui.main.mypage.like
 
 import android.os.Bundle
 import android.view.LayoutInflater
