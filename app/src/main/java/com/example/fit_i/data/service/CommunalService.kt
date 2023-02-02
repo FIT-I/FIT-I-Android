@@ -3,7 +3,6 @@ package com.example.fit_i.data.service
 import com.example.fit_i.data.model.response.*
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Headers
 import retrofit2.http.Path
 
 interface CommunalService {

@@ -49,8 +49,8 @@ class TrainerAdapter(private val dataList: List<GetTrainerListResponse.Result.Dt
         holder.bind(position)
 
         holder.itemView.setOnClickListener {
-            val intent = Intent(holder.itemView?.context, ProfileActivity::class.java)
-            intent.putExtra("name", dataList[position].name)
+            val intent = Intent(holder.itemView.context, ProfileActivity::class.java)
+            intent.putExtra("trainerIdx", dataList[position].id)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
         }
     }

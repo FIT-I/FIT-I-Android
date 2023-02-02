@@ -20,7 +20,7 @@ import retrofit2.Response
 class ProfileActivity :AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
 
-    private var trainerIdx: Int =2
+    private var trainerIdx: Int =252
 
     private lateinit var wish: CheckBox
 
