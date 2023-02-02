@@ -44,6 +44,7 @@ class MypageFragment : Fragment() {
         val ivnextpermisson = view.findViewById<View>(R.id.iv_next_permisson) as ImageView
         val tvgotoprofile = view.findViewById<View>(R.id.tv_go_modifyProfile) as TextView
         val ivnextreview = view.findViewById<View>(R.id.iv_next_review) as ImageView
+        val ivlocation = view.findViewById<View>(R.id.iv_next_location) as ImageView
         val goChangePW = view.findViewById<View>(R.id.iv_next_login_reset) as ImageView
 
         val swtmy = view.findViewById<View>(R.id.swt_my) as Switch
@@ -162,6 +163,12 @@ class MypageFragment : Fragment() {
             transaction.commit()
         }
 
+        //위치 설정
+        ivlocation.setOnClickListener {
+            val intent = Intent(context, MypageLocationActivity::class.java)  // 인텐트를 생성해줌,
+            startActivity(intent)  // 화면 전환을 시켜줌
+            //finish()
+        }
         //비밀번호 재설정
         goChangePW.setOnClickListener {
             val intent = Intent(context, MypageChangePwActivity::class.java)  // 인텐트를 생성해줌,
