@@ -26,14 +26,6 @@ class NoticeAdapter(private val dataList: List<GetAnnouncementResponse.Result>):
         }
 
     }
-//
-//
-//    interface OnItemClickListener : AdapterView.OnItemClickListener {
-//        fun onClick(v: View, position: Int)
-//        fun onItemClick(v: View, data: NoticeData, position: Int)
-//        override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-//        }
-//    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -47,19 +39,8 @@ class NoticeAdapter(private val dataList: List<GetAnnouncementResponse.Result>):
 
         holder.itemView.setOnClickListener {
 
-//            val mypageSettingFragment = MypageSettingFragment()
-//            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-//
-//            transaction.add(R.id.fl_container, mypageSettingFragment)
-//            transaction.commit()
-
-//            Toast.makeText(context,"토스트 메세지 띄우기 입니다.", Toast.LENGTH_SHORT).show()
-
             val noticeIntent = Intent(holder.itemView.context, MypageNoticeMoreActivity::class.java)
-            noticeIntent.putExtra("title", dataList[position].title)
-            noticeIntent.putExtra("contents", dataList[position].contents)
-            noticeIntent.putExtra("createdAt", dataList[position].createdAt)
-
+            noticeIntent.putExtra("notice", NoticeData(dataList[position].title,dataList[position].contents,dataList[position].createdAt))
 
             startActivity(holder.itemView.context, noticeIntent, null)
         }
