@@ -1,17 +1,12 @@
 package com.example.fit_i.ui.main.home
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fit_i.data.model.response.GetTrainerListResponse
 import com.example.fit_i.databinding.ItemTrainerBinding
-import com.example.fit_i.ui.main.mypage.notice.MypageNoticeMoreActivity
-import com.example.fit_i.ui.main.mypage.notice.NoticeData
 import com.example.fit_i.ui.profile.ProfileActivity
 
 class TrainerAdapter(private val dataList: List<GetTrainerListResponse.Result.Dto>): RecyclerView.Adapter<TrainerAdapter.ViewHolder>() {
@@ -39,8 +34,16 @@ class TrainerAdapter(private val dataList: List<GetTrainerListResponse.Result.Dt
         holder.itemView.setOnClickListener {
             val trainerIntent = Intent(holder.itemView.context, ProfileActivity::class.java)
             trainerIntent.putExtra(
-                "trainerIdx",TrainerData(dataList[position].id,dataList[position].c))
-
+                "trainerIdx", TrainerData(
+                    dataList[position].id,
+                    dataList[position].name,
+                    dataList[position].profile,
+                    dataList[position].levelName,
+                    dataList[position].school,
+                    dataList[position].grade,
+                    dataList[position].certificateNum,
+                    dataList[position].contents,
+                    dataList[position].cost))
             ContextCompat.startActivity(holder.itemView.context, trainerIntent, null)
         }
     }

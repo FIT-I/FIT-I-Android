@@ -25,57 +25,66 @@ class ProfileActivity :AppCompatActivity() {
     private var trainerIdx : Int = -1
 
     private lateinit var wish: CheckBox
-
-    fun onBind(data: GetTrainerInfoResponse.Result){
-        //binding.ivTrainerProfile.setImageResource(data.result.profile)
-        //binding.iv_background_photo=data.result.background
-
-        binding.tvTrainerName.text=data.name
-        //binding.ivTrainerGrade.text=data.result.levelName
-
-        //binding.tvDistance.text=data.result
-        binding.tvTrainerStar.text= data.grade.toString()
-        binding.tvUniversityInfo.text=data.school
-
-        binding.tvManagePrice.text= data.cost.toString()
-        binding.tvAboutMe.text=data.intro
-        binding.tvAboutService.text=data.service
-
-        binding.tvAverageValue.text= data.grade.toString()
-    }
+//
+//    fun onBind(data: GetTrainerInfoResponse.Result){
+//        //binding.ivTrainerProfile.setImageResource(data.result.profile)
+//        //binding.iv_background_photo=data.result.background
+//
+//        binding.tvTrainerName.text=data.name
+//        //binding.ivTrainerGrade.text=data.result.levelName
+//
+//        //binding.tvDistance.text=data.result
+//        binding.tvTrainerStar.text= data.grade.toString()
+//        binding.tvUniversityInfo.text=data.school
+//
+//        binding.tvManagePrice.text= data.cost.toString()
+//        binding.tvAboutMe.text=data.intro
+//        binding.tvAboutService.text=data.service
+//
+//        binding.tvAverageValue.text= data.grade.toString()
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         val data = intent.getParcelableExtra<TrainerData>("trainerIdx")
+
+        binding.tvTrainerName.text=data!!.name
+        binding.tvTrainerStar.text= data.grade.toString()
+        binding.tvUniversityInfo.text=data.school
+
+        binding.tvManagePrice.text= data.cost.toString()
+        binding.tvAboutMe.text=data.contents
+        //binding.tvAboutService.text=data.
+
+
 
         Log.d("post", data.toString())
         //trainerIdx = 2// intent getint로 실제 클릭한 트레이너값 받아와야함
 
-
-        val commmunalService = RetrofitImpl.getApiClient().create(CommunalService::class.java)
-        commmunalService.getTrainerInfo(trainerIdx).enqueue(object : Callback<GetTrainerInfoResponse> {
-            override fun onResponse(call: Call<GetTrainerInfoResponse>, response: Response<GetTrainerInfoResponse>) {
-                if(response.isSuccessful){
-                    // 정상적으로 통신이 성공된 경우
-                    onBind(response.body()!!.result)
-                    Log.d("post", "onResponse 성공: " + response.body().toString());
-                    //Toast.makeText(this@ProfileActivity, "비밀번호 찾기 성공!", Toast.LENGTH_SHORT).show()
-
-                }else{
-                    // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
-                    Log.d("post", "onResponse 실패")
-                }
-            }
-
-            override fun onFailure(call: Call<GetTrainerInfoResponse>, t: Throwable) {
-                // 통신 실패 (인터넷 끊킴, 예외 발생 등 시스템적인 이유)
-                Log.d("post", "onFailure 에러: " + t.message.toString());
-            }
-        })
+//
+//        val commmunalService = RetrofitImpl.getApiClient().create(CommunalService::class.java)
+//        commmunalService.getTrainerInfo(trainerIdx).enqueue(object : Callback<GetTrainerInfoResponse> {
+//            override fun onResponse(call: Call<GetTrainerInfoResponse>, response: Response<GetTrainerInfoResponse>) {
+//                if(response.isSuccessful){
+//                    // 정상적으로 통신이 성공된 경우
+//                    onBind(response.body()!!.result)
+//                    Log.d("post", "onResponse 성공: " + response.body().toString());
+//                    //Toast.makeText(this@ProfileActivity, "비밀번호 찾기 성공!", Toast.LENGTH_SHORT).show()
+//
+//                }else{
+//                    // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
+//                    Log.d("post", "onResponse 실패")
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<GetTrainerInfoResponse>, t: Throwable) {
+//                // 통신 실패 (인터넷 끊킴, 예외 발생 등 시스템적인 이유)
+//                Log.d("post", "onFailure 에러: " + t.message.toString());
+//            }
+//        })
 
 
         wish = findViewById<Button>(R.id.cb_heart_btn) as CheckBox
