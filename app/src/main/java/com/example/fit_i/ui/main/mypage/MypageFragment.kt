@@ -12,11 +12,13 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.fit_i.*
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.model.response.GetMypageResponse
-import com.example.fit_i.data.service.AccountsService
 import com.example.fit_i.data.service.CommunalService
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.FragmentMypageBinding
+import com.example.fit_i.ui.main.mypage.like.MypageLikelistFragment
 import com.example.fit_i.ui.main.mypage.notice.MypageNoticeFragment
+import com.example.fit_i.ui.main.mypage.review.MypageReviewFragment
+import com.example.fit_i.ui.main.mypage.setting.MypageSettingFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -39,6 +41,7 @@ class MypageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val ibsetting = view.findViewById<View>(R.id.ib_setting) as ImageButton
+
         val ivnextlike = view.findViewById<View>(R.id.iv_next_like) as ImageView
         val ivnextnotice = view.findViewById<View>(R.id.iv_next_notice) as ImageView
         val ivnextpermisson = view.findViewById<View>(R.id.iv_next_permisson) as ImageView
@@ -47,7 +50,7 @@ class MypageFragment : Fragment() {
         val ivlocation = view.findViewById<View>(R.id.iv_next_location) as ImageView
         val goChangePW = view.findViewById<View>(R.id.iv_next_login_reset) as ImageView
 
-        val swtmy = view.findViewById<View>(R.id.swt_my) as Switch
+        val swtmy : Switch= view.findViewById(R.id.swt_my)
 
         fun onBind(data: GetMypageResponse.Result) {
             binding.tvNameM.text=data.userName
