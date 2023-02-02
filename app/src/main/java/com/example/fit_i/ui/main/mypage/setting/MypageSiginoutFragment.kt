@@ -1,4 +1,4 @@
-package com.example.fit_i.ui.main.mypage
+package com.example.fit_i.ui.main.mypage.setting
 
 import android.app.AlertDialog
 import android.content.DialogInterface
@@ -12,13 +12,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.FragmentTransaction
-import com.example.fit_i.App
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
-import com.example.fit_i.data.model.request.LogoutRequest
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.AccountsService
 import com.example.fit_i.ui.login.LoginActivity
+import com.example.fit_i.ui.main.mypage.MypageFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

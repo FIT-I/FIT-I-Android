@@ -1,4 +1,4 @@
-package com.example.fit_i.ui.main.mypage
+package com.example.fit_i.ui.main.mypage.setting
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -21,6 +21,7 @@ import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.AccountsService
 import com.example.fit_i.databinding.FragmentMypageSettingBinding
 import com.example.fit_i.ui.login.LoginActivity
+import com.example.fit_i.ui.main.mypage.MypageFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

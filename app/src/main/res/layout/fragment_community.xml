@@ -8,6 +8,7 @@
     android:id="@+id/communitylayout">
 
 
+
     <ImageView
         android:id="@+id/img_no"
         android:layout_width="173dp"

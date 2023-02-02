@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -37,6 +38,7 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
 
     implementation 'com.github.ome450901:SimpleRatingBar:1.5.1'
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -66,4 +68,15 @@ dependencies {
 //    def nav_version = "2.3.5"
 //    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
 //    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    def nav_version = "2.3.5"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //kakaomap
+
+//    compile files('libs/libDaumMapAndroid.jar')
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation files('libs/libDaumMapAndroid.jar')
+
 }
