@@ -1,6 +1,7 @@
 package com.example.fit_i.ui.main.mypage
 
 import android.os.Bundle
+import android.telecom.Call
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,7 +19,7 @@ import com.example.fit_i.data.model.response.WishResponse
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.FragmentMypageLikelistBinding
 import com.example.fit_i.ui.main.home.HomeFragment
-import retrofit2.Call
+import com.example.fit_i.ui.main.mypage.MypageFragment
 import retrofit2.Callback
 import retrofit2.Response
 

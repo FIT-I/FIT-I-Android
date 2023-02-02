@@ -18,6 +18,7 @@ import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.CustomerService
 import retrofit2.Callback
 import retrofit2.Retrofit
+import com.example.fit_i.ui.main.mypage.MypageFragment
 
 //import com.example.fit_i.RetrofitImpl.service
 
