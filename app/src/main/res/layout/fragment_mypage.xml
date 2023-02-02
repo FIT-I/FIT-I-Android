@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.mypage.MypageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/tv_mypage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="마이페이지"
+        android:text="마이 프로필"
         android:textSize="23sp"
         android:textStyle="bold"
         android:textColor="@color/main"
@@ -48,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="40dp"
-        android:text="김동현"
+        android:text="userName"
         android:textColor="@color/main"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -59,7 +58,7 @@
         android:id="@+id/tv_emailM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="qqldls030@afms.com"
+        tools:text="user@email.com"
         app:layout_constraintStart_toStartOf="@+id/tv_nameM"
         app:layout_constraintTop_toBottomOf="@+id/tv_nameM" />
 
@@ -68,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
-        android:text="프로필 수정"
+        android:text="마이페이지"
         app:layout_constraintBottom_toBottomOf="@+id/tv_nameM"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/iv_profileM" />
@@ -116,7 +115,6 @@
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/fl"/>
 
-
     <TextView
         android:id="@+id/tv_like"
         android:layout_width="wrap_content"
@@ -154,7 +152,6 @@
         android:src="@drawable/ic_next"
         app:layout_constraintTop_toTopOf="@+id/tv_review"
         app:layout_constraintBottom_toBottomOf="@+id/tv_review"/>
-
 
     <TextView
         android:id="@+id/tv_location"

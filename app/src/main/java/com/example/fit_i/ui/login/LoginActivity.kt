@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.App
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl.getApiClient
+import com.example.fit_i.RetrofitImpl.getApiClientWithOutToken
 import com.example.fit_i.data.model.request.LoginRequest
 import com.example.fit_i.data.model.response.LoginResponse
 import com.example.fit_i.data.service.AccountsService
@@ -130,7 +131,7 @@ class LoginActivity : AppCompatActivity() {
             val loginRequest = LoginRequest(email,pw)
             //val login = Login("fiti@soongsil.ac.kr","fiti123!")
 
-            val service= getApiClient().create(AccountsService::class.java)
+            val service= getApiClientWithOutToken().create(AccountsService::class.java)
             service.logIn(loginRequest).enqueue(object: Callback<LoginResponse> {
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     when (response.code()) {
@@ -147,7 +148,7 @@ class LoginActivity : AppCompatActivity() {
                             Log.d("Post", "success ${response.body().toString()}")
 
                             App.token_prefs.accessToken = response.body()!!.result.accessToken
-                            App.token_prefs.refreshToken = response.body()?.result?.refreshToken
+                            App.token_prefs.refreshToken = response.body()!!.result.refreshToken
 
                             Toast.makeText(this@LoginActivity, email+" 로그인", Toast.LENGTH_SHORT).show()
                             startActivity(intent)  // 화면 전환을 시켜줌
