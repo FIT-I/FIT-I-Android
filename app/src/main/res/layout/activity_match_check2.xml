@@ -43,7 +43,7 @@
 
         android:id="@+id/tv_service_request"
         android:layout_width="350dp"
-        android:layout_height="370dp"
+        android:layout_height="307dp"
         android:layout_marginTop="22dp"
         android:background="#F8F8F8"
         android:gravity="center_vertical|top"
@@ -70,19 +70,6 @@
         app:srcCompat="@drawable/line" />
 
     <ImageView
-        android:id="@+id/iv_match_bar1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="22dp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_service_request"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_service_request"
-        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar"
-        app:srcCompat="@drawable/line" />
-
-    <ImageView
         android:id="@+id/iv_match_bar2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -92,7 +79,7 @@
         app:layout_constraintEnd_toEndOf="@+id/tv_service_request"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tv_service_request"
-        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar1"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar"
         app:srcCompat="@drawable/line" />
 
     <ImageView
@@ -122,32 +109,18 @@
         app:srcCompat="@drawable/line" />
 
     <TextView
-        android:id="@+id/tv_service_time"
+        android:id="@+id/tv_price_per_hour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:text="1시간"
-        android:textColor="@color/main"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/iv_match_bar1"
-        app:layout_constraintStart_toStartOf="@+id/tv_service_request"
-        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar" />
-
-    <TextView
-        android:id="@+id/tv_total_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="총 금액"
+        android:text="시간 당 "
         android:textColor="@color/main"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/iv_match_bar2"
         app:layout_constraintStart_toStartOf="@+id/tv_service_request"
-        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar1" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar" />
 
     <TextView
         android:id="@+id/tv_match_date"
@@ -183,7 +156,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="21.76dp"
+        android:layout_marginBottom="20dp"
         android:text="매칭 장소"
         android:textColor="@color/main"
         android:textSize="15dp"
@@ -266,9 +239,8 @@
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/iv_match_bar2"
-        app:layout_constraintStart_toEndOf="@+id/tv_total_price"
-        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar1"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/tv_price_per_hour"
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar" />
 
     <TextView
         android:id="@+id/tv_total_price3"
@@ -282,38 +254,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/iv_match_bar2"
         app:layout_constraintStart_toEndOf="@+id/tv_total_price2"
-        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar1"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/tv_service_time2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="217dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="20,000"
-        android:textColor="@color/main"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/iv_match_bar1"
-        app:layout_constraintStart_toEndOf="@+id/tv_service_time"
-        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/tv_service_time3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="원"
-        android:textColor="@color/main"
-        android:textSize="15dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/iv_match_bar1"
-        app:layout_constraintStart_toEndOf="@+id/tv_service_time2"
-        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_match_bar" />
 
     <ImageView
         android:id="@+id/iv_match_service_icon"
