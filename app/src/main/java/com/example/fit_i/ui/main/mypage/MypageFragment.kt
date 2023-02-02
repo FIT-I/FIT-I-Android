@@ -7,14 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.Switch
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.FragmentTransaction
 import com.example.fit_i.*
+import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.model.response.GetMypageResponse
+import com.example.fit_i.data.service.AccountsService
 import com.example.fit_i.data.service.CommunalService
+import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.FragmentMypageBinding
 import com.example.fit_i.ui.main.mypage.notice.MypageNoticeFragment
 import retrofit2.Call
@@ -94,15 +94,55 @@ class MypageFragment : Fragment() {
             transaction.commit()
         }
 
+        val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
+
         //스위치 눌렀을때 기능 추가하기
         swtmy.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 //체크된 상태 취소시 반응 추가
+                customerService.ringOn().enqueue(object :
+                    Callback<BaseResponse> {
+                    override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
+                        if(response.isSuccessful){
+                            // 정상적으로 통신이 성공된 경우
+                            Log.d("post", "onResponse 성공: " + response.body().toString());
+                            Toast.makeText(context, response.body()?.result.toString(), Toast.LENGTH_SHORT).show()
 
+                        }else{
+                            // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
+                            Log.d("post", "onResponse 실패")
+                        }
+                    }
+
+                    override fun onFailure(call: Call<BaseResponse>, t: Throwable) {
+                        // 통신 실패 (인터넷 끊킴, 예외 발생 등 시스템적인 이유)
+                        Log.d("post", "onFailure 에러: " + t.message.toString());
+                    }
+                })
             } else {
                 //체크된 상태 만들 시 코드
+                customerService.ringOff().enqueue(object :
+                    Callback<BaseResponse> {
+                    override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
+                        if(response.isSuccessful){
+                            // 정상적으로 통신이 성공된 경우
+                            Log.d("post", "onResponse 성공: " + response.body().toString());
+                            Toast.makeText(context, response.body()?.result.toString(), Toast.LENGTH_SHORT).show()
+
+                        }else{
+                            // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
+                            Log.d("post", "onResponse 실패")
+                        }
+                    }
+
+                    override fun onFailure(call: Call<BaseResponse>, t: Throwable) {
+                        // 통신 실패 (인터넷 끊킴, 예외 발생 등 시스템적인 이유)
+                        Log.d("post", "onFailure 에러: " + t.message.toString());
+                    }
+                })
             }
         }
+
         //찜 목록
         ivnextlike.setOnClickListener {
             val mypageLikelistFragment = MypageLikelistFragment()
