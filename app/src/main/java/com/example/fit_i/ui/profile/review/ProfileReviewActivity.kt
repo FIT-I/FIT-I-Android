@@ -1,4 +1,4 @@
-package com.example.fit_i.ui.profile
+package com.example.fit_i.ui.profile.review
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

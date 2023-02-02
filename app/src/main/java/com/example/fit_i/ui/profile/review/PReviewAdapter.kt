@@ -1,4 +1,4 @@
-package com.example.fit_i
+package com.example.fit_i.ui.profile.review
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fit_i.ReviewData
 import com.example.fit_i.databinding.ItemPreviewBinding
-import com.example.fit_i.databinding.ItemReviewBinding
 
 class PReviewAdapter (private val dataList: ArrayList<Review>): RecyclerView.Adapter<PReviewAdapter.ViewHolder>() {
         inner class ViewHolder(private val binding: ItemPreviewBinding) :
@@ -28,7 +28,7 @@ class PReviewAdapter (private val dataList: ArrayList<Review>): RecyclerView.Ada
 
         interface OnItemClickListener : AdapterView.OnItemClickListener {
             //fun onClick(v: View, position: Int)
-            fun onItemClick(v: View, data:ReviewData, position: Int)
+            fun onItemClick(v: View, data: ReviewData, position: Int)
             //override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
             //  TODO("Not yet implemented")
             //}

@@ -1,4 +1,4 @@
-package com.example.fit_i
+package com.example.fit_i.ui.profile.review
 
 data class Review(
     val name : String,
