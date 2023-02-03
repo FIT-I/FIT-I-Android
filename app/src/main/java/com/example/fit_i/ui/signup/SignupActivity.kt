@@ -1,5 +1,6 @@
 package com.example.fit_i.ui.signup
 
+import com.example.fit_i.data.model.request.SignupValidatoinRequest
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -10,7 +11,6 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
-import com.example.fit_i.data.model.request.User
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.AccountsService
 import com.example.fit_i.databinding.ActivitySignupBinding
@@ -150,11 +150,33 @@ class SignupActivity : AppCompatActivity() {
             intent.putExtra("email",email)
             intent.putExtra("pw",pw)
 
-            startActivity(intent)  // 화면 전환을 시켜줌
-            finish()
-            Toast.makeText(this, name + "signUp", Toast.LENGTH_SHORT).show()
-            //인텐트가 여기 있으면 예외처리를 못해줌
+            val service= RetrofitImpl.getApiClientWithOutToken().create(AccountsService::class.java)
+            service.signupCheckValidation(SignupValidatoinRequest(email,name,pw)).enqueue(object: Callback<BaseResponse> {
+                override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
+                    if(response.isSuccessful){
+                        when(response.body()?.code){// 정상적으로 통신이 성공된 경우
+                          1000 -> {
+                              Log.d("post", "onResponse 성공: " + response.body().toString());
+                              Toast.makeText(this@SignupActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
+                              startActivity(intent)  // 화면 전환을 시켜줌
+                              finish()
+                          }
+                          else -> {
+                              Log.d("post", "onResponse 오류: " + response.body().toString());
+                              Toast.makeText(this@SignupActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
+                          }
+                        }
 
+                    }else{
+                        // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
+                        Log.d("post", "onResponse 실패")
+                        Toast.makeText(this@SignupActivity, response.body()!!.message, Toast.LENGTH_LONG).show()
+                    }
+                }
+                override fun onFailure(call: Call<BaseResponse>, t: Throwable) {
+                    Log.d("post", "onFailure 에러: " + t.message.toString());
+                }
+            })
         }
     }
 
