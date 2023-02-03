@@ -1,9 +1,8 @@
 package com.example.fit_i.data.model.request
 
-import android.provider.ContactsContract.CommonDataKinds.Email
 import com.google.gson.annotations.SerializedName
 
-data class User(
+data class SignupRequest(
     @SerializedName("name") val name: String,
     @SerializedName("email") val email : String,
     @SerializedName("password") val password : String,
