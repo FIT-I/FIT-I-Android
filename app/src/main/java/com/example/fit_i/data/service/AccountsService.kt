@@ -1,6 +1,6 @@
 package com.example.fit_i.data.service
 
-import com.example.fit_i.data.model.request.SignupValidatoinRequest
+import com.example.fit_i.data.model.request.SignupValidationRequest
 import com.example.fit_i.data.model.request.*
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.model.response.LoginResponse
@@ -14,11 +14,11 @@ interface AccountsService {
 
     //고객 회원가입
     @POST("api/accounts/customer")
-    fun signUpCustomer (@Body user : User) : Call<BaseResponse>
+    fun signUpCustomer (@Body signupRequest : SignupRequest) : Call<BaseResponse>
 
     //회원가입 validation
     @POST("api/accounts/customer/validation")
-    fun signupCheckValidation( @Body req : SignupValidatoinRequest) : Call<BaseResponse>
+    fun signupCheckValidation( @Body req : SignupValidationRequest) : Call<BaseResponse>
 
     //로그인
     @POST("api/accounts/login")
