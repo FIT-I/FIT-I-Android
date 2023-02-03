@@ -26,18 +26,20 @@ class MatchingAdapter(private val dataList: List<GetMCResponse.Result>): Recycle
                 }
             }
 
+    //초기화 시켜주는 기능
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val viewBinding = ItemMatchBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(viewBinding)
     }
 
+    //view 연결하는 기능, viewholder와 아이템
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(position)
 
         //아이템 클릭시 트레이너 프로필란으로 이동하는 기능
         holder.itemView.setOnClickListener{
 
-            val matchingIntent = Intent(holder.itemView.context, ProfileActivity::class.java)
+            val matchingIntent = Intent(holder.itemView.context, MatchingListActivity::class.java)
             matchingIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(holder.itemView.context,matchingIntent,null)
 
