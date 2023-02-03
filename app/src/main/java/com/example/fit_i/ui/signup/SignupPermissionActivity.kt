@@ -48,7 +48,7 @@ class SignupPermissionActivity : AppCompatActivity() {
                 finish()
             }
             fun postTerms(){
-                val service = RetrofitImpl.getApiClient().create(AccountsService::class.java)
+                val service = RetrofitImpl.getApiClientWithOutToken().create(AccountsService::class.java)
                 var checked = TermsOkRequest(firstCheckBtn.isChecked,secondCheckBtn.isChecked,thirdCheckBtn.isChecked)
                 service.termsOk(checked).enqueue(object : Callback<BaseResponse> {
                     override fun onResponse(
