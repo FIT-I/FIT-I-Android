@@ -14,6 +14,7 @@ import com.example.fit_i.data.service.CommunalService
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.ActivityProfileBinding
 import com.example.fit_i.ui.main.home.TrainerData
+import com.example.fit_i.ui.main.matching.MatchingData
 import com.example.fit_i.ui.main.mypage.notice.NoticeData
 import retrofit2.Call
 import retrofit2.Callback
@@ -63,6 +64,7 @@ class ProfileActivity :AppCompatActivity() {
 
         Log.d("post", data.toString())
         //trainerIdx = 2// intent getint로 실제 클릭한 트레이너값 받아와야함
+
 
 //
 //        val commmunalService = RetrofitImpl.getApiClient().create(CommunalService::class.java)

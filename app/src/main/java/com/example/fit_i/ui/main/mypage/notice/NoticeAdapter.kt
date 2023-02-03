@@ -39,6 +39,6 @@ class NoticeAdapter(private val dataList: List<GetAnnouncementResponse.Result>):
         }
     }
 
-    override fun getItemCount(): Int = dataList.size
+    override fun getItemCount(): Int =dataList.size
 
 }
