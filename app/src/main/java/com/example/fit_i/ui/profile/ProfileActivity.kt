@@ -14,7 +14,6 @@ import com.example.fit_i.data.service.CommunalService
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.ActivityProfileBinding
 import com.example.fit_i.ui.main.home.TrainerData
-import com.example.fit_i.ui.main.matching.MatchingData
 import com.example.fit_i.ui.main.mypage.notice.NoticeData
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,7 +22,7 @@ import retrofit2.Response
 class ProfileActivity :AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
 
-    private var trainerIdx : Int = -1
+    private var trainerIdx : Int = 2
 
     private lateinit var wish: CheckBox
 //
@@ -64,7 +63,6 @@ class ProfileActivity :AppCompatActivity() {
 
         Log.d("post", data.toString())
         //trainerIdx = 2// intent getint로 실제 클릭한 트레이너값 받아와야함
-
 
 //
 //        val commmunalService = RetrofitImpl.getApiClient().create(CommunalService::class.java)
@@ -119,13 +117,21 @@ class ProfileActivity :AppCompatActivity() {
         moreAboutService.setOnClickListener {
             showAboutService()
         }
+        val report = findViewById<Button>(R.id.btn_report)
+        fun report(){
+            val intent = Intent(this,ProfileReportActivity::class.java)
+            startActivity(intent)
+        }
+        report.setOnClickListener{
+            report()
+        }
     }
 
-    val service = RetrofitImpl.getApiClient().create(CustomerService::class.java)
+    val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
 
     private fun onCheckChanged(compoundButton: CompoundButton) {
         if (wish.isChecked) {
-            service.addWish(trainerIdx).enqueue(object : Callback<BaseResponse> {
+            customerService.addWish(trainerIdx).enqueue(object : Callback<BaseResponse> {
                 override fun onResponse(
                     call: Call<BaseResponse>,
                     response: Response<BaseResponse>
@@ -148,7 +154,7 @@ class ProfileActivity :AppCompatActivity() {
                 }
             })
         } else
-            service.cancelWish(trainerIdx).enqueue(object : Callback<BaseResponse> {
+            customerService.cancelWish(trainerIdx).enqueue(object : Callback<BaseResponse> {
                 override fun onResponse(
                     call: Call<BaseResponse>,
                     response: Response<BaseResponse>

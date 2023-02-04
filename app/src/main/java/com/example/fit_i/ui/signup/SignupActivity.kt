@@ -1,6 +1,6 @@
 package com.example.fit_i.ui.signup
 
-import com.example.fit_i.data.model.request.SignupValidatoinRequest
+import com.example.fit_i.data.model.request.SignupValidationRequest
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -145,19 +145,19 @@ class SignupActivity : AppCompatActivity() {
         //회원가입하기
         //버튼 이벤트
         btnFinSignUp.setOnClickListener {
+
             val intent = Intent(this, SignupIconActivity::class.java)
-            intent.putExtra("name",name)
-            intent.putExtra("email",email)
-            intent.putExtra("pw",pw)
 
             val service= RetrofitImpl.getApiClientWithOutToken().create(AccountsService::class.java)
-            service.signupCheckValidation(SignupValidatoinRequest(email,name,pw)).enqueue(object: Callback<BaseResponse> {
+            service.signupCheckValidation(SignupValidationRequest(email,name,pw)).enqueue(object: Callback<BaseResponse> {
                 override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
                     if(response.isSuccessful){
                         when(response.body()?.code){// 정상적으로 통신이 성공된 경우
                           1000 -> {
-                              Log.d("post", "onResponse 성공: " + response.body().toString());
+                              Log.d("post", "onResponse 성공: " + response.body().toString()+SignupValidationRequest(name,email,pw));
                               Toast.makeText(this@SignupActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
+                              intent.putExtra("signup",(SignupValidationRequest(email,name,pw)))
+//
                               startActivity(intent)  // 화면 전환을 시켜줌
                               finish()
                           }

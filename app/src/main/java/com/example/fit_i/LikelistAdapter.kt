@@ -8,7 +8,7 @@ import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fit_i.databinding.ItemLikelistBinding
 
-class LikelistAdapter(private val dataList: ArrayList<LikelistData>) :
+class LikelistAdapter(private var dataList: ArrayList<LikelistData>) :
     RecyclerView.Adapter<LikelistAdapter.ViewHolder>() {
     //1 리스트 내 항목 클릭 시 onClick 호출
     override fun onBindViewHolder(holder: ViewHolder, position: Int, payloads: MutableList<Any>) {
@@ -41,6 +41,9 @@ inner class ViewHolder(private val binding: ItemLikelistBinding) :
         binding.matchIm.text = dataList[position].im
         binding.matchStar.text = dataList[position].star
         binding.matchUni.text = dataList[position].uni
+//        binding.matchIm.text = dataList[position].trainerName
+//        binding.matchStar.text = dataList[position].trainerGrade
+//        binding.matchUni.text = dataList[position].trainerSchool
 
         itemView.setOnClickListener {
             Log.d("Click", "success")
@@ -63,4 +66,11 @@ override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
 override fun getItemCount(): Int = dataList.size
 
+//API용
+fun setList(list: List<LikelistData>){
+    //    dataList = list
+    }
 }
+
+
+
