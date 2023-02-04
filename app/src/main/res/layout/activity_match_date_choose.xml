@@ -54,13 +54,13 @@
 
     <CalendarView
         android:id="@+id/cv_date_pick"
-        android:layout_width="0dp"
-        android:layout_height="339dp"
-        android:layout_marginTop="33dp"
+        android:layout_width="414dp"
+        android:layout_height="431dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pick_service_date" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_background_step"
+         />
 
     <Button
         android:id="@+id/btn_next"
@@ -77,6 +77,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
