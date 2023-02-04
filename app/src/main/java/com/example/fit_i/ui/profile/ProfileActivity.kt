@@ -13,6 +13,7 @@ import com.example.fit_i.data.model.response.GetTrainerInfoResponse
 import com.example.fit_i.data.service.CommunalService
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.ActivityProfileBinding
+import com.example.fit_i.ui.main.home.HomeFragment
 import com.example.fit_i.ui.main.home.TrainerData
 import com.example.fit_i.ui.main.mypage.notice.NoticeData
 import retrofit2.Call
@@ -124,6 +125,14 @@ class ProfileActivity :AppCompatActivity() {
         }
         report.setOnClickListener{
             report()
+        }
+        val goBack = findViewById<ImageButton>(R.id.iv_back)
+        fun goBack(){
+            val intent = Intent(this,HomeFragment::class.java)
+            startActivity(intent)
+        }
+        goBack.setOnClickListener{
+            goBack()
         }
     }
 

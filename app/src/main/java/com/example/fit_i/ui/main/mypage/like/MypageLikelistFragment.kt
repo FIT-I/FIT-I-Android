@@ -67,36 +67,43 @@ class MypageLikelistFragment : Fragment() {
                 val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
                 transaction.replace(R.id.fl_container,homeFragment)
                 transaction.commit()
+
             }
         })
 
 
-        getWishList()
+
 
 
         return binding.root
 
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        lodeData()
+    }
     //API 연결부분
-    val service = RetrofitImpl.getApiClient().create(CustomerService::class.java)
-    private fun getWishList() {
-        service.getWishlist().enqueue(object: Callback<WishResponse>{
+
+    private fun lodeData() {
+        val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
+        customerService.getWishlist().enqueue(object: Callback<WishResponse>{
             override fun onResponse(
                 call : Call<WishResponse>,
                 response: Response<WishResponse>
             ){
                 if(response.isSuccessful){
                     //정상적으로 통신이 성공된 경우
-                    Log.d("get","onResponse 성공"+response.body().toString());
-                   // Toast.makeText(this@MypageLikelistFragment,"찜목록조회",Toast.LENGTH_SHORT).show()
+                    Log.d("post","onResponse 성공"+response.body().toString());
+                    // Toast.makeText(this@MypageLikelistFragment,"찜목록조회",Toast.LENGTH_SHORT).show()
 
-                   // dataList = response.body() ?: ArrayList()
+                    // dataList = response.body() ?: ArrayList()
                     listAdapter.setList(dataList)
 
 
                 }else{
                     //통신 실패
-                    Log.d("get","onResponse 실패"+response.body().toString())
+                    Log.d("post","onResponse 실패")
                 }
             }
             override fun onFailure(call: Call<WishResponse>,t: Throwable){
