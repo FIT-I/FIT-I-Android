@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import com.example.fit_i.R
+import com.example.fit_i.data.model.response.GetMatchlistResponse
 import com.example.fit_i.databinding.ActivityMatchingListBinding
 import com.example.fit_i.ui.profile.ProfileActivity
 
@@ -35,5 +36,15 @@ class MatchingListActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    fun onBind(data : GetMatchlistResponse.Result){
+        binding.tvMatchingPrice.text = data.pricePerHour
+        binding.tvMatchingAllprcie2.text = data.totalPrice
+        binding.tvMatchingStart.text = data.matchingStart
+        binding.tvMatchingEnd.text = data.matchingEnd
+        binding.tvMatchingAlldate.text = data.matchingPeriod.toString()
+        binding.tvMatchingPickup2.text = data.pickUpType
+        binding.tvMatchingPlace.text = data.location
     }
 }
