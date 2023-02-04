@@ -229,7 +229,13 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
+        <activity
+            android:name=".ui.profile.ProfileReportActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="fc2ffceddcfde7653bf5cc05bc19f3b1" />
