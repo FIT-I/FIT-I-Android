@@ -7,12 +7,13 @@ import android.util.Log
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.CompoundButton
-import com.example.fit_i.ui.login.LoginSplashActivity
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
-import com.example.fit_i.data.model.request.User
+import com.example.fit_i.data.model.request.SignupValidationRequest
+import com.example.fit_i.data.model.request.SignupRequest
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.AccountsService
+import com.example.fit_i.ui.login.LoginActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,16 +33,16 @@ class SignupIconActivity : AppCompatActivity() {
 
     private lateinit var btnIconChoice: Button
 
-    //private lateinit var icon5 : Button
     private var choiceIcon: Int =0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup_icon)
-        val intent = Intent(this,SignupIconActivity::class.java)
-        name = intent.getStringExtra("name").toString()
-        email = intent.getStringExtra("email").toString()
-        pw = intent.getStringExtra("pw").toString()
+
+        val data = intent.getParcelableExtra<SignupValidationRequest>("signup")
+        name = data?.name.toString()
+        email = data?.email.toString()
+        pw = data?.password.toString()
 
 
         icon1 = findViewById(R.id.cb_icon1)
@@ -70,23 +71,22 @@ class SignupIconActivity : AppCompatActivity() {
         //6개 중 하나를 고르면 버튼 활성화
         //버튼 이벤트
         btnIconChoice.setOnClickListener {
-            val intent = Intent(this, LoginSplashActivity::class.java)
-            startActivity(intent)  // 화면 전환을 시켜줌
-            finish()
 
-            val service= RetrofitImpl.getApiClient().create(AccountsService::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
 
-            val signUp = User(name,email,pw,"customerProfile1")
-            //val signUp = User("홍길동","fiti@soongsil.ac.kr","fiti123!","customerProfile1")
+            val service= RetrofitImpl.getApiClientWithOutToken().create(AccountsService::class.java)
+
+            val signUp = SignupRequest(name,email,pw,"customerProfile${choiceIcon}")
             service.signUpCustomer(signUp).enqueue(object : Callback<BaseResponse> {
                 override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
                     if(response.isSuccessful){
                         // 정상적으로 통신이 성공된 경우
-                        Log.d("post", "onResponse 성공: " + response.body().toString());
-
+                        Log.d("post", "onResponse 성공: " + response.body().toString()+SignupRequest(name,email,pw,"customerProfile${choiceIcon}"));
+                        startActivity(intent)  // 화면 전환을 시켜줌
+                        finish()
                     }else{
                         // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
-                        Log.d("post", "onResponse 실패")
+                        Log.d("post", "onResponse 실패"+response.body().toString()+SignupRequest(name,email,pw,"customerProfile${choiceIcon}"))
                     }
                 }
 
@@ -156,6 +156,12 @@ class SignupIconActivity : AppCompatActivity() {
                     choiceIcon =6
                 }
         }
+
+        if(!icon1.isChecked && !icon2.isChecked &&!icon3.isChecked && !icon4.isChecked && !icon5.isChecked &&!icon6.isChecked) {
+            choiceIcon=0
+            btnIconChoice.isEnabled = false
+        }
+
         if(choiceIcon!=0)
             btnIconChoice.isEnabled = true
     }

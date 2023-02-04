@@ -14,20 +14,21 @@ import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.FragmentTransaction
 import com.example.fit_i.App
+import com.example.fit_i.MySharedPreferences
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.request.LogoutRequest
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.AccountsService
-import com.example.fit_i.databinding.FragmentMypageSettingBinding
+import com.example.fit_i.databinding.FragmentMypageLogoutBinding
 import com.example.fit_i.ui.login.LoginActivity
 import com.example.fit_i.ui.main.mypage.MypageFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MypageSettingFragment :Fragment() {
-    private lateinit var binding: FragmentMypageSettingBinding
+class MypageLogoutFragment :Fragment() {
+    private lateinit var binding: FragmentMypageLogoutBinding
 
     @SuppressLint("MissingInflatedId")
 
@@ -35,9 +36,9 @@ class MypageSettingFragment :Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMypageSettingBinding.inflate(layoutInflater)
+        binding = FragmentMypageLogoutBinding.inflate(layoutInflater)
 
-        val view = inflater.inflate(R.layout.fragment_mypage_setting, container, false)
+        val view = inflater.inflate(R.layout.fragment_mypage_logout, container, false)
 
         val ibpre = view.findViewById<View>(R.id.ib_pre1)
         val btnlogout = view.findViewById<View>(R.id.btn_logout) as AppCompatButton
@@ -75,6 +76,7 @@ class MypageSettingFragment :Fragment() {
                         if (response.isSuccessful) {
                             // 정상적으로 통신이 성공된 경우
                             Log.d("post", "onResponse 성공: " + response.body().toString());
+                            MySharedPreferences.clearUser(context!!)
                             makeToast()
                         } else {
                             // 통신이 실패한 경우(응답코드 3xx, 4xx 등)

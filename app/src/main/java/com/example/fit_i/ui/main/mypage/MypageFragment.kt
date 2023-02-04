@@ -17,7 +17,7 @@ import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.FragmentMypageBinding
 import com.example.fit_i.ui.main.mypage.notice.MypageNoticeFragment
 import com.example.fit_i.ui.main.mypage.review.MypageReviewFragment
-import com.example.fit_i.ui.main.mypage.setting.MypageSettingFragment
+import com.example.fit_i.ui.main.mypage.setting.MypageLogoutFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -80,7 +80,7 @@ class MypageFragment : Fragment() {
 
         //설정  -로그아웃,탈퇴하기
         ibsetting.setOnClickListener {
-            val mypageSettingFragment = MypageSettingFragment()
+            val mypageSettingFragment = MypageLogoutFragment()
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
 
             transaction.replace(R.id.fl_container, mypageSettingFragment)

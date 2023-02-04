@@ -8,13 +8,14 @@ import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.App
+import com.example.fit_i.MySharedPreferences
 import com.example.fit_i.R
-import com.example.fit_i.RetrofitImpl.getApiClient
 import com.example.fit_i.RetrofitImpl.getApiClientWithOutToken
 import com.example.fit_i.data.model.request.LoginRequest
 import com.example.fit_i.data.model.response.LoginResponse
 import com.example.fit_i.data.service.AccountsService
 import com.example.fit_i.databinding.ActivityLoginBinding
+import com.example.fit_i.ui.main.MainActivity
 import com.example.fit_i.ui.signup.SignupPermissionActivity
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
@@ -44,6 +45,7 @@ class LoginActivity : AppCompatActivity() {
     var email : String=""
     var pw: String=""
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -54,6 +56,18 @@ class LoginActivity : AppCompatActivity() {
 
         val btnLogin : Button = findViewById(R.id.btn_login)
 
+        // SharedPreferences 안에 값이 저장되어 있지 않을 때 -> Login
+        if(MySharedPreferences.getUserId(this).isNullOrBlank()
+            || MySharedPreferences.getUserPw(this).isNullOrBlank()) {
+            //Login()
+        }
+        else { // SharedPreferences 안에 값이 저장되어 있을 때 -> MainActivity로 이동
+            //
+            Toast.makeText(this, "${MySharedPreferences.getUserId(this)}, 자동 로그인 되었습니다.", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
 
         //비밀번호 찾기
@@ -129,47 +143,38 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, LoginSplashActivity::class.java)
 
             val loginRequest = LoginRequest(email,pw)
-            //val login = Login("fiti@soongsil.ac.kr","fiti123!")
 
             val service= getApiClientWithOutToken().create(AccountsService::class.java)
             service.logIn(loginRequest).enqueue(object: Callback<LoginResponse> {
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                    when (response.code()) {
-                        200 -> {
-                            val pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE)
-                            val editor = pref.edit()
-                            editor.putString("email", etEmail.text.toString())
-                            editor.commit()
-                            finish()
-//                            // 토큰 저장하기
-//                            App.prefs.token=token
-//                            // 토큰 가져오기
-//                            val token = App.prefs.token
-                            Log.d("Post", "success ${response.body().toString()}")
+                    if(response.isSuccessful){
+                        when(response.body()?.code){ // 정상적으로 통신이 성공된 경우
+                            1000 -> {
+                                Log.d("post", "onResponse 성공: " + response.body().toString());
+                                MySharedPreferences.setUserId(this@LoginActivity, email)
+                                MySharedPreferences.setUserPw(this@LoginActivity, pw)
 
-                            App.token_prefs.accessToken = response.body()!!.result.accessToken
-                            App.token_prefs.refreshToken = response.body()!!.result.refreshToken
+                                App.token_prefs.accessToken = response.body()!!.result.accessToken
+                                App.token_prefs.refreshToken = response.body()!!.result.refreshToken
 
-                            Toast.makeText(this@LoginActivity, email+" 로그인", Toast.LENGTH_SHORT).show()
-                            startActivity(intent)  // 화면 전환을 시켜줌
-                            finish()
+                                Toast.makeText(this@LoginActivity, email+", 로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show()
+                                startActivity(intent)  // 화면 전환을 시켜줌
+                                finish()
+                            }
+
+                            else -> {
+                                Log.d("post", "onResponse 오류: " + response.body().toString());
+                                Toast.makeText(this@LoginActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
+                            }
                         }
-                        405 -> Toast.makeText(this@LoginActivity, "로그인 실패 : 아이디나 비번이 올바르지 않습니다", Toast.LENGTH_LONG).show()
-                        500 -> Toast.makeText(this@LoginActivity, "로그인 실패 : 서버 오류", Toast.LENGTH_LONG).show()
+                    }else{
+                        // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
+                        Log.d("post", "onResponse 실패")
+                        Toast.makeText(this@LoginActivity, response.body()!!.message, Toast.LENGTH_LONG).show()
                     }
-                }/*
-                    if(response.isSuccessful) {
-                        Log.d("Post", "success ${response.body().toString()}")
-//                    Log.d("Post","success ${response}")
-
-                    } else {
-                        Log.d("Post", "success,but ${response.errorBody()}")
-                        Toast.makeText(this@LoginActivity, "아이디/비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()
-                    }
-                }*/
-
+                }
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                    Log.d("Post","fail ${t}")
+                    Log.d("post", "onFailure 에러: " + t.message.toString());
                 }
             })
         }
