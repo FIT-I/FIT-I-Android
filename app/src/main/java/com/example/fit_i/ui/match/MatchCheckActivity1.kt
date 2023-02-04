@@ -6,10 +6,12 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.R
 import com.example.fit_i.databinding.ActivityMatchCheck1Binding
+import com.example.fit_i.ui.main.MainActivity
 
 class MatchCheckActivity1:AppCompatActivity() {
     private lateinit var binding: ActivityMatchCheck1Binding
@@ -21,12 +23,18 @@ class MatchCheckActivity1:AppCompatActivity() {
 
         val btnNext: Button = findViewById(R.id.btn_next)
         btnNext.setOnClickListener{
+            fun toast_p() {
+                Toast.makeText(this, "매칭요청 되었습니다.", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this,MainActivity::class.java)
+                startActivity(intent)
+            }
             AlertDialog.Builder(this)
                 .setTitle("매칭요청")
                 .setMessage("매칭을 요청하시겠습니까?")
                 .setPositiveButton("요청", object : DialogInterface.OnClickListener {
                     override fun onClick(dialog: DialogInterface, which: Int) {
                         Log.d("MyTag", "positive")
+                        toast_p()
                     }
                 })
                 .setNegativeButton("취소", object : DialogInterface.OnClickListener {
