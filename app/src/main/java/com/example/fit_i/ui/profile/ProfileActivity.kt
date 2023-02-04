@@ -117,6 +117,14 @@ class ProfileActivity :AppCompatActivity() {
         moreAboutService.setOnClickListener {
             showAboutService()
         }
+        val report = findViewById<Button>(R.id.btn_report)
+        fun report(){
+            val intent = Intent(this,ProfileReportActivity::class.java)
+            startActivity(intent)
+        }
+        report.setOnClickListener{
+            report()
+        }
     }
 
     val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)

@@ -590,6 +590,20 @@
                 </LinearLayout>
             </HorizontalScrollView>
 
+            <Button
+                android:id="@+id/btn_report"
+                android:layout_width="93dp"
+                android:layout_height="45dp"
+                android:background="#00ff0000"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:text="신고하기"
+                android:textColor="#D9D9D9"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_background_photo" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
