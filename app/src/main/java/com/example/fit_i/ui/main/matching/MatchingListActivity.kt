@@ -45,6 +45,8 @@ class MatchingListActivity : AppCompatActivity() {
         btnmatching.setOnClickListener{
             startActivity(Intent(this,ProfileActivity::class.java))
         }
+
+
         matchingService.matchinglist(matchingIdx).enqueue(object : Callback<GetMatchlistResponse>{
             override fun onResponse(
                 call: Call<GetMatchlistResponse>,
@@ -52,6 +54,10 @@ class MatchingListActivity : AppCompatActivity() {
             ) { if (response.isSuccessful){
                 //정상 통신
                 Log.d("post","매칭 명세표 onResponse 성공:"+ response.body().toString())
+                val body = response.body()
+                body?.let {
+                    onBind(it.result)
+                }
             }
                 else{
                     //통신실패

@@ -1,116 +1,59 @@
 package com.example.fit_i.ui.main.matching
 
-import android.content.Context
-import android.provider.ContactsContract.CommonDataKinds.Photo
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.fit_i.R
-import com.example.fit_i.data.model.response.GetMatchingResponse
+import com.example.fit_i.data.model.response.GetMCResponse
 import com.example.fit_i.databinding.ItemMatchBinding
+import com.example.fit_i.ui.profile.ProfileActivity
 
-class MatchingAdapter(
-    private val dataList: List<GetMatchingResponse.Result>, val context: Context?)
-    : RecyclerView.Adapter<MatchingAdapter.ViewHolder>(){
+class MatchingAdapter(private val dataList: List<GetMCResponse.Result>): RecyclerView.Adapter<MatchingAdapter.ViewHolder>(){
+    inner class ViewHolder(private val binding: ItemMatchBinding) :
+            RecyclerView.ViewHolder(binding.root){
 
-    class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        //여기서 item이랑은 연결된거
-        var im: TextView = itemView.findViewById(R.id.match_im)
-        var uni: TextView = itemView.findViewById<TextView>(R.id.match_uni)
-        var star: TextView = itemView.findViewById<TextView>(R.id.match_star)
-        var day: TextView = itemView.findViewById<TextView>(R.id.match_day)
-        var prof: ImageView = itemView.findViewById(R.id.match_profile)
+                fun onBind(position: Int){
+                    binding.matchIm.text = dataList[position].name
+                    binding.matchStar.text = dataList[position].grade.toString()
+                    binding.matchUni.text= dataList[position].school
+                    binding.matchDay.text=dataList[position].orderDate
+                    //binding.matchProfile.imageAlpha = dataList[position].profile.toInt()
 
+
+                }
+            }
+
+    //초기화 시켜주는 기능
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val viewBinding = ItemMatchBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        return ViewHolder(viewBinding)
     }
 
-    //데이터랑 아이템이랑 연결하는거
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchingAdapter.ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_match,parent,false)
-        return ViewHolder(view)
-    }
-
-    //뷰에 들어가는거
+    //view 연결하는 기능, viewholder와 아이템
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item : GetMatchingResponse.Result = dataList!!.get(position)
-        val imgUrl : String = dataList[position].profile
+        holder.onBind(position)
 
-        if (imgUrl.length > 0) {
-            Glide.with(holder.prof.context)
-                .load(imgUrl)
-                .error(android.R.drawable.stat_notify_error)
-                .into(holder.prof)
-    }else{
-        Glide.with(holder.prof.context)
-            .load(imgUrl)//가져올 이미지
-            .error(android.R.drawable.stat_notify_error)//에러 시 보여줄 이미지
-            .into(holder.prof)//이미지를 보여줄 View
+        //아이템 클릭시 트레이너 프로필란으로 이동하는 기능
+        holder.itemView.setOnClickListener{
+
+            val matchingIntent = Intent(holder.itemView.context, MatchingListActivity::class.java)
+            matchingIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(holder.itemView.context,matchingIntent,null)
+
+//            matchingIntent.putExtra("matching",MatchingData(dataList[position].profile,dataList[position].name,dataList[position].grade,dataList[position].school,dataList[position].orderDate))
+
+
         }
-        //날짜 구현 자세히 변경하기
-//        val date : String = dataList[position].orderDate
-//        val dategap : Int = dataList[position].orderDateGap
-//        if ()
-
-        holder.star.text = dataList[position].grade.toString()
-        holder.day.text = dataList[position].orderDate
-        holder.im.text = dataList[position].name
-        holder.uni.text = dataList[position].school }
-
+    }
 
     override fun getItemCount(): Int {
+        Log.d("size", dataList.size.toString())
         return dataList.size
     }
-
-
-
-
-//fun bindMatch(dataList : GetMatchingResponse) {
-//    val im = itemView.findViewById<TextView>(R.id.match_im)
-
-//            val phto = itemPhoto?.profile.toString()
-//            if (phto.isEmpty()) {
-//                prof?.setImageResource(R.mipmap.ic_launcher)
-//            } else {
-//                prof?.visibility = View.GONE
-//            }
-//            im?.text = itemPhoto?.name
-//            star?.text = itemPhoto?.grade.toString()
-//            day?.text = itemPhoto?.orderDateGap.toString()
-//            uni?.text = itemPhoto?.school
-//
-//            itemView.setOnClickListener {
-//                Log.d("Click", "success")
-//
-
-}
-
-
-
-//    
-//    inner class ViewHolder(private val binding: ItemMatchBinding) :
-//            RecyclerView.ViewHolder(binding.root){
-//
-//                fun onBind(position: Int){
-////                    binding.matchIm.text = dataList[position].im
-////                    binding.matchStar.text = dataList[position].star
-////                    binding.matchUni.text= dataList[position].uni
-////                    binding.matchDay.text=dataList[position].day
-////                    binding.matchProfile.imageview=dataList[position].prof
-//                    val im = ItemMatchBinding.bind(R.id.textView)
-//
-//                    itemView.setOnClickListener{
-//                        Log.d("Click","success")
-//                    }
-//
-//
-//                }
-//            }
-
+    }
 
 
 
