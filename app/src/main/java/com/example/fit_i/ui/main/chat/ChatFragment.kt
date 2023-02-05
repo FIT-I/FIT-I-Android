@@ -1,17 +1,25 @@
 package com.example.fit_i.ui.main.chat
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fit_i.Message
+import com.example.fit_i.RetrofitImpl
+import com.example.fit_i.data.model.response.GetChatResponse
+import com.example.fit_i.data.service.ChatService
 import com.example.fit_i.databinding.FragmentChatBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ChatFragment : Fragment() {
-    private lateinit var binding: FragmentChatBinding
-    private val dataList = ArrayList<Message>()
+    private var _binding: FragmentChatBinding? = null
+    private val binding : FragmentChatBinding
+    get() = requireNotNull(_binding){"FragmentChatBinding"}
 
 
     override fun onCreateView(
@@ -20,23 +28,54 @@ class ChatFragment : Fragment() {
         savedInstanceState: Bundle?
 
     ): View? {
-        binding = FragmentChatBinding.inflate(inflater, container, false)
-
-        //임의로 데이터 넣어보기. 나중에 백엔드 연결하면 필요없나?
-        //사진은 어떻게하지??
-        dataList.apply {
-            add(Message("김동현", "2023.1.1", "PT 문의드립니다~!"))
-            add(Message("김준기", "2023.1.3", "저의 몸을 건강하게 해주세요..."))
-            add(Message("노규리", "2023.1.3", "핫걸이 되고싶습니당"))
-        }
-        val chatRoomAdapter = ChatRoomAdapter(dataList)
-        binding.rcChat.adapter = chatRoomAdapter
-        var linearLayoutManager = LinearLayoutManager(context)
-        binding.rcChat.layoutManager = linearLayoutManager
-
+        _binding = FragmentChatBinding.inflate(inflater, container, false)
         return binding.root
 
 
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        loadData()
+
+    }
+
+    private fun setAdapter(chatList : List<GetChatResponse.Result>){
+        val chatRoomAdpater = ChatRoomAdapter(chatList)
+        binding.rcChat.adapter = chatRoomAdpater
+
+        val linearLayoutManager = LinearLayoutManager(context)
+        binding.rcChat.layoutManager = linearLayoutManager
+        binding.rcChat.setHasFixedSize(true)
+    }
+    private fun loadData(){
+        val chatService = RetrofitImpl.getApiClient().create(ChatService::class.java)
+        chatService.chatcustomer().enqueue(object :
+        Callback<GetChatResponse>{
+            override fun onResponse(
+                call: Call<GetChatResponse>,
+                response: Response<GetChatResponse>
+            ) {
+                if (response.isSuccessful){
+                    //정상 통신
+                    Log.d("post","채팅 onResponse 성공 :" + response.body().toString())
+
+                    val body = response.body()
+                    body?.let {
+                        setAdapter(it.result)
+                    }
+                }else{
+                    //통신 실패...
+                    Log.d("post","채팅 onResponse 실패")
+                }
+            }
+
+            override fun onFailure(call: Call<GetChatResponse>, t: Throwable) {
+                Log.d("post","onFailure 에러:"+ t.message.toString())
+            }
+
+        })
     }
 
 
