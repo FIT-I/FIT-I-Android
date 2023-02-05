@@ -17,5 +17,6 @@
 
     <string name="match_request">매칭 요청</string>
     <string name="see_more_review">></string>
+    <string name="wave">~</string>
 
 </resources>
