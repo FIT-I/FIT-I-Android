@@ -11,15 +11,13 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.response.BaseResponse
-import com.example.fit_i.data.model.response.GetMypageResponse
 import com.example.fit_i.data.service.CommunalService
-import com.example.fit_i.databinding.FragmentMypageBinding
 import com.example.fit_i.databinding.FragmentMypagepermissonBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MypagepermissonFragment : Fragment(){
+class MypagePermissonFragment : Fragment(){
     private var _binding: FragmentMypagepermissonBinding? = null
     private val binding: FragmentMypagepermissonBinding
         get() = requireNotNull(_binding) { "FragmentMypagepermissonBinding" }

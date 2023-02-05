@@ -189,7 +189,7 @@ class MypageFragment : Fragment() {
 
         //이용약관
         ivnextpermisson.setOnClickListener {
-            val mypagepermissonFragment = MypagepermissonFragment()
+            val mypagepermissonFragment = MypagePermissonFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
 
             transaction.replace(R.id.fl_container, mypagepermissonFragment)

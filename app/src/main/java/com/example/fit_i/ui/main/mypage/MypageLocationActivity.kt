@@ -60,7 +60,6 @@ class MypageLocationActivity : AppCompatActivity() {
 
             commnualService.setLocation(location).enqueue(object :
                 Callback<BaseResponse> {
-                //fun setLocation(@Path("location") location:String):Call<BaseResponse>
                 override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
                     if(response.isSuccessful){
                         // 정상적으로 통신이 성공된 경우

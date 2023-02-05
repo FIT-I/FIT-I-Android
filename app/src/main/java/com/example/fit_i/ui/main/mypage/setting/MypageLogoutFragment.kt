@@ -43,14 +43,13 @@ class MypageLogoutFragment :Fragment() {
         val ibpre = view.findViewById<View>(R.id.ib_pre1)
         val btnlogout = view.findViewById<View>(R.id.btn_logout) as AppCompatButton
         val btnwithdraw = view.findViewById<View>(R.id.btn_withdraw) as AppCompatButton
-        binding.tvLogout.text=App.token_prefs.accessToken.toString()
 
-        ibpre.setOnClickListener{
+        ibpre.setOnClickListener {
             val mypageFragment = MypageFragment()
-            val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
 
             //이전 화면으로 이동
-            transaction.replace(R.id.fl_container,mypageFragment)
+            transaction.replace(R.id.fl_container, mypageFragment)
             transaction.commit()
         }
 
@@ -62,12 +61,16 @@ class MypageLogoutFragment :Fragment() {
 
             fun makeToast() {
                 Toast.makeText(context, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
-                val intent = Intent(activity,LoginActivity::class.java)
+                val intent = Intent(activity, LoginActivity::class.java)
                 startActivity(intent)
             }
-            fun logout(){
+
+            fun logout() {
                 val accountService = RetrofitImpl.getApiClient().create(AccountsService::class.java)
-                val token = LogoutRequest(accessToken = App.token_prefs.accessToken.toString(), refreshToken = App.token_prefs.refreshToken.toString())
+                val token = LogoutRequest(
+                    accessToken = App.token_prefs.accessToken.toString(),
+                    refreshToken = App.token_prefs.refreshToken.toString()
+                )
                 accountService.logOut(token).enqueue(object : Callback<BaseResponse> {
                     override fun onResponse(
                         call: Call<BaseResponse>,
@@ -81,7 +84,7 @@ class MypageLogoutFragment :Fragment() {
                         } else {
                             // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
                             //Log.d("post", response.code().toString()+"onResponse 실패 "+ response.body().toString()+token)
-                            Log.d("post", "onResponse 실패 "+ response.body().toString() + token)
+                            Log.d("post", "onResponse 실패 " + response.body().toString() + token)
 
                         }
                     }
@@ -94,31 +97,23 @@ class MypageLogoutFragment :Fragment() {
             }
 
             val dialog_listener = DialogInterface.OnClickListener { dialog, which ->
-                when(which){
-                    DialogInterface.BUTTON_POSITIVE ->{
+                when (which) {
+                    DialogInterface.BUTTON_POSITIVE -> {
                         logout()
                     }
                 }
             }
-            dialog.setPositiveButton("로그아웃",dialog_listener)
-            dialog.setNegativeButton("취소",null)
+            dialog.setPositiveButton("로그아웃", dialog_listener)
+            dialog.setNegativeButton("취소", null)
             dialog.show()
         }
-
-        /*
-        btnlogout.setOnClickListener {
-            showProfileDialog()
-        }*/
         btnwithdraw.setOnClickListener {
             val mypageSiginoutFragment = MypageSiginoutFragment()
-            val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
 
-            transaction.replace(R.id.fl_container,mypageSiginoutFragment)
+            transaction.replace(R.id.fl_container, mypageSiginoutFragment)
             transaction.commit()
         }
         return view
-}
-//    private fun showProfileDialog() {
-//        ProfileDialog(requireContext()){}.show()
-//    }
+    }
 }
