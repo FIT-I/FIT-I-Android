@@ -8,18 +8,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fit_i.LikelistAdapter
-import com.example.fit_i.LikelistData
+import com.example.fit_i.ui.main.mypage.like.LikelistAdapter
+import com.example.fit_i.ui.main.mypage.like.LikelistData
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.response.WishResponse
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.FragmentMypageLikelistBinding
 import com.example.fit_i.ui.main.home.HomeFragment
-import com.example.fit_i.ui.main.mypage.MypageFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -56,12 +54,12 @@ class MypageLikelistFragment : Fragment() {
             add(LikelistData("김준기","4.3","중앙대학교","월요일"))
             add(LikelistData("홍준혁","4.3","건국대학교","2023.1.4"))
         }
-        val likelistAdapter = LikelistAdapter(dataList)
-        binding.rcLikelist.adapter = likelistAdapter
+        listAdapter = LikelistAdapter(dataList)
+        binding.rcLikelist.adapter = listAdapter
         var linearLayoutManager = LinearLayoutManager(context)
         binding.rcLikelist.layoutManager = linearLayoutManager
 
-        likelistAdapter.setItemClickListener(object :LikelistAdapter.OnItemClickListener{
+        listAdapter.setItemClickListener(object : LikelistAdapter.OnItemClickListener{
             override fun onClick(v: View, position: Int) {
                 val homeFragment = HomeFragment()
                 val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()

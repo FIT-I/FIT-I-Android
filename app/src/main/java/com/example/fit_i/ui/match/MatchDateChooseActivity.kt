@@ -7,6 +7,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.R
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 
 class MatchDateChooseActivity : AppCompatActivity() {
     var startDate =""
@@ -16,7 +17,7 @@ class MatchDateChooseActivity : AppCompatActivity() {
         setContentView(R.layout.activity_match_date_choose)
 
         //날짜 선택
-        val cal = findViewById<CalendarView>(R.id.cv_date_pick)
+        val cal = findViewById<MaterialCalendarView>(R.id.cv_date_pick)
 
 
         //뒤로가기

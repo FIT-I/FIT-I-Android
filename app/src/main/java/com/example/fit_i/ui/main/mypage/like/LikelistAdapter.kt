@@ -1,10 +1,9 @@
-package com.example.fit_i
+package com.example.fit_i.ui.main.mypage.like
 
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fit_i.databinding.ItemLikelistBinding
 

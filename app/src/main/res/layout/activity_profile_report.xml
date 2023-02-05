@@ -77,14 +77,13 @@
 
     <TextView
         android:id="@+id/tv_report_context"
-        android:layout_width="350dp"
-        android:layout_height="0dp"
+        android:layout_width="355dp"
+        android:layout_height="143dp"
         android:layout_marginTop="19dp"
         android:background="#F8F8F8"
         android:gravity="center_vertical|top"
         android:paddingLeft="48dp"
         android:paddingTop="19.54dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,11 +91,13 @@
 
     <RadioGroup
         android:layout_width="262dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
+        android:layout_marginBottom="21dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_report_context"
+        app:layout_constraintStart_toStartOf="@+id/tv_report_context"
         app:layout_constraintTop_toTopOf="@+id/tv_report_context">
 
         <RadioButton
@@ -108,35 +109,11 @@
             android:textColor="#586177" />
 
         <RadioButton
-            android:id="@+id/rb_report2"
-            android:layout_width="wrap_content"
-            android:layout_height="22dp"
-            android:layout_marginBottom="10dp"
-            android:text="\u0020\u0020\u0020중복 요청서 작성"
-            android:textColor="#586177" />
-
-        <RadioButton
             android:id="@+id/rb_report3"
             android:layout_width="wrap_content"
             android:layout_height="22dp"
             android:layout_marginBottom="10dp"
-            android:text="\u0020\u0020\u0020허위 요청서 작성"
-            android:textColor="#586177" />
-
-        <RadioButton
-            android:id="@+id/rb_report4"
-            android:layout_width="wrap_content"
-            android:layout_height="22dp"
-            android:layout_marginBottom="10dp"
-            android:text="\u0020\u0020\u0020요청서 내 개인정보 노출"
-            android:textColor="#586177" />
-
-        <RadioButton
-            android:id="@+id/rb_report5"
-            android:layout_width="wrap_content"
-            android:layout_height="22dp"
-            android:layout_marginBottom="10dp"
-            android:text="\u0020\u0020\u0020서비스 카테고리 오선택"
+            android:text="\u0020\u0020\u0020허위 프로필 작성"
             android:textColor="#586177" />
 
         <RadioButton
@@ -144,15 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="22dp"
             android:layout_marginBottom="10dp"
-            android:text="\u0020\u0020\u0020유호하지 않은 전화번호"
-            android:textColor="#586177" />
-
-        <RadioButton
-            android:id="@+id/rb_report7"
-            android:layout_width="wrap_content"
-            android:layout_height="22dp"
-            android:layout_marginBottom="10dp"
-            android:text="\u0020\u0020\u0020부적절한 언어(욕설, 성희롱 등) 사용"
+            android:text="\u0020\u0020\u0020유효하지 않은 카카오톡 링크"
             android:textColor="#586177" />
 
         <RadioButton
@@ -167,7 +136,7 @@
         android:id="@+id/textView4"
         android:layout_width="347dp"
         android:layout_height="70dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="115dp"
         android:text="서비스 진행중 문제가 생겼다면 증빙자료(사진, 녹취록,
 대화 내역)와 함께 이메일 fitiofficial@naver.com로 접수해주세요. 신고 결과는 별도의 안내를 드리지 않습니다."
         android:textColor="#D9D9D9"

@@ -52,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_pick_service_date"
         android:background="@color/gray" />
 
-    <CalendarView
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
         android:id="@+id/cv_date_pick"
         android:layout_width="414dp"
         android:layout_height="431dp"
@@ -60,6 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_background_step"
+        app:mcv_selectionColor="#007AFF33"
          />
 
     <Button
