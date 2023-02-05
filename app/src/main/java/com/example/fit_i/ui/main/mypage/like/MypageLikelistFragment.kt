@@ -82,7 +82,10 @@ class MypageLikelistFragment : Fragment() {
         lodeData()
     }
     //API 연결부분
-
+    private fun setAdapter(likeList : List<WishResponse.Result>){
+        val likelistAdapter = LikelistAdapter(dataList)
+        binding.rcLikelist.adapter=likelistAdapter
+    }
     private fun lodeData() {
         val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
         customerService.getWishlist().enqueue(object: Callback<WishResponse>{
