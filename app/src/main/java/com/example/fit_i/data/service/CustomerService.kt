@@ -38,10 +38,6 @@ interface CustomerService {
     @PATCH("api/customer/notification/off")
     fun ringOff(): Call<BaseResponse>
 
-    //매칭위치설정
-    @PATCH("api/customer/location/{location}")
-    fun setLocation(@Path("location") location:String):Call<BaseResponse>
-
     //찜목록조회
     @GET("api/customer/wish")
     fun getWishlist() : Call<WishResponse>

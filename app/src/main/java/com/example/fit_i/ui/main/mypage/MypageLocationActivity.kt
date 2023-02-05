@@ -13,6 +13,7 @@ import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.AccountsService
+import com.example.fit_i.data.service.CommunalService
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.ui.main.MainActivity
 import com.example.fit_i.ui.signup.SignupActivity
@@ -55,9 +56,9 @@ class MypageLocationActivity : AppCompatActivity() {
         })
 
         btnOk.setOnClickListener(){
-            val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
+            val commnualService = RetrofitImpl.getApiClient().create(CommunalService::class.java)
 
-            customerService.setLocation(location).enqueue(object :
+            commnualService.setLocation(location).enqueue(object :
                 Callback<BaseResponse> {
                 //fun setLocation(@Path("location") location:String):Call<BaseResponse>
                 override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {

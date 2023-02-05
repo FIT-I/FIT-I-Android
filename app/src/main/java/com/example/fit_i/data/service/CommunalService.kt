@@ -3,10 +3,15 @@ package com.example.fit_i.data.service
 import com.example.fit_i.data.model.response.*
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.PATCH
 import retrofit2.http.Path
 
 interface CommunalService {
     //공용 API
+
+    //매칭위치설정
+    @PATCH("api/communal/location/{location}")
+    fun setLocation(@Path("location") location:String):Call<BaseResponse>
 
     //트레이너 정보조회
     @GET("api/communal/trainer/{trainerIdx}")
