@@ -159,17 +159,72 @@
             app:layout_constraintTop_toBottomOf="@id/iv_line3" />
 
         <TextView
-            android:id="@+id/tv_matching_date2"
+            android:id="@+id/tv_matching_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="23.1.18~23.1.25 총 8일"
+            android:text="23.1.17"
             android:textColor="@color/main"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/tv_matching_date"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_matching_wave"
             app:layout_constraintTop_toTopOf="@id/tv_matching_date" />
+        <TextView
+            android:id="@+id/tv_matching_wave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/tv_matching_end"
+            app:layout_constraintTop_toTopOf="@id/tv_matching_date"
+            app:layout_constraintBottom_toBottomOf="@id/tv_matching_date"
+            android:text="@string/wave"
+            android:textColor="@color/main"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:id="@+id/tv_matching_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="23.1.25"
+            android:textColor="@color/main"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_matching_date"
+            app:layout_constraintEnd_toStartOf="@+id/tv_matching_All"
+            app:layout_constraintTop_toTopOf="@id/tv_matching_date" />
+
+        <TextView
+            android:id="@+id/tv_matching_All"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="총"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            app:layout_constraintBottom_toBottomOf="@id/tv_matching_end"
+            app:layout_constraintTop_toTopOf="@id/tv_matching_end"
+            app:layout_constraintEnd_toStartOf="@id/tv_matching_Alldate"/>
+        <TextView
+            android:id="@+id/tv_matching_Alldate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8"
+            android:textColor="@color/main"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/tv_matching_date"
+            app:layout_constraintBottom_toBottomOf="@id/tv_matching_date"
+            app:layout_constraintEnd_toStartOf="@id/tv_matching_day"/>
+        <TextView
+            android:id="@+id/tv_matching_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="일"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_matching_date"
+            app:layout_constraintTop_toTopOf="@id/tv_matching_date"/>
 
         <ImageView
             android:id="@+id/iv_line4"
