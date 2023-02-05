@@ -21,14 +21,14 @@ class MatchDateChooseActivity : AppCompatActivity() {
 
         val cal = findViewById<MaterialCalendarView>(R.id.cv_date_pick)
         val calList = ArrayList<CalendarDay>()
-        cal.setOnRangeSelectedListener { widget:MaterialCalendarView, dates:List<CalendarDay> ->
-
-            calList.add(dates[0])
-            calList.add(dates[1])
-            startDate= calList[0].toString()
-            endDate = calList[1].toString()
-            Log.d("태그", "내용 : "+startDate)
-        }
+//        cal.setOnRangeSelectedListener { widget:MaterialCalendarView, dates:List<CalendarDay> ->
+//
+//            calList.add(dates[0])
+//            calList.add(dates[1])
+//            startDate= calList[0].toString()
+//            endDate = calList[1].toString()
+//            Log.d("태그", "내용 : "+startDate)
+//        }
 
         //뒤로가기
         val goBack = findViewById<ImageButton>(R.id.ib_back_arrow)
