@@ -67,6 +67,32 @@ class MatchingListActivity : AppCompatActivity() {
         })
 
 
+        matchingService.matchinglist(matchingIdx).enqueue(object : Callback<GetMatchlistResponse>{
+            override fun onResponse(
+                call: Call<GetMatchlistResponse>,
+                response: Response<GetMatchlistResponse>
+            ) { if (response.isSuccessful){
+                //정상 통신
+                Log.d("post","매칭 명세표 onResponse 성공:"+ response.body().toString())
+                val body = response.body()
+                body?.let {
+                    onBind(it.result)
+                }
+            }
+                else{
+                    //통신실패
+                    Log.d("post","매칭 명세표 onResponse 실패:"+ response.body().toString())
+            }
+            }
+
+            override fun onFailure(call: Call<GetMatchlistResponse>, t: Throwable) {
+                //통신 실패 (예외)
+                Log.d("post"," 매칭 명세표 onFailure 에러"+ t.message.toString())
+            }
+
+        })
+
+
     }
 
     fun onBind(data : GetMatchlistResponse.Result){
