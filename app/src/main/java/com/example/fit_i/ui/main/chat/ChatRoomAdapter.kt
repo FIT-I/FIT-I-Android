@@ -4,6 +4,7 @@ import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fit_i.Message
@@ -36,7 +37,20 @@ class ChatRoomAdapter(private val dataList: List<GetChatResponse.Result>):
 
         holder.itemView.setOnClickListener{
             val chatIntent = Intent(holder.itemView.context, ProfileActivity::class.java)
-            startActivity(holder.itemView.context, chatIntent,null)
+            chatIntent.putExtra(
+                "chat", ChatRoom(
+                    dataList[position].openChatLink,
+                    dataList[position].trainerId,
+                    dataList[position].trainerName,
+                    dataList[position].trainerGrade,
+                    dataList[position].trainerSchool,
+                    dataList[position].customerId,
+                    dataList[position].pickUp,
+                    dataList[position].customerLocation,
+                    dataList[position].createdAt,
+                    dataList[position].matchingId,
+                    dataList[position].trainerProfile))
+            ContextCompat.startActivity(holder.itemView.context, chatIntent,null)
         }
     }
 

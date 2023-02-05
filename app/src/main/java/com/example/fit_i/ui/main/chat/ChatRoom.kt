@@ -9,11 +9,16 @@ import java.io.Serializable
 
 @Parcelize
 data class ChatRoom(
-    val profile : String,
-    val name: String,
-    val grade : Double,
-    val school : String,
-    val url : String,
-    val day : String
+    val openChatLink : String,
+    val trainerId : Int,
+    val trainerName : String,
+    val trainerGrade : Number,
+    val trainerSchool : String,
+    val customerId : Int,
+    val pickUp : String,
+    val customerLocation : String,
+    val createdAt : String,
+    val matchingId : Int,
+    val trainerProfile : String
 
 ):Parcelable
