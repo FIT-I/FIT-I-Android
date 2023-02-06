@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fit_i.R
-import com.example.fit_i.ReviewAdapter
-import com.example.fit_i.ReviewData
+import com.example.fit_i.ui.profile.review.ReviewAdapter
+import com.example.fit_i.ui.profile.review.ReviewData
 import com.example.fit_i.databinding.FragmentMypageReviewBinding
 import com.example.fit_i.ui.main.mypage.MypageFragment
 import com.example.fit_i.ui.main.mypage.MypageReviewIngFragment

@@ -1,15 +1,11 @@
-package com.example.fit_i
+package com.example.fit_i.ui.profile.review
 
 
-import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.recyclerview.widget.RecyclerView
-import com.example.fit_i.databinding.FragmentMypageReviewIngBinding
-import com.example.fit_i.databinding.ItemLikelistBinding
 import com.example.fit_i.databinding.ItemReviewBinding
 
 class ReviewAdapter(private val dataList: ArrayList<ReviewData>):
