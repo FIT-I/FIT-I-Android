@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.fit_i.ui.match.MatchServiceActivity
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
@@ -14,144 +15,119 @@ import com.example.fit_i.data.service.CommunalService
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.ActivityProfileBinding
 import com.example.fit_i.ui.main.home.HomeFragment
-import com.example.fit_i.ui.main.home.TrainerData
-import com.example.fit_i.ui.main.mypage.notice.NoticeData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.properties.Delegates
 
 class ProfileActivity :AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
 
-    private var trainerIdx : Int = 2
+    var id by Delegates.notNull<Long>()
 
     private lateinit var wish: CheckBox
-//
-//    fun onBind(data: GetTrainerInfoResponse.Result){
-//        //binding.ivTrainerProfile.setImageResource(data.result.profile)
-//        //binding.iv_background_photo=data.result.background
-//
-//        binding.tvTrainerName.text=data.name
-//        //binding.ivTrainerGrade.text=data.result.levelName
-//
-//        //binding.tvDistance.text=data.result
-//        binding.tvTrainerStar.text= data.grade.toString()
-//        binding.tvUniversityInfo.text=data.school
-//
-//        binding.tvManagePrice.text= data.cost.toString()
-//        binding.tvAboutMe.text=data.intro
-//        binding.tvAboutService.text=data.service
-//
-//        binding.tvAverageValue.text= data.grade.toString()
-//    }
+
+    fun onBind(data: GetTrainerInfoResponse.Result){
+        //binding.ivTrainerProfile.setImageResource(data.result.profile)
+        //binding.iv_background_photo=data.result.background
+        var profilePhoto = data.profile
+        var backGroudPhoto = data.background
+
+        Glide.with(this)
+            .load(profilePhoto)
+            .into(binding.ivTrainerProfile)
+
+        Glide.with(this)
+            .load(backGroudPhoto)
+            .into(binding.ivBackgroundPhoto)
+
+        binding.tvTrainerName.text=data.name
+        //binding.ivTrainerGrade.text=data.result.levelName
+
+        //binding.tvDistance.text=data.result
+        binding.tvTrainerStar.text= data.grade.toString()
+        binding.tvUniversityInfo.text=data.school
+
+        binding.tvManagePrice.text= data.cost.toString()
+        binding.tvAboutMe.text=data.intro
+        binding.tvAboutService.text=data.service
+
+        binding.tvAverageValue.text= data.grade.toString()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        id = intent.getLongExtra("trainerIdx",-1)
+        Log.d("post", id.toString())
 
-        val data = intent.getParcelableExtra<TrainerData>("trainerIdx")
+        val commmunalService = RetrofitImpl.getApiClient().create(CommunalService::class.java)
+        commmunalService.getTrainerInfo(id).enqueue(object : Callback<GetTrainerInfoResponse> {
+            override fun onResponse(call: Call<GetTrainerInfoResponse>, response: Response<GetTrainerInfoResponse>) {
+                if(response.isSuccessful){
+                    // 정상적으로 통신이 성공된 경우
+                    onBind(response.body()!!.result)
+                    Log.d("post", "onResponse 성공: " + response.body().toString());
 
-        binding.tvTrainerName.text=data!!.name
-        binding.tvTrainerStar.text= data.grade.toString()
-        binding.tvUniversityInfo.text=data.school
+                }else{
+                    // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
+                    Log.d("post", "onResponse 실패")
+                }
+            }
 
-        binding.tvManagePrice.text= data.cost.toString()
-        binding.tvAboutMe.text=data.contents
-        //binding.tvAboutService.text=data.
-
-
-
-        Log.d("post", data.toString())
-        //trainerIdx = 2// intent getint로 실제 클릭한 트레이너값 받아와야함
-
-//
-//        val commmunalService = RetrofitImpl.getApiClient().create(CommunalService::class.java)
-//        commmunalService.getTrainerInfo(trainerIdx).enqueue(object : Callback<GetTrainerInfoResponse> {
-//            override fun onResponse(call: Call<GetTrainerInfoResponse>, response: Response<GetTrainerInfoResponse>) {
-//                if(response.isSuccessful){
-//                    // 정상적으로 통신이 성공된 경우
-//                    onBind(response.body()!!.result)
-//                    Log.d("post", "onResponse 성공: " + response.body().toString());
-//                    //Toast.makeText(this@ProfileActivity, "비밀번호 찾기 성공!", Toast.LENGTH_SHORT).show()
-//
-//                }else{
-//                    // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
-//                    Log.d("post", "onResponse 실패")
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<GetTrainerInfoResponse>, t: Throwable) {
-//                // 통신 실패 (인터넷 끊킴, 예외 발생 등 시스템적인 이유)
-//                Log.d("post", "onFailure 에러: " + t.message.toString());
-//            }
-//        })
-
+            override fun onFailure(call: Call<GetTrainerInfoResponse>, t: Throwable) {
+                // 통신 실패 (인터넷 끊킴, 예외 발생 등 시스템적인 이유)
+                Log.d("post", "onFailure 에러: " + t.message.toString());
+            }
+        })
 
         wish = findViewById<Button>(R.id.cb_heart_btn) as CheckBox
-        wish.setOnClickListener { onCheckChanged(wish) }
+        wish.setOnClickListener { onCheckChanged() }
 
         val matchRequest =findViewById<Button>(R.id.btn_match_request)
-        fun moveToNextPage(){
-            val intent = Intent(this, MatchServiceActivity::class.java)
-
-            startActivity(intent)
-        }
         matchRequest.setOnClickListener {
-            moveToNextPage()
+            val intent = Intent(this, MatchServiceActivity::class.java)
+            startActivity(intent)
         }
 
         val moreAboutMe = findViewById<ImageButton>(R.id.btn_about_me)
-        fun showAboutMe() {
+        moreAboutMe.setOnClickListener {
             val intent = Intent(this, ProfileAboutMeActivity::class.java)
             startActivity(intent)
         }
-        moreAboutMe.setOnClickListener {
-            showAboutMe()
-        }
 
         val moreAboutService = findViewById<ImageButton>(R.id.btn_about_service)
-        fun showAboutService() {
+        moreAboutService.setOnClickListener {
             val intent = Intent(this, ProfileAboutServiceActivity::class.java)
             startActivity(intent)
         }
-        moreAboutService.setOnClickListener {
-            showAboutService()
-        }
+
         val report = findViewById<Button>(R.id.btn_report)
-        fun report(){
+        report.setOnClickListener{
             val intent = Intent(this,ProfileReportActivity::class.java)
             startActivity(intent)
         }
-        report.setOnClickListener{
-            report()
-        }
+
         val goBack = findViewById<ImageButton>(R.id.iv_back)
-        fun goBack(){
+        goBack.setOnClickListener{
             val intent = Intent(this,HomeFragment::class.java)
             startActivity(intent)
-        }
-        goBack.setOnClickListener{
-            goBack()
         }
     }
 
     val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
-
-    private fun onCheckChanged(compoundButton: CompoundButton) {
+    private fun onCheckChanged() {
         if (wish.isChecked) {
-            customerService.addWish(trainerIdx).enqueue(object : Callback<BaseResponse> {
+            customerService.addWish(id).enqueue(object : Callback<BaseResponse> {
                 override fun onResponse(
                     call: Call<BaseResponse>,
                     response: Response<BaseResponse>
                 ) { if (response.isSuccessful) {
                         // 정상적으로 통신이 성공된 경우
-                        //val result: User? = response.body()
                         Log.d("post", "onResponse 성공: " + response.body().toString());
                         Toast.makeText(this@ProfileActivity, "찜 목록에 추가", Toast.LENGTH_SHORT).show()
-                        //Log.d("post","result: "+response.)
-                        //Log.d("post", "onResponse 성공: " + result.toString());
-                    } else {
+                } else {
                         // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
                         Log.d("post", "onResponse 실패 "+ response.body().toString())
                     }
@@ -163,7 +139,7 @@ class ProfileActivity :AppCompatActivity() {
                 }
             })
         } else
-            customerService.cancelWish(trainerIdx).enqueue(object : Callback<BaseResponse> {
+            customerService.cancelWish(id).enqueue(object : Callback<BaseResponse> {
                 override fun onResponse(
                     call: Call<BaseResponse>,
                     response: Response<BaseResponse>
@@ -172,8 +148,6 @@ class ProfileActivity :AppCompatActivity() {
                         //val result: User? = response.body()
                         Log.d("post", "onResponse 성공: " + response.body().toString());
                         Toast.makeText(this@ProfileActivity, "찜 목록에서 제거", Toast.LENGTH_SHORT).show()
-                        //Log.d("post","result: "+response.)
-                        //Log.d("post", "onResponse 성공: " + result.toString());
                     } else {
                         // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
                         Log.d("post", "onResponse 실패")

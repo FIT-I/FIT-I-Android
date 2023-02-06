@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.fit_i.ReviewData
 import com.example.fit_i.databinding.ItemPreviewBinding
 
 class PReviewAdapter (private val dataList: ArrayList<Review>): RecyclerView.Adapter<PReviewAdapter.ViewHolder>() {

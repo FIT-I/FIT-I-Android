@@ -42,15 +42,6 @@ class MypageNoticeFragment : Fragment() {
 
         lodeData()
 
-
-        val noticeList : ArrayList<NoticeData> = arrayListOf()
-
-        noticeList.apply {
-            add(NoticeData("앱 업데이트 안내2",",","2023-02-01"))
-        }
-
-
-
         val ibpre = view.findViewById<View>(R.id.ib_pre) as ImageButton
 
         ibpre.setOnClickListener{
@@ -74,7 +65,6 @@ class MypageNoticeFragment : Fragment() {
         binding.rvNotice.layoutManager=linearLayoutManager
 
         binding.rvNotice.setHasFixedSize(true)  //true?
-        //구분선
         binding.rvNotice.addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL))
     }
 

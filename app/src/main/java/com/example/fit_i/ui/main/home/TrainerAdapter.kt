@@ -4,10 +4,13 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.fit_i.data.model.response.GetTrainerListResponse
 import com.example.fit_i.databinding.ItemTrainerBinding
 import com.example.fit_i.ui.profile.ProfileActivity
+import kotlinx.coroutines.withContext
 
 class TrainerAdapter(private val dataList: List<GetTrainerListResponse.Result.Dto>): RecyclerView.Adapter<TrainerAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ItemTrainerBinding) :
@@ -19,6 +22,8 @@ class TrainerAdapter(private val dataList: List<GetTrainerListResponse.Result.Dt
             binding.tvUniv.text=dataList[position].school
             binding.tvPr.text=dataList[position].contents
             binding.tvMoney.text= dataList[position].cost.toString()
+
+            //프로필 이미지 바인딩
         }
     }
 
@@ -32,19 +37,10 @@ class TrainerAdapter(private val dataList: List<GetTrainerListResponse.Result.Dt
         holder.bind(position)
 
         holder.itemView.setOnClickListener {
-            val trainerIntent = Intent(holder.itemView.context, ProfileActivity::class.java)
-            trainerIntent.putExtra(
-                "trainerIdx", TrainerData(
-                    dataList[position].id,
-                    dataList[position].name,
-                    dataList[position].profile,
-                    dataList[position].levelName,
-                    dataList[position].school,
-                    dataList[position].grade,
-                    dataList[position].certificateNum,
-                    dataList[position].contents,
-                    dataList[position].cost))
-            ContextCompat.startActivity(holder.itemView.context, trainerIntent, null)
+            val intent = Intent(holder.itemView.context, ProfileActivity::class.java)
+            intent.putExtra(
+                "trainerIdx", dataList[position].id)
+            startActivity(holder.itemView.context, intent, null)
         }
     }
 

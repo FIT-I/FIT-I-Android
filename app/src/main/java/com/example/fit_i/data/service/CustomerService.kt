@@ -12,11 +12,11 @@ interface CustomerService {
 
     //트레이너 찜하기
     @POST("api/customer/{trainerIdx}")
-    fun addWish(@Path("trainerIdx") trainerIdx : Int) : Call<BaseResponse>
+    fun addWish(@Path("trainerIdx") trainerIdx: Long) : Call<BaseResponse>
 
     //트레이너 찜하기 취소
     @DELETE("api/customer/{trainerIdx}")
-    fun cancelWish(@Path("trainerIdx") trainerIdx : Int) : Call<BaseResponse>
+    fun cancelWish(@Path("trainerIdx") trainerIdx: Long) : Call<BaseResponse>
 
     //리뷰작성
     @POST ("api/customer/review")
