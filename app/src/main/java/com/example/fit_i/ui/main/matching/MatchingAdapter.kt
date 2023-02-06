@@ -20,7 +20,7 @@ class MatchingAdapter(private val dataList: List<GetMCResponse.Result>): Recycle
                     binding.matchStar.text = dataList[position].grade.toString()
                     binding.matchUni.text= dataList[position].school
                     binding.matchDay.text=dataList[position].orderDate
-                    //binding.matchProfile.imageAlpha = dataList[position].profile.toInt()
+//                    binding.matchProfile.text = dataList[position].profile.toInt()
 
 
                 }
@@ -40,10 +40,21 @@ class MatchingAdapter(private val dataList: List<GetMCResponse.Result>): Recycle
         holder.itemView.setOnClickListener{
 
             val matchingIntent = Intent(holder.itemView.context, MatchingListActivity::class.java)
-            matchingIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            startActivity(holder.itemView.context,matchingIntent,null)
+//            matchingIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
 
-//            matchingIntent.putExtra("matching",MatchingData(dataList[position].profile,dataList[position].name,dataList[position].grade,dataList[position].school,dataList[position].orderDate))
+            startActivity(holder.itemView.context,matchingIntent,null)
+            matchingIntent.putExtra(
+                "matchingIdx",MatchingData(
+                    dataList[position].matchingId,
+                    dataList[position].trainerId,
+                    dataList[position].name,
+                    dataList[position].profile,
+                    dataList[position].school,
+                    dataList[position].grade,
+                    dataList[position].orderDate,
+                    dataList[position].orderDateGap
+                )
+            )
 
 
         }

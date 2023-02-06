@@ -5,9 +5,12 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class MatchingData(
-//   val prof: String,
-    val im : String,
-    val star: String,
-    val uni: String,
-    val day : String
+    val matchingId: Int,
+    val trainerId: Int,
+    val name: String,
+    val profile: String,
+    val school: String,
+    val grade: Number,
+    val orderDate: String,
+    val orderDateGap: Int
 ): Parcelable

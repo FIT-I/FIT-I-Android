@@ -46,8 +46,7 @@ class MatchingFragment : Fragment() {
         val linearLayoutManager = LinearLayoutManager(context)
         binding.rcMatch.layoutManager=linearLayoutManager
         binding.rcMatch.setHasFixedSize(true)
-
-        // 구분선 ?? binding.rcMatch.addItemDecoration(DividerItemDecoration(context,LinearLayoutManager.VERTICAL))
+        binding.rcMatch.addItemDecoration(DividerItemDecoration(context,LinearLayoutManager.VERTICAL))
 
     }
     private fun loadData(){
@@ -58,8 +57,10 @@ class MatchingFragment : Fragment() {
                 if (response.isSuccessful) {
                     //통신 성공!!
                     Log.d("post", "매칭 onResponse 성공" + response.body().toString())
+
                     val body = response.body()
                     body?.let {
+//                        binding.practice.text = response.body().toString()
                         setAdapter(it.result)
                     }
                 }else{
