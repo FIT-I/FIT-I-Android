@@ -16,6 +16,5 @@ data class GetMCResponse(
         val grade: Number,
         val orderDate: String, //정확한 년도.월.일
         val orderDateGap: Int // 몇일전인지
-
     )
 }
