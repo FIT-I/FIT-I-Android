@@ -8,18 +8,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fit_i.LikelistAdapter
-import com.example.fit_i.LikelistData
+import com.example.fit_i.ui.main.mypage.like.LikelistAdapter
+import com.example.fit_i.ui.main.mypage.like.LikelistData
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.response.WishResponse
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.FragmentMypageLikelistBinding
 import com.example.fit_i.ui.main.home.HomeFragment
-import com.example.fit_i.ui.main.mypage.MypageFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -56,47 +54,57 @@ class MypageLikelistFragment : Fragment() {
             add(LikelistData("김준기","4.3","중앙대학교","월요일"))
             add(LikelistData("홍준혁","4.3","건국대학교","2023.1.4"))
         }
-        val likelistAdapter = LikelistAdapter(dataList)
-        binding.rcLikelist.adapter = likelistAdapter
+        listAdapter = LikelistAdapter(dataList)
+        binding.rcLikelist.adapter = listAdapter
         var linearLayoutManager = LinearLayoutManager(context)
         binding.rcLikelist.layoutManager = linearLayoutManager
 
-        likelistAdapter.setItemClickListener(object :LikelistAdapter.OnItemClickListener{
+        listAdapter.setItemClickListener(object : LikelistAdapter.OnItemClickListener{
             override fun onClick(v: View, position: Int) {
                 val homeFragment = HomeFragment()
                 val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
                 transaction.replace(R.id.fl_container,homeFragment)
                 transaction.commit()
+
             }
         })
 
 
-        getWishList()
+
 
 
         return binding.root
 
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        lodeData()
+    }
     //API 연결부분
-    val service = RetrofitImpl.getApiClient().create(CustomerService::class.java)
-    private fun getWishList() {
-        service.getWishlist().enqueue(object: Callback<WishResponse>{
+    private fun setAdapter(likeList : List<WishResponse.Result>){
+        val likelistAdapter = LikelistAdapter(dataList)
+        binding.rcLikelist.adapter=likelistAdapter
+    }
+    private fun lodeData() {
+        val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
+        customerService.getWishlist().enqueue(object: Callback<WishResponse>{
             override fun onResponse(
                 call : Call<WishResponse>,
                 response: Response<WishResponse>
             ){
                 if(response.isSuccessful){
                     //정상적으로 통신이 성공된 경우
-                    Log.d("get","onResponse 성공"+response.body().toString());
-                   // Toast.makeText(this@MypageLikelistFragment,"찜목록조회",Toast.LENGTH_SHORT).show()
+                    Log.d("post","onResponse 성공"+response.body().toString());
+                    // Toast.makeText(this@MypageLikelistFragment,"찜목록조회",Toast.LENGTH_SHORT).show()
 
-                   // dataList = response.body() ?: ArrayList()
+                    // dataList = response.body() ?: ArrayList()
                     listAdapter.setList(dataList)
 
 
                 }else{
                     //통신 실패
-                    Log.d("get","onResponse 실패"+response.body().toString())
+                    Log.d("post","onResponse 실패")
                 }
             }
             override fun onFailure(call: Call<WishResponse>,t: Throwable){

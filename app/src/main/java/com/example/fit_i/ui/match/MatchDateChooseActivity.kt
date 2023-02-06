@@ -2,11 +2,13 @@ package com.example.fit_i.ui.match
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.CalendarView
+import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.R
+import com.prolificinteractive.materialcalendarview.CalendarDay
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 
 class MatchDateChooseActivity : AppCompatActivity() {
     var startDate =""
@@ -16,8 +18,17 @@ class MatchDateChooseActivity : AppCompatActivity() {
         setContentView(R.layout.activity_match_date_choose)
 
         //날짜 선택
-        val cal = findViewById<CalendarView>(R.id.cv_date_pick)
 
+        val cal = findViewById<MaterialCalendarView>(R.id.cv_date_pick)
+        val calList = ArrayList<CalendarDay>()
+//        cal.setOnRangeSelectedListener { widget:MaterialCalendarView, dates:List<CalendarDay> ->
+//
+//            calList.add(dates[0])
+//            calList.add(dates[1])
+//            startDate= calList[0].toString()
+//            endDate = calList[1].toString()
+//            Log.d("태그", "내용 : "+startDate)
+//        }
 
         //뒤로가기
         val goBack = findViewById<ImageButton>(R.id.ib_back_arrow)

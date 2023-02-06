@@ -1,14 +1,17 @@
-package com.example.fit_i
+package com.example.fit_i.ui.main.mypage.like
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fit_i.databinding.ItemLikelistBinding
+import com.example.fit_i.ui.main.mypage.MypageLikelistFragment
+import com.example.fit_i.ui.profile.ProfileActivity
 
-class LikelistAdapter(private var dataList: ArrayList<LikelistData>) :
+class LikelistAdapter(private val dataList: ArrayList<LikelistData>) :
     RecyclerView.Adapter<LikelistAdapter.ViewHolder>() {
     //1 리스트 내 항목 클릭 시 onClick 호출
     override fun onBindViewHolder(holder: ViewHolder, position: Int, payloads: MutableList<Any>) {
@@ -62,6 +65,11 @@ override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
 override fun onBindViewHolder(holder: ViewHolder, position: Int) {
     holder.onBind(position)
+    holder.itemView.setOnClickListener{
+        val likeIntent = Intent(holder.itemView.context,ProfileActivity::class.java)
+        //likeIntent.putExtra("like",LikelistData(dataList[position].im,dataList[position].star,dataList[position].uni,dataList[position].date))
+        startActivity(holder.itemView.context, likeIntent,null)
+    }
 }
 
 override fun getItemCount(): Int = dataList.size
