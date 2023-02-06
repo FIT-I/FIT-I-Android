@@ -48,9 +48,8 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
-    //매칭 날짜 기간선택
-    implementation 'com.github.prolificinteractive:material-calendarview:1.6.0'
-    // 카카오 로그인 모듈
+
+       // 카카오 로그인 모듈
     implementation "com.kakao.sdk:v2-user:2.0.1"
     //네이버 로그인
     implementation 'com.navercorp.nid:oauth:5.1.0'
@@ -81,5 +80,9 @@ dependencies {
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation files('libs/libDaumMapAndroid.jar')
+
+    //캘린더
+    implementation 'com.github.psinetron:slycalendarview: 0.0.9'
+    implementation 'com.github.prolificinteractive:material-calendarview:2.0.1'
 
 }
