@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.fit_i.ui.match.MatchServiceActivity
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
@@ -29,6 +30,16 @@ class ProfileActivity :AppCompatActivity() {
     fun onBind(data: GetTrainerInfoResponse.Result){
         //binding.ivTrainerProfile.setImageResource(data.result.profile)
         //binding.iv_background_photo=data.result.background
+        var profilePhoto = data.profile
+        var backGroudPhoto = data.background
+
+        Glide.with(this)
+            .load(profilePhoto)
+            .into(binding.ivTrainerProfile)
+
+        Glide.with(this)
+            .load(backGroudPhoto)
+            .into(binding.ivBackgroundPhoto)
 
         binding.tvTrainerName.text=data.name
         //binding.ivTrainerGrade.text=data.result.levelName
