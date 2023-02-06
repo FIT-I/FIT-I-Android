@@ -21,7 +21,6 @@ import kotlin.properties.Delegates
 class ProfileActivity :AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
 
-//    private var trainerIdx : Int = 2
     var id by Delegates.notNull<Long>()
 
     private lateinit var wish: CheckBox
@@ -72,44 +71,31 @@ class ProfileActivity :AppCompatActivity() {
             }
         })
 
-
         wish = findViewById<Button>(R.id.cb_heart_btn) as CheckBox
         wish.setOnClickListener { onCheckChanged(wish) }
 
         val matchRequest =findViewById<Button>(R.id.btn_match_request)
-        fun moveToNextPage(){
-            val intent = Intent(this, MatchServiceActivity::class.java)
-
-            startActivity(intent)
-        }
         matchRequest.setOnClickListener {
-            moveToNextPage()
+            val intent = Intent(this, MatchServiceActivity::class.java)
+            startActivity(intent)
         }
 
         val moreAboutMe = findViewById<ImageButton>(R.id.btn_about_me)
-        fun showAboutMe() {
+        moreAboutMe.setOnClickListener {
             val intent = Intent(this, ProfileAboutMeActivity::class.java)
             startActivity(intent)
         }
-        moreAboutMe.setOnClickListener {
-            showAboutMe()
-        }
 
         val moreAboutService = findViewById<ImageButton>(R.id.btn_about_service)
-        fun showAboutService() {
+        moreAboutService.setOnClickListener {
             val intent = Intent(this, ProfileAboutServiceActivity::class.java)
             startActivity(intent)
         }
-        moreAboutService.setOnClickListener {
-            showAboutService()
-        }
+
         val report = findViewById<Button>(R.id.btn_report)
-        fun report(){
+        report.setOnClickListener{
             val intent = Intent(this,ProfileReportActivity::class.java)
             startActivity(intent)
-        }
-        report.setOnClickListener{
-            report()
         }
     }
 
