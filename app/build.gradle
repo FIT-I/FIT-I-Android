@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
 }
+apply plugin: 'com.google.gms.google-services'
 
 android {
     namespace 'com.example.fit_i'
@@ -84,5 +85,10 @@ dependencies {
     //캘린더
     implementation 'com.github.psinetron:slycalendarview: 0.0.9'
     implementation 'com.github.prolificinteractive:material-calendarview:2.0.1'
+
+    //파이어베이스
+    implementation platform('com.google.firebase:firebase-bom:29.2.1')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
 
 }
