@@ -52,8 +52,17 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_pick_service_date"
         android:background="@color/gray" />
 
+<!--    <Button-->
+<!--        android:id="@+id/btn_date"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="날짜선택"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/iv_background_step" />-->
+
     <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-        android:id="@+id/cv_date_pick"
+    android:id="@+id/cv_calendar"
         android:layout_width="414dp"
         android:layout_height="431dp"
         android:layout_marginTop="10dp"
@@ -62,6 +71,7 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_background_step"
         app:mcv_selectionColor="#f79256"
          />
+
 
     <Button
         android:id="@+id/btn_next"

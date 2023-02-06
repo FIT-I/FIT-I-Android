@@ -1,14 +1,18 @@
-package com.example.fit_i.ui.profile.review
+package com.example.fit_i.ui.main.mypage.review
 
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fit_i.data.model.response.GetMCResponse
 import com.example.fit_i.databinding.ItemReviewBinding
+import com.example.fit_i.ui.profile.ProfileActivity
 
-class ReviewAdapter(private val dataList: ArrayList<ReviewData>):
+class ReviewAdapter(private val dataList: List<GetMCResponse.Result>):
     RecyclerView.Adapter<ReviewAdapter.ViewHolder>(){
     override fun onBindViewHolder(holder: ViewHolder, position: Int, payloads: MutableList<Any>) {
         super.onBindViewHolder(holder, position, payloads)
@@ -37,14 +41,15 @@ class ReviewAdapter(private val dataList: ArrayList<ReviewData>):
 
 
         fun onBind(position: Int){
-            binding.reviewIm.text = dataList[position].im
-            binding.reviewStar.text = dataList[position].star
-            binding.reviewUni.text = dataList[position].uni
+            binding.reviewIm.text = dataList[position].name
+            binding.reviewStar.text = dataList[position].grade.toString()
+            binding.reviewUni.text = dataList[position].school
 
 
 
 
             itemView.setOnClickListener{
+
                 Log.d("Click","success")
             }
 
@@ -60,8 +65,14 @@ class ReviewAdapter(private val dataList: ArrayList<ReviewData>):
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         holder.onBind(position)
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, ProfileActivity::class.java)
+            intent.putExtra(
+                "Id", dataList[position].trainerId)
+            ContextCompat.startActivity(holder.itemView.context, intent, null)
+        }
     }
 
     override fun getItemCount(): Int= dataList.size

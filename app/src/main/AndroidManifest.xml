@@ -19,7 +19,13 @@
         android:theme="@style/Theme.FITI"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".MypageReviewWriteActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -243,6 +249,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="fc2ffceddcfde7653bf5cc05bc19f3b1" />

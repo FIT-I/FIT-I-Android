@@ -58,4 +58,6 @@ interface CustomerService {
                        @Query("size") size: Int,
                        @Query("sort") sort: Array<String>
     ): Call<GetTrainerListResponse>
+
+    
 }
