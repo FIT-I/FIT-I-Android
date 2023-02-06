@@ -1,4 +1,4 @@
-package com.example.fit_i
+package com.example.fit_i.ui.main.mypage.like
 
 data class LikelistData(
     //val profile: String,

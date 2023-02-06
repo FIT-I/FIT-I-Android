@@ -50,13 +50,13 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
     //매칭 날짜 기간선택
     implementation 'com.github.prolificinteractive:material-calendarview:1.6.0'
-    implementation 'com.jakewharton.threetenabp:threetenabp:1.1.1'
     // 카카오 로그인 모듈
     implementation "com.kakao.sdk:v2-user:2.0.1"
     //네이버 로그인
     implementation 'com.navercorp.nid:oauth:5.1.0'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
-
+    //viewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
     //서버 연결
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'

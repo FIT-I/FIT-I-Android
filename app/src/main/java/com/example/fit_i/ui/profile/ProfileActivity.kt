@@ -13,6 +13,9 @@ import com.example.fit_i.data.model.response.GetTrainerInfoResponse
 import com.example.fit_i.data.service.CommunalService
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.ActivityProfileBinding
+import com.example.fit_i.ui.main.home.HomeFragment
+import com.example.fit_i.ui.main.home.TrainerData
+import com.example.fit_i.ui.main.mypage.notice.NoticeData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -97,6 +100,11 @@ class ProfileActivity :AppCompatActivity() {
             val intent = Intent(this,ProfileReportActivity::class.java)
             startActivity(intent)
         }
+
+        val goBack = findViewById<ImageButton>(R.id.iv_back)
+        goBack.setOnClickListener{
+            val intent = Intent(this,HomeFragment::class.java)
+            startActivity(intent)        }
     }
 
     val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
