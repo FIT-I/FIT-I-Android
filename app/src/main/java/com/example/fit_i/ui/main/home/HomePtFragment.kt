@@ -82,16 +82,13 @@ class HomePtFragment : Fragment() {
     }
 
     private fun setAdapter(trainerList: List<GetTrainerListResponse.Result.Dto>){
-
         val trainerAdapter = TrainerAdapter(trainerList)
         binding.rvTrainer.adapter=trainerAdapter
-
 
         val linearLayoutManager = LinearLayoutManager(context)
         binding.rvTrainer.layoutManager=linearLayoutManager
 
         binding.rvTrainer.setHasFixedSize(true)
-        // 1. 정의되어 있는 구분선
         binding.rvTrainer.addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL))
     }
 
@@ -99,7 +96,7 @@ class HomePtFragment : Fragment() {
     private fun lodeData() {
 
         val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
-        customerService.getTrainerlist("pt",0,20,sort).enqueue(object :
+        customerService.getTrainerlist("pt",0,200,sort).enqueue(object :
             Callback<GetTrainerListResponse> {
             override fun onResponse(call: Call<GetTrainerListResponse>, response: Response<GetTrainerListResponse>) {
                 if(response.isSuccessful){

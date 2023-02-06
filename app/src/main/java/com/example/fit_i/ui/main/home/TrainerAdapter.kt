@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fit_i.data.model.response.GetTrainerListResponse
 import com.example.fit_i.databinding.ItemTrainerBinding
@@ -32,19 +33,10 @@ class TrainerAdapter(private val dataList: List<GetTrainerListResponse.Result.Dt
         holder.bind(position)
 
         holder.itemView.setOnClickListener {
-            val trainerIntent = Intent(holder.itemView.context, ProfileActivity::class.java)
-            trainerIntent.putExtra(
-                "trainerIdx", TrainerData(
-                    dataList[position].id,
-                    dataList[position].name,
-                    dataList[position].profile,
-                    dataList[position].levelName,
-                    dataList[position].school,
-                    dataList[position].grade,
-                    dataList[position].certificateNum,
-                    dataList[position].contents,
-                    dataList[position].cost))
-            ContextCompat.startActivity(holder.itemView.context, trainerIntent, null)
+            val intent = Intent(holder.itemView.context, ProfileActivity::class.java)
+            intent.putExtra(
+                "trainerIdx", dataList[position].id)
+            startActivity(holder.itemView.context, intent, null)
         }
     }
 

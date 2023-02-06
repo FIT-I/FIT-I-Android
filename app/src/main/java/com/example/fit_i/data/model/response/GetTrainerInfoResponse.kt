@@ -16,8 +16,8 @@ data class GetTrainerInfoResponse(
         val cost: Long,
         val intro: String,
         val service: String,
-        val reviewDto: String,
-        val imageList: String,
+        val reviewDto: List<String>,
+        val imageList: List<String>,
         val category: String
     )
 }
