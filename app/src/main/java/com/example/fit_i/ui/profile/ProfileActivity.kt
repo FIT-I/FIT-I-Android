@@ -14,8 +14,6 @@ import com.example.fit_i.data.service.CommunalService
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.ActivityProfileBinding
 import com.example.fit_i.ui.main.home.HomeFragment
-import com.example.fit_i.ui.main.home.TrainerData
-import com.example.fit_i.ui.main.mypage.notice.NoticeData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -50,7 +48,7 @@ class ProfileActivity :AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val id = intent.getLongExtra("trainerIdx",-1)
+        id = intent.getLongExtra("trainerIdx",-1)
         Log.d("post", id.toString())
 
         val commmunalService = RetrofitImpl.getApiClient().create(CommunalService::class.java)
@@ -60,7 +58,6 @@ class ProfileActivity :AppCompatActivity() {
                     // 정상적으로 통신이 성공된 경우
                     onBind(response.body()!!.result)
                     Log.d("post", "onResponse 성공: " + response.body().toString());
-                    //Toast.makeText(this@ProfileActivity, "비밀번호 찾기 성공!", Toast.LENGTH_SHORT).show()
 
                 }else{
                     // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
@@ -75,7 +72,7 @@ class ProfileActivity :AppCompatActivity() {
         })
 
         wish = findViewById<Button>(R.id.cb_heart_btn) as CheckBox
-        wish.setOnClickListener { onCheckChanged(wish) }
+        wish.setOnClickListener { onCheckChanged() }
 
         val matchRequest =findViewById<Button>(R.id.btn_match_request)
         matchRequest.setOnClickListener {
@@ -104,11 +101,12 @@ class ProfileActivity :AppCompatActivity() {
         val goBack = findViewById<ImageButton>(R.id.iv_back)
         goBack.setOnClickListener{
             val intent = Intent(this,HomeFragment::class.java)
-            startActivity(intent)        }
+            startActivity(intent)
+        }
     }
 
     val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
-    private fun onCheckChanged(compoundButton: CompoundButton) {
+    private fun onCheckChanged() {
         if (wish.isChecked) {
             customerService.addWish(id).enqueue(object : Callback<BaseResponse> {
                 override fun onResponse(
@@ -116,12 +114,9 @@ class ProfileActivity :AppCompatActivity() {
                     response: Response<BaseResponse>
                 ) { if (response.isSuccessful) {
                         // 정상적으로 통신이 성공된 경우
-                        //val result: User? = response.body()
                         Log.d("post", "onResponse 성공: " + response.body().toString());
                         Toast.makeText(this@ProfileActivity, "찜 목록에 추가", Toast.LENGTH_SHORT).show()
-                        //Log.d("post","result: "+response.)
-                        //Log.d("post", "onResponse 성공: " + result.toString());
-                    } else {
+                } else {
                         // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
                         Log.d("post", "onResponse 실패 "+ response.body().toString())
                     }
@@ -142,8 +137,6 @@ class ProfileActivity :AppCompatActivity() {
                         //val result: User? = response.body()
                         Log.d("post", "onResponse 성공: " + response.body().toString());
                         Toast.makeText(this@ProfileActivity, "찜 목록에서 제거", Toast.LENGTH_SHORT).show()
-                        //Log.d("post","result: "+response.)
-                        //Log.d("post", "onResponse 성공: " + result.toString());
                     } else {
                         // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
                         Log.d("post", "onResponse 실패")
