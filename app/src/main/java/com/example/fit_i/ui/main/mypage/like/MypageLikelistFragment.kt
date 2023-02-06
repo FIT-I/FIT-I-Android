@@ -8,7 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import androidx.fragment.app.FragmentTransaction
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fit_i.ui.main.mypage.like.LikelistAdapter
 import com.example.fit_i.ui.main.mypage.like.LikelistData
@@ -17,75 +19,56 @@ import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.response.WishResponse
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.FragmentMypageLikelistBinding
+import com.example.fit_i.databinding.FragmentMypageNoticeBinding
 import com.example.fit_i.ui.main.home.HomeFragment
+import com.example.fit_i.ui.main.mypage.notice.NoticeAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class MypageLikelistFragment : Fragment() {
-    private lateinit var binding: FragmentMypageLikelistBinding
-    lateinit var listAdapter: LikelistAdapter
-    //private val dataList = ArrayList<LikelistData>()
-    var dataList = ArrayList<LikelistData>()
+    private var _binding: FragmentMypageLikelistBinding? = null
+    private val binding: FragmentMypageLikelistBinding
+        get() = requireNotNull(_binding) { "FragmentMypageLikelistBinding" }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMypageLikelistBinding.inflate(inflater,container, false)
-        val view = inflater.inflate(R.layout.fragment_mypage_likelist,container,false)
+        _binding = FragmentMypageLikelistBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        lodeData()
+
         val ibpre = view.findViewById<View>(R.id.ib_pre4) as ImageButton
 
         ibpre.setOnClickListener{
             val mypageFragment = MypageFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
+
             transaction.replace(R.id.fl_container,mypageFragment)
             transaction.commit()
         }
-
-
-
-
-
-        //임의로 데이터 넣어보기, 나중에 사진 글라이드 기능 추가
-        dataList.apply {
-            add(LikelistData("김동현","4.3","숭실대학교","어제"))
-            add(LikelistData("김준기","4.3","중앙대학교","월요일"))
-            add(LikelistData("홍준혁","4.3","건국대학교","2023.1.4"))
-        }
-        listAdapter = LikelistAdapter(dataList)
-        binding.rcLikelist.adapter = listAdapter
-        var linearLayoutManager = LinearLayoutManager(context)
-        binding.rcLikelist.layoutManager = linearLayoutManager
-
-        listAdapter.setItemClickListener(object : LikelistAdapter.OnItemClickListener{
-            override fun onClick(v: View, position: Int) {
-                val homeFragment = HomeFragment()
-                val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
-                transaction.replace(R.id.fl_container,homeFragment)
-                transaction.commit()
-
-            }
-        })
-
-
-
-
-
-        return binding.root
-
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        lodeData()
     }
     //API 연결부분
     private fun setAdapter(likeList : List<WishResponse.Result>){
-        val likelistAdapter = LikelistAdapter(dataList)
-        binding.rcLikelist.adapter=likelistAdapter
+
+        val likelistAdapter = LikelistAdapter(likeList)
+        binding.rvLikelist.adapter=likelistAdapter
+
+        val linearLayoutManager = LinearLayoutManager(context)
+        binding.rvLikelist.layoutManager=linearLayoutManager
+
+        binding.rvLikelist.setHasFixedSize(true)  //true?
+        binding.rvLikelist.addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL))
     }
+
     private fun lodeData() {
         val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
         customerService.getWishlist().enqueue(object: Callback<WishResponse>{
@@ -96,11 +79,9 @@ class MypageLikelistFragment : Fragment() {
                 if(response.isSuccessful){
                     //정상적으로 통신이 성공된 경우
                     Log.d("post","onResponse 성공"+response.body().toString());
-                    // Toast.makeText(this@MypageLikelistFragment,"찜목록조회",Toast.LENGTH_SHORT).show()
 
-                    // dataList = response.body() ?: ArrayList()
-                    listAdapter.setList(dataList)
-
+                    val body = response.body()
+                    body?.let { setAdapter(it.result) }
 
                 }else{
                     //통신 실패

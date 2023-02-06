@@ -10,13 +10,10 @@ data class WishResponse(
 ){
     data class Result(
         val createdAt: String,
-        @SerializedName("star")
         val trainerGrade: Double,
         val trainerIdx: Int,
-        @SerializedName("im")
         val trainerName: String,
         val trainerProfile: String,
-        @SerializedName("uni")
         val trainerSchool: String
     )
 }
