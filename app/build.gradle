@@ -82,7 +82,6 @@ dependencies {
     implementation files('libs/libDaumMapAndroid.jar')
 
     //캘린더
-    implementation 'com.github.psinetron:slycalendarview: 0.0.9'
     implementation 'com.github.prolificinteractive:material-calendarview:2.0.1'
 
 }

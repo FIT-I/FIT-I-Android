@@ -106,6 +106,7 @@ class ProfileActivity :AppCompatActivity() {
         val report = findViewById<Button>(R.id.btn_report)
         report.setOnClickListener{
             val intent = Intent(this,ProfileReportActivity::class.java)
+            intent.putExtra("id",id)
             startActivity(intent)
         }
 
