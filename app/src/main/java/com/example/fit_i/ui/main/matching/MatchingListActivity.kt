@@ -45,7 +45,7 @@ class MatchingListActivity : AppCompatActivity() {
         btnmatching.setOnClickListener{
             startActivity(Intent(this,ProfileActivity::class.java))
         }
-        matchingService.matchinglist(matchingIdx).enqueue(object : Callback<GetMatchlistResponse>{
+        matchingService.matchingList(matchingIdx).enqueue(object : Callback<GetMatchlistResponse>{
             override fun onResponse(
                 call: Call<GetMatchlistResponse>,
                 response: Response<GetMatchlistResponse>
@@ -67,7 +67,7 @@ class MatchingListActivity : AppCompatActivity() {
         })
 
 
-        matchingService.matchinglist(matchingIdx).enqueue(object : Callback<GetMatchlistResponse>{
+        matchingService.matchingList(matchingIdx).enqueue(object : Callback<GetMatchlistResponse>{
             override fun onResponse(
                 call: Call<GetMatchlistResponse>,
                 response: Response<GetMatchlistResponse>

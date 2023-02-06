@@ -1,4 +1,4 @@
-package com.example.fit_i.ui.profile.review
+package com.example.fit_i.ui.main.mypage.review
 
 data class ReviewData(
 

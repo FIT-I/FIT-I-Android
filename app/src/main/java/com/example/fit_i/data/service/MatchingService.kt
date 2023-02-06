@@ -10,9 +10,9 @@ interface MatchingService {
 
     //고객 매칭목록조회
     @GET("api/matching/customer")
-    fun matchingcustomer() : Call<GetMCResponse>
+    fun matchingCustomer() : Call<GetMCResponse>
 
     //매칭정보
     @GET("api/matching/{matchingIdx}")
-    fun matchinglist(@Path("matchingIdx") matchingIdx: Int) : Call<GetMatchlistResponse>
+    fun matchingList(@Path("matchingIdx") matchingIdx: Int) : Call<GetMatchlistResponse>
 }

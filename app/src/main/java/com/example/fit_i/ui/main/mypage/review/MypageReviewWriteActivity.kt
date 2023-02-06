@@ -7,16 +7,12 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.*
-import androidx.fragment.app.FragmentTransaction
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.request.ReviewRequest
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.ActivityMypageReviewWriteBinding
-import com.example.fit_i.databinding.ActivityProfileBinding
-import com.example.fit_i.databinding.FragmentMypageNoticeBinding
-import com.example.fit_i.ui.main.mypage.MypageFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,7 +21,7 @@ class MypageReviewWriteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMypageReviewWriteBinding
 
     //var trainerIdx : String = ""
-    private var trainerIdx : Int =2
+    //private var trainerIdx : Int =2
     var grade: Int = 0
     var contents : String = ""
 
@@ -36,6 +32,7 @@ class MypageReviewWriteActivity : AppCompatActivity() {
         binding = ActivityMypageReviewWriteBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+        val id = intent.getLongExtra("trainerIdx",-1)
 
 
         val etreview = findViewById<View>(R.id.et_review) as EditText
@@ -70,7 +67,7 @@ class MypageReviewWriteActivity : AppCompatActivity() {
 
         val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
         btnreviewing.setOnClickListener {
-            customerService.writeReview(req = ReviewRequest(trainerIdx,grade,contents)).enqueue(object :
+            customerService.writeReview(req = ReviewRequest(id,grade,contents)).enqueue(object :
                 Callback<BaseResponse> {
                 override fun onResponse(
                     call: Call<BaseResponse>,
