@@ -63,7 +63,7 @@
             <TextView
                 android:id="@+id/tv_review1"
                 android:layout_width="0dp"
-                android:layout_height="134dp"
+                android:layout_height="140dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="20dp"
@@ -171,16 +171,18 @@
 
             <ImageView
                 android:id="@+id/iv_trainer_grade"
-                android:layout_width="51dp"
-                android:layout_height="20dp"
+                android:layout_width="60dp"
+                android:layout_height="25dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_trainer_star"
                 app:layout_constraintStart_toEndOf="@+id/tv_trainer_name"
-                app:layout_constraintTop_toBottomOf="@+id/iv_trainer_profile"
+                app:layout_constraintTop_toTopOf="@+id/tv_trainer_name"
                 app:srcCompat="@drawable/img_bronze" />
+
 
             <TextView
                 android:id="@+id/tv_distance"
@@ -190,11 +192,10 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="24dp"
                 android:layout_marginTop="2dp"
                 android:text="1km"
                 android:textSize="10sp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_trainer_name"
                 app:layout_constraintTop_toBottomOf="@+id/tv_trainer_name" />
 
             <ImageView
@@ -249,9 +250,9 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="15dp"
-                android:text="trainerName"
+                android:text="userName"
                 android:textColor="#000000"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_trainer_profile" />
@@ -488,6 +489,7 @@
                 android:layout_marginTop="29dp"
                 android:text="4.3"
                 android:textSize="10dp"
+                android:layout_marginEnd="10dp"
                 app:layout_constraintEnd_toEndOf="@+id/tv_won2"
                 app:layout_constraintStart_toEndOf="@+id/tv_average"
                 app:layout_constraintTop_toTopOf="@+id/tv_review1" />
@@ -496,12 +498,12 @@
                 android:id="@+id/btn_about_me"
                 android:layout_width="0dp"
                 android:layout_height="5dp"
-                android:layout_marginStart="167dp"
                 android:layout_marginBottom="5dp"
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_about_me"
+                app:layout_constraintEnd_toEndOf="@+id/tv_about_me"
                 app:layout_constraintStart_toStartOf="@+id/tv_about_me"
                 app:srcCompat="@drawable/ic_view_more"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
@@ -510,12 +512,12 @@
                 android:id="@+id/btn_about_service"
                 android:layout_width="0dp"
                 android:layout_height="5dp"
-                android:layout_marginStart="167dp"
                 android:layout_marginBottom="5dp"
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_about_service"
+                app:layout_constraintEnd_toEndOf="@+id/tv_about_service"
                 app:layout_constraintStart_toStartOf="@+id/tv_about_service"
                 app:srcCompat="@drawable/ic_view_more"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -525,11 +527,10 @@
                 android:layout_width="22dp"
                 android:layout_height="17.55dp"
                 android:layout_marginStart="39dp"
-                android:layout_marginTop="15dp"
                 android:layout_marginBottom="6.86dp"
                 app:layout_constraintBottom_toTopOf="@+id/iv_bar6"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_review1"
+                app:layout_constraintTop_toTopOf="@+id/tv_picture"
                 app:srcCompat="@drawable/ic_picture_more" />
 
             <TextView
@@ -611,6 +612,7 @@
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_average_value"
+                app:layout_constraintEnd_toEndOf="@+id/tv_review1"
                 app:layout_constraintStart_toEndOf="@+id/tv_average_value"
                 app:srcCompat="@drawable/ic_next"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -636,6 +638,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2023.1.1"
+                    android:layout_marginStart="10dp"
                     android:textColor="@color/gray"
                     android:textSize="10dp"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_review1_name"
@@ -647,6 +650,7 @@
                     android:layout_height="10dp"
                     android:scaleType="fitStart"
                     android:src="@drawable/star"
+                    android:layout_marginStart="5dp"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_review1_date"
                     app:layout_constraintStart_toEndOf="@+id/tv_review1_date"
                     app:layout_constraintTop_toTopOf="@+id/tv_review1_date" />
@@ -692,6 +696,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2023.1.1"
+                    android:layout_marginStart="10dp"
                     android:textColor="@color/gray"
                     android:textSize="10dp"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_review2_name"
@@ -703,6 +708,7 @@
                     android:layout_height="10dp"
                     android:scaleType="fitStart"
                     android:src="@drawable/star"
+                    android:layout_marginStart="5dp"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_review2_date"
                     app:layout_constraintStart_toEndOf="@+id/tv_review2_date"
                     app:layout_constraintTop_toTopOf="@+id/tv_review2_date" />
