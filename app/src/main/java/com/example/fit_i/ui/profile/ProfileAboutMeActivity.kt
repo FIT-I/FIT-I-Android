@@ -18,12 +18,12 @@ class ProfileAboutMeActivity:AppCompatActivity() {
         binding.tvAboutMeContext.text=intent.getStringExtra("me")
         binding.tvCharNum.text= binding.tvAboutMeContext.length().toString()
 
-        val goBack = findViewById<ImageButton>(R.id.ib_back_arrow)
+        /*val goBack = findViewById<ImageButton>(R.id.ib_back_arrow)
         goBack.setOnClickListener{
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
             finish()
-        }
+        }*/
     }
 
 }
