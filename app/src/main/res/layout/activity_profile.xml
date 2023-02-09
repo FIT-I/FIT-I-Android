@@ -18,7 +18,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
             app:layout_constraintBottom_toTopOf="@+id/iv_heartbtn_border"
@@ -132,14 +132,14 @@
 
             <ImageView
                 android:id="@+id/iv_background_photo"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/img_background" />
+                android:src="@color/main"/>
 
             <ImageButton
                 android:id="@+id/iv_back"
@@ -177,11 +177,10 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="82dp"
                 android:layout_marginTop="15dp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_trainer_name"
                 app:layout_constraintTop_toBottomOf="@+id/iv_trainer_profile"
-                app:srcCompat="@drawable/img_gold" />
+                app:srcCompat="@drawable/img_bronze" />
 
             <TextView
                 android:id="@+id/tv_distance"
@@ -220,10 +219,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="262.76dp"
-                android:layout_marginTop="31dp"
-                app:layout_constraintStart_toStartOf="@+id/tv_review1"
-                app:layout_constraintTop_toTopOf="@+id/tv_review1"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_average"
+                app:layout_constraintEnd_toStartOf="@id/tv_average"
+                app:layout_constraintTop_toTopOf="@+id/tv_average"
                 app:srcCompat="@drawable/ic_star" />
 
             <TextView
@@ -251,7 +249,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="15dp"
-                android:text="김동현"
+                android:text="trainerName"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 android:textStyle="bold"
@@ -276,7 +274,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/img_trainerprofile" />
+                app:srcCompat="@drawable/ic_profile" />
 
             <TextView
                 android:id="@+id/tv_dot_or2"
@@ -477,11 +475,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
-                android:layout_marginTop="29dp"
                 android:text="평균"
                 android:textSize="10dp"
                 app:layout_constraintStart_toEndOf="@+id/iv_star2"
-                app:layout_constraintTop_toTopOf="@+id/tv_review1" />
+                app:layout_constraintTop_toTopOf="@+id/tv_average_value" />
 
             <TextView
                 android:id="@+id/tv_average_value"
@@ -491,6 +488,7 @@
                 android:layout_marginTop="29dp"
                 android:text="4.3"
                 android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_won2"
                 app:layout_constraintStart_toEndOf="@+id/tv_average"
                 app:layout_constraintTop_toTopOf="@+id/tv_review1" />
 
@@ -550,6 +548,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_review1" />
 
             <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -603,6 +602,26 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_background_photo" />
+
+
+            <ImageButton
+                android:id="@+id/iv_more_reveiw"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_average_value"
+                app:layout_constraintStart_toEndOf="@+id/tv_average_value"
+                app:srcCompat="@drawable/ic_next"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/tv_review1"
+                app:layout_constraintStart_toStartOf="@+id/tv_review1"
+                app:layout_constraintTop_toBottomOf="@+id/iv_bar5"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

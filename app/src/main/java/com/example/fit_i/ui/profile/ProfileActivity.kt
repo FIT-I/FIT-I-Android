@@ -15,6 +15,7 @@ import com.example.fit_i.data.service.CommunalService
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.ActivityProfileBinding
 import com.example.fit_i.ui.main.home.HomeFragment
+import com.example.fit_i.ui.profile.review.ProfileReviewActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,35 +25,47 @@ class ProfileActivity :AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
 
     var id by Delegates.notNull<Long>()
+    var service by Delegates.notNull<String>()
+    var me by Delegates.notNull<String>()
+
+
 
     private lateinit var wish: CheckBox
 
-    fun onBind(data: GetTrainerInfoResponse.Result){
+    fun onBind(data: GetTrainerInfoResponse.Result?){
         //binding.ivTrainerProfile.setImageResource(data.result.profile)
         //binding.iv_background_photo=data.result.background
-        var profilePhoto = data.profile
-        var backGroudPhoto = data.background
 
-        Glide.with(this)
-            .load(profilePhoto)
-            .into(binding.ivTrainerProfile)
+        if (data?.profile != "trainerProfile") {
+            Glide.with(this)
+                .load("${data?.profile}")
+                .into(binding.ivTrainerProfile)
+            Log.d("post", data?.profile.toString())
+        }
 
-        Glide.with(this)
-            .load(backGroudPhoto)
-            .into(binding.ivBackgroundPhoto)
+        if (data?.background != null) {
+            Glide.with(this)
+                .load("${data.background}")
+                .into(binding.ivBackgroundPhoto)
+        }
 
-        binding.tvTrainerName.text=data.name
+        binding.tvTrainerName.text=data?.name
         //binding.ivTrainerGrade.text=data.result.levelName
 
         //binding.tvDistance.text=data.result
-        binding.tvTrainerStar.text= data.grade.toString()
-        binding.tvUniversityInfo.text=data.school
+        binding.tvTrainerStar.text= data?.grade.toString()
+        binding.tvUniversityInfo.text=data?.school
 
-        binding.tvManagePrice.text= data.cost.toString()
-        binding.tvAboutMe.text=data.intro
-        binding.tvAboutService.text=data.service
+        binding.tvManagePrice.text= data?.cost.toString()
+        binding.tvAboutMe.text=data?.intro
+        binding.tvAboutService.text=data?.service
 
-        binding.tvAverageValue.text= data.grade.toString()
+        service = data?.service.toString()
+        me = data?.intro.toString()
+
+
+        binding.tvAverageValue.text= data?.grade.toString()
+        binding.tvReviewNum.text=data?.reviewDto?.size.toString()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -94,12 +107,14 @@ class ProfileActivity :AppCompatActivity() {
         val moreAboutMe = findViewById<ImageButton>(R.id.btn_about_me)
         moreAboutMe.setOnClickListener {
             val intent = Intent(this, ProfileAboutMeActivity::class.java)
+            intent.putExtra("me",me)
             startActivity(intent)
         }
 
         val moreAboutService = findViewById<ImageButton>(R.id.btn_about_service)
         moreAboutService.setOnClickListener {
             val intent = Intent(this, ProfileAboutServiceActivity::class.java)
+            intent.putExtra("service",service)
             startActivity(intent)
         }
 
@@ -115,6 +130,13 @@ class ProfileActivity :AppCompatActivity() {
             val intent = Intent(this,HomeFragment::class.java)
             startActivity(intent)
         }
+
+        val moreReview = findViewById<ImageButton>(R.id.iv_more_reveiw)
+        moreReview.setOnClickListener{
+            val intent = Intent(this,ProfileReviewActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)

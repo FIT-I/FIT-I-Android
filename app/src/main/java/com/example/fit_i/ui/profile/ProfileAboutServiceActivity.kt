@@ -5,11 +5,18 @@ import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.R
+import com.example.fit_i.databinding.ActivityProfileAboutServiceBinding
 
 class ProfileAboutServiceActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityProfileAboutServiceBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile_about_service)
+        binding = ActivityProfileAboutServiceBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.tvAboutServiceContext.text=intent.getStringExtra("service")
+
         val goBack = findViewById<ImageButton>(R.id.ib_back_arrow)
         goBack.setOnClickListener{
             val intent = Intent(this, ProfileActivity::class.java)
@@ -17,5 +24,4 @@ class ProfileAboutServiceActivity : AppCompatActivity() {
             finish()
         }
     }
-
 }
