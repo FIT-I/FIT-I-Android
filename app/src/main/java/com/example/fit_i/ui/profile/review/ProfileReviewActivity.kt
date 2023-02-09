@@ -15,7 +15,7 @@ import retrofit2.Response
 
 class ProfileReviewActivity:AppCompatActivity() {
     private lateinit var binding: ActivityProfileReviewBinding
-    private val trainerIdx =intent.getLongExtra("reviewIdx",-1)
+    //private val trainerIdx =intent.getLongExtra("reviewIdx",-1)
 
     //private val trainerIdx : Long = 2
 
@@ -60,7 +60,7 @@ class ProfileReviewActivity:AppCompatActivity() {
 
     private fun lodeData() {
         val commmunalService = RetrofitImpl.getApiClient().create(CommunalService::class.java)
-        commmunalService.getReviewList(trainerIdx).enqueue(object :
+        commmunalService.getReviewList(intent.getLongExtra("reviewIdx",-1)).enqueue(object :
             Callback<GetReviewListResponse> {
             override fun onResponse(call: Call<GetReviewListResponse>, response: Response<GetReviewListResponse>) {
                 if(response.isSuccessful){
@@ -85,7 +85,4 @@ class ProfileReviewActivity:AppCompatActivity() {
             }
         })
     }
-
-
-
 }

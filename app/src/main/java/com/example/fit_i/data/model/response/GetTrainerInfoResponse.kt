@@ -8,7 +8,7 @@ data class GetTrainerInfoResponse(
 ){
     data class Result(
         val name: String?,
-        val profile: String,
+        val profile: Any,
         val background: String,
         val levelName: String,
         val school: String,
@@ -16,8 +16,16 @@ data class GetTrainerInfoResponse(
         val cost: Long,
         val intro: String?,
         val service: String?,
-        val reviewDto: List<String>?,
-        val imageList: List<String>?,
-        val category: String
-    )
+        val reviewDto: List<ReviewDto>?,
+        val imageList: List<Any>?,
+        //val category: String
+    ){
+        data class ReviewDto (
+            val name: String,
+            val profile: String? = null,
+            val grade: Long,
+            val createdAt: String,
+            val contents: String
+        )
+    }
 }

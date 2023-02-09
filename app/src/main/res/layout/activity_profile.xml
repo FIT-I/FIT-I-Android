@@ -615,13 +615,117 @@
                 app:srcCompat="@drawable/ic_next"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_review"
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_review1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/tv_review1"
-                app:layout_constraintStart_toStartOf="@+id/tv_review1"
-                app:layout_constraintTop_toBottomOf="@+id/iv_bar5"/>
+                app:layout_constraintStart_toStartOf="@+id/iv_review_icon"
+                app:layout_constraintTop_toBottomOf="@+id/iv_bar5">
+
+                <TextView
+                    android:id="@+id/tv_review1_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="userName1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_review1_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2023.1.1"
+                    android:textColor="@color/gray"
+                    android:textSize="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_review1_name"
+                    app:layout_constraintStart_toEndOf="@+id/tv_review1_name" />
+
+                <ImageView
+                    android:id="@+id/iv_review1_star"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/star"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_review1_date"
+                    app:layout_constraintStart_toEndOf="@+id/tv_review1_date"
+                    app:layout_constraintTop_toTopOf="@+id/tv_review1_date" />
+
+                <TextView
+                    android:id="@+id/tv_reivew1_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.5"
+                    android:textColor="@color/gray"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_review1_date"
+                    app:layout_constraintStart_toEndOf="@+id/iv_review1_star" />
+
+                <TextView
+                    android:id="@+id/tv_review1_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="리뷰글입니다."
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_review1_name" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_review2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="@+id/iv_review_icon"
+                app:layout_constraintTop_toBottomOf="@+id/cl_review1">
+
+                <TextView
+                    android:id="@+id/tv_review2_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="userName1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_review2_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2023.1.1"
+                    android:textColor="@color/gray"
+                    android:textSize="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_review2_name"
+                    app:layout_constraintStart_toEndOf="@+id/tv_review2_name" />
+
+                <ImageView
+                    android:id="@+id/iv_review2_star"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/star"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_review2_date"
+                    app:layout_constraintStart_toEndOf="@+id/tv_review2_date"
+                    app:layout_constraintTop_toTopOf="@+id/tv_review2_date" />
+
+                <TextView
+                    android:id="@+id/tv_reivew2_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.5"
+                    android:textColor="@color/gray"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_review2_date"
+                    app:layout_constraintStart_toEndOf="@+id/iv_review2_star" />
+
+                <TextView
+                    android:id="@+id/tv_review2_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="리뷰글입니다."
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_review2_name" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

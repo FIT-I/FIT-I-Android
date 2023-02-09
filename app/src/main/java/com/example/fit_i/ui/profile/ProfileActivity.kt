@@ -63,9 +63,20 @@ class ProfileActivity :AppCompatActivity() {
         service = data?.service.toString()
         me = data?.intro.toString()
 
-
         binding.tvAverageValue.text= data?.grade.toString()
         binding.tvReviewNum.text=data?.reviewDto?.size.toString()
+
+        //리뷰 바인딩
+        binding.tvReview1Name.text= data?.reviewDto?.get(0)?.name
+        binding.tvReview1Content.text= data?.reviewDto?.get(0)?.contents
+        binding.tvReview1Date.text= data?.reviewDto?.get(0)?.createdAt
+        binding.tvReivew1Star.text=data?.reviewDto?.get(0)?.grade.toString()
+
+        binding.tvReview2Name.text= data?.reviewDto?.get(1)?.name
+        binding.tvReview2Content.text= data?.reviewDto?.get(1)?.contents
+        binding.tvReview2Date.text= data?.reviewDto?.get(1)?.createdAt
+        binding.tvReivew2Star.text=data?.reviewDto?.get(1)?.grade.toString()
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
