@@ -6,32 +6,30 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fit_i.R
+import com.example.fit_i.data.model.response.GetReviewListResponse
 import com.example.fit_i.databinding.ItemPreviewBinding
 import com.example.fit_i.ui.main.mypage.review.ReviewData
 
-class PReviewAdapter (private val dataList: ArrayList<Review>): RecyclerView.Adapter<PReviewAdapter.ViewHolder>() {
+class PReviewAdapter (private val dataList: List<GetReviewListResponse.Result>): RecyclerView.Adapter<PReviewAdapter.ViewHolder>() {
         inner class ViewHolder(private val binding: ItemPreviewBinding) :
             RecyclerView.ViewHolder(binding.root) {
 
             fun bind(position: Int) {
-                binding.tvNameT.text = dataList[position].name
-                binding.tvStar.text= dataList[position].star.toString()
-                binding.tvDateT.text= dataList[position].date
-                binding.tvReview.text=dataList[position].review
+                binding.tvName.text = dataList[position].name
+                binding.tvStar.text = dataList[position].grade.toString()
+                binding.tvDate.text = dataList[position].createdAt
+                binding.tvReview.text = dataList[position].contents
 
-                //viewBinding.imgFricard.setImageResource(dataList[position].front)
-                itemView.setOnClickListener {
-                    Log.d("Click", "success")
+                when (dataList[position].profile) {
+                    "customerProfile1" -> binding.ivReviewer.setImageResource(R.drawable.img_char1)
+                    "customerProfile2" -> binding.ivReviewer.setImageResource(R.drawable.img_char2)
+                    "customerProfile3" -> binding.ivReviewer.setImageResource(R.drawable.img_char3)
+                    "customerProfile4" -> binding.ivReviewer.setImageResource(R.drawable.img_char4)
+                    "customerProfile5" -> binding.ivReviewer.setImageResource(R.drawable.img_char5)
+                    "customerProfile6" -> binding.ivReviewer.setImageResource(R.drawable.img_char6)
                 }
             }
-        }
-
-        interface OnItemClickListener : AdapterView.OnItemClickListener {
-            //fun onClick(v: View, position: Int)
-            fun onItemClick(v: View, data: ReviewData, position: Int)
-            //override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-            //  TODO("Not yet implemented")
-            //}
         }
 
 
@@ -43,14 +41,6 @@ class PReviewAdapter (private val dataList: ArrayList<Review>): RecyclerView.Ada
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             holder.bind(position)
-            /*
-            holder.itemView.setOnClickListener {
-                val intent = Intent(holder.itemView?.context, CardDetailActivity::class.java)
-                intent.putExtra("front", dataList[position].front)
-                intent.putExtra("back", dataList[position].back)
-                intent.putExtra("name", dataList[position].name)
-                ContextCompat.startActivity(holder.itemView.context, intent, null)
-            }*/
         }
 
         override fun getItemCount(): Int = dataList.size

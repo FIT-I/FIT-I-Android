@@ -13,14 +13,14 @@
         android:id="@+id/iv_reviewer"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/profile"
+        android:src="@drawable/ic_profile"
         android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_dateT"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_date"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_nameT" />
+        app:layout_constraintTop_toTopOf="@+id/tv_name" />
 
     <TextView
-        android:id="@+id/tv_nameT"
+        android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -30,14 +30,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_dateT"
+        android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2023.1.1"
         android:textSize="10dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="@+id/tv_nameT"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nameT" />
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
     <TextView
         android:id="@+id/tv_"
@@ -45,9 +45,9 @@
         android:layout_height="wrap_content"
         android:text="  | "
         android:textSize="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_dateT"
-        app:layout_constraintStart_toEndOf="@+id/tv_dateT"
-        app:layout_constraintTop_toTopOf="@+id/tv_dateT" />
+        app:layout_constraintBottom_toBottomOf="@+id/tv_date"
+        app:layout_constraintStart_toEndOf="@+id/tv_date"
+        app:layout_constraintTop_toTopOf="@+id/tv_date" />
 
     <ImageView
         android:id="@+id/iv_star"
@@ -56,7 +56,7 @@
         android:src="@drawable/star"
         app:layout_constraintBottom_toBottomOf="@+id/tv_star"
         app:layout_constraintStart_toEndOf="@+id/tv_"
-        app:layout_constraintTop_toTopOf="@+id/tv_dateT" />
+        app:layout_constraintTop_toTopOf="@+id/tv_date" />
 
     <TextView
         android:id="@+id/tv_star"
@@ -65,7 +65,7 @@
         android:text="4.5"
         android:textSize="10dp"
         app:layout_constraintStart_toEndOf="@+id/iv_star"
-        app:layout_constraintTop_toTopOf="@+id/tv_dateT" />
+        app:layout_constraintTop_toTopOf="@+id/tv_date" />
 
     <TextView
         android:id="@+id/tv_review"
@@ -74,5 +74,5 @@
         android:layout_marginTop="10dp"
         android:text="친절한 지도 감사합니다:-)"
         app:layout_constraintStart_toStartOf="@+id/iv_reviewer"
-        app:layout_constraintTop_toBottomOf="@+id/tv_dateT" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_date" />
 </androidx.constraintlayout.widget.ConstraintLayout>

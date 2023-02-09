@@ -56,7 +56,7 @@
                 android:layout_height="75dp"
                 android:button="@null"
                 android:background="@drawable/prof1_selector"
-                android:checked="true"/>
+                android:checked="false"/>
             <ImageView
                 android:src="@drawable/img_f1"
                 android:layout_width="37dp"

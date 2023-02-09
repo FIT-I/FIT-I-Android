@@ -27,7 +27,7 @@ interface CommunalService {
 
     //리뷰 조회
     @GET("api/communal/review/{trainerIdx}")
-    fun getReviewList(@Path("trainerIdx") trainerIdx : Int) : Call<GetReviewListResponse>
+    fun getReviewList(@Path("trainerIdx") trainerIdx: Long) : Call<GetReviewListResponse>
 
     //마이페이지 조회
     @GET("api/communal/mypage")
