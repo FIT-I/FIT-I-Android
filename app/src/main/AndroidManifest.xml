@@ -20,7 +20,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".MypageReviewWriteActivity"
+            android:name=".ui.main.mypage.review.MypageReviewWriteActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -39,28 +39,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".ui.main.mypage.MypageLocationActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ui.mypage.MypageMapActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ui.mypage.MypageLocationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -155,6 +136,13 @@
         </activity>
         <activity
             android:name=".ui.login.LoginActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.profile.review.ProfileReviewActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

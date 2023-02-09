@@ -134,6 +134,7 @@ class ProfileActivity :AppCompatActivity() {
         val moreReview = findViewById<ImageButton>(R.id.iv_more_reveiw)
         moreReview.setOnClickListener{
             val intent = Intent(this,ProfileReviewActivity::class.java)
+            intent.putExtra("reviewIdx",id)
             startActivity(intent)
         }
 
