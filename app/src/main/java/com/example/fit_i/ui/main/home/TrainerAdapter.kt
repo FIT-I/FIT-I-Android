@@ -23,7 +23,13 @@ class TrainerAdapter(private val dataList: List<GetTrainerListResponse.Result.Dt
             binding.tvPr.text=dataList[position].contents
             binding.tvMoney.text= dataList[position].cost.toString()
 
-            //프로필 이미지 바인딩
+
+            //레벨
+            when (dataList[position].levelName) {
+                "gold" -> binding.ivRank.setImageResource(R.drawable.img_gold)
+                "sliver" -> binding.ivRank.setImageResource(R.drawable.img_sliver)
+                "bronze" -> binding.ivRank.setImageResource(R.drawable.img_bronze)
+            }
         }
     }
 
