@@ -7,8 +7,8 @@ data class GetMatchlistResponse(
     val result : Result
 ){
     data class Result(
-        val matchingId : Int,
-        val customerId : Int,
+        val matchingId : Long,
+        val customerId : Long,
         val name : String,
         val pricePerHour : String,
         val totalPrice : String,
