@@ -165,10 +165,9 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_match_bar4" />
 
     <TextView
-        android:id="@+id/tv_match_place2"
+        android:id="@+id/tv_place"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="118dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="21.76dp"
         android:text="서울특별시 상도로 50"
@@ -176,7 +175,7 @@
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tv_service_request"
-        app:layout_constraintStart_toEndOf="@+id/tv_match_place"
+        app:layout_constraintEnd_toEndOf="@+id/tv_pickup_way2"
         app:layout_constraintTop_toBottomOf="@+id/iv_match_bar4"
         app:layout_constraintVertical_bias="0.25" />
 
@@ -184,7 +183,6 @@
         android:id="@+id/tv_pickup_way2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:text="트레이너님이 와주세요"
@@ -192,46 +190,57 @@
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/iv_match_bar4"
-        app:layout_constraintStart_toEndOf="@+id/tv_pickup_way"
+        app:layout_constraintEnd_toEndOf="@+id/tv_date_end"
         app:layout_constraintTop_toBottomOf="@+id/iv_match_bar3"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tv_match_date2"
+        android:id="@+id/tv_date_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="107dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:text="23.1.18~23.1.25 "
+        android:text="YYYY-MM-DD"
         android:textColor="@color/main"
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/iv_match_bar3"
-        app:layout_constraintStart_toEndOf="@+id/tv_match_date"
+        app:layout_constraintEnd_toStartOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/iv_match_bar2"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/tv_match_date3"
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/main"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:text=" ~ "
+        app:layout_constraintBottom_toBottomOf="@+id/tv_date_end"
+        app:layout_constraintEnd_toStartOf="@+id/tv_date_end" />
+
+    <TextView
+        android:id="@+id/tv_date_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:text="총8일"
-        android:textStyle="bold"
+        android:text="YYYY-MM-DD"
         android:textColor="@color/main"
         android:textSize="15dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/iv_match_bar3"
-        app:layout_constraintStart_toEndOf="@+id/tv_match_date2"
+        app:layout_constraintEnd_toEndOf="@+id/iv_match_bar2"
         app:layout_constraintTop_toBottomOf="@+id/iv_match_bar2"
         app:layout_constraintVertical_bias="1.0" />
 
+
     <TextView
-        android:id="@+id/tv_total_price2"
+        android:id="@+id/tv_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="208dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:text="20,000"
@@ -239,7 +248,7 @@
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/iv_match_bar2"
-        app:layout_constraintStart_toEndOf="@+id/tv_price_per_hour"
+        app:layout_constraintEnd_toStartOf="@+id/tv_total_price3"
         app:layout_constraintTop_toBottomOf="@+id/iv_match_bar" />
 
     <TextView
@@ -253,7 +262,7 @@
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/iv_match_bar2"
-        app:layout_constraintStart_toEndOf="@+id/tv_total_price2"
+        app:layout_constraintEnd_toEndOf="@+id/iv_match_bar2"
         app:layout_constraintTop_toBottomOf="@+id/iv_match_bar" />
 
     <ImageView

@@ -36,7 +36,10 @@ class ProfileActivity :AppCompatActivity() {
         //binding.ivTrainerProfile.setImageResource(data.result.profile)
         //binding.iv_background_photo=data.result.background
 
-        if (data?.profile != "trainerProfile"|| data.profile != null) {
+        if (data?.profile == "trainerProfile"){
+            binding.ivTrainerProfile.setImageResource(R.drawable.ic_profile)
+        }
+        else if (data?.profile != "trainerProfile"|| data.profile != null) {
             Glide.with(this)
                 .load("${data?.profile}")
                 .into(binding.ivTrainerProfile)
@@ -130,9 +133,11 @@ class ProfileActivity :AppCompatActivity() {
         wish = findViewById<Button>(R.id.cb_heart_btn) as CheckBox
         wish.setOnClickListener { onCheckChanged() }
 
+        //매칭 신청
         val matchRequest =findViewById<Button>(R.id.btn_match_request)
         matchRequest.setOnClickListener {
             val intent = Intent(this, MatchServiceActivity::class.java)
+            intent.putExtra("matchIdx",id)
             startActivity(intent)
         }
 
