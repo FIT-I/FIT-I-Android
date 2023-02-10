@@ -1,4 +1,4 @@
-package com.example.fit_i
+package com.example.fit_i.ui.main.home
 
 import android.app.Activity
 import android.app.Dialog
@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.example.fit_i.R
 import com.example.fit_i.databinding.FragmentBottomsheetBinding
 import com.example.fit_i.databinding.FragmentHomePtBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
