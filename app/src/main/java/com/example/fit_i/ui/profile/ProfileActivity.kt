@@ -70,7 +70,7 @@ class ProfileActivity :AppCompatActivity() {
         binding.tvReviewNum.text=data?.reviewDto?.size.toString()
 
         //리뷰 바인딩
-        if(data?.reviewDto?.size!=0) {
+        if(data?.reviewDto?.size!! >1) {
             binding.tvReview1Name.text = data?.reviewDto?.get(0)?.name
             binding.tvReview1Content.text = data?.reviewDto?.get(0)?.contents
             binding.tvReview1Date.text = data?.reviewDto?.get(0)?.createdAt
@@ -80,6 +80,18 @@ class ProfileActivity :AppCompatActivity() {
             binding.tvReview2Content.text = data?.reviewDto?.get(1)?.contents
             binding.tvReview2Date.text = data?.reviewDto?.get(1)?.createdAt
             binding.tvReivew2Star.text = data?.reviewDto?.get(1)?.grade.toString()
+        }
+        else if(data?.reviewDto?.size==1){
+            binding.tvReview1Name.text = data?.reviewDto?.get(0)?.name
+            binding.tvReview1Content.text = data?.reviewDto?.get(0)?.contents
+            binding.tvReview1Date.text = data?.reviewDto?.get(0)?.createdAt
+            binding.tvReivew1Star.text = data?.reviewDto?.get(0)?.grade.toString()
+
+            binding.tvReview2Name.text = ""
+            binding.tvReview2Content.text = ""
+            binding.tvReview2Date.text = ""
+            binding.tvReivew2Star.text =""
+            binding.ivReview2Star.visibility= View.INVISIBLE
         }
         else{
             binding.tvReview1Name.text = ""
@@ -93,7 +105,6 @@ class ProfileActivity :AppCompatActivity() {
             binding.tvReview2Date.text = ""
             binding.tvReivew2Star.text =""
             binding.ivReview2Star.visibility= View.INVISIBLE
-
         }
 
     }
@@ -103,8 +114,10 @@ class ProfileActivity :AppCompatActivity() {
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        id = intent.getLongExtra("trainerIdx",-1)
-        if(id==null){
+
+        if(intent.hasExtra("trainerIdx")) {
+            id = intent.getLongExtra("trainerIdx", -1)
+        }else{
             id = intent.getLongExtra("likeTrainerIdx",-1)
         }
 
@@ -206,7 +219,6 @@ class ProfileActivity :AppCompatActivity() {
                     response: Response<BaseResponse>
                 ) { if (response.isSuccessful) { // response의 status code가 200~299 사이의
                     // 정상적으로 통신이 성공된 경우
-                        //val result: User? = response.body()
                         Log.d("post", "onResponse 성공: " + response.body().toString());
                         Toast.makeText(this@ProfileActivity, "찜 목록에서 제거", Toast.LENGTH_SHORT).show()
                     } else {
