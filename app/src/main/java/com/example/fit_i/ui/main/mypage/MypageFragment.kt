@@ -147,7 +147,7 @@ class MypageFragment : Fragment() {
         }
 
         //찜 목록
-        ivnextlike.setOnClickListener {
+        binding.clWish.setOnClickListener {
             val mypageLikelistFragment = MypageLikelistFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
 
@@ -157,7 +157,7 @@ class MypageFragment : Fragment() {
         }
 
         //매칭 후기 작성하기
-        ivnextreview.setOnClickListener {
+        binding.clMatching.setOnClickListener {
             val mypageReviewBinding = MypageReviewFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
 
@@ -166,20 +166,20 @@ class MypageFragment : Fragment() {
         }
 
         //위치 설정
-        ivlocation.setOnClickListener {
+        binding.clLocation.setOnClickListener {
             val intent = Intent(context, MypageLocationActivity::class.java)  // 인텐트를 생성해줌,
             startActivity(intent)  // 화면 전환을 시켜줌
             //finish()
         }
         //비밀번호 재설정
-        goChangePW.setOnClickListener {
+        binding.clPwChange.setOnClickListener {
             val intent = Intent(context, MypageChangePwActivity::class.java)  // 인텐트를 생성해줌,
             startActivity(intent)  // 화면 전환을 시켜줌
             //finish()
         }
 
         // 공지사항
-        ivnextnotice.setOnClickListener {
+        binding.clNotice.setOnClickListener {
             val mypageNoticeFragment = MypageNoticeFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
 
@@ -188,7 +188,7 @@ class MypageFragment : Fragment() {
         }
 
         //이용약관
-        ivnextpermisson.setOnClickListener {
+        binding.clPermission.setOnClickListener {
             val mypagepermissonFragment = MypagePermissonFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
 

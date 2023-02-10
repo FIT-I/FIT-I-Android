@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fit_i.BottomSheetFragment
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.response.GetTrainerListResponse
 import com.example.fit_i.data.service.CustomerService

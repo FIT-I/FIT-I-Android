@@ -1,11 +1,13 @@
 package com.example.fit_i.ui.main.matching
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.response.GetMCResponse
@@ -20,6 +22,7 @@ class MatchingFragment : Fragment() {
     private var _binding: FragmentMatchingBinding? = null
     private val binding: FragmentMatchingBinding
         get() = requireNotNull(_binding) {"FragmentMatchingBinding"}
+    //var mContext: Context? = activity
 
 
 //    private val dataList = ArrayList<MatchingData>()
@@ -45,7 +48,7 @@ class MatchingFragment : Fragment() {
         val linearLayoutManager = LinearLayoutManager(context)
         binding.rcMatch.layoutManager=linearLayoutManager
         binding.rcMatch.setHasFixedSize(true)
-        binding.rcMatch.addItemDecoration(DividerItemDecoration(context,LinearLayoutManager.VERTICAL))
+        //binding.rcMatch.addItemDecoration(DividerItemDecoration(context,LinearLayoutManager.VERTICAL))
 
     }
     private fun loadData(){
@@ -58,10 +61,7 @@ class MatchingFragment : Fragment() {
                     Log.d("post", "매칭 onResponse 성공" + response.body().toString())
 
                     val body = response.body()
-                    body?.let {
-//                        binding.practice.text = response.body().toString()
-                        setAdapter(it.result)
-                    }
+                    body?.let { setAdapter(it.result) }
                 }else{
                     //통신 실패...
                     Log.d("post","매칭 onResponse 실패")

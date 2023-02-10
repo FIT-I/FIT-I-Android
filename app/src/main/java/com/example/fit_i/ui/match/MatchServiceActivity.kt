@@ -17,6 +17,8 @@ class MatchServiceActivity :AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_match_service)
 
+        val id = intent.getLongExtra("matchIdx",-1)
+
         checkBox = findViewById(R.id.cb_check_service)
         buttonNext=findViewById(R.id.btn_next_step)
         buttonNext.isEnabled = false
@@ -33,10 +35,9 @@ class MatchServiceActivity :AppCompatActivity(){
         }
 
         //서비스선택 다음단계로 이동
-
-
         buttonNext.setOnClickListener{
-            val intent = Intent(this, MatchDateChooseActivity::class.java)
+            val intent = Intent(this, MatchDateActivity::class.java)
+            intent.putExtra("matchIdx",id)
             startActivity(intent)
             finish()
         }

@@ -19,6 +19,10 @@ class MatchPickUpActivity :AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_match_pickup)
 
+        val id = intent.getLongExtra("matchIdx",-1)
+        val start = intent.getStringExtra("start")
+        val end = intent.getStringExtra("end")
+
         pickup1 = findViewById(R.id.btn_pickup1)
         pickup2 = findViewById(R.id.btn_pickup2)
         buttonNext = findViewById(R.id.btn_next_step)
@@ -34,21 +38,21 @@ class MatchPickUpActivity :AppCompatActivity(){
             startActivity(intent)
             finish()
         }
-        //픽업 다음 단계로 이동
-        val nextStep = findViewById<TextView>(R.id.btn_next_step)
-//        nextStep.setOnClickListener{
-//            val intent = Intent(this,MatchCheckActivity2::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
-        nextStep.setOnClickListener{
+
+        buttonNext.setOnClickListener{
             if(pickup1.isChecked){
                 val intent = Intent(this, MatchCheckActivity1::class.java)
+                intent.putExtra("matchIdx",id)
+                intent.putExtra("start",start)
+                intent.putExtra("end",end)
                 startActivity(intent)
                 finish()
             }
             else{
                 val intent = Intent(this, MatchCheckActivity2::class.java)
+                intent.putExtra("matchIdx",id)
+                intent.putExtra("start",start)
+                intent.putExtra("end",end)
                 startActivity(intent)
                 finish()
             }

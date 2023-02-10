@@ -27,8 +27,8 @@ class ProfileReportActivity:AppCompatActivity() {
         setContentView(binding.root)
 
         //아이디 받아오기
-        val id = intent.getLongExtra("id",-1)
-        Log.d("post",id.toString())
+        //val id = intent.getLongExtra("id",-1)
+        //Log.d("post",id.toString())
 
         val goBack = findViewById<ImageButton>(R.id.ib_close)
         goBack.setOnClickListener{
@@ -58,7 +58,7 @@ class ProfileReportActivity:AppCompatActivity() {
                 ) { dialog, which ->
                     //Log.d("MyTag", "positive")
                     val redbellService = RetrofitImpl.getApiClient().create(RedbellService::class.java)
-                    redbellService.report(ReportRequest(reason,id)).enqueue(object : Callback<BaseResponse> {
+                    redbellService.report(ReportRequest(reason,intent.getLongExtra("id",-1))).enqueue(object : Callback<BaseResponse> {
                         override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
                             if(response.isSuccessful){
                                 // 정상적으로 통신이 성공된 경우
@@ -67,7 +67,7 @@ class ProfileReportActivity:AppCompatActivity() {
                                 finish()
                             }else{
                                 // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
-                                Log.d("post", "onResponse 실패"+reason+id+response.code())
+                                Log.d("post", "onResponse 실패"+response.code())
                             }
                         }
 

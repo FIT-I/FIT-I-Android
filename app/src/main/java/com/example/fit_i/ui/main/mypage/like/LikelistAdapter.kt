@@ -43,7 +43,7 @@ class LikelistAdapter(private val dataList: List<WishResponse.Result>): Recycler
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, ProfileActivity::class.java)
             intent.putExtra(
-                "trainerIdx", dataList[position].trainerIdx)
+                "likeTrainerIdx", dataList[position].trainerIdx)
             startActivity(holder.itemView.context, intent, null)
         }
     }

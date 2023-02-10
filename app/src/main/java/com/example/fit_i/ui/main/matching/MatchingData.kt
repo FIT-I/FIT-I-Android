@@ -5,8 +5,8 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class MatchingData(
-    val matchingId: Int,
-    val trainerId: Int,
+    val matchingId: Long,
+    val trainerId: Long,
     val name: String,
     val profile: String,
     val school: String,

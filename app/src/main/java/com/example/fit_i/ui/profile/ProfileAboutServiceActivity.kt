@@ -17,11 +17,11 @@ class ProfileAboutServiceActivity : AppCompatActivity() {
 
         binding.tvAboutServiceContext.text=intent.getStringExtra("service")
 
-        val goBack = findViewById<ImageButton>(R.id.ib_back_arrow)
+        /*val goBack = findViewById<ImageButton>(R.id.ib_back_arrow)
         goBack.setOnClickListener{
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
             finish()
-        }
+        }*/
     }
 }

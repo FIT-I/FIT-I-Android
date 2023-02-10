@@ -100,20 +100,18 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_review_match"/>
         <EditText
             android:id="@+id/et_review"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:textColor="@color/main"
             android:textSize="15sp"
             android:enabled="true"
             android:layout_marginTop="5dp"
             android:paddingTop="10dp"
             android:padding="5dp"
-            android:privateImeOptions="defaultInputmode=korean"
+            android:inputType="text"
             app:layout_constraintTop_toBottomOf="@+id/iv_line6"
             app:layout_constraintStart_toStartOf="parent"
             android:background="@null"/>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button

@@ -9,7 +9,7 @@ import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fit_i.BottomSheetFragment
+import com.example.fit_i.ui.main.home.BottomSheetFragment
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.response.GetTrainerListResponse
 import com.example.fit_i.data.service.CustomerService
@@ -39,32 +39,32 @@ class HomePtFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        lodeData()
+        lodeData(arrayOf("recent"))
 
 
         binding.tvSort.text = "실시간 순"
         binding.llSort.setOnClickListener(){
-            val bottomSheet = BottomSheetFragment{
+            val bottomSheet = BottomSheetFragment {
                 when (it){
                     0 -> {
                         binding.tvSort.text = "실시간 순"
-                        sort = arrayOf("recent")
-                        lodeData()
+                        //sort = arrayOf("recent")
+                        lodeData(arrayOf("recent"))
                     }
                     1 -> {
                         binding.tvSort.text = "트레이너 레벨 순"
-                        sort = arrayOf("level")
-                        lodeData()
+                        //sort = arrayOf("level")
+                        lodeData(arrayOf("level"))
                     }
                     2 -> {
                         binding.tvSort.text = "가격 낮은 순"
-                        sort = arrayOf("recent","DESC")
-                        lodeData()
+                        //sort = arrayOf("recent","DESC")
+                        lodeData(arrayOf("recent","DESC"))
                     }
                     3 -> {
                         binding.tvSort.text = "가격 높은 순"
-                        sort = arrayOf("recent","ASC")
-                        lodeData()
+                        //sort = arrayOf("recent","ASC")
+                        lodeData(arrayOf("recent","ASC"))
                     }
                 }
             }
@@ -84,7 +84,7 @@ class HomePtFragment : Fragment() {
     }
 
 
-    private fun lodeData() {
+    private fun lodeData(sort: Array<String>) {
 
         val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
         customerService.getTrainerlist("pt",0,200,sort).enqueue(object :

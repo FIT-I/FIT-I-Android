@@ -3,6 +3,7 @@ package com.example.fit_i.ui.profile
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -29,14 +30,16 @@ class ProfileActivity :AppCompatActivity() {
     var me by Delegates.notNull<String>()
 
 
-
     private lateinit var wish: CheckBox
 
     fun onBind(data: GetTrainerInfoResponse.Result?){
         //binding.ivTrainerProfile.setImageResource(data.result.profile)
         //binding.iv_background_photo=data.result.background
 
-        if (data?.profile != "trainerProfile") {
+        if (data?.profile == "trainerProfile"){
+            binding.ivTrainerProfile.setImageResource(R.drawable.ic_profile)
+        }
+        else if (data?.profile != "trainerProfile"|| data.profile != null) {
             Glide.with(this)
                 .load("${data?.profile}")
                 .into(binding.ivTrainerProfile)
@@ -67,15 +70,42 @@ class ProfileActivity :AppCompatActivity() {
         binding.tvReviewNum.text=data?.reviewDto?.size.toString()
 
         //리뷰 바인딩
-        binding.tvReview1Name.text= data?.reviewDto?.get(0)?.name
-        binding.tvReview1Content.text= data?.reviewDto?.get(0)?.contents
-        binding.tvReview1Date.text= data?.reviewDto?.get(0)?.createdAt
-        binding.tvReivew1Star.text=data?.reviewDto?.get(0)?.grade.toString()
+        if(data?.reviewDto?.size!! >1) {
+            binding.tvReview1Name.text = data?.reviewDto?.get(0)?.name
+            binding.tvReview1Content.text = data?.reviewDto?.get(0)?.contents
+            binding.tvReview1Date.text = data?.reviewDto?.get(0)?.createdAt
+            binding.tvReivew1Star.text = data?.reviewDto?.get(0)?.grade.toString()
 
-        binding.tvReview2Name.text= data?.reviewDto?.get(1)?.name
-        binding.tvReview2Content.text= data?.reviewDto?.get(1)?.contents
-        binding.tvReview2Date.text= data?.reviewDto?.get(1)?.createdAt
-        binding.tvReivew2Star.text=data?.reviewDto?.get(1)?.grade.toString()
+            binding.tvReview2Name.text = data?.reviewDto?.get(1)?.name
+            binding.tvReview2Content.text = data?.reviewDto?.get(1)?.contents
+            binding.tvReview2Date.text = data?.reviewDto?.get(1)?.createdAt
+            binding.tvReivew2Star.text = data?.reviewDto?.get(1)?.grade.toString()
+        }
+        else if(data?.reviewDto?.size==1){
+            binding.tvReview1Name.text = data?.reviewDto?.get(0)?.name
+            binding.tvReview1Content.text = data?.reviewDto?.get(0)?.contents
+            binding.tvReview1Date.text = data?.reviewDto?.get(0)?.createdAt
+            binding.tvReivew1Star.text = data?.reviewDto?.get(0)?.grade.toString()
+
+            binding.tvReview2Name.text = ""
+            binding.tvReview2Content.text = ""
+            binding.tvReview2Date.text = ""
+            binding.tvReivew2Star.text =""
+            binding.ivReview2Star.visibility= View.INVISIBLE
+        }
+        else{
+            binding.tvReview1Name.text = ""
+            binding.tvReview1Content.text = ""
+            binding.tvReview1Date.text = ""
+            binding.tvReivew1Star.text = ""
+            binding.ivReview1Star.visibility= View.INVISIBLE
+
+            binding.tvReview2Name.text = ""
+            binding.tvReview2Content.text = ""
+            binding.tvReview2Date.text = ""
+            binding.tvReivew2Star.text =""
+            binding.ivReview2Star.visibility= View.INVISIBLE
+        }
 
     }
 
@@ -83,7 +113,18 @@ class ProfileActivity :AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        id = intent.getLongExtra("trainerIdx",-1)
+
+
+        if(intent.hasExtra("trainerIdx")) {
+            id = intent.getLongExtra("trainerIdx", -1)
+        }
+        else if(intent.hasExtra("trainerId")){
+            id = intent.getLongExtra("trainerId", -1)
+        }
+        else{
+            id = intent.getLongExtra("likeTrainerIdx",-1)
+        }
+
         Log.d("post", id.toString())
 
         val commmunalService = RetrofitImpl.getApiClient().create(CommunalService::class.java)
@@ -109,9 +150,11 @@ class ProfileActivity :AppCompatActivity() {
         wish = findViewById<Button>(R.id.cb_heart_btn) as CheckBox
         wish.setOnClickListener { onCheckChanged() }
 
+        //매칭 신청
         val matchRequest =findViewById<Button>(R.id.btn_match_request)
         matchRequest.setOnClickListener {
             val intent = Intent(this, MatchServiceActivity::class.java)
+            intent.putExtra("matchIdx",id)
             startActivity(intent)
         }
 
@@ -180,7 +223,6 @@ class ProfileActivity :AppCompatActivity() {
                     response: Response<BaseResponse>
                 ) { if (response.isSuccessful) { // response의 status code가 200~299 사이의
                     // 정상적으로 통신이 성공된 경우
-                        //val result: User? = response.body()
                         Log.d("post", "onResponse 성공: " + response.body().toString());
                         Toast.makeText(this@ProfileActivity, "찜 목록에서 제거", Toast.LENGTH_SHORT).show()
                     } else {
