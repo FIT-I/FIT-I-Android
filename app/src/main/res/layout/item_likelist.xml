@@ -18,6 +18,8 @@
             android:id="@+id/iv_profile"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:background="@drawable/custom_profile_matching"
+            android:scaleType="centerCrop"
             android:src="@drawable/ic_profile" />
 
         <LinearLayout
