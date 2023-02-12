@@ -270,14 +270,15 @@
                 android:layout_marginTop="145dp"
                 android:layout_marginEnd="290dp"
                 android:layout_marginBottom="-35dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_profile"
+                android:background="@drawable/custom_profile"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_background_photo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0"
-                android:background="@drawable/ic_profile"
-                app:srcCompat="@drawable/ic_profile" />
+                app:layout_constraintVertical_bias="1.0" />
 
 
             <TextView

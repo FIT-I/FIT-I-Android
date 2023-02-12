@@ -43,6 +43,7 @@ class ProfileActivity :AppCompatActivity() {
             Glide.with(this)
                 .load("${data?.profile}")
                 .into(binding.ivTrainerProfile)
+            binding.ivTrainerProfile.clipToOutline = true
             Log.d("post", data?.profile.toString())
         }
 

@@ -14,23 +14,24 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.fit_i.R
-import com.example.fit_i.databinding.FragmentBottomsheetBinding
-import com.example.fit_i.databinding.FragmentHomePtBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import java.util.logging.Logger
 
 
-class BottomSheetFragment(val itemClick: (Int) -> Unit) : BottomSheetDialogFragment() {
+class BottomSheetFragment(val itemClick: (Int) -> Unit) :
+    BottomSheetDialogFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View? = inflater.inflate(R.layout.fragment_bottomsheet, container, false)
 
-        val view = inflater.inflate(R.layout.fragment_bottomsheet, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         val time : TextView = view.findViewById(R.id.tv_sort_time)
         val level : TextView = view.findViewById(R.id.tv_sort_level)
         val high : TextView = view.findViewById(R.id.tv_sort_high)
@@ -60,6 +61,5 @@ class BottomSheetFragment(val itemClick: (Int) -> Unit) : BottomSheetDialogFragm
             dismiss()
         }
 
-        return view
     }
 }

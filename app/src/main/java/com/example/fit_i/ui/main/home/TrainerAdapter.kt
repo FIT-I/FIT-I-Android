@@ -23,20 +23,30 @@ class TrainerAdapter(private val dataList: List<GetTrainerListResponse.Result.Dt
             binding.tvPr.text=dataList[position].contents
             binding.tvMoney.text= dataList[position].cost.toString()
 
-
             //레벨
             when (dataList[position].levelName) {
                 "gold" -> binding.ivRank.setImageResource(R.drawable.img_gold)
                 "sliver" -> binding.ivRank.setImageResource(R.drawable.img_sliver)
                 "bronze" -> binding.ivRank.setImageResource(R.drawable.img_bronze)
             }
-
-            if (dataList[position].profile != "trainerProfile"|| dataList[position].profile  != null) {
+            if (dataList[position].profile == "trainerProfile"){
+                binding.ivProfile.setImageResource(R.drawable.ic_profile)
+            }
+            else if (dataList[position].profile != "trainerProfile"|| dataList[position].profile != null) {
                 Glide.with(itemView)
-                    .load("${dataList[position]?.profile}")
+                    .load("${dataList[position].profile}")
                     .into(binding.ivProfile)
+                binding.ivProfile.clipToOutline = true
                 Log.d("post", dataList[position].profile)
             }
+//
+//            if (dataList[position].profile != "trainerProfile"|| dataList[position].profile  != null) {
+//                Glide.with(itemView)
+//                    .load("${dataList[position]?.profile}")
+//                    .into(binding.ivProfile)
+//                binding.ivProfile.clipToOutline = true
+//                Log.d("post", dataList[position].profile)
+//            }
         }
     }
 
