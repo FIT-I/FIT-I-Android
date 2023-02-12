@@ -10,12 +10,13 @@
         android:id="@+id/tv_mypage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
         android:text="마이페이지"
-        android:textSize="23sp"
-        android:textStyle="bold"
         android:textColor="@color/main"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="30dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,40 +74,37 @@
         app:layout_constraintTop_toTopOf="@+id/iv_profileM" />
 
 
-    <FrameLayout
-        android:id="@+id/fl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_emailM">
+<!--    <FrameLayout-->
+<!--        android:id="@+id/fl"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        android:layout_gravity="center"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tv_emailM">-->
 
-        <TextView
-            android:layout_margin="10dp"
-            android:id="@+id/ImageView01"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textColor="@color/main"
-            android:text="  내 매칭 관리"
-            android:gravity="center_vertical"
-            android:background="@drawable/rectangle" />
+<!--        <TextView-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:id="@+id/ImageView01"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="10dp"-->
+<!--            android:textColor="@color/main"-->
+<!--            android:text="  내 매칭 관리"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:background="@drawable/rectangle" />-->
 
-        <Switch
-            android:id="@+id/swt_my"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|center"
-            android:layout_marginEnd="25dp"
-            android:track="@drawable/switch_my"
-            android:thumb="@drawable/switch_my_one"/>
+<!--        <Switch-->
+<!--            android:id="@+id/swt_my"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="end|center"-->
+<!--            android:layout_marginEnd="25dp"-->
+<!--            android:track="@drawable/switch_my"-->
+<!--            android:thumb="@drawable/switch_my_one"/>-->
 
-
-
-
-    </FrameLayout>
+<!--    </FrameLayout>-->
 
     <ImageView
         android:id="@+id/iv_bar2"
@@ -114,7 +112,7 @@
         android:layout_height="1dp"
         android:background="@color/gray"
         android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/fl"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_emailM"/>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
