@@ -45,16 +45,6 @@ class MypageLikelistFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         lodeData()
-
-        val ibpre = view.findViewById<View>(R.id.ib_pre4) as ImageButton
-
-        ibpre.setOnClickListener{
-            val mypageFragment = MypageFragment()
-            val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
-
-            transaction.replace(R.id.fl_container,mypageFragment)
-            transaction.commit()
-        }
     }
     //API 연결부분
     private fun setAdapter(likeList : List<WishResponse.Result>){

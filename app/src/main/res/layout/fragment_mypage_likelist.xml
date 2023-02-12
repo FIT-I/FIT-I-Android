@@ -5,31 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/ib_pre4"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="60dp"
-        android:background="@android:color/transparent"
-        android:backgroundTint="@color/main"
-        android:scaleType="fitStart"
-        android:src="@drawable/ic_pre"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/tv_likelist"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="찜 목록"
+        android:textColor="@color/main"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/ib_pre4"
-        android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="찜 목록"
-            android:textSize="20sp"
-            android:textColor="@color/main"
-            android:textStyle="bold"/>
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="70dp" />
     <ImageView
         android:id="@+id/iv_line"
         android:layout_width="match_parent"

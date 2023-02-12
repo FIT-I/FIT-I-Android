@@ -39,14 +39,6 @@ class TrainerAdapter(private val dataList: List<GetTrainerListResponse.Result.Dt
                 binding.ivProfile.clipToOutline = true
                 Log.d("post", dataList[position].profile)
             }
-//
-//            if (dataList[position].profile != "trainerProfile"|| dataList[position].profile  != null) {
-//                Glide.with(itemView)
-//                    .load("${dataList[position]?.profile}")
-//                    .into(binding.ivProfile)
-//                binding.ivProfile.clipToOutline = true
-//                Log.d("post", dataList[position].profile)
-//            }
         }
     }
 

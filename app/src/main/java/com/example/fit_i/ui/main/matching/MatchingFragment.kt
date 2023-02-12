@@ -1,13 +1,11 @@
 package com.example.fit_i.ui.main.matching
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.response.GetMCResponse
@@ -22,11 +20,6 @@ class MatchingFragment : Fragment() {
     private var _binding: FragmentMatchingBinding? = null
     private val binding: FragmentMatchingBinding
         get() = requireNotNull(_binding) {"FragmentMatchingBinding"}
-    //var mContext: Context? = activity
-
-
-//    private val dataList = ArrayList<MatchingData>()
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -74,6 +67,4 @@ class MatchingFragment : Fragment() {
             }
         })
     }
-
-
 }
