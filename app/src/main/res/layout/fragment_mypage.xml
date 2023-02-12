@@ -35,11 +35,11 @@
         android:id="@+id/iv_profileM"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="30dp"
         android:src="@drawable/ic_profile"
         app:layout_constraintBottom_toBottomOf="@id/tv_emailM"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_nameM" />
+        app:layout_constraintStart_toStartOf="@+id/tv_mypage"
+        app:layout_constraintTop_toTopOf="@+id/tv_nameM"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_nameM"
@@ -93,6 +93,7 @@
             android:text="  내 매칭 관리"
             android:gravity="center_vertical"
             android:background="@drawable/rectangle" />
+
         <Switch
             android:id="@+id/swt_my"
             android:layout_width="wrap_content"

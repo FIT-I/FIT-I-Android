@@ -31,17 +31,17 @@ class HomePtFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-            _binding = FragmentHomePtBinding.inflate(inflater, container, false)
-            return binding.root
+        _binding = FragmentHomePtBinding.inflate(inflater, container, false)
+        return binding.root
         }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        lodeData(sort)
 
-        lodeData(arrayOf("recent"))
 
-
+/*
         binding.tvSort.text = "실시간 순"
         binding.llSort.setOnClickListener(){
             val bottomSheet = BottomSheetFragment {
@@ -69,7 +69,7 @@ class HomePtFragment : Fragment() {
                 }
             }
             activity?.let { it1 -> bottomSheet.show(it1.supportFragmentManager,bottomSheet.tag) }
-        } //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함
+        } //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함*/
     }
 
     private fun setAdapter(trainerList: List<GetTrainerListResponse.Result.Dto>){
@@ -87,7 +87,7 @@ class HomePtFragment : Fragment() {
     private fun lodeData(sort: Array<String>) {
 
         val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
-        customerService.getTrainerlist("pt",0,200,sort).enqueue(object :
+        customerService.getTrainerlist("pt",0,500,sort).enqueue(object :
             Callback<GetTrainerListResponse> {
             override fun onResponse(call: Call<GetTrainerListResponse>, response: Response<GetTrainerListResponse>) {
                 if(response.isSuccessful){
