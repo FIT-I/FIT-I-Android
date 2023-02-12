@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.fit_i.R
 import com.example.fit_i.data.model.response.GetMCResponse
 import com.example.fit_i.databinding.ItemMatchBinding
 
@@ -16,18 +17,22 @@ class MatchingAdapter(private val dataList: List<GetMCResponse.Result>) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(position: Int) {
+
             binding.matchIm.text = dataList[position].name
             binding.matchStar.text = dataList[position].grade.toString()
             binding.matchUni.text = dataList[position].school
             binding.matchDay.text = dataList[position].orderDate
 
-            if (dataList[position].profile != "trainerProfile" || dataList[position].profile != null) {
+            if (dataList[position].profile == "trainerProfile"){
+                binding.matchProfile.setImageResource(R.drawable.ic_profile)
+            }
+            else if (dataList[position].profile != "trainerProfile"|| dataList[position].profile != null) {
                 Glide.with(itemView)
-                    .load("${dataList[position]?.profile}")
+                    .load("${dataList[position].profile}")
                     .into(binding.matchProfile)
+                binding.matchProfile.clipToOutline = true
                 Log.d("post", dataList[position].profile)
             }
-
         }
     }
 
@@ -46,23 +51,10 @@ class MatchingAdapter(private val dataList: List<GetMCResponse.Result>) :
         holder.itemView.setOnClickListener {
 
             val intent = Intent(holder.itemView.context, MatchingListActivity::class.java)
-//            matchingIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            intent.getLongExtra("matchingId", dataList[position].matchingId)
-            intent.getLongExtra("trainerId", dataList[position].trainerId)
+            intent.putExtra("matchingId", dataList[position].matchingId)
+            intent.putExtra("trainerId", dataList[position].trainerId)
 
             startActivity(holder.itemView.context, intent, null)
-//            matchingIntent.putExtra(
-//                "matchingIdx",MatchingData(
-//                    dataList[position].matchingId,
-//                    dataList[position].trainerId,
-//                    dataList[position].name,
-//                    dataList[position].profile,
-//                    dataList[position].school,
-//                    dataList[position].grade,
-//                    dataList[position].orderDate,
-//                    dataList[position].orderDateGap
-//                )
-//            )
         }
     }
 

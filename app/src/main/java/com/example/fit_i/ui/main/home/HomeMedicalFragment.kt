@@ -13,14 +13,15 @@ import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.response.GetTrainerListResponse
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.FragmentHomeFriendBinding
+import com.example.fit_i.databinding.FragmentHomeMedicalBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class HomeMedicalFragment : Fragment() {
-    private var _binding: FragmentHomeFriendBinding? = null
-    private val binding: FragmentHomeFriendBinding
-        get() = requireNotNull(_binding) { "FragmentHomeFriendBinding" }
+    private var _binding: FragmentHomeMedicalBinding? = null
+    private val binding: FragmentHomeMedicalBinding
+        get() = requireNotNull(_binding) { "FragmentHomeMedicalBinding" }
 
     var sort = arrayOf("recent")
 
@@ -30,7 +31,7 @@ class HomeMedicalFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHomeFriendBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeMedicalBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -38,8 +39,8 @@ class HomeMedicalFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        lodeData()
-
+        lodeData(sort)
+/*
         val trainerList : ArrayList<TrainerData> = arrayListOf()
 //
 //        trainerList.apply {
@@ -77,7 +78,7 @@ class HomeMedicalFragment : Fragment() {
                 }
             }
             activity?.let { it1 -> bottomSheet.show(it1.supportFragmentManager,bottomSheet.tag) }
-        } //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함
+        } //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함*/
     }
 
     private fun setAdapter(trainerList: List<GetTrainerListResponse.Result.Dto>){
@@ -94,10 +95,10 @@ class HomeMedicalFragment : Fragment() {
     }
 
 
-    private fun lodeData() {
+    private fun lodeData(sort: Array<String>) {
 
         val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
-        customerService.getTrainerlist("rehab", 0, 20, arrayOf("recent", "DESC")).enqueue(object :
+        customerService.getTrainerlist("rehab", 0, 500, sort).enqueue(object :
             Callback<GetTrainerListResponse> {
             override fun onResponse(
                 call: Call<GetTrainerListResponse>,

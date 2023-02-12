@@ -12,6 +12,7 @@ import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.model.response.GetTrainerInfoResponse
+import com.example.fit_i.data.model.response.WishResponse
 import com.example.fit_i.data.service.CommunalService
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.ActivityProfileBinding
@@ -33,8 +34,6 @@ class ProfileActivity :AppCompatActivity() {
     private lateinit var wish: CheckBox
 
     fun onBind(data: GetTrainerInfoResponse.Result?){
-        //binding.ivTrainerProfile.setImageResource(data.result.profile)
-        //binding.iv_background_photo=data.result.background
 
         if (data?.profile == "trainerProfile"){
             binding.ivTrainerProfile.setImageResource(R.drawable.ic_profile)
@@ -43,6 +42,7 @@ class ProfileActivity :AppCompatActivity() {
             Glide.with(this)
                 .load("${data?.profile}")
                 .into(binding.ivTrainerProfile)
+            binding.ivTrainerProfile.clipToOutline = true
             Log.d("post", data?.profile.toString())
         }
 
@@ -121,11 +121,38 @@ class ProfileActivity :AppCompatActivity() {
         else if(intent.hasExtra("trainerId")){
             id = intent.getLongExtra("trainerId", -1)
         }
+        else if(intent.hasExtra("chatTrainerId")){
+            id = intent.getLongExtra("chatTrainerId", -1)
+        }
         else{
             id = intent.getLongExtra("likeTrainerIdx",-1)
         }
 
         Log.d("post", id.toString())
+
+        customerService.getWishlist().enqueue(object: Callback<WishResponse>{
+            override fun onResponse(
+                call : Call<WishResponse>,
+                response: Response<WishResponse>
+            ){
+                if(response.isSuccessful){
+                    //정상적으로 통신이 성공된 경우
+                    Log.d("post","onResponse 성공"+response.body().toString());
+
+                    //찜목록에 들어있는 비교해야 함
+                    //if(response.body()?.result.contains(id)){ wish.isChecked = true }
+
+                }else{
+                    //통신 실패
+                    Log.d("post","onResponse 실패")
+                }
+            }
+            override fun onFailure(call: Call<WishResponse>, t: Throwable){
+                //통신 실패
+                Log.d("get","onFailure 에러"+t.message.toString());
+            }
+        })
+
 
         val commmunalService = RetrofitImpl.getApiClient().create(CommunalService::class.java)
         commmunalService.getTrainerInfo(id).enqueue(object : Callback<GetTrainerInfoResponse> {

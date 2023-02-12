@@ -39,17 +39,7 @@ class MypageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val ibsetting = view.findViewById<View>(R.id.ib_setting) as ImageButton
-
-        val ivnextlike = view.findViewById<View>(R.id.iv_next_like) as ImageView
-        val ivnextnotice = view.findViewById<View>(R.id.iv_next_notice) as ImageView
-        val ivnextpermisson = view.findViewById<View>(R.id.iv_next_permisson) as ImageView
-        val tvgotoprofile = view.findViewById<View>(R.id.tv_go_modifyProfile) as TextView
-        val ivnextreview = view.findViewById<View>(R.id.iv_next_review) as ImageView
-        val ivlocation = view.findViewById<View>(R.id.iv_next_location) as ImageView
-        val goChangePW = view.findViewById<View>(R.id.iv_next_login_reset) as ImageView
-
-        val swtmy : Switch= view.findViewById(R.id.swt_my)
+        //val swtmy : Switch= view.findViewById(R.id.swt_my)
 
         fun onBind(data: GetMypageResponse.Result) {
             binding.tvNameM.text=data.userName
@@ -79,7 +69,7 @@ class MypageFragment : Fragment() {
         })
 
         //설정  -로그아웃,탈퇴하기
-        ibsetting.setOnClickListener {
+        binding.ibSetting.setOnClickListener {
             val mypageSettingFragment = MypageLogoutFragment()
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
 
@@ -87,9 +77,8 @@ class MypageFragment : Fragment() {
             transaction.commit()
         }
 
-
         //마이페이지
-        tvgotoprofile.setOnClickListener {
+        binding.tvGoModifyProfile.setOnClickListener {
             val mypageModifyProfileFragment = MypageModifyProfileFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
 
@@ -97,10 +86,11 @@ class MypageFragment : Fragment() {
             transaction.commit()
         }
 
-        val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
 
+        /*
         //스위치 눌렀을때 기능 추가하기
         swtmy.setOnCheckedChangeListener { buttonView, isChecked ->
+            val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
             if (isChecked) {
                 //체크된 상태 취소시 반응 추가
                 customerService.ringOn().enqueue(object :
@@ -144,7 +134,7 @@ class MypageFragment : Fragment() {
                     }
                 })
             }
-        }
+        }*/
 
         //찜 목록
         binding.clWish.setOnClickListener {
@@ -171,6 +161,7 @@ class MypageFragment : Fragment() {
             startActivity(intent)  // 화면 전환을 시켜줌
             //finish()
         }
+
         //비밀번호 재설정
         binding.clPwChange.setOnClickListener {
             val intent = Intent(context, MypageChangePwActivity::class.java)  // 인텐트를 생성해줌,

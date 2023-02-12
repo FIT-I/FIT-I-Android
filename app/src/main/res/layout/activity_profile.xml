@@ -270,14 +270,15 @@
                 android:layout_marginTop="145dp"
                 android:layout_marginEnd="290dp"
                 android:layout_marginBottom="-35dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_profile"
+                android:background="@drawable/custom_profile"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_background_photo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0"
-                android:background="@drawable/ic_profile"
-                app:srcCompat="@drawable/ic_profile" />
+                app:layout_constraintVertical_bias="1.0" />
 
 
             <TextView
@@ -641,7 +642,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2023.1.1"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="15dp"
                     android:textColor="@color/gray"
                     android:textSize="10dp"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_review1_name"
@@ -690,7 +691,7 @@
                     android:id="@+id/tv_review2_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="userName1"
+                    android:text="userName2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -699,7 +700,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2023.1.1"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="15dp"
                     android:textColor="@color/gray"
                     android:textSize="10dp"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_review2_name"

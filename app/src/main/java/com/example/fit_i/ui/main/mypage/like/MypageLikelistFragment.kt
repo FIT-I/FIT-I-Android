@@ -45,16 +45,6 @@ class MypageLikelistFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         lodeData()
-
-        val ibpre = view.findViewById<View>(R.id.ib_pre4) as ImageButton
-
-        ibpre.setOnClickListener{
-            val mypageFragment = MypageFragment()
-            val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
-
-            transaction.replace(R.id.fl_container,mypageFragment)
-            transaction.commit()
-        }
     }
     //API 연결부분
     private fun setAdapter(likeList : List<WishResponse.Result>){
@@ -79,6 +69,13 @@ class MypageLikelistFragment : Fragment() {
                 if(response.isSuccessful){
                     //정상적으로 통신이 성공된 경우
                     Log.d("post","onResponse 성공"+response.body().toString());
+
+                    if(response.body()?.result?.size==0){
+                        binding.clMatchingNo.visibility=View.VISIBLE
+                    }
+                    else
+                        binding.clMatchingNo.visibility=View.INVISIBLE
+
 
                     val body = response.body()
                     body?.let { setAdapter(it.result) }

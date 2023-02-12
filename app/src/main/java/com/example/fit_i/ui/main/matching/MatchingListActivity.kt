@@ -25,8 +25,14 @@ class MatchingListActivity : AppCompatActivity() {
         binding.tvMatchingAllprcie2.text = data?.totalPrice
         binding.tvMatchingStart.text = data?.matchingStart
         binding.tvMatchingEnd.text = data?.matchingEnd
-        binding.tvMatchingAlldate.text = data?.matchingPeriod.toString()
-        binding.tvMatchingPickup2.text = data?.pickUpType
+        binding.tvMatchingAll.text = data?.matchingPeriod.toString()
+
+        if(data?.pickUpType=="TRAINER_GO") {
+            binding.tvMatchingPickup2.text = "트레이너님이 와주세요"
+        }else if(data?.pickUpType=="CUSTOMER_GO") {
+            binding.tvMatchingPickup2.text = "제가 직접 갈게요"
+        }
+
         binding.tvMatchingPlace.text = data?.location
     }
 
@@ -39,15 +45,7 @@ class MatchingListActivity : AppCompatActivity() {
         val trainerId = intent.getLongExtra("trainerId",-1)//트레이너인덱스
 
         val btnmatching = findViewById<Button>(R.id.btn_matching_List)
-        val btnback = findViewById<ImageButton>(R.id.btn_back)
         val matchingService = RetrofitImpl.getApiClient().create(MatchingService::class.java)
-
-        //뒤로 가기 버튼
-        btnback.setOnClickListener {
-            val matchingFragment = MatchingFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fl_container,matchingFragment).commit()
-        }
 
         // 트레이너 프로필로 이동하는 기능
         btnmatching.setOnClickListener{
@@ -72,17 +70,13 @@ class MatchingListActivity : AppCompatActivity() {
                 else{
                     //통신실패
                     Log.d("post","매칭 명세표 onResponse 실패:"+ response.body().toString())
-            }
+                }
             }
 
             override fun onFailure(call: Call<GetMatchlistResponse>, t: Throwable) {
                 //통신 실패 (예외)
                 Log.d("post"," 매칭 명세표 onFailure 에러"+ t.message.toString())
             }
-
         })
-
-
     }
-
 }

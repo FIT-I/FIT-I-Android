@@ -6,12 +6,12 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.fit_i.App
 import com.example.fit_i.MySharedPreferences
@@ -22,7 +22,6 @@ import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.AccountsService
 import com.example.fit_i.databinding.FragmentMypageLogoutBinding
 import com.example.fit_i.ui.login.LoginActivity
-import com.example.fit_i.ui.main.mypage.MypageFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -40,18 +39,8 @@ class MypageLogoutFragment :Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_mypage_logout, container, false)
 
-        val ibpre = view.findViewById<View>(R.id.ib_pre1)
         val btnlogout = view.findViewById<View>(R.id.btn_logout) as AppCompatButton
         val btnwithdraw = view.findViewById<View>(R.id.btn_withdraw) as AppCompatButton
-
-        ibpre.setOnClickListener {
-            val mypageFragment = MypageFragment()
-            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-
-            //이전 화면으로 이동
-            transaction.replace(R.id.fl_container, mypageFragment)
-            transaction.commit()
-        }
 
         btnlogout.setOnClickListener {
             val dialog = AlertDialog.Builder(context)

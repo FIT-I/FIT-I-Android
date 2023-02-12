@@ -5,10 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
-import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.CommunalService
@@ -33,18 +30,6 @@ class MypagePermissonFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val ibpre = view.findViewById<View>(R.id.ib_pre3) as ImageButton
-
-        ibpre.setOnClickListener{
-            val mypageFragment = MypageFragment()
-            val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
-
-            //이전 화면으로 이동
-            transaction.replace(R.id.fl_container,mypageFragment)
-            transaction.commit()
-
-        }
-
 
         fun onBind(data: BaseResponse) {
             binding.tvPermisson.text=data.result

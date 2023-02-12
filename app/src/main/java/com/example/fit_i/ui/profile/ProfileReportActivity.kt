@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.request.ReportRequest
+import com.example.fit_i.data.model.request.SignupValidationRequest
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.RedbellService
 import com.example.fit_i.databinding.ActivityProfileReportBinding
@@ -26,10 +27,6 @@ class ProfileReportActivity:AppCompatActivity() {
         binding = ActivityProfileReportBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //아이디 받아오기
-        //val id = intent.getLongExtra("id",-1)
-        //Log.d("post",id.toString())
-
         val goBack = findViewById<ImageButton>(R.id.ib_close)
         goBack.setOnClickListener{
             val intent = Intent(this,ProfileActivity::class.java)
@@ -41,10 +38,11 @@ class ProfileReportActivity:AppCompatActivity() {
         var reason : String ="asdf"
         binding.rgReport.setOnCheckedChangeListener { group, checkedId ->
             when(checkedId){
-                R.id.rb_report1 -> { reason = "요청서와 관련없는 광고/홍보/영업" }
-                R.id.rb_report2 -> { reason = "허위 프로필 작성" }
-                R.id.rb_report3 -> { reason = "유효하지 않은 카카오톡 링크" }
-                R.id.rb_report4 -> { reason = "관련 법령 등을 위반하는 요청" }
+                R.id.rb_report1 -> { reason = "AD" }
+                R.id.rb_report2 -> { reason = "FAKE_PROFILE" }
+                R.id.rb_report3 -> { reason = "INVALID_LINK" }
+                R.id.rb_report4 -> { reason = "BAD_WORD" }
+                R.id.rb_report5 -> { reason = "ILLEGAL" }
             }
         }
 
@@ -61,10 +59,19 @@ class ProfileReportActivity:AppCompatActivity() {
                     redbellService.report(ReportRequest(reason,intent.getLongExtra("id",-1))).enqueue(object : Callback<BaseResponse> {
                         override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
                             if(response.isSuccessful){
-                                // 정상적으로 통신이 성공된 경우
-                                Log.d("post", "onResponse 성공: " + response.body().toString());
-                                Toast.makeText(this@ProfileReportActivity, "신고가 접수되었습니다다.", Toast.LENGTH_SHORT).show()
-                                finish()
+                                when(response.body()?.code){// 정상적으로 통신이 성공된 경우
+                                    1000 -> {
+                                        Log.d("post", "onResponse 성공: " + response.body().toString());
+                                        Toast.makeText(this@ProfileReportActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
+//
+                                        startActivity(intent)  // 화면 전환을 시켜줌
+                                        finish()
+                                    }
+                                    else -> {
+                                        Log.d("post", "onResponse 오류: " + response.body().toString());
+                                        Toast.makeText(this@ProfileReportActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
+                                    }
+                                }
                             }else{
                                 // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
                                 Log.d("post", "onResponse 실패"+response.code())

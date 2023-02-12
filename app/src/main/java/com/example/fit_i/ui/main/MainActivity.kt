@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import com.example.fit_i.CommunityFragment
 import com.example.fit_i.R
 import com.example.fit_i.databinding.ActivityMainBinding
 import com.example.fit_i.ui.main.chat.ChatFragment
