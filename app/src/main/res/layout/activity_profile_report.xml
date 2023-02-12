@@ -80,7 +80,7 @@
     <ImageView
         android:id="@+id/tv_report_context"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="180dp"
         android:layout_marginTop="19dp"
         android:background="#F8F8F8"
         android:gravity="center_vertical|top"
@@ -126,9 +126,16 @@
             android:layout_marginBottom="10dp"
             android:text="\u0020\u0020\u0020유효하지 않은 카카오톡 링크"
             android:textColor="#586177" />
-
         <RadioButton
             android:id="@+id/rb_report4"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginBottom="10dp"
+            android:text="\u0020\u0020\u0020부적절한 언어(욕설, 성희롱 등) 사용"
+            android:textColor="#586177" />
+
+        <RadioButton
+            android:id="@+id/rb_report5"
             android:layout_width="wrap_content"
             android:layout_height="22dp"
             android:text="\u0020\u0020\u0020관련 법령 등을 위반하는 요청"
