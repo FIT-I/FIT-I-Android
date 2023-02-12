@@ -122,6 +122,9 @@ class ProfileActivity :AppCompatActivity() {
         else if(intent.hasExtra("trainerId")){
             id = intent.getLongExtra("trainerId", -1)
         }
+        else if(intent.hasExtra("chatTrainerId")){
+            id = intent.getLongExtra("chatTrainerId", -1)
+        }
         else{
             id = intent.getLongExtra("likeTrainerIdx",-1)
         }

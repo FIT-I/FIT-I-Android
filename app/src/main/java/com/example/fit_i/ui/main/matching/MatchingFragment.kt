@@ -53,6 +53,12 @@ class MatchingFragment : Fragment() {
                     //통신 성공!!
                     Log.d("post", "매칭 onResponse 성공" + response.body().toString())
 
+                    if(response.body()?.result?.size==0){
+                        binding.clMatchingNo.visibility=View.VISIBLE
+                    }
+                    else
+                        binding.clMatchingNo.visibility=View.INVISIBLE
+
                     val body = response.body()
                     body?.let { setAdapter(it.result) }
                 }else{

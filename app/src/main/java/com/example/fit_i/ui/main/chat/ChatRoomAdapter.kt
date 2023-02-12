@@ -48,23 +48,10 @@ class ChatRoomAdapter(private val dataList: List<GetChatResponse.Result>) :
         holder.onBind(position)
 
         holder.itemView.setOnClickListener {
-            val chatIntent = Intent(holder.itemView.context, ProfileActivity::class.java)
-            chatIntent.putExtra(
-                "chat", ChatRoom(
-                    dataList[position].openChatLink,
-                    dataList[position].trainerId,
-                    dataList[position].trainerName,
-                    dataList[position].trainerGrade,
-                    dataList[position].trainerSchool,
-                    dataList[position].customerId,
-                    dataList[position].pickUp,
-                    dataList[position].customerLocation,
-                    dataList[position].createdAt,
-                    dataList[position].matchingId,
-                    dataList[position].trainerProfile
-                )
-            )
-            ContextCompat.startActivity(holder.itemView.context, chatIntent, null)
+            val intent = Intent(holder.itemView.context, ProfileActivity::class.java)
+            intent.putExtra(
+                "chatTrainerId", dataList[position].trainerId)
+            startActivity(holder.itemView.context, intent, null)
         }
     }
 

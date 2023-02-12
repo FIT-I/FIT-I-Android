@@ -70,6 +70,13 @@ class MypageLikelistFragment : Fragment() {
                     //정상적으로 통신이 성공된 경우
                     Log.d("post","onResponse 성공"+response.body().toString());
 
+                    if(response.body()?.result?.size==0){
+                        binding.clMatchingNo.visibility=View.VISIBLE
+                    }
+                    else
+                        binding.clMatchingNo.visibility=View.INVISIBLE
+
+
                     val body = response.body()
                     body?.let { setAdapter(it.result) }
 

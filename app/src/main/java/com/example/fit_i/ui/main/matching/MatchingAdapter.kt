@@ -17,6 +17,7 @@ class MatchingAdapter(private val dataList: List<GetMCResponse.Result>) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(position: Int) {
+
             binding.matchIm.text = dataList[position].name
             binding.matchStar.text = dataList[position].grade.toString()
             binding.matchUni.text = dataList[position].school
@@ -50,7 +51,6 @@ class MatchingAdapter(private val dataList: List<GetMCResponse.Result>) :
         holder.itemView.setOnClickListener {
 
             val intent = Intent(holder.itemView.context, MatchingListActivity::class.java)
-//            matchingIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             intent.putExtra("matchingId", dataList[position].matchingId)
             intent.putExtra("trainerId", dataList[position].trainerId)
 

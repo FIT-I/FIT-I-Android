@@ -71,6 +71,11 @@ class MypageReviewFragment : Fragment() {
                     //onBind(response.body()!!.result)
                     Log.d("post", "onResponse 성공: " + response.body().toString());
                     //Toast.makeText(this@ProfileActivity, "비밀번호 찾기 성공!", Toast.LENGTH_SHORT).show()
+                    if(response.body()?.result?.size==0){
+                        binding.clMatchingNo.visibility=View.VISIBLE
+                    }
+                    else
+                        binding.clMatchingNo.visibility=View.INVISIBLE
 
                     val body = response.body()
                     body?.let {
