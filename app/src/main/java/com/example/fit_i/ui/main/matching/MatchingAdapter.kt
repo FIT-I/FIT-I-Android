@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.fit_i.R
 import com.example.fit_i.data.model.response.GetMCResponse
 import com.example.fit_i.databinding.ItemMatchBinding
 
@@ -21,10 +22,14 @@ class MatchingAdapter(private val dataList: List<GetMCResponse.Result>) :
             binding.matchUni.text = dataList[position].school
             binding.matchDay.text = dataList[position].orderDate
 
-            if (dataList[position].profile != "trainerProfile" || dataList[position].profile != null) {
+            if (dataList[position].profile == "trainerProfile"){
+                binding.matchProfile.setImageResource(R.drawable.ic_profile)
+            }
+            else if (dataList[position].profile != "trainerProfile"|| dataList[position].profile != null) {
                 Glide.with(itemView)
-                    .load("${dataList[position]?.profile}")
+                    .load("${dataList[position].profile}")
                     .into(binding.matchProfile)
+                binding.matchProfile.clipToOutline = true
                 Log.d("post", dataList[position].profile)
             }
 
