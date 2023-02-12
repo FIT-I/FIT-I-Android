@@ -3,16 +3,13 @@ package com.example.fit_i.ui.main.mypage.like
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.fit_i.data.model.response.GetTrainerListResponse
+import com.example.fit_i.R
 import com.example.fit_i.data.model.response.WishResponse
 import com.example.fit_i.databinding.ItemLikelistBinding
-import com.example.fit_i.databinding.ItemTrainerBinding
-import com.example.fit_i.ui.main.mypage.MypageLikelistFragment
 import com.example.fit_i.ui.profile.ProfileActivity
 
 class LikelistAdapter(private val dataList: List<WishResponse.Result>): RecyclerView.Adapter<LikelistAdapter.ViewHolder>() {
@@ -22,12 +19,18 @@ class LikelistAdapter(private val dataList: List<WishResponse.Result>): Recycler
         fun bind(position: Int) {
             binding.tvName.text = dataList[position].trainerName
             binding.tvStar.text= dataList[position].trainerGrade.toString()
-            binding.tvStar.text=dataList[position].trainerSchool
+            binding.tvSchool.text=dataList[position].trainerSchool
             binding.tvDate.text=dataList[position].createdAt
 
-//            Glide.with(context)
-//                .load(dataList[position].trainerProfile)
-//                .into(binding.ivProfile)
+            if (dataList[position].trainerProfile == "trainerProfile") {
+                binding.ivProfile.setImageResource(R.drawable.ic_profile)
+            } else if (dataList[position].trainerProfile != "trainerProfile" || dataList[position].trainerProfile != null) {
+                Glide.with(itemView)
+                    .load("${dataList[position].trainerProfile}")
+                    .into(binding.ivProfile)
+                binding.ivProfile.clipToOutline = true
+                Log.d("post", dataList[position].trainerProfile)
+            }
         }
     }
 
