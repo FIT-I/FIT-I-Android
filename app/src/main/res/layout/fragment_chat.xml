@@ -1,36 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.chat.ChatFragment">
+
     <TextView
         android:id="@+id/tv_chat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="채팅 내역 확인"
-        android:textSize="20dp"
-        android:textColor="@color/main"
-        android:textStyle="bold"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="15dp"
+        android:text="채팅 내역 확인"
+        android:textColor="@color/main"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="4dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_chat"
-        android:background="#F8F8F8"/>
+        android:background="#F8F8F8"
+        app:layout_constraintTop_toBottomOf="@id/tv_chat" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rc_chat"
-        app:layout_constraintTop_toBottomOf="@+id/line"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        tools:listitem="@layout/item_chat"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_chat"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/line"
+            tools:listitem="@layout/item_chat" />
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
