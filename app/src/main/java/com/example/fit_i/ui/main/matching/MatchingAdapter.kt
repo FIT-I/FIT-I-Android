@@ -32,7 +32,6 @@ class MatchingAdapter(private val dataList: List<GetMCResponse.Result>) :
                 binding.matchProfile.clipToOutline = true
                 Log.d("post", dataList[position].profile)
             }
-
         }
     }
 
@@ -52,22 +51,10 @@ class MatchingAdapter(private val dataList: List<GetMCResponse.Result>) :
 
             val intent = Intent(holder.itemView.context, MatchingListActivity::class.java)
 //            matchingIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            intent.getLongExtra("matchingId", dataList[position].matchingId)
-            intent.getLongExtra("trainerId", dataList[position].trainerId)
+            intent.putExtra("matchingId", dataList[position].matchingId)
+            intent.putExtra("trainerId", dataList[position].trainerId)
 
             startActivity(holder.itemView.context, intent, null)
-//            matchingIntent.putExtra(
-//                "matchingIdx",MatchingData(
-//                    dataList[position].matchingId,
-//                    dataList[position].trainerId,
-//                    dataList[position].name,
-//                    dataList[position].profile,
-//                    dataList[position].school,
-//                    dataList[position].grade,
-//                    dataList[position].orderDate,
-//                    dataList[position].orderDateGap
-//                )
-//            )
         }
     }
 

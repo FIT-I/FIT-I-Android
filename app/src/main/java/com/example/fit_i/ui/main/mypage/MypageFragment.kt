@@ -161,6 +161,7 @@ class MypageFragment : Fragment() {
             startActivity(intent)  // 화면 전환을 시켜줌
             //finish()
         }
+
         //비밀번호 재설정
         binding.clPwChange.setOnClickListener {
             val intent = Intent(context, MypageChangePwActivity::class.java)  // 인텐트를 생성해줌,
