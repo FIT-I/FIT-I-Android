@@ -27,13 +27,6 @@ class ProfileReportActivity:AppCompatActivity() {
         binding = ActivityProfileReportBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val goBack = findViewById<ImageButton>(R.id.ib_close)
-        goBack.setOnClickListener{
-            val intent = Intent(this,ProfileActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
         //사유 선택
         var reason : String ="asdf"
         binding.rgReport.setOnCheckedChangeListener { group, checkedId ->

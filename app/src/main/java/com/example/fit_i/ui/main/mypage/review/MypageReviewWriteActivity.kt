@@ -34,7 +34,6 @@ class MypageReviewWriteActivity : AppCompatActivity() {
 
         val etreview = findViewById<View>(R.id.et_review) as EditText
         val btnreviewing = findViewById<View>(R.id.btn_review_ing) as Button
-        val ibpre = findViewById<View>(R.id.ib_pre6) as ImageButton
         val rating = findViewById<View>(R.id.bar_grade) as RatingBar
         contents = etreview.text.toString()
         grade = rating.numStars

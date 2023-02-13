@@ -14,8 +14,9 @@
         android:layout_height="wrap_content"
         android:text="마이 프로필"
         android:textColor="@color/main"
-        android:textSize="15sp"
-        android:layout_marginTop="55dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +44,7 @@
                 android:background="@drawable/prof1_selector"
                 android:checked="false"/>
             <ImageView
-                android:src="@drawable/img_f1"
+                android:src="@drawable/img_char1"
                 android:layout_width="37dp"
                 android:layout_height="64dp"
                 android:layout_gravity="center" />
@@ -60,7 +61,7 @@
                 android:button="@null"
                 android:background="@drawable/prof1_selector" />
             <ImageView
-                android:src="@drawable/img_f2"
+                android:src="@drawable/img_char2"
                 android:layout_width="37dp"
                 android:layout_height="64dp"
                 android:layout_gravity="center"/>
@@ -77,7 +78,7 @@
                 android:button="@null"
                 android:background="@drawable/prof1_selector" />
             <ImageView
-                android:src="@drawable/img_profile3"
+                android:src="@drawable/img_char3"
                 android:layout_width="37dp"
                 android:layout_height="64dp"
                 android:layout_gravity="center"/>
@@ -105,7 +106,7 @@
                 android:button="@null"
                 android:background="@drawable/prof1_selector" />
             <ImageView
-                android:src="@drawable/img_profile4"
+                android:src="@drawable/img_char4"
                 android:layout_width="37dp"
                 android:layout_height="64dp"
                 android:layout_gravity="center"/>
@@ -122,7 +123,7 @@
                 android:button="@null"
                 android:background="@drawable/prof1_selector" />
             <ImageView
-                android:src="@drawable/img_profile5"
+                android:src="@drawable/img_char5"
                 android:layout_width="37dp"
                 android:layout_height="64dp"
                 android:layout_gravity="center"
@@ -140,7 +141,7 @@
                 android:button="@null"
                 android:background="@drawable/prof1_selector" />
             <ImageView
-                android:src="@drawable/img_profile6"
+                android:src="@drawable/img_char6"
                 android:layout_width="37dp"
                 android:layout_height="64dp"
                 android:layout_gravity="center"/>

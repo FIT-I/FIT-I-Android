@@ -6,31 +6,18 @@
     android:layout_height="match_parent"
     tools:context="ui.main.mypage.review.MypageReviewWriteActivity">
 
-    <ImageButton
-        android:id="@+id/ib_pre6"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginStart="30dp"
-        android:background="@null"
-        android:backgroundTint="@color/main"
-        android:scaleType="fitStart"
-        android:src="@drawable/ic_pre"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/tv_review_ing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="매칭 후기 남기기"
         android:textColor="@color/main"
-        android:textSize="20sp"
+        android:textSize="20dp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/ib_pre6" />
+        app:layout_constraintTop_toTopOf="parent" />
     <ImageView
         android:id="@+id/iv_line4"
         android:layout_width="match_parent"
