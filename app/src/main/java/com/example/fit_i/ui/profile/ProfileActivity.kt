@@ -6,8 +6,9 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.fit_i.ui.match.MatchServiceActivity
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.response.BaseResponse
@@ -17,11 +18,13 @@ import com.example.fit_i.data.service.CommunalService
 import com.example.fit_i.data.service.CustomerService
 import com.example.fit_i.databinding.ActivityProfileBinding
 import com.example.fit_i.ui.main.home.HomeFragment
+import com.example.fit_i.ui.match.MatchServiceActivity
 import com.example.fit_i.ui.profile.review.ProfileReviewActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import kotlin.properties.Delegates
+
 
 class ProfileActivity :AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
@@ -161,7 +164,8 @@ class ProfileActivity :AppCompatActivity() {
                     // 정상적으로 통신이 성공된 경우
                     onBind(response.body()!!.result)
                     Log.d("post", "onResponse 성공: " + response.body().toString());
-
+                    val body = response.body()
+                    body?.let { setAdapter(it.result) }
                 }else{
                     // 통신이 실패한 경우(응답코드 3xx, 4xx 등)
                     Log.d("post", "onResponse 실패")
@@ -218,7 +222,14 @@ class ProfileActivity :AppCompatActivity() {
             intent.putExtra("reviewIdx",id)
             startActivity(intent)
         }
+    }
 
+    private fun setAdapter(picList: GetTrainerInfoResponse.Result){
+        val picAdapter = PicAdapter(picList)
+        binding.rvPic.adapter=picAdapter
+
+        binding.rvPic.setHasFixedSize(false)
+        binding.rvPic.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false) // 가로
     }
 
     val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)

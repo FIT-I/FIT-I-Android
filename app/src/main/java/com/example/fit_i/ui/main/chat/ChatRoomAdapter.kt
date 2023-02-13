@@ -1,14 +1,13 @@
 package com.example.fit_i.ui.main.chat
 
 import android.content.Intent
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.fit_i.Message
 import com.example.fit_i.R
 import com.example.fit_i.data.model.response.GetChatResponse
 import com.example.fit_i.databinding.ItemChatBinding
@@ -24,7 +23,12 @@ class ChatRoomAdapter(private val dataList: List<GetChatResponse.Result>) :
             binding.chatStar.text = dataList[position].trainerGrade.toString()
             binding.chatUni.text = dataList[position].trainerSchool
             binding.chatUrl.text = dataList[position].openChatLink
-            //binding.chatDate.text=dataList[position]
+            binding.chatDate.text=dataList[position].createdAt
+
+            binding.chatUrl.setOnClickListener {
+                var intent = Intent(Intent.ACTION_VIEW, Uri.parse(dataList[position].openChatLink))
+                startActivity(itemView.context, intent, null)
+            }
 
             if (dataList[position].trainerProfile == "trainerProfile") {
                 binding.chatProfile.setImageResource(R.drawable.ic_profile)
@@ -48,10 +52,10 @@ class ChatRoomAdapter(private val dataList: List<GetChatResponse.Result>) :
         holder.onBind(position)
 
         holder.itemView.setOnClickListener {
-            val intent = Intent(holder.itemView.context, ProfileActivity::class.java)
-            intent.putExtra(
-                "chatTrainerId", dataList[position].trainerId)
-            startActivity(holder.itemView.context, intent, null)
+//            val intent = Intent(holder.itemView.context, ProfileActivity::class.java)
+//            intent.putExtra(
+//                "chatTrainerId", dataList[position].trainerId)
+//            startActivity(holder.itemView.context, intent, null)
         }
     }
 
