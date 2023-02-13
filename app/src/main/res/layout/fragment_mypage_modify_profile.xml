@@ -152,7 +152,7 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="userName"
+        android:text=""
         android:textSize="15sp"
         android:textColor="@color/main"
         app:layout_constraintStart_toStartOf="parent"
@@ -196,7 +196,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="user@email.com"
+        android:text=""
         android:textColor="@color/main"
         app:layout_constraintStart_toStartOf="@+id/tv_info"
         app:layout_constraintTop_toBottomOf="@+id/tv_emailM" />
@@ -217,7 +217,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="서울특별시 동작구 369, 숭실대학교"
+        android:text=""
         android:textColor="@color/main"
         app:layout_constraintStart_toStartOf="@+id/tv_info"
         app:layout_constraintTop_toBottomOf="@+id/tv_addressM" />
