@@ -13,7 +13,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.fit_i"
+        applicationId "com.fit_i.customer"
         minSdk 21
         targetSdk 32
         versionCode 1
@@ -24,7 +24,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
