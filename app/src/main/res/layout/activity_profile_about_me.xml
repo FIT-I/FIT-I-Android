@@ -9,11 +9,11 @@
         android:id="@+id/tv_about_me_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
         android:text="소개글"
-        android:textColor="#011E5F"
+        android:textColor="@color/main"
         android:textSize="20dp"
         android:textStyle="bold"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

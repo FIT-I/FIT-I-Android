@@ -11,9 +11,9 @@
         android:layout_height="wrap_content"
         android:text="매칭 후기 남기기"
         android:textColor="@color/main"
-        android:textSize="20sp"
+        android:textSize="20dp"
         android:textStyle="bold"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

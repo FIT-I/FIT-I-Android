@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="40dp"
-        android:text="userName"
+        android:text=""
         android:textColor="@color/main"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -59,7 +59,7 @@
         android:id="@+id/tv_emailM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="user@email.com"
+        tools:text=""
         app:layout_constraintStart_toStartOf="@+id/tv_nameM"
         app:layout_constraintTop_toBottomOf="@+id/tv_nameM" />
 

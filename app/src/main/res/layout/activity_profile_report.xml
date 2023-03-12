@@ -14,20 +14,21 @@
         android:textColor="@color/main"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/iv_background_step"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/iv_background_step"
         android:layout_width="0dp"
         android:layout_height="5dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@+id/tv_report_alert"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_report_title"
         app:srcCompat="@drawable/img_bar" />
 
     <TextView
@@ -172,15 +173,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <ImageButton
-        android:id="@+id/ib_close"
-        android:layout_width="12dp"
-        android:layout_height="12dp"
-        android:layout_marginStart="118dp"
-        android:layout_marginBottom="45dp"
-        android:background="#00ff0000"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/iv_background_step"
-        app:layout_constraintStart_toEndOf="@+id/tv_report_title"
-        app:srcCompat="@drawable/ic_close" />
 </androidx.constraintlayout.widget.ConstraintLayout>
