@@ -23,15 +23,15 @@ class HomeFragment : Fragment() {
         "다이어트",
         "식단관리",
         "재활치료",
-        "운동친구"
+//        "운동친구"
     )
-    private val tabIconArray = arrayOf(
-        R.drawable.ic_pt,
-        R.drawable.ic_diet,
-        R.drawable.ic_eating,
-        R.drawable.ic_medical,
-        R.drawable.ic_friend
-    )
+//    private val tabIconArray = arrayOf(
+//        R.drawable.ic_pt,
+//        R.drawable.ic_diet,
+//        R.drawable.ic_eating,
+//        R.drawable.ic_medical,
+//        R.drawable.ic_friend
+//    )
 
 
     override fun onCreateView(
@@ -51,7 +51,7 @@ class HomeFragment : Fragment() {
         pagerAdapter.addFragment(HomeDietFragment())
         pagerAdapter.addFragment(HomeEatingFragment())
         pagerAdapter.addFragment(HomeMedicalFragment())
-        pagerAdapter.addFragment(HomeFriendFragment())
+//        pagerAdapter.addFragment(HomeFriendFragment())
 
         // adapter 연결
         viewPager.adapter = pagerAdapter
