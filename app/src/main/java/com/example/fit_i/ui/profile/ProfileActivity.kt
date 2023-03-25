@@ -133,6 +133,9 @@ class ProfileActivity :AppCompatActivity() {
 
         Log.d("post", id.toString())
 
+        fun <T> isPresent(arr: List<WishResponse.Result>?, target: T): Boolean {
+            return arr!!.any{ i -> i == target }
+        }
         customerService.getWishlist().enqueue(object: Callback<WishResponse>{
             override fun onResponse(
                 call : Call<WishResponse>,
@@ -143,7 +146,7 @@ class ProfileActivity :AppCompatActivity() {
                     Log.d("post","onResponse 성공"+response.body().toString());
 
                     //찜목록에 들어있는 비교해야 함
-                    //if(response.body()?.result.contains(id)){ wish.isChecked = true }
+                    if(isPresent(response.body()?.result,id)){ wish.isChecked = true }
 
                 }else{
                     //통신 실패

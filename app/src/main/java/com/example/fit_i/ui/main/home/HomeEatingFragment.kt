@@ -20,7 +20,7 @@ import retrofit2.Response
 class HomeEatingFragment : Fragment() {
     private var _binding: FragmentHomeEatingBinding? = null
     private val binding: FragmentHomeEatingBinding
-        get() = requireNotNull(_binding) { "FragmentHomeDietBinding" }
+        get() = requireNotNull(_binding) { "FragmentHomeEatingBinding" }
 
     var sort = arrayOf("recent")
 
@@ -97,7 +97,7 @@ class HomeEatingFragment : Fragment() {
     private fun lodeData(sort: Array<String>) {
 
         val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
-        customerService.getTrainerlist("diet", 0, 500, sort).enqueue(object :
+        customerService.getTrainerlist("food", 0, 500, sort).enqueue(object :
             Callback<GetTrainerListResponse> {
             override fun onResponse(
                 call: Call<GetTrainerListResponse>,
