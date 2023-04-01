@@ -1,85 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.main.home.HomeFragment">
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/ic_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-<!--    <FrameLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/imageView5"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/imageView5">-->
-
-<!--        <ImageView-->
-<!--            android:layout_width="280dp"-->
-<!--            android:layout_height="35dp"-->
-<!--            android:background="@drawable/corner"-->
-<!--            android:backgroundTint=""-->
-
-<!--            />-->
-
-
-<!--        <EditText-->
-<!--            android:id="@+id/tv_search"-->
-<!--            android:layout_width="280dp"-->
-<!--            android:layout_height="35dp"-->
-<!--            android:background="@null"-->
-<!--            android:backgroundTint="@null"-->
-<!--            android:text="검색어를 입력해주세요"-->
-<!--            android:textAlignment="center"-->
-<!--            android:textColor="#81CCF1"-->
-<!--            android:textSize=""-->
-<!--            app:layout_constraintBottom_toBottomOf="@+id/imageView5"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.285"-->
-<!--            app:layout_constraintStart_toEndOf="@+id/imageView5"-->
-<!--            app:layout_constraintTop_toTopOf="@+id/imageView5"-->
-<!--            app:layout_constraintVertical_bias="0.0" />-->
-
-<!--    </FrameLayout>-->
-
-
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/background_light"
-        android:elevation="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        android:layout_marginTop="15dp"
-        app:tabGravity="fill"
-        app:tabIndicatorHeight="1dp"
-        app:tabMode="scrollable"
-        app:tabPadding="20dp"
-        app:tabRippleColor="@android:color/transparent"
-        app:tabSelectedTextColor="@color/main"
-        app:tabTextColor="#818181" />
+        android:layout_height="match_parent"
+        tools:context=".ui.main.home.HomeFragment">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="10dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="최신 순"
+            android:textColor="#333333"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:letterSpacing="-0.05"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+            android:background="@android:color/transparent"
+            android:drawableRight="@drawable/down_menu"
+            />
 
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layoutDirection="ltr"
-        app:layout_constraintTop_toBottomOf="@id/tab_layout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
+            android:elevation="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5"
+            android:layout_marginTop="5dp"
+            app:tabGravity="fill"
+            app:tabIndicatorHeight="1dp"
+            app:tabMode="scrollable"
+            app:tabPadding="20dp"
+            app:tabRippleColor="@android:color/transparent"
+            app:tabSelectedTextColor="@color/main"
+            app:tabTextColor="#818181" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layoutDirection="ltr"
+            app:layout_constraintTop_toBottomOf="@id/btn_category"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+

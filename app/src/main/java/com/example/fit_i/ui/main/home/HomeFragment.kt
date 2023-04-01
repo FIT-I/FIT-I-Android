@@ -1,5 +1,6 @@
 package com.example.fit_i.ui.main.home
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -38,6 +39,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         // Inflate the layout for this fragment
         val view:View = inflater.inflate(R.layout.fragment_home, container, false)
         binding = FragmentHomeBinding.inflate(layoutInflater)
