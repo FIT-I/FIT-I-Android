@@ -9,12 +9,10 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fit_i.BottomSheetFragment
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.response.GetTrainerListResponse
 import com.example.fit_i.data.service.CustomerService
-import com.example.fit_i.databinding.FragmentHomeEatingBinding
 import com.example.fit_i.databinding.FragmentHomeFriendBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,8 +39,9 @@ class HomeFriendFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        lodeData()
+        lodeData(sort)
 
+        /*
         val trainerList : ArrayList<TrainerData> = arrayListOf()
 
 
@@ -73,7 +72,7 @@ class HomeFriendFragment : Fragment() {
                 }
             }
             activity?.let { it1 -> bottomSheet.show(it1.supportFragmentManager,bottomSheet.tag) }
-        } //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함
+        } //일단은 텍스트 변경만. 실제 sorting 코드도 짜야함*/
     }
 
     private fun setAdapter(trainerList: List<GetTrainerListResponse.Result.Dto>){
@@ -90,10 +89,10 @@ class HomeFriendFragment : Fragment() {
     }
 
 
-    private fun lodeData() {
+    private fun lodeData(sort: Array<String>) {
 
         val customerService = RetrofitImpl.getApiClient().create(CustomerService::class.java)
-        customerService.getTrainerlist("friend", 0, 20, sort).enqueue(object :
+        customerService.getTrainerlist("friend", 0, 500, sort).enqueue(object :
             Callback<GetTrainerListResponse> {
             override fun onResponse(
                 call: Call<GetTrainerListResponse>,

@@ -7,7 +7,7 @@ data class GetMatchingResponse(
     val result: List<Result>
 ){
     data class Result(
-        val matchingId: Int,
+        val matchingId: Long,
         val name: String,
         val profile: String,
         val school: String,

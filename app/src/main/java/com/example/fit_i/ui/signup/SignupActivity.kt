@@ -185,20 +185,17 @@ class SignupActivity : AppCompatActivity() {
         pwDoubleCheck()
         pwCheck()
         emailCheck()
-        return name.isNotEmpty() && email.isNotEmpty() && pw.isNotEmpty() && pw2.isNotEmpty() && emailCheck() && pwDoubleCheck() && pwCheck()
+        return name.isNotEmpty() && email.isNotEmpty() && pw.isNotEmpty() && pw2.isNotEmpty() && pwDoubleCheck() && pwCheck()
     }
 
     //이메일 정규성 검사
-    private fun emailCheck(): Boolean {
+    private fun emailCheck() {
         val pattern1 = Pattern.compile(emailPattern) // 패턴 컴파일
         val matcher1 = pattern1.matcher(email)
 
-        return if (!matcher1.find()) {
-            //Toast.makeText(this@SignupActivity, "이메일 형식을 확인해주세요", Toast.LENGTH_SHORT).show()
-            false
-        } else {
-            true
-        }
+        if (!matcher1.find())
+            Toast.makeText(this@SignupActivity, "이메일 형식을 확인해주세요", Toast.LENGTH_SHORT).show()
+
     }
 
     //패스워드 정규성검사

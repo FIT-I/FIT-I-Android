@@ -2,7 +2,8 @@ package com.example.fit_i.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.fit_i.CommunityFragment
+import android.util.Log
+import android.widget.Toast
 import com.example.fit_i.R
 import com.example.fit_i.databinding.ActivityMainBinding
 import com.example.fit_i.ui.main.chat.ChatFragment
@@ -18,7 +19,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
-
 
         val bottomNavBar = findViewById<BottomNavigationView>(R.id.bottom_navi)
         bottomNavBar.setOnItemSelectedListener { item ->
@@ -44,28 +44,30 @@ class MainActivity : AppCompatActivity() {
                     val mypageFragment = MypageFragment()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fl_container, mypageFragment).commit()
-
                 }
-
             }
             true
         }
 
         val homeFragment = HomeFragment()
         supportFragmentManager.beginTransaction().replace(R.id.fl_container, homeFragment).commit()
-        //selectedItemId=R.id.item_fragment1
-//버튼 눌렀을때 다른 프래그먼트로 이동시
-//        val communityFragment = CommunityFragment()
-//        val fm:FragmentManager = supportFragmentManager
-//        fm.beginTransaction().add(R.id.fl_container,communityFragment).commit()
-
-
 
         bottomNavBar.itemIconTintList = null
+    }
+    private var backPressedTime : Long = 0
 
-//        val mypageFragment = MypageFragment()
-//        val fm: FragmentManager = supportFragmentManager
-//        fm.beginTransaction().add(R.id.fl_container,mypageFragment).commit()
+    override fun onBackPressed() {
+        Log.d("TAG", "뒤로가기")
+
+        // 2초내 다시 클릭하면 앱 종료
+        if (System.currentTimeMillis() - backPressedTime < 2000) {
+            finish()
+            return
+        }
+
+        // 처음 클릭 메시지
+        Toast.makeText(this, "'뒤로' 버튼을 한번 더 누르시면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show()
+        backPressedTime = System.currentTimeMillis()
     }
 
 }

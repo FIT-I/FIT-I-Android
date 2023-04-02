@@ -57,8 +57,8 @@ class LoginActivity : AppCompatActivity() {
         val btnLogin : Button = findViewById(R.id.btn_login)
 
         // SharedPreferences 안에 값이 저장되어 있지 않을 때 -> Login
-        if(MySharedPreferences.getUserId(this).isNullOrBlank()
-            || MySharedPreferences.getUserPw(this).isNullOrBlank()) {
+        if(MySharedPreferences.getUserId(this).isBlank()
+            || MySharedPreferences.getUserPw(this).isBlank()) {
             //Login()
         }
         else { // SharedPreferences 안에 값이 저장되어 있을 때 -> MainActivity로 이동
@@ -179,7 +179,7 @@ class LoginActivity : AppCompatActivity() {
             })
         }
 
-
+/*
         val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
             if (error != null) {
                 when {
@@ -219,8 +219,9 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                 finish()
             }
-        }
+        }*/
 
+        /*
         val kakao_login_button = findViewById<ImageButton>(R.id.ib_kakao_login_button) // 로그인 버튼
 
         kakao_login_button.setOnClickListener {
@@ -248,16 +249,14 @@ class LoginActivity : AppCompatActivity() {
 //        }
 //        binding.tvNaverDeleteToken.setOnClickListener {
 //            startNaverDeleteToken()
-//        }
+//        }*/
     }
 
     private fun isTrue(): Boolean {
         return email.isNotEmpty()&&pw.isNotEmpty()
     }
-    private fun isStroke(){
 
-    }
-
+/*
     /**
      * 로그인
      * authenticate() 메서드를 이용한 로그인 */
@@ -370,6 +369,5 @@ class LoginActivity : AppCompatActivity() {
 //            binding.tvResult.text = ""
 //        }
         }
-    }
-
+    }*/
 }

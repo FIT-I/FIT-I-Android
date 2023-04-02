@@ -6,32 +6,18 @@
     tools:context=".ui.main.mypage.notice.MypageNoticeFragment">
 
 
-
-    <ImageButton
-        android:id="@+id/ib_pre7"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="60dp"
-        android:background="@android:color/transparent"
-        android:backgroundTint="@color/main"
-        android:scaleType="fitStart"
-        android:src="@drawable/ic_pre"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/tv_mypage_notice"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="공지사항"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        android:layout_marginTop="10dp"
+        android:textColor="@color/main"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ib_pre7" />
+        app:layout_constraintTop_toTopOf="parent" />
     <ImageView
         android:id="@+id/iv_bar4"
         android:layout_width="match_parent"
