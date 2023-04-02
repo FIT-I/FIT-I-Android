@@ -29,13 +29,13 @@ class ProfileReportActivity:AppCompatActivity() {
         //아이디 받아오기
         val id = intent.getLongExtra("id",-1)
         Log.d("post",id.toString())
-
-        val goBack = findViewById<ImageButton>(R.id.ib_close)
-        goBack.setOnClickListener{
-            val intent = Intent(this,ProfileActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
+//
+//        val goBack = findViewById<ImageButton>(R.id.ib_close)
+//        goBack.setOnClickListener{
+//            val intent = Intent(this,ProfileActivity::class.java)
+//            startActivity(intent)
+//            finish()
+//        }
 
         //사유 선택
         var reason : String ="asdf"
