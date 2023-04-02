@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:background="@drawable/shape_profile_review_background"
+    android:paddingTop="14dp"
+    android:paddingBottom="14dp"
+    tools:context=".ProfileReviewBoxFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_profile_average_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_profile_review_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.3"
+            android:textColor="@color/black"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toTopOf="@id/rb_profile_review_star"
+            app:layout_constraintEnd_toEndOf="@id/rb_profile_review_star"
+            app:layout_constraintStart_toStartOf="@id/rb_profile_review_star"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RatingBar
+            android:id="@+id/rb_profile_review_star"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:progressTint="@color/main"
+            android:rating="4.3"
+            android:stepSize="0.5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_review_score" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view_profile_vertical_dividing_line1"
+        android:layout_width="2dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="32dp"
+        android:background="#EDEDED"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/layout_profile_average_review"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/view_profile_vertical_dividing_line1"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_profile_review_score5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5점"
+            android:textColor="#636363"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ProgressBar
+            android:id="@+id/pb_profile_review_score5"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/layer_list_profile_progress_bar"
+            app:layout_constraintStart_toEndOf="@id/tv_profile_review_score5"
+            app:layout_constraintEnd_toStartOf="@id/tv_profile_review_total_number5"
+            app:layout_constraintTop_toTopOf="@id/tv_profile_review_score5"
+            app:layout_constraintBottom_toBottomOf="@id/tv_profile_review_score5"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:max="15"
+            android:progress="9"
+            android:indeterminate="false"/>
+
+        <TextView
+            android:id="@+id/tv_profile_review_total_number5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            app:layout_constraintStart_toEndOf="@id/pb_profile_review_score5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_profile_review_score4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4점"
+            android:textColor="#636363"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_profile_review_score5"
+            app:layout_constraintBottom_toTopOf="@id/tv_profile_review_score3"/>
+
+        <ProgressBar
+            android:id="@+id/pb_profile_review_score4"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/layer_list_profile_progress_bar"
+            app:layout_constraintStart_toEndOf="@id/tv_profile_review_score4"
+            app:layout_constraintEnd_toStartOf="@id/tv_profile_review_total_number4"
+            app:layout_constraintTop_toTopOf="@id/tv_profile_review_score4"
+            app:layout_constraintBottom_toBottomOf="@id/tv_profile_review_score4"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:max="15"
+            android:progress="3"
+            android:indeterminate="false"/>
+
+        <TextView
+            android:id="@+id/tv_profile_review_total_number4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            app:layout_constraintStart_toEndOf="@id/pb_profile_review_score4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_profile_review_score4"
+            app:layout_constraintBottom_toBottomOf="@id/tv_profile_review_score4" />
+
+        <TextView
+            android:id="@+id/tv_profile_review_score3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3점"
+            android:textColor="#636363"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_profile_review_score4"
+            app:layout_constraintBottom_toTopOf="@id/tv_profile_review_score2"/>
+
+        <ProgressBar
+            android:id="@+id/pb_profile_review_score3"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/layer_list_profile_progress_bar"
+            app:layout_constraintStart_toEndOf="@id/tv_profile_review_score3"
+            app:layout_constraintEnd_toStartOf="@id/tv_profile_review_total_number3"
+            app:layout_constraintTop_toTopOf="@id/tv_profile_review_score3"
+            app:layout_constraintBottom_toBottomOf="@id/tv_profile_review_score3"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:max="15"
+            android:progress="1"
+            android:indeterminate="false"/>
+
+        <TextView
+            android:id="@+id/tv_profile_review_total_number3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            app:layout_constraintStart_toEndOf="@id/pb_profile_review_score3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_profile_review_score3"
+            app:layout_constraintBottom_toBottomOf="@id/tv_profile_review_score3"/>
+
+        <TextView
+            android:id="@+id/tv_profile_review_score2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2점"
+            android:textColor="#636363"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_profile_review_score3"
+            app:layout_constraintBottom_toTopOf="@id/tv_profile_review_score1"/>
+
+        <ProgressBar
+            android:id="@+id/pb_profile_review_score2"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/layer_list_profile_progress_bar"
+            app:layout_constraintStart_toEndOf="@id/tv_profile_review_score2"
+            app:layout_constraintEnd_toStartOf="@id/tv_profile_review_total_number2"
+            app:layout_constraintTop_toTopOf="@id/tv_profile_review_score2"
+            app:layout_constraintBottom_toBottomOf="@id/tv_profile_review_score2"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:max="15"
+            android:progress="1"
+            android:indeterminate="false"/>
+
+        <TextView
+            android:id="@+id/tv_profile_review_total_number2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            app:layout_constraintStart_toEndOf="@id/pb_profile_review_score2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_profile_review_score2"
+            app:layout_constraintBottom_toBottomOf="@id/tv_profile_review_score2"/>
+
+        <TextView
+            android:id="@+id/tv_profile_review_score1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1점"
+            android:textColor="#636363"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ProgressBar
+            android:id="@+id/pb_profile_review_score1"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/layer_list_profile_progress_bar"
+            app:layout_constraintStart_toEndOf="@id/tv_profile_review_score1"
+            app:layout_constraintEnd_toStartOf="@id/tv_profile_review_total_number1"
+            app:layout_constraintTop_toTopOf="@id/tv_profile_review_score1"
+            app:layout_constraintBottom_toBottomOf="@id/tv_profile_review_score1"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:max="15"
+            android:progress="3"
+            android:indeterminate="false"/>
+
+        <TextView
+            android:id="@+id/tv_profile_review_total_number1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            app:layout_constraintStart_toEndOf="@id/pb_profile_review_score1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_profile_review_score1"
+            app:layout_constraintBottom_toBottomOf="@id/tv_profile_review_score1"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
