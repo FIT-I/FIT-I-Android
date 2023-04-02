@@ -14,101 +14,53 @@
         android:textColor="@color/main"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/iv_background_step"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/iv_background_step"
         android:layout_width="0dp"
         android:layout_height="5dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@+id/tv_report_alert"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_report_title"
         app:srcCompat="@drawable/img_bar" />
 
     <TextView
         android:id="@+id/tv_report_alert"
-        android:layout_width="308dp"
-        android:layout_height="55dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:gravity="center_horizontal"
-        android:text="신고하기 사유 확인이 불가능한 경우 해당 신고는 무효됩니다."
+        android:text="사유선택"
         android:textColor="@color/main"
         android:textSize="20dp"
+        android:padding="25dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tv_report_alert2"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_background_step" />
 
-    <TextView
-        android:id="@+id/tv_report_alert2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:background="#D9D9D9"
-        android:gravity="center_vertical|center_horizontal"
-        android:paddingLeft="40dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:text="신고하기 사유 확인이 불가능한 경우 해당 신고는
-미조치됩니다."
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:textColor="@color/black"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_report_context"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_report_alert" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="20dp"
-        android:layout_height="18.6dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="@+id/tv_report_alert2"
-        app:layout_constraintTop_toTopOf="@+id/tv_report_alert2"
-        app:srcCompat="@drawable/ic_report" />
-
-    <ImageView
-        android:id="@+id/tv_report_context"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="19dp"
-        android:background="#F8F8F8"
-        android:gravity="center_vertical|top"
-        android:paddingTop="120dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_report_alert2" />
 
     <RadioGroup
         android:id="@+id/rg_report"
-        android:layout_width="262dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="21dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_report_context"
-        app:layout_constraintStart_toStartOf="@+id/tv_report_context"
-        app:layout_constraintTop_toTopOf="@+id/tv_report_context">
+        android:padding="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_report_alert">
 
         <RadioButton
             android:id="@+id/rb_report1"
             android:layout_width="wrap_content"
             android:layout_height="22dp"
             android:layout_marginBottom="10dp"
-            android:text="\u0020\u0020\u0020요청서와 관련없는 광고/홍보/영업"
+            android:text="@string/report_ad"
             android:textColor="#586177" />
 
         <RadioButton
@@ -116,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="22dp"
             android:layout_marginBottom="10dp"
-            android:text="\u0020\u0020\u0020허위 프로필 작성"
+            android:text="@string/report_fake_profile"
             android:textColor="#586177" />
 
         <RadioButton
@@ -124,24 +76,54 @@
             android:layout_width="wrap_content"
             android:layout_height="22dp"
             android:layout_marginBottom="10dp"
-            android:text="\u0020\u0020\u0020유효하지 않은 카카오톡 링크"
+            android:text="@string/report_invalid_link"
             android:textColor="#586177" />
 
         <RadioButton
             android:id="@+id/rb_report4"
             android:layout_width="wrap_content"
             android:layout_height="22dp"
-            android:text="\u0020\u0020\u0020관련 법령 등을 위반하는 요청"
+            android:layout_marginBottom="10dp"
+            android:text="@string/report_bad_word"
+            android:textColor="#586177" />
+
+        <RadioButton
+            android:id="@+id/rb_report5"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:text="@string/report_illegal"
             android:textColor="#586177" />
     </RadioGroup>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:padding="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_report" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="서비스 진행중 문제가 생겼다면 증빙자료(사진, 녹취록, 대화 내역)와 함께 이메일 fitiofficial@naver.com 로 접수해주세요.
+신고 결과는 별도의 안내를 드리지 않습니다."
+        android:padding="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="115dp"
-        android:text="서비스 진행중 문제가 생겼다면 증빙자료(사진, 녹취록,
-대화 내역)와 함께 이메일 fitiofficial@naver.com로 접수해주세요. 신고 결과는 별도의 안내를 드리지 않습니다."
+        android:text="신고하기 사유 확인이 불가능한 경우 해당 신고는 미조치됩니다."
         android:textColor="#D9D9D9"
         android:textSize="12dp"
         android:padding="10dp"
@@ -149,31 +131,17 @@
         android:layout_marginEnd="5dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_next_step"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_report_context" />
-
+        app:layout_constraintStart_toStartOf="parent"/>
     <Button
         android:id="@+id/btn_next_step"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="38dp"
         android:text="신고하기"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <ImageButton
-        android:id="@+id/ib_close"
-        android:layout_width="12dp"
-        android:layout_height="12dp"
-        android:layout_marginStart="118dp"
-        android:layout_marginBottom="45dp"
-        android:background="#00ff0000"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/iv_background_step"
-        app:layout_constraintStart_toEndOf="@+id/tv_report_title"
-        app:srcCompat="@drawable/ic_close" />
+        app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

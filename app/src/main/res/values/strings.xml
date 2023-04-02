@@ -18,5 +18,10 @@
     <string name="match_request">매칭 요청</string>
     <string name="see_more_review">></string>
     <string name="wave">~</string>
+    <string name="report_ad">요청서와 관련없는 광고/홍보/영업</string>
+    <string name="report_fake_profile">허위 프로필 작성</string>
+    <string name="report_invalid_link">유효하지 않은 카카오톡 링크</string>
+    <string name="report_bad_word">부적절한 언어(욕설, 성희롱 등) 사용</string>
+    <string name="report_illegal">관련 법령 등을 위반하는 요청</string>
 
 </resources>
