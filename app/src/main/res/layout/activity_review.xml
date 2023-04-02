@@ -22,71 +22,78 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:id="@+id/cl_review_box"
+            <fragment
+                android:id="@+id/fragment"
+                android:name="com.example.fit_i.ui.main.chat.ChatFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/shape_review_box"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView">
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-                <LinearLayout
-                    android:id="@+id/ll_rating"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/cl_review_box"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/shape_review_box"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="horizontal"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/textView">-->
 
-                    <TextView
-                        android:id="@+id/tv_rate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="8dp"
-                        android:text="4.3"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="21dp" />
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/ll_rating"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent">-->
 
-                    <RatingBar
-                        android:id="@+id/rb_average_rate"
-                        style="@style/Widget.AppCompat.RatingBar.Small"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:isIndicator="true"
-                        android:numStars="5"
-                        android:progressBackgroundTint="@color/main"
-                        android:progressTint="@color/main"
-                        android:rating="4.3"
-                        android:secondaryProgressTint="@color/main"
-                        android:stepSize="1" />
-                </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_rate"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginBottom="8dp"-->
+<!--                        android:text="4.3"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="21dp" />-->
 
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="20dp"
-                    android:text="|" />
+<!--                    <RatingBar-->
+<!--                        android:id="@+id/rb_average_rate"-->
+<!--                        style="@style/Widget.AppCompat.RatingBar.Small"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:isIndicator="true"-->
+<!--                        android:numStars="5"-->
+<!--                        android:progressBackgroundTint="@color/main"-->
+<!--                        android:progressTint="@color/main"-->
+<!--                        android:rating="4.3"-->
+<!--                        android:secondaryProgressTint="@color/main"-->
+<!--                        android:stepSize="1" />-->
+<!--                </LinearLayout>-->
 
-                <com.github.mikephil.charting.charts.HorizontalBarChart
-                    android:id="@+id/chart"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView7"
-                    app:layout_constraintTop_toTopOf="parent" />
+<!--                <TextView-->
+<!--                    android:id="@+id/textView7"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="20dp"-->
+<!--                    android:text="|" />-->
 
-            </LinearLayout>
+<!--                <com.github.mikephil.charting.charts.HorizontalBarChart-->
+<!--                    android:id="@+id/chart"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/textView7"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
@@ -94,11 +101,10 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingStart="20dp"
-                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/cl_review_box">
+                app:layout_constraintTop_toBottomOf="@+id/fragment">
 
                 <TextView
                     android:layout_width="wrap_content"
