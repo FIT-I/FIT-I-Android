@@ -504,9 +504,6 @@
         android:id="@+id/layout_profile_bottom_view"
         android:layout_width="match_parent"
         android:layout_height="84dp"
-        android:paddingLeft="25dp"
-        android:paddingTop="6dp"
-        android:paddingRight="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -515,7 +512,6 @@
             android:id="@+id/view_profile_dividing_line6"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_marginTop="30dp"
             android:layout_marginBottom="13dp"
             android:background="#DDDDDD"
             app:layout_constraintEnd_toEndOf="parent"
@@ -530,6 +526,8 @@
             android:padding="0dp"
             android:scaleType="centerInside"
             android:background="@android:color/transparent"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="25dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -542,6 +540,7 @@
             android:textSize="16dp"
             android:textStyle="bold"
             android:layout_marginStart="14dp"
+            android:layout_marginEnd="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/ib_profile_like"
             app:layout_constraintTop_toTopOf="@id/ib_profile_like"
