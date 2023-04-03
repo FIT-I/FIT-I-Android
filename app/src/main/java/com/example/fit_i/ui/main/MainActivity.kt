@@ -28,19 +28,19 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fl_container, homeFragment).commit()
                 }
-                R.id.item_fragment2 -> {
-                    val matchingFragment = MatchingFragment()
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.fl_container, matchingFragment).commit()
-                }
+//                R.id.item_fragment2 -> {
+//                    val matchingFragment = MatchingFragment()
+//                    supportFragmentManager.beginTransaction()
+//                        .replace(R.id.fl_container, matchingFragment).commit()
+//                }
 
-                R.id.item_fragment3 -> {
+                R.id.item_fragment2 -> {
                     val chatFragment = ChatFragment()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fl_container, chatFragment).commit()
                 }
 
-                R.id.item_fragment4 -> {
+                R.id.item_fragment3 -> {
                     val mypageFragment = MypageFragment()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fl_container, mypageFragment).commit()
