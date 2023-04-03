@@ -26,15 +26,14 @@ class HomeFragment : Fragment() {
         "다이어트",
         "식단관리",
         "재활치료",
-//        "운동친구"
     )
-//    private val tabIconArray = arrayOf(
-//        R.drawable.ic_pt,
-//        R.drawable.ic_diet,
-//        R.drawable.ic_eating,
-//        R.drawable.ic_medical,
-//        R.drawable.ic_friend
-//    )
+    private val tabIconArray = arrayOf(
+        R.drawable.ic_pt,
+        R.drawable.ic_diet,
+        R.drawable.ic_eating,
+        R.drawable.ic_medical,
+        R.drawable.ic_friend
+    )
 
 
     override fun onCreateView(
