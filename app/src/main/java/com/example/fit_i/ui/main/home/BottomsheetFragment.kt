@@ -34,31 +34,39 @@ class BottomSheetFragment(val itemClick: (Int) -> Unit) :
 
         val time : TextView = view.findViewById(R.id.tv_sort_time)
         val level : TextView = view.findViewById(R.id.tv_sort_level)
-        val high : TextView = view.findViewById(R.id.tv_sort_high)
-        val low : TextView = view.findViewById(R.id.tv_sort_low)
+        val like : TextView = view.findViewById(R.id.tv_sort_like)
+        val dis : TextView = view.findViewById(R.id.tv_sort_distance)
+        val review : TextView = view.findViewById(R.id.tv_sort_review)
 
         time.setOnClickListener {
-            Toast.makeText(activity, "실시간 순", Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity, "최신 순", Toast.LENGTH_SHORT).show()
             itemClick(0)
             dismiss()
         }
 
         level.setOnClickListener {
-            Toast.makeText(activity, "레벨 순", Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity, "등급 순", Toast.LENGTH_SHORT).show()
             itemClick(1)
             dismiss()
         }
 
-        low.setOnClickListener {
-            Toast.makeText(activity, "가격 낮은 순", Toast.LENGTH_SHORT).show()
+        dis.setOnClickListener {
+            Toast.makeText(activity, "거리 순", Toast.LENGTH_SHORT).show()
             itemClick(2)
             dismiss()
         }
 
-        high.setOnClickListener {
-            Toast.makeText(activity, "가격 높은 순", Toast.LENGTH_SHORT).show()
+        like.setOnClickListener {
+            Toast.makeText(activity, "찜 많은 순", Toast.LENGTH_SHORT).show()
             itemClick(3)
             dismiss()
+        }
+
+        review.setOnClickListener{
+            Toast.makeText(activity, "찜 많은 순", Toast.LENGTH_SHORT).show()
+            itemClick(4)
+            dismiss()
+
         }
 
     }

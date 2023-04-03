@@ -1,5 +1,6 @@
 package com.example.fit_i.ui.main.home
 
+import android.app.FragmentManager
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +19,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var viewPager: ViewPager2
     private lateinit var tabLayout: TabLayout
+    private lateinit var bottomesheet : BottomSheetFragment
 
     private val tabTitleArray = arrayOf(
         "개인PT",
@@ -48,6 +50,7 @@ class HomeFragment : Fragment() {
         tabLayout = view.findViewById(R.id.tab_layout)
 
 
+
         val pagerAdapter = PagerAdapter(requireActivity())
         pagerAdapter.addFragment(HomePtFragment())
         pagerAdapter.addFragment(HomeDietFragment())
@@ -69,6 +72,17 @@ class HomeFragment : Fragment() {
             tab.text = tabTitleArray[position]
             //tab.setIcon(tabIconArray[position])
         }.attach()
+
+//        //bottomesheet
+//        binding.btnCategory.setOnClickListener{
+//            val bottomSheet = BottomSheetFragment{
+//                when(it){
+//                    0 -> {
+//                    }
+//                }
+//            }
+//        }
+
 
         return view
     }

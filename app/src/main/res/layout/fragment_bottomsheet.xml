@@ -7,6 +7,7 @@
     android:padding="25dp"
     app:behavior_hideable="true"
     app:behavior_peekHeight="56dp"
+    android:background="@drawable/layout_bottomsheet"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <TextView
@@ -14,19 +15,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="실시간 순"
+        android:text="최신 순"
         android:textColor="@android:color/black"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="0.8dp"
         android:layout_marginTop="10dp"
-        android:background="@color/gray"
+        android:background="#DDDDDDB2"
         app:layout_constraintTop_toBottomOf="@+id/tv_sort_time"
         tools:layout_editor_absoluteX="25dp" />
 
@@ -36,55 +36,72 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="트레이너 레벨 순"
+        android:text="등급 순"
         android:textColor="@android:color/black"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="0.8dp"
         android:layout_marginTop="10dp"
-        android:background="@color/gray"
+        android:background="#DDDDDDB2"
         app:layout_constraintTop_toBottomOf="@+id/tv_sort_level"
         tools:layout_editor_absoluteX="25dp" />
 
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_sort_low"
+        android:id="@+id/tv_sort_distance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="낮은 가격 순"
+        android:text="거리 순"
         android:textColor="@android:color/black"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="0.8dp"
         android:layout_marginTop="10dp"
-        android:background="@color/gray"
-        app:layout_constraintTop_toBottomOf="@+id/tv_sort_low"
+        android:background="#DDDDDDB2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sort_distance"
         tools:layout_editor_absoluteX="25dp" />
 
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_sort_high"
+        android:id="@+id/tv_sort_like"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="높은 가격 순"
+        android:text="찜 많은 순"
         android:textColor="@android:color/black"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginTop="10dp"
+        android:background="#DDDDDDB2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sort_like"
+        tools:layout_editor_absoluteX="25dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_sort_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="후기 많은 순"
+        android:textColor="@android:color/black"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
