@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.8dp"
         android:layout_marginTop="10dp"
-        android:background="#DDDDDDB2"
+        android:background="@color/whitegray"
         app:layout_constraintTop_toBottomOf="@+id/tv_sort_time"
         tools:layout_editor_absoluteX="25dp" />
 
@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.8dp"
         android:layout_marginTop="10dp"
-        android:background="#DDDDDDB2"
+        android:background="@color/whitegray"
         app:layout_constraintTop_toBottomOf="@+id/tv_sort_level"
         tools:layout_editor_absoluteX="25dp" />
 
@@ -68,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.8dp"
         android:layout_marginTop="10dp"
-        android:background="#DDDDDDB2"
+        android:background="@color/whitegray"
         app:layout_constraintTop_toBottomOf="@+id/tv_sort_distance"
         tools:layout_editor_absoluteX="25dp" />
 
@@ -89,7 +89,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.8dp"
         android:layout_marginTop="10dp"
-        android:background="#DDDDDDB2"
+        android:background="@color/whitegray"
         app:layout_constraintTop_toBottomOf="@+id/tv_sort_like"
         tools:layout_editor_absoluteX="25dp" />
 
