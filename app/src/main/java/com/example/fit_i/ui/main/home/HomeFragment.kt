@@ -29,8 +29,9 @@ class HomeFragment : Fragment() {
         "개인PT",
         "다이어트",
         "식단관리",
-        "재활치료",
+        "재활치료"
     )
+
 //    private val tabIconArray = arrayOf(
 //        R.drawable.ic_pt,
 //        R.drawable.ic_diet,

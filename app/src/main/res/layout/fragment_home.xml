@@ -45,7 +45,7 @@
             app:tabGravity="fill"
             app:tabIndicatorHeight="1dp"
             app:tabMode="scrollable"
-            app:tabPadding="20dp"
+            app:tabPadding="5dp"
             app:tabRippleColor="@android:color/transparent"
             app:tabSelectedTextColor="@color/main"
             app:tabTextColor="#818181" />

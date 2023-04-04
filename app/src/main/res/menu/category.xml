@@ -11,18 +11,14 @@
         android:icon="@drawable/ic_diet"
         android:title="@string/diet"/>
     <item
-        android:id="@+id/category4"
+        android:id="@+id/category3"
         android:enabled="true"
         android:icon="@drawable/ic_eating"
         android:title="@string/eating"/>
     <item
-        android:id="@+id/category3"
+        android:id="@+id/category4"
         android:enabled="true"
         android:icon="@drawable/ic_medical"
         android:title="@string/medical"/>
-    <item
-        android:id="@+id/category5"
-        android:enabled="true"
-        android:icon="@drawable/ic_friend"
-        android:title="@string/friend"/>
+
 </menu>
