@@ -1,16 +1,20 @@
 package com.example.fit_i.ui.main.home
 
-import android.app.FragmentManager
-import android.graphics.Color
+
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager2.widget.ViewPager2
 import com.example.fit_i.R
 import com.example.fit_i.databinding.FragmentHomeBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -27,13 +31,13 @@ class HomeFragment : Fragment() {
         "식단관리",
         "재활치료",
     )
-    private val tabIconArray = arrayOf(
-        R.drawable.ic_pt,
-        R.drawable.ic_diet,
-        R.drawable.ic_eating,
-        R.drawable.ic_medical,
-        R.drawable.ic_friend
-    )
+//    private val tabIconArray = arrayOf(
+//        R.drawable.ic_pt,
+//        R.drawable.ic_diet,
+//        R.drawable.ic_eating,
+//        R.drawable.ic_medical,
+//        R.drawable.ic_friend
+//    )
 
 
     override fun onCreateView(
@@ -72,16 +76,13 @@ class HomeFragment : Fragment() {
             //tab.setIcon(tabIconArray[position])
         }.attach()
 
-//        //bottomesheet
-//        binding.btnCategory.setOnClickListener{
-//            val bottomSheet = BottomSheetFragment{
-//                when(it){
-//                    0 -> {
-//                    }
-//                }
-//            }
-//        }
-
+        //bottomesheet
+        binding.btnCategory.setOnClickListener{
+            val bottomSheet = BottomSheetDialogFragment()
+            //이게 맞나ㅏ?
+            val manager : FragmentManager = childFragmentManager
+            bottomSheet.show(manager, "tag")
+            }
 
         return view
     }

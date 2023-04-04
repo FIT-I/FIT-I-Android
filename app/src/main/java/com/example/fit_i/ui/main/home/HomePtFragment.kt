@@ -56,7 +56,7 @@ class HomePtFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        lodeData(sort)
+        lodeData(sort)
 
 
 /*
