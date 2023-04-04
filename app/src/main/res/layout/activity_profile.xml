@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileActivity">
 
     <!--    전체 스크롤-->
     <androidx.core.widget.NestedScrollView
@@ -24,30 +25,7 @@
                 android:id="@+id/view_profile_background_image"
                 android:layout_width="match_parent"
                 android:layout_height="445dp"
-                android:background="@color/main" />
-
-            <ImageButton
-                android:id="@+id/ib_profile_back"
-                android:layout_width="7.59dp"
-                android:layout_height="15.19dp"
-                android:layout_marginStart="23.7dp"
-                android:layout_marginTop="20dp"
-                android:padding="0dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_back_white"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/ib_profile_more"
-                android:layout_width="18dp"
-                android:layout_height="4dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="25dp"
-                android:padding="0dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_more"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@color/main"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -136,7 +114,7 @@
                 <ImageButton
                     android:id="@+id/ib_profile_introduction_detail"
                     android:layout_width="30dp"
-                    android:layout_height="15dp"
+                    android:layout_height="30dp"
                     android:layout_marginTop="15dp"
                     android:background="@android:color/transparent"
                     android:padding="0dp"
@@ -150,7 +128,6 @@
                     android:id="@+id/view_profile_dividing_line2"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="9dp"
                     android:layout_marginBottom="13dp"
                     android:background="#DDDDDD"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -374,7 +351,7 @@
                     <ImageButton
                         android:id="@+id/ib_profile_service_detail"
                         android:layout_width="30dp"
-                        android:layout_height="15dp"
+                        android:layout_height="30dp"
                         android:layout_marginTop="15dp"
                         android:background="@android:color/transparent"
                         android:padding="0dp"
@@ -388,7 +365,6 @@
                     android:id="@+id/view_profile_dividing_line4"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="9dp"
                     android:layout_marginBottom="13dp"
                     android:background="#DDDDDD"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -444,7 +420,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_profile_review_detail"
                     android:layout_width="0dp"
-                    android:layout_height="205dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -500,6 +476,30 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
+    <ImageButton
+        android:id="@+id/ib_profile_back"
+        android:layout_width="7.59dp"
+        android:layout_height="15.19dp"
+        android:layout_marginStart="23.7dp"
+        android:layout_marginTop="20dp"
+        android:padding="0dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_back_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ib_profile_more"
+        android:layout_width="18dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="25dp"
+        android:padding="0dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_more"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_profile_bottom_view"
         android:layout_width="match_parent"
@@ -512,7 +512,6 @@
             android:id="@+id/view_profile_dividing_line6"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_marginBottom="13dp"
             android:background="#DDDDDD"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
