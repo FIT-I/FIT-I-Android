@@ -6,13 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.profile.review.ReviewActivity">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_scrollview"
@@ -23,88 +21,21 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <fragment
-                android:id="@+id/fragment"
-                android:name="com.example.fit_i.ui.main.chat.ChatFragment"
+                android:id="@+id/frag_review_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-<!--            <LinearLayout-->
-<!--                android:id="@+id/cl_review_box"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="20dp"-->
-<!--                android:layout_marginRight="20dp"-->
-<!--                android:layout_marginTop="5dp"-->
-<!--                android:background="@drawable/shape_review_box"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="horizontal"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/textView">-->
-
-<!--                <LinearLayout-->
-<!--                    android:id="@+id/ll_rating"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="vertical"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent">-->
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/tv_rate"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_gravity="center"-->
-<!--                        android:layout_marginBottom="8dp"-->
-<!--                        android:text="4.3"-->
-<!--                        android:textAlignment="center"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        android:textSize="21dp" />-->
-
-<!--                    <RatingBar-->
-<!--                        android:id="@+id/rb_average_rate"-->
-<!--                        style="@style/Widget.AppCompat.RatingBar.Small"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:isIndicator="true"-->
-<!--                        android:numStars="5"-->
-<!--                        android:progressBackgroundTint="@color/main"-->
-<!--                        android:progressTint="@color/main"-->
-<!--                        android:rating="4.3"-->
-<!--                        android:secondaryProgressTint="@color/main"-->
-<!--                        android:stepSize="1" />-->
-<!--                </LinearLayout>-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/textView7"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:padding="20dp"-->
-<!--                    android:text="|" />-->
-
-<!--                <com.github.mikephil.charting.charts.HorizontalBarChart-->
-<!--                    android:id="@+id/chart"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_weight="1"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toEndOf="@+id/textView7"-->
-<!--                    app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--            </LinearLayout>-->
+                app:layout_constraintTop_toBottomOf="@+id/tv_review_num" />
 
             <LinearLayout
-                android:id="@+id/linearLayout2"
+                android:id="@+id/ll_tag"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:paddingStart="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/fragment">
+                app:layout_constraintStart_toStartOf="@+id/tv_review_num"
+                app:layout_constraintTop_toBottomOf="@+id/frag_review_box">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -112,45 +43,40 @@
                     android:background="@drawable/shape_tag"
                     android:text="# 빠른응답" />
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_tag"
                     android:text="# 친절" />
 
-
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/textView6"
+                android:id="@+id/iv_bar"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="33dp"
                 android:background="@color/gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+                app:layout_constraintTop_toBottomOf="@+id/ll_tag" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tv_review_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="25dp"
-                android:paddingTop="21dp"
+                android:padding="25dp"
                 android:text="후기 9건"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_review"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/textView6"
+                app:layout_constraintTop_toBottomOf="@+id/iv_bar"
                 tools:listitem="@layout/item_new_review" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
