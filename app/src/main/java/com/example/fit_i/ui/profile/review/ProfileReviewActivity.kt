@@ -1,5 +1,6 @@
 package com.example.fit_i.ui.profile.review
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -8,29 +9,93 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fit_i.*
 import com.example.fit_i.data.model.response.GetReviewListResponse
 import com.example.fit_i.data.service.CommunalService
-import com.example.fit_i.databinding.ActivityProfileReviewBinding
+import com.example.fit_i.databinding.ActivityReviewBinding
+import com.github.mikephil.charting.charts.BarChart
+import com.github.mikephil.charting.charts.Chart
+import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.components.XAxis
+import com.github.mikephil.charting.components.YAxis
+import com.github.mikephil.charting.data.BarData
+import com.github.mikephil.charting.data.BarDataSet
+import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.formatter.ValueFormatter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
+import kotlin.collections.ArrayList
+
 
 class ProfileReviewActivity:AppCompatActivity() {
-    private lateinit var binding: ActivityProfileReviewBinding
+    /*
+    private lateinit var binding: ActivityReviewBinding
     //private val trainerIdx =intent.getLongExtra("reviewIdx",-1)
 
     //private val trainerIdx : Long = 2
+    val MAX_X_VALUE = 100
+    val MAX_Y_VALUE = 1
+    val MIN_Y_VALUE = 0
+    val SET_LABEL= "revuew"
+    private var chart: BarChart = findViewById(R.id.chart)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityProfileReviewBinding.inflate(layoutInflater)
+        binding = ActivityReviewBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
 
         val rvReview : RecyclerView = findViewById(R.id.rv_review)
 
         val reviewList : ArrayList<Review> = arrayListOf()
 
-        lodeData()
+        //lodeData()
 
+        chart = findViewById(R.id.chart2)
+
+
+        val entries = listOf(
+            BarEntry(0f, 10f),
+            BarEntry(1f, 20f),
+            BarEntry(2f, 30f),
+            BarEntry(3f, 40f),
+            BarEntry(4f, 50f),
+            BarEntry(5f, 60f),
+        )
+
+        val dataSet = BarDataSet(entries, "Values")
+        dataSet.color = Color.BLUE
+
+        val data = BarData(dataSet)
+        data.setValueTextSize(16f)
+
+        chart.data = data
+        chart.setFitBars(true)
+        chart.animateY(1000)
+        chart.description.isEnabled = false
+        chart.legend.isEnabled = false
+        chart.setDrawGridBackground(false)
+        chart.setDrawBarShadow(false)
+
+        chart.description.isEnabled = false
+        chart.legend.isEnabled = false
+
+        // x 축 설정
+        chart.xAxis.apply {
+            setDrawGridLines(false) // 그리드 라인 표시 여부
+            setDrawAxisLine(false) // 축 라인 표시 여부
+            setDrawLabels(false) // 라벨 표시 여부
+        }
+
+        // y 축 설정
+        chart.axisLeft.apply {
+            setDrawGridLines(false) // 그리드 라인 표시 여부
+            setDrawAxisLine(false) // 축 라인 표시 여부
+            setDrawLabels(false) // 라벨 표시 여부
+            valueFormatter = YAxisFormatter() // Y 축 라벨 포맷터 설정
+        }
+
+        chart.axisRight.isEnabled = false // 오른쪽 y 축 비활성화
 /*
         reviewList.apply {
             add(Review("박윤빈 ","2022.01.11",4.5,"좋았어요. 친절하고 잘 가르쳐줬습니다~~~"))
@@ -84,5 +149,7 @@ class ProfileReviewActivity:AppCompatActivity() {
                 Log.d("post", "onFailure 에러: " + t.message.toString());
             }
         })
-    }
+    }*/
+
 }
+

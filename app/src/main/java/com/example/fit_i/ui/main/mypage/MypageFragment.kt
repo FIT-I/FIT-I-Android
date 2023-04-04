@@ -48,6 +48,16 @@ class MypageFragment : Fragment() {
         fun onBind(data: GetMypageResponse.Result) {
             binding.tvNameM.text=data.userName
             binding.tvEmailM.text=data.email
+            binding.ivProfileM
+
+            when (data.profile) {
+                "customerProfile1" -> binding.ivProfileM.setImageResource(R.drawable.img_char1)
+                "customerProfile2" -> binding.ivProfileM.setImageResource(R.drawable.img_char2)
+                "customerProfile3" -> binding.ivProfileM.setImageResource(R.drawable.img_char3)
+                "customerProfile4" -> binding.ivProfileM.setImageResource(R.drawable.img_char4)
+                "customerProfile5" -> binding.ivProfileM.setImageResource(R.drawable.img_char5)
+                "customerProfile6" -> binding.ivProfileM.setImageResource(R.drawable.img_char6)
+            }
         }
 
         val commmunalService = RetrofitImpl.getApiClient().create(CommunalService::class.java)

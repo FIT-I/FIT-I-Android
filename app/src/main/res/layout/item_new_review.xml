@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="20dp"
-    android:layout_marginStart="20dp"
-    android:layout_marginBottom="20dp"
+    android:layout_marginStart="25dp"
+    android:layout_marginBottom="25dp"
     android:layout_marginEnd="20dp">
 
     <ImageView
@@ -14,7 +14,6 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:src="@drawable/ic_profile"
-        android:layout_marginStart="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_date"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_name" />
@@ -29,43 +28,25 @@
         app:layout_constraintStart_toEndOf="@+id/iv_reviewer"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_date"
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2023.1.1"
-        android:textSize="10dp"
-        android:layout_marginTop="5dp"
+        android:numStars="5"
         app:layout_constraintStart_toStartOf="@+id/tv_name"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
     <TextView
-        android:id="@+id/tv_"
+        android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="  | "
+        android:paddingStart="10dp"
+        android:text="2일 전"
         android:textSize="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_date"
-        app:layout_constraintStart_toEndOf="@+id/tv_date"
-        app:layout_constraintTop_toTopOf="@+id/tv_date" />
-
-    <ImageView
-        android:id="@+id/iv_star"
-        android:layout_width="wrap_content"
-        android:layout_height="6dp"
-        android:src="@drawable/star"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_star"
-        app:layout_constraintStart_toEndOf="@+id/tv_"
-        app:layout_constraintTop_toTopOf="@+id/tv_date" />
-
-    <TextView
-        android:id="@+id/tv_star"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="4.5"
-        android:textSize="10dp"
-        app:layout_constraintStart_toEndOf="@+id/iv_star"
-        app:layout_constraintTop_toTopOf="@+id/tv_date" />
+        app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
+        app:layout_constraintStart_toEndOf="@+id/ratingBar"
+        app:layout_constraintTop_toTopOf="@+id/ratingBar" />
 
     <TextView
         android:id="@+id/tv_review"
@@ -75,4 +56,13 @@
         android:text="친절한 지도 감사합니다:-)"
         app:layout_constraintStart_toStartOf="@+id/iv_reviewer"
         app:layout_constraintTop_toBottomOf="@+id/tv_date" />
+
+    <TextView
+        android:id="@+id/tv_report_go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="신고하기"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
