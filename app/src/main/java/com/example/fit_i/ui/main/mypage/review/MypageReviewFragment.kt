@@ -39,17 +39,6 @@ class MypageReviewFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         lodeData()
-
-        val ibpre = view.findViewById<View>(R.id.ib_pre5)
-        ibpre.setOnClickListener {
-            val mypageFragment = MypageFragment()
-            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-
-            //이전 화면으로 이동
-            transaction.replace(R.id.fl_container, mypageFragment)
-            transaction.commit()
-
-        }
     }
 
     private fun setAdapter(reviewList: List<GetMCResponse.Result>) {
@@ -82,6 +71,11 @@ class MypageReviewFragment : Fragment() {
                     //onBind(response.body()!!.result)
                     Log.d("post", "onResponse 성공: " + response.body().toString());
                     //Toast.makeText(this@ProfileActivity, "비밀번호 찾기 성공!", Toast.LENGTH_SHORT).show()
+                    if(response.body()?.result?.size==0){
+                        binding.clMatchingNo.visibility=View.VISIBLE
+                    }
+                    else
+                        binding.clMatchingNo.visibility=View.INVISIBLE
 
                     val body = response.body()
                     body?.let {

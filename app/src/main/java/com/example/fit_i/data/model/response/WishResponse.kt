@@ -11,7 +11,7 @@ data class WishResponse(
     data class Result(
         val createdAt: String,
         val trainerGrade: Double,
-        val trainerIdx: Int,
+        val trainerIdx: Long,
         val trainerName: String,
         val trainerProfile: String,
         val trainerSchool: String

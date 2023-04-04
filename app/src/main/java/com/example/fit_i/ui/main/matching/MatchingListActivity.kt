@@ -18,56 +18,44 @@ import retrofit2.Response
 
 class MatchingListActivity : AppCompatActivity() {
     //나중에 정의해도 됨 lateinit
-    private var _binding: ActivityMatchingListBinding? = null
-    private val binding : ActivityMatchingListBinding
-    get() = requireNotNull(_binding){"ActivityMatchingListBinding"}
+    private lateinit var binding : ActivityMatchingListBinding
 
-    private var matchingIdx : Int = 1
+    fun onBind(data : GetMatchlistResponse.Result?){
+        binding.tvMatchingPrice.text = data?.pricePerHour
+        binding.tvMatchingAllprcie2.text = data?.totalPrice
+        binding.tvMatchingStart.text = data?.matchingStart
+        binding.tvMatchingEnd.text = data?.matchingEnd
+        binding.tvMatchingAll.text = data?.matchingPeriod.toString()
+
+        if(data?.pickUpType=="TRAINER_GO") {
+            binding.tvMatchingPickup2.text = "트레이너님이 와주세요"
+        }else if(data?.pickUpType=="CUSTOMER_GO") {
+            binding.tvMatchingPickup2.text = "제가 직접 갈게요"
+        }
+
+        binding.tvMatchingPlace.text = data?.location
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_matching_list)
-        _binding = ActivityMatchingListBinding.inflate(layoutInflater)
+        binding = ActivityMatchingListBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val matchingId =intent.getLongExtra("matchingId",-1)//고객 인덱스
+        val trainerId = intent.getLongExtra("trainerId",-1)//트레이너인덱스
 
         val btnmatching = findViewById<Button>(R.id.btn_matching_List)
-        val btnback = findViewById<ImageButton>(R.id.btn_back)
         val matchingService = RetrofitImpl.getApiClient().create(MatchingService::class.java)
-
-
-        //뒤로 가기 버튼
-        btnback.setOnClickListener {
-            val matchingFragment = MatchingFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fl_container,matchingFragment).commit()
-        }
 
         // 트레이너 프로필로 이동하는 기능
         btnmatching.setOnClickListener{
-            startActivity(Intent(this,ProfileActivity::class.java))
+            val intent = Intent(this, ProfileActivity::class.java)  // 인텐트를 생성해줌,
+            intent.putExtra("trainerId",trainerId)
+            startActivity(intent)  // 화면 전환을 시켜줌
+            finish()
         }
-        matchingService.matchingList(matchingIdx).enqueue(object : Callback<GetMatchlistResponse>{
-            override fun onResponse(
-                call: Call<GetMatchlistResponse>,
-                response: Response<GetMatchlistResponse>
-            ) { if (response.isSuccessful){
-                //정상 통신
-                Log.d("post","매칭 명세표 onResponse 성공:"+ response.body().toString())
-            }
-                else{
-                    //통신실패
-                    Log.d("post","매칭 명세표 onResponse 실패:"+ response.body().toString())
-            }
-            }
 
-            override fun onFailure(call: Call<GetMatchlistResponse>, t: Throwable) {
-                //통신 실패 (예외)
-                Log.d("post"," 매칭 명세표 onFailure 에러"+ t.message.toString())
-            }
-
-        })
-
-
-        matchingService.matchingList(matchingIdx).enqueue(object : Callback<GetMatchlistResponse>{
+        matchingService.matchingList(matchingId).enqueue(object : Callback<GetMatchlistResponse>{
             override fun onResponse(
                 call: Call<GetMatchlistResponse>,
                 response: Response<GetMatchlistResponse>
@@ -82,28 +70,13 @@ class MatchingListActivity : AppCompatActivity() {
                 else{
                     //통신실패
                     Log.d("post","매칭 명세표 onResponse 실패:"+ response.body().toString())
-            }
+                }
             }
 
             override fun onFailure(call: Call<GetMatchlistResponse>, t: Throwable) {
                 //통신 실패 (예외)
                 Log.d("post"," 매칭 명세표 onFailure 에러"+ t.message.toString())
             }
-
         })
-
-
     }
-
-    fun onBind(data : GetMatchlistResponse.Result){
-        binding.tvMatchingPrice.text = data.pricePerHour
-        binding.tvMatchingAllprcie2.text = data.totalPrice
-        binding.tvMatchingStart.text = data.matchingStart
-        binding.tvMatchingEnd.text = data.matchingEnd
-        binding.tvMatchingAlldate.text = data.matchingPeriod.toString()
-        binding.tvMatchingPickup2.text = data.pickUpType
-        binding.tvMatchingPlace.text = data.location
-    }
-
-
 }

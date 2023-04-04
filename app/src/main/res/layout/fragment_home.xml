@@ -5,6 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.home.HomeFragment">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:src="@drawable/img_small_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 <!--    <ImageView-->
 <!--        android:id="@+id/iv_mainComment"-->
 <!--        android:layout_width="wrap_content"-->
@@ -24,14 +35,14 @@
         android:elevation="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tabMode="scrollable"
-        app:tabSelectedTextColor="@color/main"
-        app:tabTextColor="#818181"
-        app:tabIndicatorHeight="0dp"
-        app:tabRippleColor="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
         app:tabGravity="fill"
-        app:tabPadding="20dp" />
+        app:tabIndicatorHeight="1dp"
+        app:tabMode="scrollable"
+        app:tabPadding="20dp"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabSelectedTextColor="@color/main"
+        app:tabTextColor="#818181" />
 
 
     <androidx.viewpager2.widget.ViewPager2

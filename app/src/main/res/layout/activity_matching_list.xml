@@ -7,31 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.matching.MatchingListActivity">
 
-    <ImageButton
-        android:id="@+id/btn_back"
-        android:layout_width="12dp"
-        android:layout_height="20dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="60dp"
-        android:layout_marginStart="30dp"
-        android:src="@drawable/ic_back"/>
-
-
     <TextView
         android:id="@+id/tv_matching"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="60dp"
         android:text="보낸 요청 확인"
         android:textColor="@color/main"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/btn_back" />
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/iv_line"
         android:layout_width="match_parent"
@@ -204,9 +192,10 @@
             android:textColor="@color/main"
             app:layout_constraintBottom_toBottomOf="@id/tv_matching_end"
             app:layout_constraintTop_toTopOf="@id/tv_matching_end"
-            app:layout_constraintEnd_toStartOf="@id/tv_matching_Alldate"/>
+            app:layout_constraintEnd_toStartOf="@id/tv_matching_all_date"/>
+
         <TextView
-            android:id="@+id/tv_matching_Alldate"
+            android:id="@+id/tv_matching_all_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="8"

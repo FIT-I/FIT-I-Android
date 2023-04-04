@@ -24,7 +24,7 @@ interface CustomerService {
 
     //트레이너 매칭요청
     @POST("api/customer/matching/{trainerIdx}")
-    fun matcingPlz(@Body req : MatchingRequest, @Path("trainerIdx") trainerIdx: Int ) :Call<BaseResponse>
+    fun matcingPlz(@Body req: MatchingRequest, @Path("trainerIdx") trainerIdx: Long ) :Call<BaseResponse>
 
     //고객 프로필수정
     @PATCH("api/customer/profile/{profile}")

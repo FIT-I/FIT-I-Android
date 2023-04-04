@@ -14,5 +14,5 @@ interface MatchingService {
 
     //매칭정보
     @GET("api/matching/{matchingIdx}")
-    fun matchingList(@Path("matchingIdx") matchingIdx: Int) : Call<GetMatchlistResponse>
+    fun matchingList(@Path("matchingIdx") matchingIdx: Long) : Call<GetMatchlistResponse>
 }

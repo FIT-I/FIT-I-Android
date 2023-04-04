@@ -30,8 +30,6 @@ class ChatFragment : Fragment() {
     ): View? {
         _binding = FragmentChatBinding.inflate(inflater, container, false)
         return binding.root
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -60,6 +58,11 @@ class ChatFragment : Fragment() {
                 if (response.isSuccessful){
                     //정상 통신
                     Log.d("post","채팅 onResponse 성공 :" + response.body().toString())
+                    if(response.body()?.result?.size==0){
+                        binding.clMatchingNo.visibility=View.VISIBLE
+                    }
+                    else
+                        binding.clMatchingNo.visibility=View.INVISIBLE
 
                     val body = response.body()
                     body?.let {

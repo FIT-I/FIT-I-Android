@@ -89,18 +89,6 @@ class MypageModifyProfileFragment : Fragment() {
             }
         })
 
-        val ibpre = view.findViewById<View>(R.id.ib_pre) as ImageButton
-
-        //이전
-        ibpre.setOnClickListener {
-            val mypageFragment = MypageFragment()
-            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-
-            //이전 화면으로 이동
-            transaction.replace(R.id.fl_container, mypageFragment)
-            transaction.commit()
-        }
-
         icon1 = view.findViewById(R.id.btn_pf1)
         icon2 = view.findViewById(R.id.btn_pf2)
         icon3 = view.findViewById(R.id.btn_pf3)

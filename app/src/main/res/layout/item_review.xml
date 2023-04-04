@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/review_profile"
+            android:id="@+id/iv_profile"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/ic_profile" />
@@ -30,7 +30,7 @@
 
 
             <TextView
-                android:id="@+id/review_im"
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="김동현"
@@ -49,7 +49,7 @@
                     android:src="@drawable/img_star" />
 
                 <TextView
-                    android:id="@+id/review_star"
+                    android:id="@+id/tv_grade"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4.3"
@@ -67,7 +67,7 @@
 
 
                 <TextView
-                    android:id="@+id/review_uni"
+                    android:id="@+id/tv_school"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="숭실대학교"

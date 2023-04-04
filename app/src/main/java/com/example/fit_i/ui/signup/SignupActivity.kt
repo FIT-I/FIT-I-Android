@@ -239,5 +239,6 @@ class SignupActivity : BaseActivity() {
 //            confirmPW.setTextColor(Color.parseColor("#FF0000"))
 //            return false
 //        }
+
     }
 }
