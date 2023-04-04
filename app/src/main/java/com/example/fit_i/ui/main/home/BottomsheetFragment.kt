@@ -23,46 +23,48 @@ import java.util.logging.Logger
 
 class BottomSheetFragment(val itemClick: (Int) -> Unit) :
     BottomSheetDialogFragment() {
+
+    private var _binding: FragmentBottomsheetBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_bottomsheet, container, false)
+    ): View?{
+        _binding = FragmentBottomsheetBinding.inflate(inflater, container,false)
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val time : TextView = view.findViewById(R.id.tv_sort_time)
-        val level : TextView = view.findViewById(R.id.tv_sort_level)
-        val like : TextView = view.findViewById(R.id.tv_sort_like)
-        val dis : TextView = view.findViewById(R.id.tv_sort_distance)
-        val review : TextView = view.findViewById(R.id.tv_sort_review)
 
-        time.setOnClickListener {
+        binding.tvSortTime.setOnClickListener {
             Toast.makeText(activity, "최신 순", Toast.LENGTH_SHORT).show()
             itemClick(0)
             dismiss()
         }
 
-        level.setOnClickListener {
+        binding.tvSortLevel.setOnClickListener {
             Toast.makeText(activity, "등급 순", Toast.LENGTH_SHORT).show()
             itemClick(1)
             dismiss()
         }
 
-        dis.setOnClickListener {
+        binding.tvSortDistance.setOnClickListener {
             Toast.makeText(activity, "거리 순", Toast.LENGTH_SHORT).show()
             itemClick(2)
             dismiss()
         }
 
-        like.setOnClickListener {
+        binding.tvSortLike.setOnClickListener {
             Toast.makeText(activity, "찜 많은 순", Toast.LENGTH_SHORT).show()
             itemClick(3)
             dismiss()
         }
 
-        review.setOnClickListener{
+        binding.tvSortReview.setOnClickListener{
             Toast.makeText(activity, "찜 많은 순", Toast.LENGTH_SHORT).show()
             itemClick(4)
             dismiss()
