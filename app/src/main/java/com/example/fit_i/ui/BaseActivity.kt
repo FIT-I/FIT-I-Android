@@ -2,30 +2,42 @@ package com.example.fit_i.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.FrameLayout
 import androidx.appcompat.widget.Toolbar
+import com.example.fit_i.R
 import com.example.fit_i.databinding.ActivityBaseBinding
 
-open class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity() {
     private lateinit var customActionBar: Toolbar
+    private lateinit var binding: ActivityBaseBinding // BaseActivity 레이아웃 파일에 대한 바인딩 클래스
 
-    private lateinit var binding: ActivityBaseBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBaseBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+//        setContentView(binding.root)
+        setContentView(R.layout.activity_base)
 
-        //customActionBar = findViewById(R.id.toolbar)
-        setSupportActionBar(binding.toolbar)
+        customActionBar = findViewById(R.id.toolbar)
+        setSupportActionBar(customActionBar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+
+        val frameLayout = findViewById<FrameLayout>(R.id.frame_layout)
+        val inflater = LayoutInflater.from(this)
+        inflater.inflate(getLayoutResourceId(), frameLayout, true)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         //menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
+
+    abstract fun getLayoutResourceId(): Int
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {

@@ -1,42 +1,37 @@
 package com.example.fit_i.ui.profile
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.ImageButton
+import android.view.LayoutInflater
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.request.ReportRequest
-import com.example.fit_i.data.model.request.SignupValidationRequest
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.RedbellService
 import com.example.fit_i.databinding.ActivityProfileReportBinding
+import com.example.fit_i.ui.BaseActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ProfileReportActivity:AppCompatActivity() {
+class ProfileReportActivity:BaseActivity() {
     private lateinit var binding: ActivityProfileReportBinding
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
+
         binding = ActivityProfileReportBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val inflater = LayoutInflater.from(this)
+        inflater.inflate(R.layout.activity_profile_report, findViewById(R.id.frame_layout), true)
+        findViewById<FrameLayout>(R.id.frame_layout).addView(binding.root)
+        supportActionBar?.title = "신고하기"
 
         //아이디 받아오기
         val id = intent.getLongExtra("id",-1)
         Log.d("post",id.toString())
-//
-//        val goBack = findViewById<ImageButton>(R.id.ib_close)
-//        goBack.setOnClickListener{
-//            val intent = Intent(this,ProfileActivity::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
 
         //사유 선택
         var reason : String ="asdf"
@@ -93,5 +88,9 @@ class ProfileReportActivity:AppCompatActivity() {
                 .create()
                 .show()
         }
+    }
+
+    override fun getLayoutResourceId(): Int {
+        return R.layout.activity_profile_report;
     }
 }
