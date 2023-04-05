@@ -6,28 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.mypage.MypageLocationActivity">
 
-<ImageButton
-    android:id="@+id/iv_back"
-    android:layout_width="25dp"
-    android:layout_height="25dp"
-    android:layout_marginStart="30dp"
-    android:layout_marginTop="70dp"
-    android:background="@android:color/transparent"
-    android:scaleType="fitCenter"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/ic_back"
-    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-<TextView
+    <TextView
     android:id="@+id/tv_location"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="매칭 위치 설정"
     android:textColor="@color/main"
-    android:textSize="25dp"
+    android:textSize="20dp"
     android:textStyle="bold"
-    android:layout_marginTop="80dp"
+    android:layout_marginTop="60dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />

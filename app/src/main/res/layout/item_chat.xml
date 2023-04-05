@@ -18,7 +18,9 @@
             android:id="@+id/chat_profile"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/img_pic" />
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_profile"
+            android:background="@drawable/custom_profile_matching" />
 
         <LinearLayout
             android:id="@+id/llay"
@@ -32,7 +34,7 @@
                 android:id="@+id/chat_im"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="김동현"
+                android:text="userName"
                 android:textColor="@color/main"
                 android:textSize="15sp" />
 
@@ -60,7 +62,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
-                    android:text="."
+                    android:text="ㆍ"
                     android:textColor="@color/main"
                     android:textSize="10sp" />
 
@@ -83,6 +85,7 @@
 
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/ll_openchating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -97,7 +100,7 @@
                     android:id="@+id/chat_url"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="https://open.kakao.com/o/gpcrIQPe"
+                    android:text="https://open.kakao.com/fit-i"
                     android:layout_margin="3dp"
                     android:textSize="12sp"
                     android:textColor="#011E5F"/>

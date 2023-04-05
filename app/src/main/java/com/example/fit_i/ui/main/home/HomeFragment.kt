@@ -65,7 +65,7 @@ class HomeFragment : Fragment() {
         // tablayout attach
         TabLayoutMediator(tabLayout, viewPager){ tab, position ->
             tab.text = tabTitleArray[position]
-            tab.setIcon(tabIconArray[position])
+            //tab.setIcon(tabIconArray[position])
         }.attach()
 
         return view

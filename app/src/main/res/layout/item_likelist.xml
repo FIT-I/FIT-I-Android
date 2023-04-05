@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/ll_likeitem"
@@ -18,6 +18,8 @@
             android:id="@+id/iv_profile"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:background="@drawable/custom_profile_matching"
+            android:scaleType="centerCrop"
             android:src="@drawable/ic_profile" />
 
         <LinearLayout
@@ -72,10 +74,11 @@
                     android:text="피티대학교"
                     android:textColor="@color/main"
                     android:textSize="12sp" />
+
                 <TextView
-                    android:layout_marginLeft="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
                     android:text="재학"
                     android:textColor="@color/main"
                     android:textSize="12sp" />

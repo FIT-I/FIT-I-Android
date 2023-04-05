@@ -17,7 +17,7 @@ data class GetTrainerInfoResponse(
         val intro: String?,
         val service: String?,
         val reviewDto: List<ReviewDto>?,
-        val imageList: List<Any>?,
+        val imageList: List<String>?,
         //val category: String
     ){
         data class ReviewDto (
