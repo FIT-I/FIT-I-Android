@@ -34,7 +34,7 @@ class ProfileReportActivity:BaseActivity() {
         Log.d("post",id.toString())
 
         //사유 선택
-        var reason : String ="asdf"
+        var reason =""
         binding.rgReport.setOnCheckedChangeListener { group, checkedId ->
             when(checkedId){
                 R.id.rb_report1 -> { reason = "AD" }
@@ -46,12 +46,11 @@ class ProfileReportActivity:BaseActivity() {
         }
 
 
-        val report = findViewById<Button>(R.id.btn_next_step)
-        report.setOnClickListener{
+        binding.btnReportDone.setOnClickListener{
             AlertDialog.Builder(this)
                 .setTitle("신고하기")
                 .setMessage("정말 신고하시겠습니까?")
-                .setPositiveButton("계정신고"
+                .setPositiveButton("신고"
                 ) { dialog, which ->
                     //Log.d("MyTag", "positive")
                     val redbellService = RetrofitImpl.getApiClient().create(RedbellService::class.java)
