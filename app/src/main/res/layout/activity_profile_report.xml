@@ -6,91 +6,59 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tv_report_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
-        android:text="신고하기"
-        android:textColor="@color/main"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_marginTop="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/iv_background_step"
-        android:layout_width="0dp"
-        android:layout_height="5dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_report_alert"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_report_title"
-        app:srcCompat="@drawable/img_bar" />
-
-    <TextView
         android:id="@+id/tv_report_alert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="사유선택"
-        android:textColor="@color/main"
-        android:textSize="20dp"
+        android:text="@string/report_title"
+        android:textSize="17sp"
+        app:layout_constraintTop_toTopOf="parent"
         android:padding="25dp"
         android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_background_step" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <RadioGroup
         android:id="@+id/rg_report"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="25dp"
+        android:paddingStart="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_report_alert">
 
         <RadioButton
             android:id="@+id/rb_report1"
             android:layout_width="wrap_content"
-            android:layout_height="22dp"
+            android:layout_height="25dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/report_ad"
-            android:textColor="#586177" />
+            android:text="@string/report_ad"/>
 
         <RadioButton
             android:id="@+id/rb_report2"
             android:layout_width="wrap_content"
-            android:layout_height="22dp"
+            android:layout_height="25dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/report_fake_profile"
-            android:textColor="#586177" />
+            android:text="@string/report_fake_profile" />
 
         <RadioButton
             android:id="@+id/rb_report3"
             android:layout_width="wrap_content"
-            android:layout_height="22dp"
+            android:layout_height="25dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/report_invalid_link"
-            android:textColor="#586177" />
+            android:text="@string/report_invalid_link"/>
+
         <RadioButton
             android:id="@+id/rb_report4"
             android:layout_width="wrap_content"
-            android:layout_height="22dp"
+            android:layout_height="25dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/report_bad_word"
-            android:textColor="#586177" />
+            android:text="@string/report_bad_word" />
 
         <RadioButton
             android:id="@+id/rb_report5"
             android:layout_width="wrap_content"
-            android:layout_height="22dp"
-            android:text="@string/report_illegal"
-            android:textColor="#586177" />
+            android:layout_height="25dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/report_illegal" />
     </RadioGroup>
 
     <ImageView
@@ -106,40 +74,39 @@
         app:layout_constraintTop_toBottomOf="@+id/rg_report" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/tv_report_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="서비스 진행중 문제가 생겼다면 증빙자료(사진, 녹취록, 대화 내역)와 함께 이메일 fitiofficial@naver.com 로 접수해주세요.
-신고 결과는 별도의 안내를 드리지 않습니다."
-        android:padding="25dp"
+        android:text="@string/report_email"
+        android:paddingTop="10dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_report_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="115dp"
-        android:text="신고하기 사유 확인이 불가능한 경우 해당 신고는 미조치됩니다."
+        android:text="@string/report_info"
         android:textColor="#D9D9D9"
-        android:textSize="12dp"
-        android:padding="10dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
+        android:textSize="12sp"
+        android:padding="15dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_report_done"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <Button
         android:id="@+id/btn_report_done"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="55dp"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="38dp"
-        android:text="신고하기"
-        android:textSize="20sp"
+        android:text="@string/done_report"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
