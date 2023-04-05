@@ -4,20 +4,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
-import com.example.fit_i.R
+import com.example.fit_i.databinding.ActivityBaseBinding
 
 open class BaseActivity : AppCompatActivity() {
-    protected lateinit var customActionBar: Toolbar
+    private lateinit var customActionBar: Toolbar
 
+    private lateinit var binding: ActivityBaseBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_base)
+        binding = ActivityBaseBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        customActionBar = findViewById(R.id.toolbar)
-        setSupportActionBar(customActionBar)
+        //customActionBar = findViewById(R.id.toolbar)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
