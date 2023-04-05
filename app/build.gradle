@@ -4,6 +4,10 @@ plugins {
     id 'kotlin-parcelize'
 }
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def BASE_URL = properties.getProperty('baseurl')
+
 android {
     namespace 'com.example.fit_i'
     compileSdk 32
@@ -18,6 +22,9 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
+
+        buildConfigField "String", "BASE_URL", properties["baseurl"]
+        manifestPlaceholders = [BASE_URL : "baseurl"]
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
