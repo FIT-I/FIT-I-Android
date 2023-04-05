@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -20,12 +21,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
-            android:name=".ui.BaseActivity"
+        <activity android:name=".ui.BaseActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".ui.main.mypage.review.MypageReviewWriteActivity"
             android:exported="false">
@@ -56,14 +58,6 @@
                 android:value="" />
         </activity>
 
-
-        <activity
-            android:name=".ui.main.mypage.review.MypageReviewWriteActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
         <activity
             android:name=".ui.main.mypage.MypageLocationActivity"
             android:exported="true">
@@ -230,5 +224,4 @@
             android:name="com.kakao.sdk.AppKey"
             android:value="fc2ffceddcfde7653bf5cc05bc19f3b1" />
     </application>
-
-</manifest>
+    </manifest>

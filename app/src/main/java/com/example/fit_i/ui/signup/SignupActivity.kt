@@ -241,4 +241,8 @@ class SignupActivity : BaseActivity() {
 //        }
 
     }
+
+    override fun getLayoutResourceId(): Int {
+        return R.layout.activity_signup
+    }
 }
