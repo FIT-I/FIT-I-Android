@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 
 object RetrofitImpl {
-    private const val BASE_URL = "https://fiti.site/"
+    private const val BASE_URL = BuildConfig.BASE_URL
 
     //코튼 없음
     fun getApiClientWithOutToken(): Retrofit {

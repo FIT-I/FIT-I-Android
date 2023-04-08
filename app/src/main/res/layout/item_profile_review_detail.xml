@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="276dp"
+    android:layout_height="205dp"
+    android:background="@drawable/shape_profile_review_background"
+    android:padding="17dp">
+
+    <ImageView
+        android:id="@+id/iv_profile_review_profile_image"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/img_review_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_profile_review_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:text="유재석"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_profile_review_day"
+        app:layout_constraintStart_toEndOf="@+id/iv_profile_review_profile_image" />
+
+    <TextView
+        android:id="@+id/tv_profile_review_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:text="2일전"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_profile_review_profile_image"
+        app:layout_constraintStart_toEndOf="@id/iv_profile_review_profile_image" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:text="친절한 지도 감사합니다:) 총 3회 수업진행하였는데 부위 별 운동 설명을 잘 해주셔서 조금 더 쉽게 운동 할수 있었던 것 같아요 쌤 파이팅~"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_profile_review_profile_image" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,20 +7,23 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.LayoutInflater
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fit_i.R
 import com.example.fit_i.RetrofitImpl
 import com.example.fit_i.data.model.response.BaseResponse
 import com.example.fit_i.data.service.AccountsService
+import com.example.fit_i.databinding.ActivityLoginBinding
 import com.example.fit_i.databinding.ActivitySignupBinding
+import com.example.fit_i.ui.BaseActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.regex.Pattern
 
 
-class SignupActivity : AppCompatActivity() {
+class SignupActivity : BaseActivity() {
     private lateinit var binding: ActivitySignupBinding
 
     //메시지 담을 변수
@@ -38,7 +41,16 @@ class SignupActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
+
+        // MainActivity의 레이아웃을 frame_layout에 추가
+        val inflater = LayoutInflater.from(this)
+        inflater.inflate(R.layout.activity_signup, findViewById(R.id.frame_layout), true)
+
+        supportActionBar?.title = "회원가입"
+
+        //setContentView(R.layout.activity_signup)
+
+        binding = ActivitySignupBinding.inflate(layoutInflater)
 
         //객체 생성
         val etName: EditText = findViewById(R.id.et_name)
@@ -185,17 +197,20 @@ class SignupActivity : AppCompatActivity() {
         pwDoubleCheck()
         pwCheck()
         emailCheck()
-        return name.isNotEmpty() && email.isNotEmpty() && pw.isNotEmpty() && pw2.isNotEmpty() && pwDoubleCheck() && pwCheck()
+        return name.isNotEmpty() && email.isNotEmpty() && pw.isNotEmpty() && pw2.isNotEmpty() && emailCheck() && pwDoubleCheck() && pwCheck()
     }
 
     //이메일 정규성 검사
-    private fun emailCheck() {
+    private fun emailCheck(): Boolean {
         val pattern1 = Pattern.compile(emailPattern) // 패턴 컴파일
         val matcher1 = pattern1.matcher(email)
 
-        if (!matcher1.find())
-            Toast.makeText(this@SignupActivity, "이메일 형식을 확인해주세요", Toast.LENGTH_SHORT).show()
-
+        return if (!matcher1.find()) {
+            //Toast.makeText(this@SignupActivity, "이메일 형식을 확인해주세요", Toast.LENGTH_SHORT).show()
+            false
+        } else {
+            true
+        }
     }
 
     //패스워드 정규성검사
@@ -224,5 +239,6 @@ class SignupActivity : AppCompatActivity() {
             confirmPW.setTextColor(Color.parseColor("#FF0000"))
             return false
         }
+
     }
 }

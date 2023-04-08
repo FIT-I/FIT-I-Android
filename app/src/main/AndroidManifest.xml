@@ -19,10 +19,26 @@
         android:theme="@style/Theme.FITI"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <activity
+            android:name=".ui.BaseActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.main.mypage.review.MypageReviewWriteActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".SearchActivity"
             android:exported="false" />
         <activity
+
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -35,6 +51,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".ui.match.MatchDateActivity"
             android:exported="true">
@@ -49,6 +66,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".ui.main.mypage.MypageLocationActivity"
             android:exported="true">
