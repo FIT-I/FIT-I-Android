@@ -33,12 +33,28 @@ class HomeEatingFragment : Fragment() {
         _binding = FragmentHomeEatingBinding.inflate(inflater, container, false)
         return binding.root
     }
+//        val trainerList : ArrayList<TrainerData> = arrayListOf()
+//
+//        trainerList.apply {
+//            add(TrainerData("김동현","서울대학교","Pt 센터 경력 3년. 스포애니 상도점에서 대표 트레이너로 근무한 경험이 있습니다."
+//                ,"20,000","128","1"))
+//            add(TrainerData("김동현","서울대학교","Pt 센터 경력 3년. 스포애니 상도점에서 대표 트레이너로 근무한 경험이 있습니다."
+//                ,"20,000","128","1"))
+//            add(TrainerData("김동현","서울대학교","Pt 센터 경력 3년. 스포애니 상도점에서 대표 트레이너로 근무한 경험이 있습니다."
+//                ,"20,000","128","1"))
+//            add(TrainerData("김동현","서울대학교","Pt 센터 경력 3년. 스포애니 상도점에서 대표 트레이너로 근무한 경험이 있습니다."
+//                ,"20,000","128","1"))
+//            add(TrainerData("김동현","서울대학교","Pt 센터 경력 3년. 스포애니 상도점에서 대표 트레이너로 근무한 경험이 있습니다."
+//                ,"20,000","128","1"))
+//        }
+//        return binding.root
+//    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        lodeData(sort)
+//        lodeData(sort)
 /*
         val trainerList : ArrayList<TrainerData> = arrayListOf()
 

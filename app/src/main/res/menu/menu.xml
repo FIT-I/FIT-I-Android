@@ -4,20 +4,20 @@
         android:id="@+id/item_fragment1"
         android:enabled="true"
         android:icon="@drawable/house_selector"
-        android:title="@string/home"/>
+        android:title="" />
     <item
         android:id="@+id/item_fragment2"
         android:enabled="true"
-        android:icon="@drawable/globe_selector"
-        android:title="@string/matching"/>
+        android:icon="@drawable/chat_selector"
+        android:title="" />
+<!--    <item-->
+<!--        android:id="@+id/item_fragment3"-->
+<!--        android:enabled="true"-->
+<!--        android:icon="@drawable/date_selector"-->
+<!--        android:title= ""/>-->
     <item
         android:id="@+id/item_fragment3"
         android:enabled="true"
-        android:icon="@drawable/chat_selector"
-        android:title="@string/chat"/>
-    <item
-        android:id="@+id/item_fragment4"
-        android:enabled="true"
         android:icon="@drawable/person_selector"
-        android:title="@string/mypage"/>
+        android:title = ""/>
 </menu>

@@ -5,13 +5,15 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class TrainerData(
-    val id: Long,
+//    val id: Long,
     val name: String,
-    val profile: String,
-    val levelName: String,
+//    val profile: Int,
+//    val levelName: String,
     val school: String,
-    val grade: Double,
-    val certificateNum: Long,
+//    val grade: Int,
+//    val certificateNum: Long,
     val contents: String,
-    val cost: Long
+    val cost: String,
+    val review: String,
+    val km: String
 ): Parcelable

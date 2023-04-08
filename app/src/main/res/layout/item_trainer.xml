@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/rec"
     android:layout_marginTop="10dp"
     android:layout_marginBottom="10dp"
     android:layout_marginStart="20dp"
@@ -14,9 +15,9 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_profile"
+        android:src="@drawable/img_photo"
         android:background="@drawable/custom_profile"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -24,32 +25,36 @@
         android:id="@+id/linearLayout5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        app:layout_constraintStart_toEndOf="@+id/iv_profile"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:text="김동현"
+            android:layout_marginEnd="5dp"
+            android:text="김종국"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/iv_rank"
-            android:layout_width="60dp"
+            android:layout_width="12dp"
             android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/img_gold" />
+            app:srcCompat="@drawable/ic_gold" />
 
 
 
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout3"
+        app:tint="@color/line" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -58,12 +63,13 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
-        app:layout_constraintStart_toEndOf="@+id/iv_profile"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_gravity="center_vertical"
             android:src="@drawable/ic_star" />
 
         <TextView
@@ -71,7 +77,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4.3"
+            android:textColor="@color/black"
             android:textSize="11dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="("
+            android:textSize="11dp"/>
+        <TextView
+            android:id="@+id/tv_review_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="128"
+            android:textSize="11dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=")"
+            android:textSize="11dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -96,21 +120,40 @@
             android:textColor="@color/gray"
 
             android:textSize="11dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ㆍ"
+            android:textColor="@color/gray"
+            android:textSize="11dp" />
+        <TextView
+            android:id="@+id/tv_km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="@color/gray"
+            android:textSize="11dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="km"
+            android:textColor="@color/gray"
+            android:textSize="11dp" />
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/tv_pr"
-        android:layout_width="220dp"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:lines="3"
-        android:text="Pt 센터 경력 3년. 스포애니 상도점에서 대표 트레이너로 근무한 경험이 있습니다. 가르치는 것은 자신있습니다."
+        android:lines="2"
+        android:text="Pt 센터 경력 3년. 스포애니 상도점에서 대표 트레이너로 근무한 경험이 있습니다."
         android:textColor="@color/black"
         android:textSize="11dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toEndOf="@+id/iv_profile"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 
     <LinearLayout
         android:id="@+id/linearLayout4"
@@ -118,48 +161,29 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toEndOf="@+id/iv_profile"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_pr">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="₩"
-            android:textColor="@color/black"
-            android:textSize="11dp"/>
+
         <TextView
             android:id="@+id/tv_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="20000"
             android:textColor="@color/black"
-            android:textSize="11dp" />
+            android:textSize="11dp"
+            android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
-            android:text="원"
+            android:text="원 부터"
             android:textColor="@color/black"
+            android:textStyle="bold"
 
             android:textSize="11dp" />
 
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:text="/"
-            android:textColor="@color/gray"
-            android:textSize="11dp" />
-
-        <TextView
-            android:id="@+id/tv_hour"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1시간"
-            android:textColor="@color/gray"
-            android:textSize="11dp" />
     </LinearLayout>
 
 
