@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.home.SearchActivity">
+
+    <ImageButton
+        android:id="@+id/btn_search_home"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/layout_ff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btn_search_home">
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/edittext_border"
+            android:hint="트레이너 명/학교 검색"
+            android:padding="8dp"
+            android:paddingStart="45dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/edittext"
+            android:textSize="14dp" />
+
+        <ImageButton
+            android:id="@+id/btn_search_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:layout_marginStart="30dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_search_small" />
+
+
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/tv_search_tt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="트레이너 통합검색"
+        android:textColor="#333333"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_ff" />
+
+    <TextView
+        android:id="@+id/tv_search_tt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="트레이너 이름/학교/등급 등으로 검색하여 \n원하는 트레이너를 빠르게
+찾아보세요."
+        android:textColor="@color/text_8B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_search_tt1" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_search_person"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_search_tt2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
