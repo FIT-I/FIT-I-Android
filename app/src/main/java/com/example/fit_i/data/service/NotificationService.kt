@@ -1,7 +1,5 @@
 package com.example.fit_i.data.service
 
-import com.example.fit_i.data.model.request.AlarmEmailRequest
-import com.example.fit_i.data.model.request.AlarmRequest.AlarmApi
 import com.example.fit_i.data.model.request.FirebaseTokenRequest
 import retrofit2.Call
 import retrofit2.http.Body
@@ -20,11 +18,5 @@ interface NotificationService {
     @DELETE("api/firebase/users/{email}")
     fun deletetoken(@Path("email") email: String) : Call<String>
 
-    //알림 API - 알림 전송
-    @POST("api/notification")
-    fun postalarm(@Body req : AlarmApi ) : Call<String>
 
-    //알림 API - email
-    @POST("api/notification/users/{email}")
-    fun postalarmemail(@Body req: AlarmEmailRequest, @Query("email")email: String)
 }
